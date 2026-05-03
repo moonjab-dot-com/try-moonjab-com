@@ -67,8 +67,6 @@ const dashboardChildren = (
     <Route path="interviews/session" element={<InterviewSession />} />
     <Route path="interviews/results" element={<InterviewResults />} />
     <Route path="interviews/ai" element={<InterviewAI />} />
-    <Route path="opportunities" element={<Opportunities />} />
-    <Route path="opportunities/:id" element={<OpportunityDetail />} />
     <Route path="settings" element={<Settings />} />
   </>
 );
