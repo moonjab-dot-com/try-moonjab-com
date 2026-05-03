@@ -9,8 +9,6 @@ import { ThemeProvider } from "next-themes";
 import { Suspense, lazy } from "react";
 import { useAuthSync } from "@/hooks/useAuthSync";
 import { useAuthRedirect } from "@/hooks/useAuthRedirect";
-import { useSmartReminders } from "@/hooks/useSmartReminders";
-import { useNotificationTriggers } from "@/hooks/useNotificationTriggers";
 import { SkeletonDashboard } from "@/components/ui/skeleton-loader";
 import Landing from "./pages/Landing";
 import Auth from "./pages/Auth";
@@ -51,8 +49,6 @@ const queryClient = new QueryClient();
 function AuthSyncWrapper({ children }: { children: React.ReactNode }) {
   useAuthSync();
   useAuthRedirect();
-  useSmartReminders();
-  useNotificationTriggers();
   return <>{children}</>;
 }
 
