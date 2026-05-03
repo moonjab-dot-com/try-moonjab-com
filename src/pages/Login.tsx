@@ -34,6 +34,7 @@ const Login = () => {
     try {
       await login(formData.email, formData.password);
       toast.success('Bienvenido de vuelta');
+      // Force activation: send straight to CV builder so user takes action immediately
       navigate('/dashboard');
     } catch (error: any) {
       const msg = error.message || '';
@@ -47,7 +48,7 @@ const Login = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-background p-6">
-      <SEOHead title="Iniciar Sesión" description="Accede a tu cuenta MoonJab para gestionar tu CV, practicar entrevistas y explorar oportunidades laborales." path="/login" />
+      <SEOHead title="Iniciar Sesión" description="Accede a tu cuenta MoonJab para gestionar tu CV y practicar entrevistas con IA." path="/login" />
       <motion.div 
         initial={{ opacity: 0, y: 10 }} 
         animate={{ opacity: 1, y: 0 }} 
