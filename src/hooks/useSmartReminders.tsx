@@ -10,7 +10,7 @@ export const useSmartReminders = () => {
   const profile = useProfileStore((state) => state.profile);
   const cvs = useCVStore((state) => state.cvs);
   const sessions = useInterviewStore((state) => state.sessions);
-  const savedOpportunities = useOpportunitiesStore((state) => state.savedOpportunities);
+  const savedOpportunities: any[] = [];
 
   useEffect(() => {
     // Check reminders every hour
