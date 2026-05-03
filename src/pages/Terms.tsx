@@ -24,7 +24,6 @@ MoonJab proporciona una plataforma de desarrollo profesional que incluye:
 - Diagnóstico de carrera basado en el modelo RIASEC
 - Creación y optimización de CV con asistencia de IA
 - Simulador de entrevistas con feedback personalizado
-- Búsqueda y recomendación de oportunidades laborales
 - Recursos educativos y guías de carrera
 
 **Disponibilidad:**
@@ -114,7 +113,7 @@ Cualquier sugerencia o feedback que proporciones puede ser utilizado por nosotro
 MoonJab ofrece dos modalidades: un modo invitado gratuito con funciones limitadas y un plan Pro de pago con acceso completo a todas las herramientas.
 
 **Precio:**
-El plan Pro tiene un costo de $15 USD por mes, facturado mensualmente.
+El plan Pro tiene un costo de $5 USD por mes, facturado mensualmente.
 
 **Procesamiento de pagos:**
 Los pagos se procesan de forma segura a través de Stripe. Aceptamos las principales tarjetas de crédito y débito. MoonJab no almacena datos de tarjetas; toda la información de pago es gestionada directamente por Stripe.
@@ -143,7 +142,7 @@ La Plataforma se proporciona "tal cual" y "según disponibilidad". No garantizam
 **Limitación de daños:**
 En la máxima medida permitida por la ley, MoonJab no será responsable por:
 - Daños indirectos, incidentales o consecuentes
-- Pérdida de beneficios, datos o oportunidades
+- Pérdida de beneficios o datos
 - Cualquier daño que exceda el monto pagado en los últimos 12 meses
 
 **Decisiones de empleo:**
