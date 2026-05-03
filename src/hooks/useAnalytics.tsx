@@ -7,10 +7,10 @@ type EventType =
   | 'role_detected'
   | 'cv_created'
   | 'cv_exported'
+  | 'cv_improved'
+  | 'cv_updated'
   | 'interview_started'
   | 'interview_completed'
-  | 'opportunity_saved'
-  | 'opportunity_applied'
   | 'profile_updated'
   | 'login'
   | 'signup';
