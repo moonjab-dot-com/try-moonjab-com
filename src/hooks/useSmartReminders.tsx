@@ -3,7 +3,7 @@ import { useNotificationsStore } from '@/store/useNotificationsStore';
 import { useProfileStore } from '@/store/useProfileStore';
 import { useCVStore } from '@/store/useCVStore';
 import { useInterviewStore } from '@/store/useInterviewStore';
-import { useOpportunitiesStore } from '@/store/useOpportunitiesStore';
+
 
 export const useSmartReminders = () => {
   const { addNotification } = useNotificationsStore();
