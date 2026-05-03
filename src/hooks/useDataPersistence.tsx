@@ -18,6 +18,7 @@ export function useDataPersistence() {
       clearUserScopedStores();
       return;
     }
+
     clearUserScopedStores();
     void loadUserData(session.user.id);
   }, [session?.user?.id]);
@@ -37,7 +38,7 @@ export function useDataPersistence() {
           id: cv.id,
           userId: cv.user_id,
           title: cv.nombre_cv,
-          template: (cv.template as any) || 'creativo',
+          template: (cv.template as any) || 'creative',
           language: 'es',
           personal: (cv.info_personal as any) || {},
           summary: cv.resumen || '',
@@ -57,6 +58,7 @@ export function useDataPersistence() {
           score: { overall: 0, clarity: 0, impact: 0, keywords: 0, format: 0 },
           metadata: { industryTags: [], targetKeywords: [] },
         }));
+
         useCVStore.setState({ cvs: transformedCVs, currentCV: null });
       }
 
@@ -79,10 +81,11 @@ export function useDataPersistence() {
           saved: true,
           privacy: 'private' as any,
         }));
+
         useInterviewStore.setState({ sessions: transformedSessions, currentSession: null });
       }
     } catch (error) {
-      console.error('Error loading user data:', error);
+      // silent fail
     }
   }
 
