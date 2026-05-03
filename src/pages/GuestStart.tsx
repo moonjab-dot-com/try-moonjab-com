@@ -5,8 +5,6 @@ import { useProfileStore } from '@/store/useProfileStore';
 import { useCVStore } from '@/store/useCVStore';
 import { useInterviewStore } from '@/store/useInterviewStore';
 
-import { SEOHead } from '@/components/SEOHead';
-
 export default function GuestStart() {
   const navigate = useNavigate();
   const startGuestMode = useAuthStore((state) => state.startGuestMode);
@@ -15,7 +13,6 @@ export default function GuestStart() {
     useProfileStore.setState({ profile: null });
     useCVStore.setState({ cvs: [], currentCV: null });
     useInterviewStore.setState({ sessions: [], currentSession: null, questionBank: [], currentQuestionIndex: 0 });
-    
     startGuestMode();
     navigate('/test/dashboard', { replace: true });
   }, [startGuestMode, navigate]);
