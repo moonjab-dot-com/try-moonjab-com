@@ -3,8 +3,8 @@ import { supabase } from '@/integrations/supabase/client';
 import { useAuthStore } from '@/store/useAuthStore';
 
 export const MOONJAB_PRO = {
-  price_id: "price_1TByrLE84vzDx9ysFXERAYK8",
-  product_id: "prod_UAJU0VprNZw3rz",
+  price_id: "price_1TT6iqE84vzDx9ysqISIQAT8",
+  product_id: "prod_US0k1wvfIrfnxe",
 };
 
 interface SubscriptionState {
