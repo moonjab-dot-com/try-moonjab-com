@@ -15,7 +15,7 @@ export default function GuestStart() {
     useProfileStore.setState({ profile: null });
     useCVStore.setState({ cvs: [], currentCV: null });
     useInterviewStore.setState({ sessions: [], currentSession: null, questionBank: [], currentQuestionIndex: 0 });
-    useOpportunitiesStore.setState({ opportunities: [], applications: [], savedOpportunities: [], cache: {}, hasMore: true, currentPage: 1 });
+    
     startGuestMode();
     navigate('/test/dashboard', { replace: true });
   }, [startGuestMode, navigate]);
