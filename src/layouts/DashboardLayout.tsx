@@ -89,7 +89,7 @@ export default function DashboardLayout() {
       { icon: Home, label: t('nav.dashboard'), path: dashboardBasePath },
       { icon: FileText, label: t('nav.cv'), path: `${dashboardBasePath}/cvs` },
       { icon: Mic, label: t('nav.interviews'), path: `${dashboardBasePath}/interviews` },
-      { icon: Briefcase, label: t('nav.opportunities'), path: `${dashboardBasePath}/opportunities` },
+      
     ];
     if (isAdmin && !isTrial) items.push({ icon: Shield, label: 'Admin', path: `${dashboardBasePath}/admin` });
     return items;
