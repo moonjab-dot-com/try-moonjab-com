@@ -4,7 +4,7 @@ import { useAuthStore } from '@/store/useAuthStore';
 import { useProfileStore } from '@/store/useProfileStore';
 import { useCVStore } from '@/store/useCVStore';
 import { useInterviewStore } from '@/store/useInterviewStore';
-import { useOpportunitiesStore } from '@/store/useOpportunitiesStore';
+
 import { SEOHead } from '@/components/SEOHead';
 
 export default function GuestStart() {
