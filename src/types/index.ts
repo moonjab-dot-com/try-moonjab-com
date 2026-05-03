@@ -240,16 +240,6 @@ export interface Progress {
   interviews: number;
 }
 
-export interface JobOpportunity {
-  id: string;
-  company: string;
-  position: string;
-  match: number;
-  salary?: string;
-  location: string;
-  type: 'remote' | 'hybrid' | 'onsite';
-  logo?: string;
-}
 
 export type GoalCategory = 'career' | 'learning' | 'wellbeing' | 'networking' | 'other';
 export type GoalPriority = 'alta' | 'media' | 'baja';
@@ -622,73 +612,4 @@ export interface NetworkSuggestion {
   commonInterests: string[];
   mutualConnections: number;
   score: number;
-}
-
-export type OpportunityModality = 'remote' | 'hybrid' | 'onsite';
-export type OpportunityContractType = 'internship' | 'part-time' | 'full-time' | 'contract';
-export type OpportunityCategory = 'technology' | 'marketing' | 'design' | 'business' | 'education' | 'health' | 'other';
-export type ApplicationStatus = 'sent' | 'viewed' | 'rejected' | 'interview' | 'offer';
-
-export interface OpportunitySalaryRange {
-  min: number;
-  max: number;
-  currency: 'USD' | 'EUR' | 'PEN';
-}
-
-export interface Opportunity {
-  id: string;
-  title: string;
-  company: string;
-  location: string;
-  modality: OpportunityModality;
-  contractType: OpportunityContractType;
-  description: string;
-  requirements: string[];
-  benefits?: string[];
-  tags: string[];
-  category: OpportunityCategory;
-  publishedAt: string;
-  expiresAt: string | null;
-  salaryRange?: OpportunitySalaryRange;
-  source: string;
-  companyLogo?: string;
-  views: number;
-  applicantsCount: number;
-  applyUrl?: string;
-}
-
-export interface MatchBreakdown {
-  skillsMatch: number;
-  experienceMatch: number;
-  educationMatch: number;
-  lifestyleMatch: number;
-  keywordsMatch: number;
-  interestMatch?: number; // RIASEC-based interest alignment
-}
-
-export interface MatchResult {
-  overall: number;
-  breakdown: MatchBreakdown;
-  recommendations: string[];
-  missingSkills: string[];
-}
-
-export interface Application {
-  id: string;
-  userId: string;
-  opportunityId: string;
-  cvVersionId: string;
-  coverLetter?: string;
-  status: ApplicationStatus;
-  createdAt: string;
-  updatedAt: string;
-  employerResponse?: string;
-  matchScore?: number;
-}
-
-export interface SavedOpportunity {
-  userId: string;
-  opportunityId: string;
-  savedAt: string;
-  listName: string;
 }
