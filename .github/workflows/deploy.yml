@@ -30,9 +30,9 @@ jobs:
       - run: npm run build
         env:
           # GITHUB_PAGES removed — it was forcing base: "/oficial-moonjab/" which broke the site
-          VITE_SUPABASE_URL: "https://jpimnzadoznmmqeanflo.supabase.co"
-          VITE_SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpwaW1uemFkb3pubW1xZWFuZmxvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM3NTUwMDUsImV4cCI6MjA4OTMzMTAwNX0.jbrnQu5gJlDujUSBVuq3RRSpU0R4YYGF22jauP-DH5s"
-          VITE_SUPABASE_PROJECT_ID: "jpimnzadoznmmqeanflo"
+          VITE_SUPABASE_URL: "https://vajjrwoiufqdbziwluih.supabase.co"
+          VITE_SUPABASE_ANON_KEY: "sb_publishable_JS8pSfRHLSXHTvbde7nqkw_fUcCh1rh"
+          VITE_SUPABASE_PROJECT_ID: "vajjrwoiufqdbziwluih"
 
       - name: SPA fallback
         run: cp dist/index.html dist/404.html
