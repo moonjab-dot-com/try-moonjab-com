@@ -43,8 +43,6 @@ const InterviewSetup = lazy(() => import("./pages/InterviewSetup"));
 const InterviewSession = lazy(() => import("./pages/InterviewSession"));
 const InterviewResults = lazy(() => import("./pages/InterviewResults"));
 const InterviewAI = lazy(() => import("./pages/InterviewAI"));
-const Opportunities = lazy(() => import("./pages/Opportunities"));
-const OpportunityDetail = lazy(() => import("./pages/OpportunityDetail"));
 const Settings = lazy(() => import("./pages/Settings"));
 const AdminDashboard = lazy(() => import("./pages/AdminDashboard"));
 
