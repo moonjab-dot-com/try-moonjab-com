@@ -12,20 +12,22 @@ import {
   DropdownMenuTrigger,
   DropdownMenuSeparator,
 } from '@/components/ui/dropdown-menu';
-import { ArrowLeft, Save, Sparkles, Download, History, Palette, GitCompare, MoreVertical, Layout } from 'lucide-react';
+import { ArrowLeft, Save, Sparkles, Download, History, GitCompare, MoreVertical, Layout } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
 import CVEditorPanel from '@/components/cv/CVEditorPanel';
+import { useSubscription, MOONJAB_PRO } from '@/hooks/useSubscription';
 import CVPreviewPanel from '@/components/cv/CVPreviewPanel';
 import TemplateSelector from '@/components/cv/TemplateSelector';
 import AIAnalysisModal from '@/components/cv/AIAnalysisModal';
 import VersionHistoryModal from '@/components/cv/VersionHistoryModal';
 import VersionCompareModal from '@/components/cv/VersionCompareModal';
+import { UpgradeModal } from '@/components/UpgradeModal';
 
-import TemplateCustomizer, { TemplateColors } from '@/components/cv/TemplateCustomizer';
 import { cn } from '@/lib/utils';
 import { useAI } from '@/hooks/useAI';
 import { useIsMobile } from '@/hooks/use-mobile';
 import html2pdf from 'html2pdf.js';
+import { useAnalytics } from '@/hooks/useAnalytics';
 
 export default function CVBuilder() {
   const { id } = useParams<{ id: string }>();
@@ -39,21 +41,25 @@ export default function CVBuilder() {
   const [isSaving, setIsSaving] = useState(false);
   const [showVersionHistory, setShowVersionHistory] = useState(false);
   const [showVersionCompare, setShowVersionCompare] = useState(false);
-  const [showTemplateCustomizer, setShowTemplateCustomizer] = useState(false);
-  const [templateColors, setTemplateColors] = useState<TemplateColors>({
-    primary: '#1e40af',
-    secondary: '#3b82f6',
-    accent: '#60a5fa',
-    text: '#1f2937',
-    background: '#ffffff',
-  });
+  const [showUpgradeModal, setShowUpgradeModal] = useState(false);
   const previewRef = useRef<HTMLDivElement>(null);
   const isMobile = useIsMobile();
+  const { subscribed, productId } = useSubscription();
+  const isPremium = subscribed && productId === MOONJAB_PRO.product_id;
+  const { trackEvent } = useAnalytics();
+
+  // Force free users into the Creativo template
+  useEffect(() => {
+    if (currentCV && !isPremium && currentCV.template !== 'creative') {
+      updateCV(currentCV.id, { template: 'creative' });
+    }
+  }, [currentCV?.id, isPremium]);
 
   useEffect(() => {
     if (id === 'new') {
       if (user) {
         const newCV = createCV(user.id, 'Nuevo CV');
+        void trackEvent('cv_created', { cvId: newCV.id });
         navigate(`/dashboard/cvs/${newCV.id}`, { replace: true });
       }
     } else if (id) {
@@ -99,7 +105,7 @@ export default function CVBuilder() {
     if (isGuestMode || user?.plan !== 'premium') {
       toast({
         title: 'Función Premium',
-        description: 'Suscríbete al plan Pro por $15/mes para analizar tu CV con IA.',
+        description: 'Suscríbete al plan Pro por $5/mes para analizar tu CV con IA.',
         variant: 'destructive',
       });
       return;
@@ -109,7 +115,8 @@ export default function CVBuilder() {
       const analysis = await analyzeCVintense(currentCV, currentCV.personal.title);
       setAnalysisData(analysis);
       setShowAnalysis(true);
-      
+      void trackEvent('cv_improved', { cvId: currentCV.id });
+
       toast({
         title: 'Análisis completado',
         description: 'Revisa las sugerencias personalizadas para mejorar tu CV',
@@ -136,13 +143,9 @@ export default function CVBuilder() {
   const { isGuestMode } = useAuthStore();
 
   const handleExportPDF = () => {
-    // Block export for guest mode / non-premium users
+    // Conversion trigger: free / guest users see upgrade modal
     if (isGuestMode || user?.plan !== 'premium') {
-      toast({
-        title: 'Función Premium',
-        description: 'Suscríbete al plan Pro por $15/mes para descargar tus CVs en PDF.',
-        variant: 'destructive',
-      });
+      setShowUpgradeModal(true);
       return;
     }
 
@@ -188,6 +191,7 @@ export default function CVBuilder() {
       .from(element)
       .save()
       .then(() => {
+        void trackEvent('cv_exported', { cvId: currentCV.id, fileName });
         toast({
           title: 'PDF exportado',
           description: `Tu CV ha sido descargado como ${fileName}`,
@@ -273,12 +277,8 @@ export default function CVBuilder() {
                     />
                   </div>
                   
-                  <DropdownMenuItem onClick={() => setShowTemplateCustomizer(true)}>
-                    <Palette className="mr-2 h-4 w-4" />
-                    Personalizar colores
-                  </DropdownMenuItem>
-                  
                   <DropdownMenuSeparator />
+                  
                   
                   <DropdownMenuItem onClick={() => setShowVersionHistory(true)}>
                     <History className="mr-2 h-4 w-4" />
@@ -307,9 +307,6 @@ export default function CVBuilder() {
                 onChange={(template) => updateCV(currentCV.id, { template })}
               />
               
-              <Button variant="outline" size="icon" onClick={() => setShowTemplateCustomizer(true)} title="Personalizar colores" className="shadow-clovely-sm min-h-[44px] min-w-[44px]">
-                <Palette className="h-4 w-4" />
-              </Button>
               
               <Button variant="outline" onClick={() => setShowVersionHistory(true)} className="shadow-clovely-sm min-h-[44px]">
                 <History className="mr-2 h-4 w-4" />
@@ -433,23 +430,11 @@ export default function CVBuilder() {
         />
       )}
 
-
-      {/* Template Customizer Modal */}
-      {showTemplateCustomizer && currentCV && (
-        <TemplateCustomizer
-          open={showTemplateCustomizer}
-          onClose={() => setShowTemplateCustomizer(false)}
-          currentColors={templateColors}
-          onApply={(colors) => {
-            setTemplateColors(colors);
-            toast({
-              title: 'Colores aplicados',
-              description: 'El esquema de colores ha sido actualizado',
-            });
-          }}
-          template={currentCV.template}
-        />
-      )}
+      <UpgradeModal
+        open={showUpgradeModal}
+        onClose={() => setShowUpgradeModal(false)}
+        feature="descarga de PDF"
+      />
     </div>
   );
 }
