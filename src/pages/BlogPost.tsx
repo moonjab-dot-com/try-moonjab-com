@@ -8,41 +8,6 @@ import { Link, useParams, useNavigate } from 'react-router-dom';
 import { Calendar, Clock, ArrowLeft, ArrowRight, Share2, Twitter, Linkedin, User } from 'lucide-react';
 import { blogPosts } from './Blog';
 
-// ── Helpers ───────────────────────────────────────────────────────────────────
-
-/** Convert "5 Dic 2024" → ISO 8601 date string for schema */
-function parsePostDate(dateStr: string): string {
-  const months: Record<string, string> = {
-    Ene: '01', Feb: '02', Mar: '03', Abr: '04', May: '05', Jun: '06',
-    Jul: '07', Ago: '08', Sep: '09', Oct: '10', Nov: '11', Dic: '12',
-  };
-  const parts = dateStr.trim().split(' ');
-  if (parts.length === 3) {
-    const day = parts[0].padStart(2, '0');
-    const month = months[parts[1]] ?? '01';
-    const year = parts[2];
-    return `${year}-${month}-${day}`;
-  }
-  return new Date().toISOString().split('T')[0];
-}
-
-/** Strip markdown-like syntax for plain-text meta description */
-function markdownToPlainText(md: string): string {
-  return md
-    .replace(/#{1,6}\s+/g, '')
-    .replace(/\*\*(.*?)\*\*/g, '$1')
-    .replace(/\*(.*?)\*/g, '$1')
-    .replace(/^[-*]\s+/gm, '')
-    .replace(/^\d+\.\s+/gm, '')
-    .replace(/^---$/gm, '')
-    .replace(/\n{2,}/g, ' ')
-    .replace(/\n/g, ' ')
-    .trim()
-    .slice(0, 160);
-}
-
-// ─────────────────────────────────────────────────────────────────────────────
-
 const BlogPost = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -55,12 +20,7 @@ const BlogPost = () => {
   if (!post) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
-        <SEOHead
-          title="Artículo no encontrado"
-          description="Este artículo del blog de MoonJab no existe o ha sido movido."
-          path="/blog"
-          noindex
-        />
+      <SEOHead title="Blog" description="Artículo del blog de MoonJab sobre empleabilidad, CV y desarrollo profesional." path="/blog" />
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">Artículo no encontrado</h1>
           <Link to="/blog">
@@ -71,29 +31,11 @@ const BlogPost = () => {
     );
   }
 
-  const shareUrl = typeof window !== 'undefined' ? window.location.href : `https://moonjab.com/blog/${post.id}`;
+  const shareUrl = window.location.href;
   const shareText = `${post.title} - MoonJab Blog`;
-  const isoDate = parsePostDate(post.date);
-  const seoDescription = post.excerpt || markdownToPlainText(post.content);
 
   return (
     <div className="min-h-screen bg-background">
-      <SEOHead
-        title={post.title}
-        description={seoDescription}
-        path={`/blog/${post.id}`}
-        ogImage={post.image}
-        type="article"
-        articlePublishedTime={isoDate}
-        articleModifiedTime={isoDate}
-        articleAuthor={post.author}
-        articleTags={[post.category, 'empleabilidad', 'carrera profesional', 'LATAM']}
-        breadcrumbs={[
-          { name: 'Blog', item: '/blog' },
-          { name: post.title, item: `/blog/${post.id}` },
-        ]}
-      />
-
       {/* Navbar */}
       <nav className="sticky top-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border/50">
         <div className="container mx-auto px-6 h-20 flex items-center justify-between max-w-7xl">
@@ -116,49 +58,28 @@ const BlogPost = () => {
           src={post.image} 
           alt={post.title}
           className="w-full h-full object-cover"
-          width={1200}
-          height={630}
-          loading="eager"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
       </div>
 
       {/* Article */}
-      <article
-        className="container mx-auto px-6 max-w-3xl -mt-32 relative z-10"
-        itemScope
-        itemType="https://schema.org/Article"
-      >
-        <meta itemProp="datePublished" content={isoDate} />
-        <meta itemProp="dateModified" content={isoDate} />
-        <meta itemProp="author" content={post.author} />
-        <meta itemProp="image" content={post.image} />
-
+      <article className="container mx-auto px-6 max-w-3xl -mt-32 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          {/* Breadcrumb visible */}
-          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs text-muted-foreground mb-6 pt-2">
-            <Link to="/" className="hover:text-foreground transition-colors">Inicio</Link>
-            <span>/</span>
-            <Link to="/blog" className="hover:text-foreground transition-colors">Blog</Link>
-            <span>/</span>
-            <span className="text-foreground truncate max-w-[200px]">{post.title}</span>
-          </nav>
-
           {/* Header */}
           <div className="bg-background rounded-2xl p-8 md:p-12 shadow-xl mb-8">
             <Badge className="mb-4 bg-primary/10 text-primary">
               {post.category}
             </Badge>
             
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-tight" itemProp="headline">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 leading-tight">
               {post.title}
             </h1>
 
-            <p className="text-xl text-muted-foreground mb-8" itemProp="description">
+            <p className="text-xl text-muted-foreground mb-8">
               {post.excerpt}
             </p>
 
@@ -169,15 +90,15 @@ const BlogPost = () => {
                   <User className="h-6 w-6 text-primary" />
                 </div>
                 <div>
-                  <p className="font-semibold" itemProp="author">{post.author}</p>
+                  <p className="font-semibold">{post.author}</p>
                   <p className="text-sm text-muted-foreground">{post.authorRole}</p>
                 </div>
               </div>
               <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                <time dateTime={isoDate} className="flex items-center gap-1">
+                <span className="flex items-center gap-1">
                   <Calendar className="h-4 w-4" />
                   {post.date}
-                </time>
+                </span>
                 <span className="flex items-center gap-1">
                   <Clock className="h-4 w-4" />
                   {post.readTime} de lectura
@@ -192,7 +113,6 @@ const BlogPost = () => {
                 href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Compartir en Twitter"
                 className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
               >
                 <Twitter className="h-4 w-4" />
@@ -201,14 +121,12 @@ const BlogPost = () => {
                 href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Compartir en LinkedIn"
                 className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
               >
                 <Linkedin className="h-4 w-4" />
               </a>
               <button 
                 onClick={() => navigator.clipboard.writeText(shareUrl)}
-                aria-label="Copiar enlace"
                 className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
               >
                 <Share2 className="h-4 w-4" />
@@ -217,7 +135,7 @@ const BlogPost = () => {
           </div>
 
           {/* Content */}
-          <div className="prose prose-lg dark:prose-invert max-w-none mb-16" itemProp="articleBody">
+          <div className="prose prose-lg dark:prose-invert max-w-none mb-16">
             {post.content.split('\n').map((paragraph, i) => {
               if (paragraph.startsWith('## ')) {
                 return <h2 key={i} className="text-3xl font-bold mt-12 mb-6">{paragraph.replace('## ', '')}</h2>;
@@ -246,7 +164,7 @@ const BlogPost = () => {
               if (paragraph.startsWith('*') && paragraph.endsWith('*')) {
                 return <p key={i} className="italic text-muted-foreground">{paragraph.replace(/^\*|\*$/g, '')}</p>;
               }
-              if (paragraph.startsWith('"') || paragraph.startsWith('\u201c')) {
+              if (paragraph.startsWith('"') || paragraph.startsWith('"')) {
                 return <blockquote key={i} className="border-l-4 border-primary pl-6 italic my-8 text-xl">{paragraph}</blockquote>;
               }
               if (paragraph.trim() === '') return null;
