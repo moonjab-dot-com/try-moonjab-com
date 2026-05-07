@@ -28,45 +28,6 @@ const fadeUp = {
   })
 };
 
-// ── SEO data ─────────────────────────────────────────────────────────────────
-
-const LANDING_FAQS = [
-  {
-    question: '¿Es gratis MoonJab?',
-    answer:
-      'Sí. MoonJab tiene un plan gratuito con acceso al diagnóstico de empleabilidad, una simulación de entrevista y una plantilla de CV. El plan Pro cuesta $5 USD/mes e incluye CVs ilimitados, entrevistas ilimitadas con feedback de IA y más.',
-  },
-  {
-    question: '¿MoonJab funciona para conseguir mi primer trabajo?',
-    answer:
-      'Absolutamente. MoonJab está diseñado específicamente para estudiantes universitarios y recién egresados que buscan su primer empleo o práctica profesional en LATAM.',
-  },
-  {
-    question: '¿Los CVs creados son compatibles con sistemas ATS?',
-    answer:
-      'Sí. Nuestra inteligencia artificial analiza y optimiza tu CV para superar los filtros ATS (Applicant Tracking Systems) utilizados por las principales empresas de LATAM.',
-  },
-  {
-    question: '¿En qué países de LATAM está disponible MoonJab?',
-    answer:
-      'MoonJab está disponible en toda América Latina: Perú, México, Colombia, Argentina, Chile, Ecuador, Bolivia, Paraguay, Uruguay y Venezuela.',
-  },
-  {
-    question: '¿Cómo funciona el simulador de entrevistas con IA?',
-    answer:
-      'Nuestro simulador de entrevistas usa inteligencia artificial para hacerte preguntas reales de entrevistas laborales, analizar tus respuestas y darte feedback instantáneo sobre cómo mejorar. Puedes practicar entrevistas técnicas, de comportamiento y de casos.',
-  },
-  {
-    question: '¿Puedo usar MoonJab sin crear una cuenta?',
-    answer:
-      'Sí. El modo invitado te permite probar el CV builder y una simulación de entrevista sin necesidad de registrarte. Para guardar tu progreso y acceder a todas las funciones, crea una cuenta gratuita.',
-  },
-];
-
-const LANDING_BREADCRUMBS = [{ name: 'Inicio', item: '/' }];
-
-// ─────────────────────────────────────────────────────────────────────────────
-
 const MobileNavMenu = () => {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
@@ -141,13 +102,10 @@ const LandingContent = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <SEOHead
-        title="MoonJab — CV Builder con IA y Preparación de Entrevistas para Estudiantes en LATAM"
-        description="Crea tu CV profesional optimizado para ATS con inteligencia artificial en minutos y practica entrevistas reales. La plataforma de carrera #1 para estudiantes en LATAM. Gratis para empezar."
+        title="MoonJab — Plataforma de Carrera para Estudiantes | CV Builder & Entrevistas con IA"
+        description="Crea tu CV optimizado para ATS y practica entrevistas con IA. La plataforma de carrera #1 para estudiantes en LATAM."
         path="/"
-        faqs={LANDING_FAQS}
-        breadcrumbs={LANDING_BREADCRUMBS}
       />
-
       {/* ── Navbar ── */}
       <MobileNavMenu />
       <nav className="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border/30">
@@ -193,165 +151,268 @@ const LandingContent = () => {
             </div>
           </motion.div>
 
-          <motion.h1
-            initial="hidden"
-            animate="visible"
-            variants={fadeUp}
-            custom={1}
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.08] mb-6"
-          >
-            {t('landing.heroTitle')}
+          <motion.h1 initial="hidden" animate="visible" variants={fadeUp} custom={1}
+            className="text-[clamp(2rem,5.5vw,3.5rem)] font-bold leading-[1.08] tracking-tight mb-6">
+            {t('landing.heroTitle1')}
+            <span className="relative">
+              <span className="gradient-text">{t('landing.heroHighlight')}</span>
+              <svg className="absolute -bottom-1 left-0 w-full" viewBox="0 0 200 8" fill="none">
+                <path d="M2 6C50 2 150 2 198 6" stroke="hsl(var(--primary))" strokeWidth="2.5" strokeLinecap="round" opacity="0.4" />
+              </svg>
+            </span>
           </motion.h1>
 
-          <motion.p
-            initial="hidden"
-            animate="visible"
-            variants={fadeUp}
-            custom={2}
-            className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed mb-10"
-          >
+          <motion.p initial="hidden" animate="visible" variants={fadeUp} custom={2}
+            className="text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed mb-10">
             {t('landing.heroSubtitle')}
           </motion.p>
 
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={fadeUp}
-            custom={3}
-            className="flex flex-col sm:flex-row gap-3 justify-center"
-          >
+          <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={3}
+            className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link to="/registro">
-              <Button size="lg" className="h-12 px-8 text-sm font-semibold gap-2 shadow-clovely-md w-full sm:w-auto">
-                {t('landing.heroCTA')}
+              <Button size="lg" className="h-12 px-7 text-sm font-semibold gap-2 shadow-clovely-md">
+                {t('landing.ctaStart')}
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </Link>
             <Link to="/guest-start">
-              <Button variant="outline" size="lg" className="h-12 px-8 text-sm gap-2 w-full sm:w-auto">
-                {t('landing.heroSecondaryCTA')}
+              <Button variant="outline" size="lg" className="h-12 px-7 text-sm font-medium gap-2">
+                <Eye className="h-4 w-4" />
+                {t('landing.ctaTry')}
               </Button>
             </Link>
+          </motion.div>
+
+          <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={4}
+            className="flex items-center justify-center gap-5 text-xs text-muted-foreground mt-8">
+            <span className="flex items-center gap-1.5">
+              <Check className="h-3.5 w-3.5 text-primary" /> {t('landing.checkGuest')}
+            </span>
+            <span className="flex items-center gap-1.5">
+              <Check className="h-3.5 w-3.5 text-primary" /> {t('landing.checkCancel')}
+            </span>
           </motion.div>
         </div>
       </motion.section>
 
-      {/* ── Stats ── */}
-      <section aria-label="Estadísticas de MoonJab" className="py-16 border-y border-border/30">
+      {/* ── Product Preview ── */}
+      <section className="pb-24 sm:pb-32">
         <div className="mx-auto max-w-5xl px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, i) => (
-              <motion.div
-                key={i}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeUp}
-                custom={i}
-                className="text-center"
-              >
-                <p className="text-3xl sm:text-4xl font-bold text-primary mb-1">{stat.value}</p>
-                <p className="text-xs text-muted-foreground">{stat.label}</p>
+          <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, ease }} className="relative">
+            <div className="absolute -inset-4 rounded-2xl bg-gradient-to-b from-primary/10 to-transparent blur-2xl opacity-60 pointer-events-none" />
+            <div className="relative rounded-xl overflow-hidden border border-border/50 shadow-clovely-xl bg-card">
+              <div className="bg-muted/40 px-4 py-2.5 border-b border-border/30 flex items-center gap-2">
+                <div className="flex gap-1.5">
+                  <div className="w-2.5 h-2.5 rounded-full bg-destructive/40" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/40" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-primary/40" />
+                </div>
+                <div className="flex-1 flex justify-center">
+                  <div className="px-4 py-0.5 rounded-md bg-muted/60 text-[10px] text-muted-foreground font-mono">moonjab.com</div>
+                </div>
+              </div>
+              <video autoPlay loop muted playsInline className="w-full h-auto">
+                <source src="/moonjab-hero-video.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── Social Proof Strip ── */}
+      <section className="py-12 border-y border-border/30">
+        <div className="mx-auto max-w-4xl px-6">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 text-center">
+            {stats.map((stat, i) =>
+              <motion.div key={i} initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.08, duration: 0.5 }} className="flex flex-col items-center gap-1">
+                <stat.icon className="h-4 w-4 text-primary/60 mb-1" />
+                <p className="text-2xl sm:text-3xl font-bold tracking-tight">{stat.value}</p>
+                <p className="text-[11px] text-muted-foreground">{stat.label}</p>
               </motion.div>
-            ))}
+            )}
           </div>
         </div>
       </section>
 
-      {/* ── Features ── */}
-      <section id="features" aria-label="Características de MoonJab" className="py-24 sm:py-32">
-        <div className="mx-auto max-w-5xl px-6">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-14">
+      {/* ── Features Bento ── */}
+      <section id="features" className="py-24 sm:py-32">
+        <div className="mx-auto max-w-6xl px-6">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-16">
             <p className="text-xs font-semibold text-primary uppercase tracking-[0.2em] mb-3">{t('landing.features.label')}</p>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">{t('landing.features.title')}</h2>
-            <p className="text-muted-foreground max-w-lg mx-auto">{t('landing.features.subtitle')}</p>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
+              {t('landing.features.title')}
+            </h2>
+            <p className="text-muted-foreground max-w-lg mx-auto">
+              {t('landing.features.subtitle')}
+            </p>
           </motion.div>
 
-          {/* CV Feature */}
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-            className="rounded-2xl border border-border/40 bg-card p-8 md:p-12 mb-6">
-            <div className="grid md:grid-cols-2 gap-10 items-center">
-              <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/8 text-primary text-xs font-medium mb-6">
-                  <FileText className="h-3 w-3" />
-                  {t('landing.features.cv.tag')}
+          <div className="grid md:grid-cols-3 gap-4">
+            {/* Large card — CV */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
+              className="md:col-span-2 group relative overflow-hidden rounded-2xl border border-border/40 bg-card p-8 hover:shadow-clovely-lg transition-all duration-500">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/[0.03] rounded-full blur-3xl pointer-events-none" />
+              <div className="relative">
+                <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/15 transition-colors">
+                  <FileText className="h-5 w-5 text-primary" />
                 </div>
-                <h3 className="text-2xl sm:text-3xl font-bold tracking-tight mb-4">{t('landing.features.cv.title')}</h3>
-                <p className="text-muted-foreground leading-relaxed mb-6">{t('landing.features.cv.desc')}</p>
-                <ul className="space-y-2.5">
-                  {cvPoints.map((point, i) => (
-                    <li key={i} className="flex items-center gap-2.5 text-sm">
-                      <Check className="h-4 w-4 text-primary flex-shrink-0" />
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-                <div className="flex flex-wrap gap-2 mt-6">
-                  {cvTags.map((tag) => (
-                    <span key={tag} className="px-2.5 py-1 rounded-full bg-muted text-[11px] text-muted-foreground font-medium">{tag}</span>
-                  ))}
+                <h3 className="text-xl font-bold mb-2">{t('landing.features.cv.title')}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed max-w-md mb-6">{t('landing.features.cv.description')}</p>
+                <div className="flex flex-wrap gap-2">
+                  {cvTags.map((tag) =>
+                    <span key={tag} className="px-2.5 py-1 text-[11px] rounded-md bg-primary/[0.06] text-primary font-medium">{tag}</span>
+                  )}
                 </div>
               </div>
-              <div className="bg-muted/50 rounded-xl aspect-video flex items-center justify-center">
-                <FileText className="h-16 w-16 text-muted-foreground/30" />
-              </div>
-            </div>
-          </motion.div>
+            </motion.div>
 
-          {/* Interview Feature */}
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-            className="rounded-2xl border border-border/40 bg-card p-8 md:p-12">
-            <div className="grid md:grid-cols-2 gap-10 items-center">
-              <div className="md:order-2">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/8 text-primary text-xs font-medium mb-6">
-                  <Mic className="h-3 w-3" />
-                  {t('landing.features.interview.tag')}
-                </div>
-                <h3 className="text-2xl sm:text-3xl font-bold tracking-tight mb-4">{t('landing.features.interview.title')}</h3>
-                <p className="text-muted-foreground leading-relaxed mb-6">{t('landing.features.interview.desc')}</p>
-                <ul className="space-y-2.5">
-                  {interviewPoints.map((point, i) => (
-                    <li key={i} className="flex items-center gap-2.5 text-sm">
-                      <Check className="h-4 w-4 text-primary flex-shrink-0" />
-                      {point}
-                    </li>
-                  ))}
-                </ul>
+            {/* Small card — Diagnostic */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={1}
+              className="group relative overflow-hidden rounded-2xl border border-border/40 bg-card p-8 hover:shadow-clovely-lg transition-all duration-500">
+              <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/15 transition-colors">
+                <Compass className="h-5 w-5 text-primary" />
               </div>
-              <div className="md:order-1 bg-muted/50 rounded-xl aspect-video flex items-center justify-center">
-                <Mic className="h-16 w-16 text-muted-foreground/30" />
+              <h3 className="text-lg font-bold mb-2">{t('landing.features.diagnostic.title')}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{t('landing.features.diagnostic.description')}</p>
+            </motion.div>
+
+            {/* Small card — Interview */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={2}
+              className="group relative overflow-hidden rounded-2xl border border-border/40 bg-card p-8 hover:shadow-clovely-lg transition-all duration-500">
+              <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/15 transition-colors">
+                <Mic className="h-5 w-5 text-primary" />
               </div>
-            </div>
-          </motion.div>
+              <h3 className="text-lg font-bold mb-2">{t('landing.features.interview.title')}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{t('landing.features.interview.description')}</p>
+            </motion.div>
+
+          </div>
         </div>
       </section>
 
       {/* ── How it works ── */}
-      <section id="how" aria-label="Cómo funciona MoonJab" className="py-24 sm:py-32 bg-muted/20 border-y border-border/30">
+      <section id="how" className="py-24 sm:py-32 bg-muted/30 border-y border-border/30">
         <div className="mx-auto max-w-5xl px-6">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-14">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-16">
             <p className="text-xs font-semibold text-primary uppercase tracking-[0.2em] mb-3">{t('landing.how.label')}</p>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">{t('landing.how.title')}</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">
+              {t('landing.how.title')}
+            </h2>
           </motion.div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {steps.map((step, i) => (
-              <motion.div key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i}
-                className="p-6 rounded-2xl border border-border/40 bg-card">
-                <div className="flex items-center gap-3 mb-4">
-                  <span className="text-3xl font-bold text-primary/20">{step.num}</span>
-                  <div className="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center">
-                    <step.icon className="h-4 w-4 text-primary" />
-                  </div>
+
+          <div className="grid md:grid-cols-3 gap-8 relative">
+            <div className="hidden md:block absolute top-14 left-[16.66%] right-[16.66%] h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent" />
+            {steps.map((step, i) =>
+              <motion.div key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i} className="relative text-center">
+                <div className="relative z-10 w-14 h-14 rounded-2xl bg-card border border-border/50 shadow-clovely-sm flex items-center justify-center mx-auto mb-5">
+                  <step.icon className="h-6 w-6 text-primary" />
                 </div>
-                <h3 className="font-semibold mb-2">{step.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+                <span className="text-[10px] font-mono text-primary/60 uppercase tracking-[0.2em]">{step.num}</span>
+                <h3 className="font-bold text-lg mt-1.5 mb-2.5">{step.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed max-w-xs mx-auto">{step.desc}</p>
               </motion.div>
-            ))}
+            )}
           </div>
         </div>
       </section>
 
+      {/* ── Feature Deep Dives ── */}
+      <section className="py-24 sm:py-32">
+        <div className="mx-auto max-w-5xl px-6 space-y-28">
+          {/* CV Deep Dive */}
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+            className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="space-y-5">
+              <div className="inline-flex items-center gap-2 text-xs font-semibold text-primary uppercase tracking-[0.15em]">
+                <FileText className="h-3.5 w-3.5" />
+                {t('landing.deepDive.cvLabel')}
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-bold tracking-tight leading-tight">{t('landing.deepDive.cvTitle')}</h3>
+              <p className="text-muted-foreground leading-relaxed">{t('landing.deepDive.cvDesc')}</p>
+              <ul className="space-y-3 pt-1">
+                {cvPoints.map((point, j) =>
+                  <li key={j} className="flex items-center gap-3 text-sm">
+                    <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Check className="h-3 w-3 text-primary" />
+                    </div>
+                    {point}
+                  </li>
+                )}
+              </ul>
+            </div>
+            <div>
+              <div className="aspect-[4/3] rounded-xl bg-gradient-to-br from-card to-muted/50 border border-border/40 p-6 flex flex-col justify-between">
+                <div className="space-y-3">
+                  <div className="h-3 w-32 rounded bg-primary/15" />
+                  <div className="h-2.5 w-full rounded bg-muted" />
+                  <div className="h-2.5 w-4/5 rounded bg-muted" />
+                </div>
+                <div className="space-y-2">
+                  <div className="h-2 w-20 rounded bg-primary/20" />
+                  <div className="h-2 w-full rounded bg-muted/80" />
+                  <div className="h-2 w-3/4 rounded bg-muted/80" />
+                </div>
+                <div className="flex gap-2">
+                  <div className="px-3 py-1.5 rounded-md bg-primary/10 text-[10px] text-primary font-medium">ATS Score: 92%</div>
+                  <div className="px-3 py-1.5 rounded-md bg-muted text-[10px] text-muted-foreground">PDF Ready</div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Interview Deep Dive */}
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+            className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div className="space-y-5 md:order-2">
+              <div className="inline-flex items-center gap-2 text-xs font-semibold text-primary uppercase tracking-[0.15em]">
+                <MessageSquare className="h-3.5 w-3.5" />
+                {t('landing.deepDive.interviewLabel')}
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-bold tracking-tight leading-tight">{t('landing.deepDive.interviewTitle')}</h3>
+              <p className="text-muted-foreground leading-relaxed">{t('landing.deepDive.interviewDesc')}</p>
+              <ul className="space-y-3 pt-1">
+                {interviewPoints.map((point, j) =>
+                  <li key={j} className="flex items-center gap-3 text-sm">
+                    <div className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Check className="h-3 w-3 text-primary" />
+                    </div>
+                    {point}
+                  </li>
+                )}
+              </ul>
+            </div>
+            <div className="md:order-1">
+              <div className="aspect-[4/3] rounded-xl bg-gradient-to-br from-card to-muted/50 border border-border/40 p-6 flex flex-col gap-3">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-7 h-7 rounded-full bg-primary/15 flex items-center justify-center">
+                    <Mic className="h-3.5 w-3.5 text-primary" />
+                  </div>
+                  <div className="text-[11px] font-medium text-foreground/70">{t('landing.deepDive.interviewerAI')}</div>
+                </div>
+                <div className="flex-1 space-y-3">
+                  <div className="bg-muted/60 rounded-lg p-3 max-w-[80%]">
+                    <div className="h-2 w-full rounded bg-foreground/10" />
+                    <div className="h-2 w-3/4 rounded bg-foreground/10 mt-1.5" />
+                  </div>
+                  <div className="bg-primary/[0.08] rounded-lg p-3 max-w-[75%] ml-auto">
+                    <div className="h-2 w-full rounded bg-primary/20" />
+                    <div className="h-2 w-2/3 rounded bg-primary/20 mt-1.5" />
+                  </div>
+                </div>
+                <div className="flex gap-2 items-center">
+                  <div className="flex-1 h-1.5 rounded-full bg-muted overflow-hidden">
+                    <div className="h-full w-3/4 rounded-full bg-primary/40" />
+                  </div>
+                  <span className="text-[10px] text-primary font-medium">75%</span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* ── Testimonials ── */}
-      <section aria-label="Testimonios de usuarios de MoonJab" className="py-24 sm:py-32">
+      <section className="py-24 sm:py-32 bg-muted/30 border-y border-border/30">
         <div className="mx-auto max-w-5xl px-6">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-14">
             <p className="text-xs font-semibold text-primary uppercase tracking-[0.2em] mb-3">{t('landing.testimonials.label')}</p>
@@ -382,7 +443,7 @@ const LandingContent = () => {
       </section>
 
       {/* ── Pricing ── */}
-      <section id="pricing" aria-label="Precios de MoonJab" className="py-24 sm:py-32">
+      <section id="pricing" className="py-24 sm:py-32">
         <div className="mx-auto max-w-4xl px-6">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-14">
             <p className="text-xs font-semibold text-primary uppercase tracking-[0.2em] mb-3">{t('landing.pricing.label')}</p>
@@ -443,37 +504,8 @@ const LandingContent = () => {
         </div>
       </section>
 
-      {/* ── FAQ visible (doubles as schema) ── */}
-      <section aria-label="Preguntas frecuentes sobre MoonJab" className="py-24 sm:py-32 bg-muted/20 border-t border-border/30">
-        <div className="mx-auto max-w-3xl px-6">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-3">Preguntas frecuentes</h2>
-            <p className="text-muted-foreground">Todo lo que necesitas saber sobre MoonJab.</p>
-          </motion.div>
-          <div className="space-y-4">
-            {LANDING_FAQS.map((faq, i) => (
-              <motion.details
-                key={i}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-                variants={fadeUp}
-                custom={i}
-                className="group p-5 rounded-xl border border-border/40 bg-card cursor-pointer"
-              >
-                <summary className="font-medium text-sm list-none flex items-center justify-between gap-4">
-                  {faq.question}
-                  <ChevronRight className="h-4 w-4 text-muted-foreground flex-shrink-0 group-open:rotate-90 transition-transform" />
-                </summary>
-                <p className="text-sm text-muted-foreground mt-3 leading-relaxed">{faq.answer}</p>
-              </motion.details>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── Final CTA ── */}
-      <section className="py-24 sm:py-32 border-t border-border/30">
+      <section className="py-24 sm:py-32 bg-muted/30 border-t border-border/30">
         <div className="mx-auto max-w-2xl px-6 text-center">
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="space-y-6">
             <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto">
@@ -508,18 +540,18 @@ const LandingContent = () => {
               <OfficialLogo size="md" animated={false} />
               <p className="text-xs text-muted-foreground">{t('landing.footer.tagline')}</p>
             </div>
-            <nav aria-label="Footer" className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-muted-foreground">
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-muted-foreground">
               <Link to="/pricing" className="hover:text-foreground transition-colors">{t('landing.footer.pricing')}</Link>
               <Link to="/about" className="hover:text-foreground transition-colors">{t('landing.footer.about')}</Link>
               <Link to="/blog" className="hover:text-foreground transition-colors">{t('landing.footer.blog')}</Link>
               <Link to="/help" className="hover:text-foreground transition-colors">{t('landing.footer.help')}</Link>
               <Link to="/privacy" className="hover:text-foreground transition-colors">{t('landing.footer.privacy')}</Link>
               <Link to="/terms" className="hover:text-foreground transition-colors">{t('landing.footer.terms')}</Link>
-            </nav>
+            </div>
           </div>
           <div className="flex items-center justify-between mt-8 pt-6 border-t border-border/20">
             <p className="text-[11px] text-muted-foreground">{t('landing.footer.rights')}</p>
-            <a href="https://www.instagram.com/trymoonjab" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="Instagram de MoonJab">
+            <a href="https://www.instagram.com/trymoonjab" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="Instagram">
               <Instagram className="h-4 w-4" />
             </a>
           </div>
