@@ -11,6 +11,43 @@ import { Check, ArrowRight, ArrowLeft, Zap, Sparkles, Loader2, Crown } from 'luc
 import { toast } from 'sonner';
 import { useSubscription, MOONJAB_PRO } from '@/hooks/useSubscription';
 
+// ── SEO data ──────────────────────────────────────────────────────────────────
+
+const PRICING_FAQS = [
+  {
+    question: '¿Cuánto cuesta MoonJab?',
+    answer:
+      'MoonJab tiene un plan gratuito completo. El plan Pro cuesta $5 USD al mes e incluye CVs ilimitados, entrevistas ilimitadas con IA, plantillas premium y soporte prioritario.',
+  },
+  {
+    question: '¿Puedo cancelar mi suscripción Pro en cualquier momento?',
+    answer:
+      'Sí. Puedes cancelar tu suscripción Pro en cualquier momento desde la configuración de tu cuenta. No hay permanencias ni penalizaciones por cancelar.',
+  },
+  {
+    question: '¿El plan gratuito tiene límites?',
+    answer:
+      'El plan gratuito incluye acceso al diagnóstico de empleabilidad, una simulación de entrevista y una plantilla de CV. Para uso ilimitado, el plan Pro por $5/mes es la mejor opción.',
+  },
+  {
+    question: '¿Aceptan pagos en moneda local?',
+    answer:
+      'Actualmente cobramos en USD. Los pagos se procesan de forma segura con Stripe y puedes pagar con tarjeta de crédito o débito internacional.',
+  },
+  {
+    question: '¿MoonJab Pro incluye acceso a todas las funciones?',
+    answer:
+      'Sí. El plan Pro desbloquea todas las funcionalidades: CV builder ilimitado con IA, simulador de entrevistas ilimitado, todas las plantillas premium, feedback detallado y soporte prioritario.',
+  },
+  {
+    question: '¿Hay descuentos para estudiantes universitarios?',
+    answer:
+      'MoonJab ya está diseñado para estudiantes con el precio más accesible del mercado ($5/mes). Estamos trabajando en descuentos especiales para instituciones educativas. Escríbenos a hey@moonjab.com.',
+  },
+];
+
+// ─────────────────────────────────────────────────────────────────────────────
+
 const Pricing = () => {
   const { t } = useTranslation();
   const [loading, setLoading] = useState(false);
@@ -67,6 +104,14 @@ const Pricing = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="Precios — MoonJab Gratis y Pro | CV Builder con IA para Estudiantes"
+        description="MoonJab es gratis para empezar. El plan Pro cuesta $5/mes e incluye CV builder con IA ilimitado, simulador de entrevistas y plantillas premium para estudiantes en LATAM."
+        path="/pricing"
+        faqs={PRICING_FAQS}
+        breadcrumbs={[{ name: 'Precios', item: '/pricing' }]}
+      />
+
       <nav className="sticky top-0 z-50 backdrop-blur-xl bg-background/80 border-b border-border/40">
         <div className="container mx-auto px-6 h-14 flex items-center justify-between max-w-5xl">
           <OfficialLogo size="md" to="/" />
@@ -113,7 +158,7 @@ const Pricing = () => {
                   <div className="w-9 h-9 rounded-lg bg-primary/8 flex items-center justify-center mb-4">
                     <plan.icon className="h-4 w-4 text-primary" />
                   </div>
-                  <h3 className="font-semibold text-lg mb-0.5">{plan.name}</h3>
+                  <h2 className="font-semibold text-lg mb-0.5">{plan.name}</h2>
                   <p className="text-xs text-muted-foreground mb-4">{plan.description}</p>
                   <div className="flex items-baseline gap-0.5 mb-5">
                     <span className="text-3xl font-bold">{plan.price}</span>
@@ -140,15 +185,16 @@ const Pricing = () => {
         </div>
       </section>
 
-      <section className="py-16 border-y border-border/40">
+      {/* FAQ — visible + schema via SEOHead */}
+      <section aria-label="Preguntas frecuentes sobre precios" className="py-16 border-y border-border/40">
         <div className="container mx-auto px-6 max-w-3xl">
           <h2 className="text-xl font-semibold text-center mb-8">{t('pricing.faqTitle')}</h2>
           <div className="space-y-3">
-            {faqKeys.map((key, i) => (
-              <div key={i} className="p-4 rounded-lg border border-border/40 hover:border-primary/10 transition-colors">
-                <h3 className="font-medium text-sm mb-1">{t(`pricing.faqs.${key}`)}</h3>
-                <p className="text-sm text-muted-foreground">{t(`pricing.faqs.a${key.slice(1)}`)}</p>
-              </div>
+            {PRICING_FAQS.map((faq, i) => (
+              <details key={i} className="p-4 rounded-lg border border-border/40 hover:border-primary/10 transition-colors group cursor-pointer">
+                <summary className="font-medium text-sm mb-1 list-none">{faq.question}</summary>
+                <p className="text-sm text-muted-foreground mt-2">{faq.answer}</p>
+              </details>
             ))}
           </div>
         </div>
