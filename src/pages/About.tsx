@@ -27,7 +27,13 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEOHead title="Sobre Nosotros" description="Conoce al equipo detrás de MoonJab. Nuestra misión es democratizar la empleabilidad en LATAM con inteligencia artificial." path="/about" />
+      <SEOHead
+        title="Sobre Nosotros — El equipo detrás de MoonJab"
+        description="Conoce al equipo detrás de MoonJab. Nuestra misión es democratizar la empleabilidad en LATAM con inteligencia artificial. Ayudamos a más de 10,000 estudiantes a conseguir su primer empleo."
+        path="/about"
+        breadcrumbs={[{ name: 'Sobre Nosotros', item: '/about' }]}
+      />
+
       <nav className="sticky top-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border/50">
         <div className="container mx-auto px-6 h-20 flex items-center justify-between max-w-7xl">
           <OfficialLogo size="lg" to="/" />
@@ -69,7 +75,7 @@ const About = () => {
       </section>
 
       {/* Stats */}
-      <section className="py-24">
+      <section aria-label="Estadísticas de MoonJab" className="py-24">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, i) => (
@@ -83,7 +89,7 @@ const About = () => {
       </section>
 
       {/* Values */}
-      <section className="py-24 bg-muted/30">
+      <section aria-label="Valores de MoonJab" className="py-24 bg-muted/30">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-heading font-bold mb-4">{t('about.valuesTitle')}</h2>
