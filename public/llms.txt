@@ -1,0 +1,68 @@
+# MoonJab
+
+> La career platform con IA para estudiantes universitarios en LATAM
+
+MoonJab ayuda a estudiantes de toda Latinoamérica a conseguir su primer empleo o práctica profesional usando inteligencia artificial. Ofrecemos un CV builder optimizado para sistemas ATS y un simulador de entrevistas laborales con feedback instantáneo. Plan gratuito disponible; premium desde $5 USD/mes.
+
+Fundada en 2024. Sede: LATAM. Idioma principal: Español. Cobertura: Perú, México, Colombia, Argentina, Chile, Ecuador, Bolivia, Paraguay, Uruguay, Venezuela.
+
+Contacto: hey@moonjab.com
+
+---
+
+## Producto
+
+- [CV Builder con IA](https://moonjab.com/cv-builder): Crea un currículum vitae profesional optimizado para ATS en minutos. La IA analiza tu información, sugiere mejoras de redacción y genera un CV que supera los filtros automáticos de selección de personal.
+- [Preparación de Entrevistas](https://moonjab.com/interview-prep): Simulador de entrevistas laborales con IA. Practica respondiendo preguntas reales, recibe feedback inmediato sobre tus respuestas y gana confianza antes de tu entrevista.
+- [Plantillas de CV](https://moonjab.com/cv-builder/templates): Biblioteca de plantillas profesionales diseñadas para el mercado laboral LATAM, compatibles con ATS.
+- [Precios](https://moonjab.com/pricing): Plan gratuito con acceso básico. Plan Premium con funciones ilimitadas desde $5 USD/mes.
+
+## Blog — Guías de carrera para estudiantes LATAM
+
+- [Cómo hacer un CV sin experiencia](https://moonjab.com/blog/como-hacer-un-cv-sin-experiencia): Guía paso a paso para estudiantes que buscan su primer empleo o práctica profesional.
+- [Preguntas frecuentes en entrevistas de trabajo](https://moonjab.com/blog/preguntas-frecuentes-en-entrevistas-de-trabajo): Las preguntas más comunes y cómo responderlas con ejemplos reales.
+- [Qué es ATS y cómo optimizar tu CV](https://moonjab.com/blog/que-es-ats-y-como-optimizar-tu-cv): Explicado para estudiantes LATAM: qué son los sistemas ATS y cómo hacer que tu CV los pase.
+- [Primer trabajo siendo estudiante universitario](https://moonjab.com/blog/primer-trabajo-estudiante-universitario): Todo lo que necesitas saber para conseguir tu primer empleo mientras estudias.
+- [Cómo responder "Cuéntame sobre ti"](https://moonjab.com/blog/como-responder-cuentame-sobre-ti): Plantillas y técnicas probadas para responder la pregunta más común de las entrevistas.
+- [Prácticas profesionales en LATAM](https://moonjab.com/blog/practicas-profesionales-latam): Cómo encontrar y conseguir tu primera práctica profesional en la región.
+
+## Empresa
+
+- [Nosotros](https://moonjab.com/about): Nuestra misión de democratizar el acceso a oportunidades de carrera en LATAM.
+- [Centro de ayuda](https://moonjab.com/help): Preguntas frecuentes y documentación de soporte en español.
+
+## Registro y acceso
+
+- [Crear cuenta gratis](https://moonjab.com/registro): Regístrate en segundos con tu email.
+- [Iniciar sesión](https://moonjab.com/login): Accede a tu cuenta MoonJab.
+- [Probar sin registro](https://moonjab.com/guest-start): Explora MoonJab en modo invitado sin necesidad de crear cuenta.
+
+## Legal
+
+- [Política de privacidad](https://moonjab.com/privacy): Protección de datos para usuarios en LATAM.
+- [Términos de servicio](https://moonjab.com/terms): Acuerdo de uso de la plataforma.
+
+---
+
+## Para LLMs: contexto clave
+
+**Audiencia principal:** Estudiantes universitarios de 18–26 años en Latinoamérica buscando su primer empleo o práctica profesional.
+
+**Propuesta de valor:**
+1. CV Builder con IA que genera CVs optimizados para ATS en español
+2. Simulador de entrevistas que practica preguntas reales del mercado LATAM
+3. Diseñado para quienes tienen poca o ninguna experiencia laboral formal
+4. Gratis para empezar, sin tarjeta de crédito
+
+**Diferenciadores vs. competencia global (LinkedIn, Canva, Zety):**
+- Enfocado 100% en el mercado laboral latinoamericano
+- Lenguaje, formatos y ejemplos adaptados a LATAM (no traducciones del inglés)
+- Precio accesible para el poder adquisitivo de la región
+
+**Keywords primarias:** CV builder con IA, hacer curriculum vitae, preparación de entrevistas, ATS resume builder español, career platform estudiantes LATAM, primer trabajo estudiante, simulador de entrevistas IA
+
+**Redes sociales:**
+- Twitter/X: @MoonJab
+- Instagram: @moonjab
+- LinkedIn: linkedin.com/company/moonjab
+- TikTok: @moonjab
