@@ -93,4 +93,73 @@
     </news:news>
   </url>
 
+
+  <url>
+    <loc>https://moonjab.com/blog/como-hacer-un-cv-sin-experiencia</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/como-hacer-un-cv-sin-experiencia"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/como-hacer-un-cv-sin-experiencia"/>
+    <news:news>
+      <news:publication>
+        <news:name>MoonJab Blog</news:name>
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-07</news:publication_date>
+      <news:title>Cómo hacer un CV sin experiencia laboral (guía completa 2026)</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://moonjab.com/blog/que-es-ats-y-como-optimizar-tu-cv</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/que-es-ats-y-como-optimizar-tu-cv"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/que-es-ats-y-como-optimizar-tu-cv"/>
+    <news:news>
+      <news:publication>
+        <news:name>MoonJab Blog</news:name>
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-07</news:publication_date>
+      <news:title>¿Qué es ATS y cómo optimizar tu CV para pasar los filtros?</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://moonjab.com/blog/primer-trabajo-estudiante-universitario</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/primer-trabajo-estudiante-universitario"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/primer-trabajo-estudiante-universitario"/>
+    <news:news>
+      <news:publication>
+        <news:name>MoonJab Blog</news:name>
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-07</news:publication_date>
+      <news:title>Cómo conseguir tu primer trabajo siendo estudiante universitario en LATAM</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://moonjab.com/blog/practicas-profesionales-latam</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/practicas-profesionales-latam"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/practicas-profesionales-latam"/>
+    <news:news>
+      <news:publication>
+        <news:name>MoonJab Blog</news:name>
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>2026-05-07</news:publication_date>
+      <news:title>Prácticas profesionales en LATAM: cómo conseguirlas y destacar</news:title>
+    </news:news>
+  </url>
+
 </urlset>

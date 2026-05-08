@@ -24,6 +24,76 @@
     </image:image>
   </url>
 
+  <!-- ── PRODUCT LANDING PAGES ───────────────────────── -->
+  <url>
+    <loc>https://moonjab.com/cv-builder</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/cv-builder"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/cv-builder"/>
+  </url>
+
+  <url>
+    <loc>https://moonjab.com/interview-prep</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/interview-prep"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/interview-prep"/>
+  </url>
+
+  <!-- ── COUNTRY-SPECIFIC CV BUILDER PAGES ────────────── -->
+  <url>
+    <loc>https://moonjab.com/cv-builder/peru</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="es-PE"     href="https://moonjab.com/cv-builder/peru"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/cv-builder/peru"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/cv-builder/peru"/>
+  </url>
+
+  <url>
+    <loc>https://moonjab.com/cv-builder/mexico</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="es-MX"     href="https://moonjab.com/cv-builder/mexico"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/cv-builder/mexico"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/cv-builder/mexico"/>
+  </url>
+
+  <url>
+    <loc>https://moonjab.com/cv-builder/colombia</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="es-CO"     href="https://moonjab.com/cv-builder/colombia"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/cv-builder/colombia"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/cv-builder/colombia"/>
+  </url>
+
+  <url>
+    <loc>https://moonjab.com/cv-builder/argentina</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="es-AR"     href="https://moonjab.com/cv-builder/argentina"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/cv-builder/argentina"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/cv-builder/argentina"/>
+  </url>
+
+  <url>
+    <loc>https://moonjab.com/cv-builder/chile</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="es-CL"     href="https://moonjab.com/cv-builder/chile"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/cv-builder/chile"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/cv-builder/chile"/>
+  </url>
+
   <!-- ── PRICING & CONVERSION ──────────────────────── -->
   <url>
     <loc>https://moonjab.com/pricing</loc>
