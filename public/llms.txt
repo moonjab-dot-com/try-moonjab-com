@@ -17,8 +17,22 @@ Contacto: hey@moonjab.com
 - [Plantillas de CV](https://moonjab.com/cv-builder/templates): Biblioteca de plantillas profesionales diseñadas para el mercado laboral LATAM, compatibles con ATS.
 - [Precios](https://moonjab.com/pricing): Plan gratuito con acceso básico. Plan Premium con funciones ilimitadas desde $5 USD/mes.
 
+## CV Builder por País
+
+Guías y herramientas adaptadas al mercado laboral de cada país:
+
+- [CV Builder para Perú](https://moonjab.com/cv-builder/peru): Crea tu currículum vitae para el mercado peruano. Consejos sobre empresas top como Backus, Alicorp, Interbank, BCP. Formato estándar en Perú.
+- [CV Builder para México](https://moonjab.com/cv-builder/mexico): Haz tu currículum vitae para México. Adaptado para empresas como FEMSA, Bimbo, Cemex, Televisa. Incluye RFC si aplica.
+- [CV Builder para Colombia](https://moonjab.com/cv-builder/colombia): Crea tu hoja de vida para Colombia (el término colombiano para currículum). Empresas como Bancolombia, Ecopetrol, Grupo Nutresa.
+- [CV Builder para Argentina](https://moonjab.com/cv-builder/argentina): Arma tu CV para Argentina. Estilo europeo con fotos profesionales habitual. Empresas como Mercado Libre, Naranja X, YPF.
+- [CV Builder para Chile](https://moonjab.com/cv-builder/chile): Crea tu currículum para Chile. Empresas como Falabella, Banco Santander, Entel, Cencosud.
+
 ## Blog — Guías de carrera para estudiantes LATAM
 
+- [Cómo hacer un CV sin experiencia laboral](https://moonjab.com/blog/como-hacer-un-cv-sin-experiencia): Guía paso a paso para estudiantes universitarios. Cómo destacar proyectos académicos, voluntariado, certificaciones y habilidades cuando no tienes experiencia formal.
+- [¿Qué es ATS y cómo optimizar tu CV?](https://moonjab.com/blog/que-es-ats-y-como-optimizar-tu-cv): Explica qué es un Applicant Tracking System, por qué el 75% de CVs son rechazados por software antes de llegar a un humano, y cómo optimizar palabras clave y formato.
+- [Cómo conseguir tu primer trabajo siendo universitario](https://moonjab.com/blog/primer-trabajo-estudiante-universitario): Estrategia completa para estudiantes LATAM: dónde buscar, cómo postular, qué decir en entrevistas cuando no tienes experiencia laboral formal.
+- [Prácticas profesionales en LATAM](https://moonjab.com/blog/practicas-profesionales-latam): Guía de programas de prácticas en Perú, México, Colombia, Argentina y Chile. Cómo aplicar, qué esperar y cómo convertir una práctica en empleo fijo.
 - [Cómo preparar una entrevista técnica](https://moonjab.com/blog/como-preparar-una-entrevista-tecnica): Estrategias probadas para destacar en entrevistas técnicas en 2025, con consejos de expertos de Google, Meta y Amazon.
 - [Networking para conseguir empleo](https://moonjab.com/blog/networking-para-conseguir-empleo): El 70% de empleos se consiguen por contactos. Cómo construir una red profesional que impulse tu carrera.
 - [10 errores en tu CV que cuestan entrevistas](https://moonjab.com/blog/10-errores-en-tu-cv): Los errores más comunes en currículums y cómo evitarlos para aumentar callbacks en un 300%.
