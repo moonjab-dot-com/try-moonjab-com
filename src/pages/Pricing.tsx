@@ -65,8 +65,63 @@ const Pricing = () => {
 
   const faqKeys = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6'] as const;
 
+  const pricingSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: '¿Cuánto cuesta MoonJab?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'MoonJab tiene un plan gratuito con acceso básico al CV builder e entrevistas de práctica. El plan Pro cuesta $5 USD al mes con acceso ilimitado a todas las funciones.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: '¿El plan gratuito de MoonJab requiere tarjeta de crédito?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'No. El plan gratuito de MoonJab no requiere tarjeta de crédito. Puedes empezar a crear tu CV y practicar entrevistas sin pagar nada.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: '¿Puedo cancelar el plan Pro en cualquier momento?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Sí. Puedes cancelar tu suscripción Pro de MoonJab en cualquier momento desde la configuración de tu cuenta, sin penalizaciones.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: '¿Qué incluye el plan Pro de MoonJab?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'El plan Pro incluye CV builder ilimitado con IA, simulaciones de entrevista ilimitadas, feedback detallado con inteligencia artificial, plantillas premium y acceso prioritario a nuevas funciones.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: '¿MoonJab está disponible en toda Latinoamérica?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: 'Sí. MoonJab está disponible para estudiantes y profesionales en Perú, México, Colombia, Argentina, Chile, Ecuador, Bolivia, Paraguay, Uruguay, Venezuela y todos los países de LATAM.',
+        },
+      },
+    ],
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title="Planes y Precios — MoonJab"
+        description="Plan gratuito sin tarjeta de crédito y Pro desde $5/mes. CV builder con IA y simulador de entrevistas ilimitado para estudiantes en LATAM."
+        path="/pricing"
+        keywords="precios MoonJab, cuánto cuesta MoonJab, plan gratuito CV con IA, plan pro entrevistas inteligencia artificial, career platform LATAM precio"
+        breadcrumbs={[{ name: 'Precios', url: 'https://moonjab.com/pricing' }]}
+        schema={pricingSchema}
+      />
       <nav className="sticky top-0 z-50 backdrop-blur-xl bg-background/80 border-b border-border/40">
         <div className="container mx-auto px-6 h-14 flex items-center justify-between max-w-5xl">
           <OfficialLogo size="md" to="/" />

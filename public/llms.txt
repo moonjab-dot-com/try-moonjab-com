@@ -19,12 +19,11 @@ Contacto: hey@moonjab.com
 
 ## Blog — Guías de carrera para estudiantes LATAM
 
-- [Cómo hacer un CV sin experiencia](https://moonjab.com/blog/como-hacer-un-cv-sin-experiencia): Guía paso a paso para estudiantes que buscan su primer empleo o práctica profesional.
-- [Preguntas frecuentes en entrevistas de trabajo](https://moonjab.com/blog/preguntas-frecuentes-en-entrevistas-de-trabajo): Las preguntas más comunes y cómo responderlas con ejemplos reales.
-- [Qué es ATS y cómo optimizar tu CV](https://moonjab.com/blog/que-es-ats-y-como-optimizar-tu-cv): Explicado para estudiantes LATAM: qué son los sistemas ATS y cómo hacer que tu CV los pase.
-- [Primer trabajo siendo estudiante universitario](https://moonjab.com/blog/primer-trabajo-estudiante-universitario): Todo lo que necesitas saber para conseguir tu primer empleo mientras estudias.
-- [Cómo responder "Cuéntame sobre ti"](https://moonjab.com/blog/como-responder-cuentame-sobre-ti): Plantillas y técnicas probadas para responder la pregunta más común de las entrevistas.
-- [Prácticas profesionales en LATAM](https://moonjab.com/blog/practicas-profesionales-latam): Cómo encontrar y conseguir tu primera práctica profesional en la región.
+- [Cómo preparar una entrevista técnica](https://moonjab.com/blog/como-preparar-una-entrevista-tecnica): Estrategias probadas para destacar en entrevistas técnicas en 2025, con consejos de expertos de Google, Meta y Amazon.
+- [Networking para conseguir empleo](https://moonjab.com/blog/networking-para-conseguir-empleo): El 70% de empleos se consiguen por contactos. Cómo construir una red profesional que impulse tu carrera.
+- [10 errores en tu CV que cuestan entrevistas](https://moonjab.com/blog/10-errores-en-tu-cv): Los errores más comunes en currículums y cómo evitarlos para aumentar callbacks en un 300%.
+- [Cómo cambiar de carrera a los 30](https://moonjab.com/blog/como-cambiar-de-carrera-a-los-30): Guía completa con casos reales de transición profesional exitosa en LATAM.
+- [Cómo negociar tu salario](https://moonjab.com/blog/como-negociar-tu-salario): Técnicas y scripts para negociar con confianza y obtener el salario que mereces.
 
 ## Empresa
 

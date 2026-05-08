@@ -12,7 +12,8 @@ import { useState } from 'react';
 // Blog post data - in a real app this would come from a CMS or API
 export const blogPosts = [
   {
-    id: 'preparar-entrevista-tecnica-2025',
+    id: 'como-preparar-una-entrevista-tecnica',
+    isoDate: '2024-12-05',
     title: 'Cómo prepararte para una entrevista técnica en 2025',
     excerpt: 'Las entrevistas técnicas han evolucionado. Descubre las mejores estrategias para destacar con los consejos de expertos de Google, Meta y Amazon.',
     content: `
@@ -80,7 +81,8 @@ Para las preguntas de behavioral, ten 5-7 historias STAR preparadas que demuestr
     featured: true
   },
   {
-    id: 'networking-busqueda-empleo',
+    id: 'networking-para-conseguir-empleo',
+    isoDate: '2024-12-02',
     title: 'El poder del networking en tu búsqueda de empleo',
     excerpt: 'El 70% de los empleos se consiguen por conexiones. Aprende cómo construir una red profesional que impulse tu carrera.',
     content: `
@@ -154,7 +156,8 @@ No se trata de coleccionar tarjetas de presentación. El networking efectivo est
     featured: false
   },
   {
-    id: 'errores-cv-evitar',
+    id: '10-errores-en-tu-cv',
+    isoDate: '2024-11-28',
     title: '10 errores en tu CV que te están costando entrevistas',
     excerpt: 'Pequeños detalles que marcan la diferencia. Optimiza tu currículum y aumenta tus callbacks en un 300%.',
     content: `
@@ -235,7 +238,8 @@ Si incluyes foto, que sea profesional. Fondo neutro, buena iluminación, vestime
     featured: false
   },
   {
-    id: 'cambio-carrera-guia',
+    id: 'como-cambiar-de-carrera-a-los-30',
+    isoDate: '2024-11-25',
     title: 'Guía completa para cambiar de carrera a los 30',
     excerpt: 'Nunca es tarde para reinventarte. Una guía paso a paso basada en casos reales de transición exitosa.',
     content: `
@@ -319,7 +323,8 @@ A los 30, tienes algo que no tenías a los 22: experiencia, perspectiva y clarid
     featured: false
   },
   {
-    id: 'negociar-salario',
+    id: 'como-negociar-tu-salario',
+    isoDate: '2024-11-20',
     title: 'Cómo negociar tu salario (sin sentir que pides demasiado)',
     excerpt: 'La diferencia entre aceptar la primera oferta y negociar puede ser de miles de dólares al año. Aprende a hacerlo con confianza.',
     content: `
@@ -416,12 +421,32 @@ Si el salario es inamovible, negocia:
   }
 ];
 
+const blogListSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  '@id': 'https://moonjab.com/blog#blog',
+  name: 'Blog MoonJab — Empleabilidad y Carrera para Estudiantes LATAM',
+  description: 'Guías expertas sobre CV con IA, preparación de entrevistas y desarrollo de carrera para estudiantes en LATAM.',
+  url: 'https://moonjab.com/blog',
+  publisher: { '@id': 'https://moonjab.com/#organization' },
+  inLanguage: 'es',
+  blogPost: blogPosts.map(post => ({
+    '@type': 'BlogPosting',
+    headline: post.title,
+    description: post.excerpt,
+    url: `https://moonjab.com/blog/${post.id}`,
+    datePublished: post.isoDate,
+    author: { '@type': 'Person', name: post.author },
+    image: post.image,
+  })),
+};
+
 const Blog = () => {
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   const categories = [...new Set(blogPosts.map(post => post.category))];
-  const filteredPosts = selectedCategory 
+  const filteredPosts = selectedCategory
     ? blogPosts.filter(p => p.category === selectedCategory)
     : blogPosts;
 
@@ -430,7 +455,14 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEOHead title="Blog de Empleabilidad" description="Consejos prácticos sobre CV, entrevistas, networking y carrera profesional. Recursos gratuitos para impulsar tu búsqueda de empleo." path="/blog" />
+      <SEOHead
+        title="Blog de Empleabilidad para Estudiantes | CV, Entrevistas y Carrera"
+        description="Guías expertas sobre CV con IA, preparación de entrevistas, networking y carrera para estudiantes en Perú, México, Colombia, Argentina y Chile. Recursos gratuitos y actualizados."
+        path="/blog"
+        keywords="blog empleabilidad, consejos CV, preparación entrevistas trabajo, carrera estudiantes LATAM, networking profesional, negociar salario"
+        breadcrumbs={[{ name: 'Blog', url: 'https://moonjab.com/blog' }]}
+        schema={blogListSchema}
+      />
       {/* Navbar */}
       <nav className="sticky top-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border/50">
         <div className="container mx-auto px-6 h-20 flex items-center justify-between max-w-7xl">
@@ -493,9 +525,12 @@ const Blog = () => {
               >
                 <div className="grid md:grid-cols-2">
                   <div className="aspect-video md:aspect-auto overflow-hidden">
-                    <img 
-                      src={featuredPost.image} 
+                    <img
+                      src={featuredPost.image}
                       alt={featuredPost.title}
+                      width="800"
+                      height="450"
+                      loading="eager"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
@@ -543,9 +578,12 @@ const Blog = () => {
                   onClick={() => navigate(`/blog/${post.id}`)}
                 >
                   <div className="aspect-video overflow-hidden">
-                    <img 
-                      src={post.image} 
+                    <img
+                      src={post.image}
                       alt={post.title}
+                      width="800"
+                      height="450"
+                      loading="lazy"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
