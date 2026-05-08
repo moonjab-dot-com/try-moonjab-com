@@ -1,240 +1,321 @@
 import { SEOHead } from '@/components/SEOHead';
-import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
 import { OfficialLogo } from '@/components/OfficialLogo';
 import { ThemeToggle } from '@/components/ThemeToggle';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
+import { Check, ArrowRight, FileText, Zap, Shield, Download, Star, ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { CheckCircle, ArrowRight, FileText, Zap, Shield, Download, Star, Users } from 'lucide-react';
 
-const fade = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } };
-
-const cvBuilderSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
-  '@id': 'https://moonjab.com/cv-builder#app',
-  name: 'MoonJab CV Builder con IA',
-  applicationCategory: 'BusinessApplication',
-  applicationSubCategory: 'Resume Builder',
-  url: 'https://moonjab.com/cv-builder',
-  description: 'Crea tu currículum vitae optimizado para ATS con inteligencia artificial. Plantillas profesionales, análisis de keywords y descarga en PDF.',
-  operatingSystem: 'Web',
-  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-  publisher: { '@id': 'https://moonjab.com/#organization' },
-  inLanguage: 'es',
-  featureList: [
-    'CV builder optimizado para ATS con IA',
-    'Análisis automático de palabras clave',
-    'Plantillas profesionales para LATAM',
-    'Descarga en PDF de alta calidad',
-    'Adaptación del CV por vacante',
-    'Sugerencias de mejora en tiempo real',
-  ],
+const fadeUp = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
-const FEATURES = [
-  { icon: Zap, title: 'IA que optimiza por ti', desc: 'La inteligencia artificial analiza tu información y sugiere mejoras de redacción, keywords y estructura para maximizar tu ATS score.' },
-  { icon: Shield, title: 'Optimizado para ATS', desc: 'El 75% de los CVs son rechazados por software antes de llegar a un humano. Nuestro formato garantiza que el tuyo pase todos los filtros.' },
-  { icon: Download, title: 'PDF profesional listo', desc: 'Descarga tu CV en PDF de alta calidad, listo para enviar. Formatos compatibles con todos los portales de empleo de LATAM.' },
-  { icon: FileText, title: 'Plantillas para LATAM', desc: 'Diseñadas específicamente para el mercado laboral latinoamericano: Perú, México, Colombia, Argentina, Chile y más.' },
-];
+const CVBuilderLanding = () => {
+  const features = [
+    { icon: Zap, title: 'Optimización ATS automática', desc: 'La IA analiza tu CV y lo optimiza para pasar los filtros automáticos de las empresas más grandes de LATAM.' },
+    { icon: FileText, title: 'Plantillas profesionales', desc: 'Elige entre Harvard, Modern, Minimal, Professional y más. Diseñadas por expertos en RRHH.' },
+    { icon: Star, title: 'Sugerencias con IA', desc: 'Recibe sugerencias inteligentes de palabras clave, redacción y estructura para cada sección de tu CV.' },
+    { icon: Download, title: 'Exporta en PDF', desc: 'Descarga tu currículum en PDF de alta calidad, listo para postular. Compatible con todos los portales de empleo.' },
+    { icon: Shield, title: 'Diseñado para estudiantes', desc: 'Funciona incluso si no tienes experiencia laboral. Resalta logros académicos, proyectos y habilidades.' },
+    { icon: ChevronRight, title: 'Listo en minutos', desc: 'Crea tu CV profesional en menos de 10 minutos. Sin plantillas genéricas. Sin complicaciones.' },
+  ];
 
-const STEPS = [
-  { n: '01', title: 'Ingresa tu información', desc: 'Completa tu perfil con educación, experiencias, habilidades y logros. La IA te guía en cada sección.' },
-  { n: '02', title: 'La IA optimiza tu CV', desc: 'Análisis automático de keywords, mejoras de redacción y optimización ATS en tiempo real.' },
-  { n: '03', title: 'Adapta por vacante', desc: 'Pega el anuncio de trabajo y la IA ajusta automáticamente tu CV para maximizar compatibilidad.' },
-  { n: '04', title: 'Descarga y postula', desc: 'Exporta tu CV en PDF profesional y empieza a postular con confianza.' },
-];
+  const steps = [
+    { num: '01', title: 'Ingresa tu información', desc: 'Completa tu perfil con tu formación, habilidades, proyectos y experiencias. Sin formularios complicados.' },
+    { num: '02', title: 'La IA optimiza tu CV', desc: 'Nuestro motor de inteligencia artificial analiza tu información y genera sugerencias para maximizar tu score ATS.' },
+    { num: '03', title: 'Elige tu plantilla y descarga', desc: 'Selecciona la plantilla que mejor se adapte a tu industria y descarga tu CV en PDF profesional.' },
+  ];
 
-const COUNTRIES = [
-  { slug: 'peru', name: 'Perú', flag: '🇵🇪' },
-  { slug: 'mexico', name: 'México', flag: '🇲🇽' },
-  { slug: 'colombia', name: 'Colombia', flag: '🇨🇴' },
-  { slug: 'argentina', name: 'Argentina', flag: '🇦🇷' },
-  { slug: 'chile', name: 'Chile', flag: '🇨🇱' },
-];
+  const faqs = [
+    { q: '¿Qué es un CV optimizado para ATS?', a: 'Un CV optimizado para ATS (Applicant Tracking System) está diseñado para superar los filtros automáticos que usan las empresas para preseleccionar candidatos. El CV builder de MoonJab usa IA para asegurarse de que tu currículum tenga las palabras clave correctas, el formato adecuado y la estructura que los sistemas ATS pueden leer.' },
+    { q: '¿Puedo crear un CV sin experiencia laboral?', a: 'Absolutamente. El CV builder de MoonJab está especialmente diseñado para estudiantes universitarios y recién egresados sin experiencia. Te ayuda a destacar tus logros académicos, proyectos, habilidades y actividades extracurriculares para crear un CV competitivo.' },
+    { q: '¿Cuánto cuesta crear un CV con MoonJab?', a: 'MoonJab tiene un plan gratuito que incluye acceso al CV builder con la plantilla Creativo. El Plan Premium ($5 USD/mes) incluye todas las plantillas, análisis IA ilimitado y exportación PDF sin límites.' },
+    { q: '¿El CV se puede personalizar para cada trabajo?', a: 'Sí. Puedes crear múltiples versiones de tu CV y adaptar cada una a diferentes ofertas laborales. La IA de MoonJab analiza la descripción del puesto y sugiere ajustes para maximizar tu compatibilidad.' },
+    { q: '¿En qué formatos puedo descargar mi CV?', a: 'Puedes descargar tu CV en PDF de alta calidad. El formato PDF es el más aceptado por sistemas ATS y reclutadores en toda Latinoamérica.' },
+  ];
 
-const CVBuilderLanding = () => (
-  <div className="min-h-screen bg-background text-foreground">
-    <SEOHead
-      title="CV Builder con IA — Crea tu Currículum Optimizado para ATS"
-      description="Crea tu currículum vitae profesional con inteligencia artificial en minutos. Optimizado para ATS, con plantillas para LATAM y descarga en PDF. Gratis para estudiantes en Perú, México, Colombia, Argentina y Chile."
-      path="/cv-builder"
-      keywords="CV builder con IA, crear currículum vitae ATS, resume builder LATAM, hacer curriculum con inteligencia artificial, optimizar CV ATS, plantillas CV profesional"
-      breadcrumbs={[{ name: 'CV Builder', url: 'https://moonjab.com/cv-builder' }]}
-      schema={cvBuilderSchema}
-    />
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'SoftwareApplication',
+    name: 'MoonJab CV Builder',
+    applicationCategory: 'BusinessApplication',
+    operatingSystem: 'Web',
+    url: 'https://moonjab.com/cv-builder',
+    description: 'Constructor de currículum con IA optimizado para ATS para estudiantes universitarios en LATAM.',
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+    publisher: { '@id': 'https://moonjab.com/#organization' },
+  };
 
-    <nav className="sticky top-0 z-50 backdrop-blur-xl bg-background/80 border-b border-border/40">
-      <div className="mx-auto max-w-6xl px-6 h-14 flex items-center justify-between">
-        <OfficialLogo size="md" to="/" />
-        <div className="flex items-center gap-3">
-          <ThemeToggle />
-          <Link to="/login"><Button variant="ghost" size="sm" className="h-8 text-sm">Iniciar sesión</Button></Link>
-          <Link to="/registro"><Button size="sm" className="h-8 text-sm px-4">Empezar gratis</Button></Link>
-        </div>
-      </div>
-    </nav>
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(({ q, a }) => ({
+      '@type': 'Question',
+      name: q,
+      acceptedAnswer: { '@type': 'Answer', text: a },
+    })),
+  };
 
-    {/* Hero */}
-    <section className="pt-20 pb-16 sm:pt-28 sm:pb-24">
-      <div className="mx-auto max-w-4xl px-6 text-center">
-        <motion.div initial="hidden" animate="visible" variants={fade}>
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-primary/20 bg-primary/[0.06] text-xs font-medium text-primary mb-6">
-            <Zap className="h-3 w-3" />
-            Impulsado por inteligencia artificial
-          </div>
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-tight mb-6">
-            Crea tu CV profesional<br />
-            <span className="text-primary">con IA en minutos</span>
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-10">
-            El CV builder que optimiza tu currículum para pasar filtros ATS automáticamente.
-            Diseñado para estudiantes y recién egresados en Perú, México, Colombia, Argentina y Chile.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+  return (
+    <div className="min-h-screen bg-background text-foreground">
+      <SEOHead
+        title="CV Builder con IA — Crear Currículum ATS para Estudiantes"
+        description="Crea tu CV profesional con IA en minutos. Optimizado para ATS, plantillas profesionales y análisis IA. Diseñado para estudiantes en Perú, México, Colombia y LATAM."
+        path="/cv-builder"
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+
+      {/* Nav */}
+      <nav className="sticky top-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border/30">
+        <div className="mx-auto max-w-6xl px-6 h-14 flex items-center justify-between">
+          <OfficialLogo size="md" to="/" />
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+            <Link to="/login">
+              <Button variant="ghost" size="sm" className="text-sm h-8">Iniciar sesión</Button>
+            </Link>
             <Link to="/registro">
-              <Button size="lg" className="h-12 px-8 text-sm font-semibold gap-2">
+              <Button size="sm" className="text-sm h-8 px-4">Comenzar gratis</Button>
+            </Link>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero */}
+      <section className="pt-20 pb-16 sm:pt-28 sm:pb-24">
+        <div className="mx-auto max-w-3xl px-6 text-center">
+          <motion.div initial="hidden" animate="visible" variants={fadeUp}>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/20 bg-primary/[0.06] text-xs font-medium text-primary mb-6">
+              <FileText className="h-3 w-3" />
+              CV Builder con Inteligencia Artificial
+            </div>
+          </motion.div>
+
+          <motion.h1
+            initial="hidden"
+            animate="visible"
+            variants={{ hidden: { opacity: 0, y: 24 }, visible: { opacity: 1, y: 0, transition: { delay: 0.1, duration: 0.6 } } }}
+            className="text-[clamp(2rem,5vw,3.2rem)] font-bold leading-tight tracking-tight mb-5"
+          >
+            Crea tu <span className="text-primary">CV optimizado para ATS</span> con Inteligencia Artificial
+          </motion.h1>
+
+          <motion.p
+            initial="hidden"
+            animate="visible"
+            variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { delay: 0.2, duration: 0.5 } } }}
+            className="text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed mb-8"
+          >
+            Crea un currículum vitae profesional en minutos. Nuestra IA analiza tu perfil, sugiere mejoras y genera un CV que supera los filtros automáticos de las empresas más grandes de Perú, México, Colombia y toda LATAM.
+          </motion.p>
+
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={{ hidden: { opacity: 0 }, visible: { opacity: 1, transition: { delay: 0.3 } } }}
+            className="flex flex-col sm:flex-row gap-3 justify-center"
+          >
+            <Link to="/registro">
+              <Button size="lg" className="h-12 px-7 text-sm font-semibold gap-2">
                 Crear mi CV gratis
                 <ArrowRight className="h-4 w-4" />
               </Button>
             </Link>
             <Link to="/guest-start">
-              <Button variant="outline" size="lg" className="h-12 px-8 text-sm">
-                Ver demo sin registro
+              <Button variant="outline" size="lg" className="h-12 px-7 text-sm gap-2">
+                Probar sin cuenta
               </Button>
             </Link>
-          </div>
-          <div className="flex items-center justify-center gap-6 mt-8 text-xs text-muted-foreground">
-            <span className="flex items-center gap-1.5"><CheckCircle className="h-3.5 w-3.5 text-primary" /> Sin tarjeta de crédito</span>
-            <span className="flex items-center gap-1.5"><CheckCircle className="h-3.5 w-3.5 text-primary" /> Plan gratuito disponible</span>
-            <span className="flex items-center gap-1.5"><CheckCircle className="h-3.5 w-3.5 text-primary" /> Descarga en PDF</span>
-          </div>
-        </motion.div>
-      </div>
-    </section>
+          </motion.div>
 
-    {/* Social proof */}
-    <section className="py-10 border-y border-border/30">
-      <div className="mx-auto max-w-4xl px-6">
-        <div className="grid grid-cols-3 gap-8 text-center">
-          {[{ v: '10K+', l: 'CVs creados' }, { v: '87%', l: 'pasan el ATS' }, { v: '4.9', l: 'valoración media' }].map((s, i) => (
-            <div key={i}>
-              <p className="text-2xl sm:text-3xl font-bold">{s.v}</p>
-              <p className="text-xs text-muted-foreground mt-1">{s.l}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    {/* Features */}
-    <section className="py-20 sm:py-28">
-      <div className="mx-auto max-w-5xl px-6">
-        <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight mb-4">
-            Todo lo que necesita tu CV para destacar
-          </h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
-            No es solo un editor de texto. Es un sistema de optimización de carreras con IA.
+          <p className="text-xs text-muted-foreground mt-4">
+            <Check className="inline h-3 w-3 text-primary mr-1" />Gratis para empezar &nbsp;·&nbsp;
+            <Check className="inline h-3 w-3 text-primary mr-1" />Sin tarjeta de crédito
           </p>
         </div>
-        <div className="grid sm:grid-cols-2 gap-5">
-          {FEATURES.map((f, i) => (
-            <motion.div key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fade}
-              className="p-6 rounded-2xl border border-border/40 bg-card hover:shadow-md transition-shadow">
-              <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                <f.icon className="h-5 w-5 text-primary" />
-              </div>
-              <h3 className="font-bold text-base mb-2">{f.title}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
+      </section>
 
-    {/* How it works */}
-    <section className="py-20 bg-muted/30 border-y border-border/30">
-      <div className="mx-auto max-w-5xl px-6">
-        <div className="text-center mb-14">
-          <h2 className="text-3xl font-bold tracking-tight">¿Cómo funciona el CV builder?</h2>
-        </div>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {STEPS.map((s, i) => (
-            <motion.div key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fade} className="text-center">
-              <div className="text-3xl font-bold text-primary/20 mb-3">{s.n}</div>
-              <h3 className="font-bold mb-2">{s.title}</h3>
-              <p className="text-sm text-muted-foreground">{s.desc}</p>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
+      {/* Features */}
+      <section className="py-16 sm:py-20 bg-muted/30 border-y border-border/30">
+        <div className="mx-auto max-w-5xl px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-3">
+              Todo lo que necesitas para crear un CV profesional con IA
+            </h2>
+            <p className="text-muted-foreground max-w-lg mx-auto">
+              El CV builder de MoonJab combina diseño profesional con optimización ATS automática para maximizar tus posibilidades de ser llamado a entrevista.
+            </p>
+          </div>
 
-    {/* Country-specific pages */}
-    <section className="py-20">
-      <div className="mx-auto max-w-5xl px-6">
-        <div className="text-center mb-10">
-          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-3">
-            Optimizado para el mercado laboral de tu país
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {features.map((f, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.07 }}
+                className="p-6 rounded-xl border border-border/40 bg-card"
+              >
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
+                  <f.icon className="h-5 w-5 text-primary" />
+                </div>
+                <h3 className="font-semibold mb-2">{f.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* How it works */}
+      <section className="py-16 sm:py-20">
+        <div className="mx-auto max-w-4xl px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-3">
+              Cómo crear tu currículum ATS con MoonJab en 3 pasos
+            </h2>
+            <p className="text-muted-foreground">
+              De cero a CV profesional optimizado en menos de 10 minutos.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {steps.map((step, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="text-center"
+              >
+                <div className="text-4xl font-bold text-primary/20 mb-3">{step.num}</div>
+                <h3 className="font-bold mb-2">{step.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{step.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why MoonJab for students */}
+      <section className="py-16 sm:py-20 bg-muted/30 border-y border-border/30">
+        <div className="mx-auto max-w-4xl px-6">
+          <div className="grid md:grid-cols-2 gap-10 items-center">
+            <div>
+              <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-4">
+                El mejor CV builder para estudiantes universitarios en LATAM
+              </h2>
+              <p className="text-muted-foreground leading-relaxed mb-5">
+                La mayoría de estudiantes en Perú, México, Colombia, Argentina y Chile cometen los mismos errores al crear su currículum: formato incorrecto para ATS, falta de palabras clave, y no saber cómo presentar sus logros académicos como si fueran experiencia laboral.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                MoonJab resuelve exactamente ese problema. Nuestra IA está entrenada para ayudar a estudiantes sin experiencia a crear CVs que compiten con candidatos experimentados, destacando proyectos, habilidades, logros académicos y actividades extracurriculares de manera estratégica.
+              </p>
+              <ul className="space-y-2.5">
+                {[
+                  'Funciona para estudiantes sin experiencia laboral',
+                  'Optimizado para ATS de empresas en LATAM',
+                  'Plantillas adaptadas a estándares internacionales',
+                  'Compatible con LinkedIn, Indeed, Computrabajo y más',
+                  'Disponible en español para toda Latinoamérica',
+                ].map((item, i) => (
+                  <li key={i} className="flex items-center gap-2.5 text-sm">
+                    <Check className="h-4 w-4 text-primary flex-shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="rounded-xl border border-border/40 bg-card p-7 space-y-4">
+              <h3 className="font-bold text-lg">¿Por qué optimizar tu CV para ATS?</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                El <strong>75% de los CVs</strong> son rechazados por sistemas ATS antes de que un reclutador los vea. Empresas como BBVA, Deloitte, McKinsey, Google y Microsoft usan estos sistemas para filtrar miles de aplicaciones automáticamente.
+              </p>
+              <p className="text-sm text-muted-foreground leading-relaxed">
+                Un CV optimizado para ATS tiene el formato correcto, las palabras clave adecuadas y la estructura que estos sistemas pueden leer. Con MoonJab, tu CV es analizado y optimizado automáticamente para cada tipo de puesto.
+              </p>
+              <Link to="/blog/que-es-ats-y-como-optimizar-tu-cv" className="text-sm text-primary hover:underline flex items-center gap-1">
+                Lee: ¿Qué es ATS y cómo optimizar tu CV? <ArrowRight className="h-3 w-3" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-16 sm:py-20">
+        <div className="mx-auto max-w-3xl px-6">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-center mb-10">
+            Preguntas frecuentes sobre el CV Builder con IA de MoonJab
           </h2>
-          <p className="text-muted-foreground">Guías y consejos específicos para cada país de LATAM</p>
+          <div className="space-y-5">
+            {faqs.map((faq, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+                className="rounded-xl border border-border/40 bg-card p-6"
+              >
+                <h3 className="font-semibold mb-2">{faq.q}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{faq.a}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
-        <div className="flex flex-wrap justify-center gap-3">
-          {COUNTRIES.map(c => (
-            <Link key={c.slug} to={`/cv-builder/${c.slug}`}>
-              <Button variant="outline" className="gap-2 h-10 px-5">
-                <span>{c.flag}</span> CV Builder para {c.name}
+      </section>
+
+      {/* CTA */}
+      <section className="py-16 sm:py-20 bg-muted/30 border-t border-border/30">
+        <div className="mx-auto max-w-2xl px-6 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tight mb-4">
+            Crea tu CV optimizado para ATS ahora — es gratis
+          </h2>
+          <p className="text-muted-foreground mb-7 max-w-md mx-auto">
+            Únete a más de 10,000 estudiantes en LATAM que ya usan MoonJab para destacar profesionalmente.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Link to="/registro">
+              <Button size="lg" className="h-12 px-7 text-sm font-semibold gap-2">
+                Crear mi CV gratis
+                <ArrowRight className="h-4 w-4" />
               </Button>
             </Link>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    {/* CTA */}
-    <section className="py-20 bg-primary text-primary-foreground">
-      <div className="mx-auto max-w-2xl px-6 text-center">
-        <h2 className="text-3xl font-bold mb-4">Tu próximo trabajo empieza con un mejor CV</h2>
-        <p className="opacity-90 mb-8 text-lg">Únete a los 10,000+ estudiantes en LATAM que ya crearon su CV con MoonJab</p>
-        <Link to="/registro">
-          <Button size="lg" variant="secondary" className="h-12 px-8 font-semibold gap-2">
-            Crear mi CV gratis <ArrowRight className="h-4 w-4" />
-          </Button>
-        </Link>
-      </div>
-    </section>
-
-    {/* Blog internal links */}
-    <section className="py-16 border-t border-border/30">
-      <div className="mx-auto max-w-5xl px-6">
-        <h2 className="text-xl font-bold mb-6 text-center">Guías relacionadas</h2>
-        <div className="grid sm:grid-cols-3 gap-4">
-          {[
-            { path: '/blog/como-hacer-un-cv-sin-experiencia', title: 'CV sin experiencia laboral', desc: 'Guía paso a paso para estudiantes' },
-            { path: '/blog/que-es-ats-y-como-optimizar-tu-cv', title: '¿Qué es ATS?', desc: 'Cómo pasar los filtros automáticos' },
-            { path: '/blog/10-errores-en-tu-cv', title: '10 errores en tu CV', desc: 'Que te están costando entrevistas' },
-          ].map((a, i) => (
-            <Link key={i} to={a.path} className="block p-4 rounded-xl border border-border/40 hover:border-primary/30 hover:bg-muted/40 transition-all">
-              <p className="font-semibold text-sm mb-1">{a.title}</p>
-              <p className="text-xs text-muted-foreground">{a.desc}</p>
+            <Link to="/interview-prep">
+              <Button variant="outline" size="lg" className="h-12 px-7 text-sm gap-2">
+                Ver simulador de entrevistas
+              </Button>
             </Link>
-          ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <footer className="py-8 border-t border-border/30">
-      <div className="mx-auto max-w-6xl px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
-        <p>© 2024–2026 MoonJab. Todos los derechos reservados.</p>
-        <div className="flex gap-4">
-          <Link to="/privacy" className="hover:text-foreground">Privacidad</Link>
-          <Link to="/terms" className="hover:text-foreground">Términos</Link>
-          <Link to="/blog" className="hover:text-foreground">Blog</Link>
+      <footer className="py-8 border-t border-border/30">
+        <div className="mx-auto max-w-6xl px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-muted-foreground">© 2024 MoonJab. Todos los derechos reservados.</p>
+          <nav className="flex gap-5 text-xs text-muted-foreground flex-wrap justify-center">
+            <Link to="/" className="hover:text-foreground transition-colors">Inicio</Link>
+            <Link to="/interview-prep" className="hover:text-foreground transition-colors">Simulador de Entrevistas</Link>
+            <Link to="/pricing" className="hover:text-foreground transition-colors">Precios</Link>
+            <Link to="/blog" className="hover:text-foreground transition-colors">Blog</Link>
+            <Link to="/privacy" className="hover:text-foreground transition-colors">Privacidad</Link>
+          </nav>
         </div>
-      </div>
-    </footer>
-  </div>
-);
+      </footer>
+    </div>
+  );
+};
 
 export default CVBuilderLanding;

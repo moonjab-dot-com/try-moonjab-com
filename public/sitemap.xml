@@ -4,166 +4,155 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-  <!-- ── HOMEPAGE ────────────────────────────────────── -->
+  <!-- ── HOMEPAGE ────────────────────────────────── -->
   <url>
     <loc>https://moonjab.com/</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2025-05-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/"/>
-    <xhtml:link rel="alternate" hreflang="es-PE"     href="https://moonjab.com/"/>
-    <xhtml:link rel="alternate" hreflang="es-MX"     href="https://moonjab.com/"/>
-    <xhtml:link rel="alternate" hreflang="es-CO"     href="https://moonjab.com/"/>
-    <xhtml:link rel="alternate" hreflang="es-AR"     href="https://moonjab.com/"/>
-    <xhtml:link rel="alternate" hreflang="es-CL"     href="https://moonjab.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/"/>
+    <xhtml:link rel="alternate" hreflang="es-PE" href="https://moonjab.com/"/>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://moonjab.com/"/>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://moonjab.com/"/>
+    <xhtml:link rel="alternate" hreflang="es-AR" href="https://moonjab.com/"/>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://moonjab.com/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/"/>
     <image:image>
       <image:loc>https://moonjab.com/og-image.png</image:loc>
-      <image:title>MoonJab — CV Builder con IA y Preparación de Entrevistas</image:title>
-      <image:caption>Career platform para estudiantes en LATAM</image:caption>
+      <image:title>MoonJab — CV Builder con IA y Simulador de Entrevistas</image:title>
+      <image:caption>Plataforma de carrera para estudiantes en LATAM</image:caption>
     </image:image>
   </url>
 
-  <!-- ── PRODUCT LANDING PAGES ───────────────────────── -->
+  <!-- ── SEO PRODUCT LANDING PAGES ───────────────── -->
   <url>
     <loc>https://moonjab.com/cv-builder</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2025-05-08</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.92</priority>
-    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/cv-builder"/>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/cv-builder"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/cv-builder"/>
   </url>
 
   <url>
     <loc>https://moonjab.com/interview-prep</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2025-05-08</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.92</priority>
-    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/interview-prep"/>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/interview-prep"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/interview-prep"/>
   </url>
 
-  <!-- ── COUNTRY-SPECIFIC CV BUILDER PAGES ────────────── -->
-  <url>
-    <loc>https://moonjab.com/cv-builder/peru</loc>
-    <lastmod>2026-05-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.82</priority>
-    <xhtml:link rel="alternate" hreflang="es-PE"     href="https://moonjab.com/cv-builder/peru"/>
-    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/cv-builder/peru"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/cv-builder/peru"/>
-  </url>
-
-  <url>
-    <loc>https://moonjab.com/cv-builder/mexico</loc>
-    <lastmod>2026-05-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.82</priority>
-    <xhtml:link rel="alternate" hreflang="es-MX"     href="https://moonjab.com/cv-builder/mexico"/>
-    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/cv-builder/mexico"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/cv-builder/mexico"/>
-  </url>
-
-  <url>
-    <loc>https://moonjab.com/cv-builder/colombia</loc>
-    <lastmod>2026-05-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.82</priority>
-    <xhtml:link rel="alternate" hreflang="es-CO"     href="https://moonjab.com/cv-builder/colombia"/>
-    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/cv-builder/colombia"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/cv-builder/colombia"/>
-  </url>
-
-  <url>
-    <loc>https://moonjab.com/cv-builder/argentina</loc>
-    <lastmod>2026-05-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.82</priority>
-    <xhtml:link rel="alternate" hreflang="es-AR"     href="https://moonjab.com/cv-builder/argentina"/>
-    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/cv-builder/argentina"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/cv-builder/argentina"/>
-  </url>
-
-  <url>
-    <loc>https://moonjab.com/cv-builder/chile</loc>
-    <lastmod>2026-05-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.82</priority>
-    <xhtml:link rel="alternate" hreflang="es-CL"     href="https://moonjab.com/cv-builder/chile"/>
-    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/cv-builder/chile"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/cv-builder/chile"/>
-  </url>
-
-  <!-- ── PRICING & CONVERSION ──────────────────────── -->
+  <!-- ── PRICING & CONVERSION ─────────────────────── -->
   <url>
     <loc>https://moonjab.com/pricing</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2025-05-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
-    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/pricing"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/pricing"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/pricing"/>
   </url>
 
-  <!-- ── BLOG INDEX ────────────────────────────────── -->
-  <url>
-    <loc>https://moonjab.com/blog</loc>
-    <lastmod>2026-05-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.85</priority>
-    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog"/>
-  </url>
-
-  <!-- ── AUTH & ONBOARDING ─────────────────────────── -->
+  <!-- ── AUTH PAGES ───────────────────────────────── -->
   <url>
     <loc>https://moonjab.com/registro</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2025-05-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <url>
-    <loc>https://moonjab.com/guest-start</loc>
-    <lastmod>2026-05-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
+    <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://moonjab.com/login</loc>
-    <lastmod>2026-05-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.55</priority>
-  </url>
-
-  <!-- ── COMPANY ───────────────────────────────────── -->
-  <url>
-    <loc>https://moonjab.com/about</loc>
-    <lastmod>2026-05-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/about"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/about"/>
-  </url>
-
-  <url>
-    <loc>https://moonjab.com/help</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2025-05-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.60</priority>
+  </url>
+
+  <!-- ── GUEST ENTRY ───────────────────────────────── -->
+  <url>
+    <loc>https://moonjab.com/guest-start</loc>
+    <lastmod>2025-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- ── ABOUT & COMPANY ──────────────────────────── -->
+  <url>
+    <loc>https://moonjab.com/about</loc>
+    <lastmod>2025-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+  </url>
+
+  <!-- ── HELP ─────────────────────────────────────── -->
+  <url>
+    <loc>https://moonjab.com/help</loc>
+    <lastmod>2025-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.65</priority>
+  </url>
+
+  <!-- ── BLOG ─────────────────────────────────────── -->
+  <url>
+    <loc>https://moonjab.com/blog</loc>
+    <lastmod>2025-05-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+
+  <url>
+    <loc>https://moonjab.com/blog/como-hacer-un-cv-sin-experiencia</loc>
+    <lastmod>2025-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://moonjab.com/blog/preguntas-frecuentes-en-entrevistas-de-trabajo</loc>
+    <lastmod>2025-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://moonjab.com/blog/que-es-ats-y-como-optimizar-tu-cv</loc>
+    <lastmod>2025-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://moonjab.com/blog/primer-trabajo-estudiante-universitario</loc>
+    <lastmod>2025-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://moonjab.com/blog/como-responder-cuentame-sobre-ti</loc>
+    <lastmod>2025-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+
+  <url>
+    <loc>https://moonjab.com/blog/practicas-profesionales-latam</loc>
+    <lastmod>2025-05-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
   </url>
 
   <!-- ── LEGAL ─────────────────────────────────────── -->
   <url>
     <loc>https://moonjab.com/privacy</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2025-05-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.40</priority>
   </url>
 
   <url>
     <loc>https://moonjab.com/terms</loc>
-    <lastmod>2026-05-07</lastmod>
+    <lastmod>2025-05-08</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.40</priority>
   </url>

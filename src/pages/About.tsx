@@ -27,23 +27,7 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEOHead
-        title="Sobre MoonJab — Career Platform para Estudiantes en LATAM"
-        description="MoonJab democratiza el acceso a oportunidades de carrera en Latinoamérica. Conoce nuestra misión, valores y el equipo que está transformando la empleabilidad de estudiantes en LATAM con IA."
-        path="/about"
-        keywords="MoonJab empresa, sobre MoonJab, career platform LATAM, misión empleabilidad estudiantes, quiénes somos MoonJab"
-        breadcrumbs={[{ name: 'Nosotros', url: 'https://moonjab.com/about' }]}
-        schema={{
-          '@context': 'https://schema.org',
-          '@type': 'AboutPage',
-          '@id': 'https://moonjab.com/about#webpage',
-          url: 'https://moonjab.com/about',
-          name: 'Sobre MoonJab — Career Platform para Estudiantes LATAM',
-          description: 'MoonJab democratiza el acceso a oportunidades de carrera en Latinoamérica con inteligencia artificial.',
-          publisher: { '@id': 'https://moonjab.com/#organization' },
-          inLanguage: 'es',
-        }}
-      />
+      <SEOHead title="Sobre MoonJab — Nuestra Misión y Equipo" description="Conoce la misión y equipo de MoonJab. Democratizamos la empleabilidad en LATAM con IA: CV builder ATS y simulador de entrevistas para estudiantes universitarios en LATAM." path="/about" />
       <nav className="sticky top-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border/50">
         <div className="container mx-auto px-6 h-20 flex items-center justify-between max-w-7xl">
           <OfficialLogo size="lg" to="/" />
