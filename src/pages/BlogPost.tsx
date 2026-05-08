@@ -20,7 +20,12 @@ const BlogPost = () => {
   if (!post) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
-      <SEOHead title="Blog" description="Artículo del blog de MoonJab sobre empleabilidad, CV y desarrollo profesional." path="/blog" />
+        <SEOHead
+          title="Artículo no encontrado — Blog MoonJab"
+          description="El artículo que buscas no existe o fue movido. Explora el blog de MoonJab con guías sobre CV, entrevistas y carrera."
+          path={`/blog/${id ?? ''}`}
+          noindex
+        />
         <div className="text-center">
           <h1 className="text-4xl font-bold mb-4">Artículo no encontrado</h1>
           <Link to="/blog">
@@ -31,11 +36,59 @@ const BlogPost = () => {
     );
   }
 
+  const canonicalPath = `/blog/${post.id}`;
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    '@id': `https://moonjab.com${canonicalPath}#article`,
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: `${post.isoDate}T00:00:00-05:00`,
+    dateModified: `${post.isoDate}T00:00:00-05:00`,
+    author: {
+      '@type': 'Person',
+      name: post.author,
+      jobTitle: post.authorRole,
+      url: 'https://moonjab.com/about',
+    },
+    publisher: { '@id': 'https://moonjab.com/#organization' },
+    image: {
+      '@type': 'ImageObject',
+      url: post.image,
+      width: 800,
+      height: 450,
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://moonjab.com${canonicalPath}`,
+    },
+    articleSection: post.category,
+    inLanguage: 'es',
+    url: `https://moonjab.com${canonicalPath}`,
+  };
+
   const shareUrl = window.location.href;
   const shareText = `${post.title} - MoonJab Blog`;
 
   return (
     <div className="min-h-screen bg-background">
+      <SEOHead
+        title={post.title}
+        description={post.excerpt}
+        path={canonicalPath}
+        ogImage={post.image}
+        ogImageAlt={post.title}
+        type="article"
+        publishedTime={`${post.isoDate}T00:00:00-05:00`}
+        modifiedTime={`${post.isoDate}T00:00:00-05:00`}
+        author={post.author}
+        keywords={`${post.category.toLowerCase()}, ${post.title.toLowerCase()}, MoonJab blog, empleabilidad LATAM`}
+        breadcrumbs={[
+          { name: 'Blog', url: 'https://moonjab.com/blog' },
+          { name: post.title, url: `https://moonjab.com${canonicalPath}` },
+        ]}
+        schema={articleSchema}
+      />
       {/* Navbar */}
       <nav className="sticky top-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border/50">
         <div className="container mx-auto px-6 h-20 flex items-center justify-between max-w-7xl">
@@ -54,9 +107,13 @@ const BlogPost = () => {
 
       {/* Hero Image */}
       <div className="relative h-[40vh] md:h-[50vh] overflow-hidden">
-        <img 
-          src={post.image} 
+        <img
+          src={post.image}
           alt={post.title}
+          width="1200"
+          height="630"
+          loading="eager"
+          fetchPriority="high"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
