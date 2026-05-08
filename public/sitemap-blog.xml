@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- ── BLOG ARTICLES ─────────────────────────────────────────────────── -->
+  <!-- Update <lastmod> with each article's real publish/update date        -->
+
+  <url>
+    <loc>https://moonjab.com/blog/como-hacer-un-cv-sin-experiencia</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/como-hacer-un-cv-sin-experiencia"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/como-hacer-un-cv-sin-experiencia"/>
+  </url>
+
+  <url>
+    <loc>https://moonjab.com/blog/preguntas-frecuentes-en-entrevistas-de-trabajo</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.78</priority>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/preguntas-frecuentes-en-entrevistas-de-trabajo"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/preguntas-frecuentes-en-entrevistas-de-trabajo"/>
+  </url>
+
+  <url>
+    <loc>https://moonjab.com/blog/que-es-ats-y-como-optimizar-tu-cv</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.78</priority>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/que-es-ats-y-como-optimizar-tu-cv"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/que-es-ats-y-como-optimizar-tu-cv"/>
+  </url>
+
+  <url>
+    <loc>https://moonjab.com/blog/primer-trabajo-estudiante-universitario</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.78</priority>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/primer-trabajo-estudiante-universitario"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/primer-trabajo-estudiante-universitario"/>
+  </url>
+
+  <url>
+    <loc>https://moonjab.com/blog/como-responder-cuentame-sobre-ti</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/como-responder-cuentame-sobre-ti"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/como-responder-cuentame-sobre-ti"/>
+  </url>
+
+  <url>
+    <loc>https://moonjab.com/blog/practicas-profesionales-latam</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/practicas-profesionales-latam"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/practicas-profesionales-latam"/>
+  </url>
+
+</urlset>
