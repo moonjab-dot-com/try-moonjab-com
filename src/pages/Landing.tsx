@@ -103,7 +103,7 @@ const LandingContent = () => {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <SEOHead
         title="MoonJab — CV Builder con IA y Simulador de Entrevistas LATAM"
-        description="Crea tu CV optimizado para ATS con inteligencia artificial y practica entrevistas reales. Career platform #1 para estudiantes en Perú, México, Colombia, Argentina y Chile. Gratis para empezar."
+        description="Crea tu CV optimizado para ATS con IA y practica entrevistas laborales reales. Plataforma de carrera #1 para estudiantes en Perú, México, Colombia, Argentina y Chile."
         path="/"
         keywords="CV builder con IA, simulador de entrevistas, career platform estudiantes LATAM, hacer curriculum vitae ATS, preparar entrevista trabajo, primer empleo estudiantes"
         breadcrumbs={[]}
