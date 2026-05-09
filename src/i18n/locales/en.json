@@ -401,6 +401,31 @@
       "privacy": "Privacy",
       "terms": "Terms",
       "rights": "© 2025 MoonJab. All rights reserved."
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "items": [
+        {
+          "q": "What is MoonJab and what does it do?",
+          "a": "MoonJab is the AI-powered employability platform designed for university students and young professionals in Latin America. It helps you create an ATS-optimized professional CV with AI, practice real job interviews with an AI interview simulator, and discover your vocational profile through a RIASEC diagnostic. It is designed to help you land your first job, internships, or advance your career at companies in any industry across Peru, Mexico, Colombia, Argentina, and Chile."
+        },
+        {
+          "q": "Is it free to create a CV with MoonJab?",
+          "a": "Yes. MoonJab has a free plan (Guest Mode) that includes the AI CV builder, basic template, and 3 interview simulations per month, with no credit card required. The Pro plan costs $5 USD/month and includes full access: all professional CV templates, unlimited AI interviews with detailed feedback, full RIASEC diagnostic, and unlimited PDF export."
+        },
+        {
+          "q": "How does the AI CV builder work?",
+          "a": "MoonJab's AI CV builder analyzes your profile, experience, and skills to create a professional resume optimized to pass ATS (Applicant Tracking System) filters. You enter your information, the AI suggests automatic improvements, you choose from professional templates (Harvard, Modern, Minimal, Professional, Creative), and download your CV as a PDF. The process takes less than 10 minutes and produces a CV ready to apply for jobs across LATAM."
+        },
+        {
+          "q": "How does the AI interview simulator work?",
+          "a": "MoonJab's interview simulator generates personalized questions based on your industry, experience level, and the position you're applying for. You practice answering by text or voice, and the AI evaluates your responses in real time using the STAR method (Situation, Task, Action, Result). You receive detailed feedback on clarity, structure, and areas of improvement so you arrive confident at your real job interview."
+        },
+        {
+          "q": "Which LATAM countries is MoonJab available in?",
+          "a": "MoonJab is available for students and professionals across all of Latin America. It has special focus on Peru, Mexico, Colombia, Argentina, and Chile, but is also available in Ecuador, Bolivia, Paraguay, Uruguay, and Venezuela. The platform is fully in Spanish, with content adapted to the Latin American job market."
+        }
+      ]
     }
   },
   "onboarding": {
