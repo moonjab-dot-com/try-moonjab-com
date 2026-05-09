@@ -8,7 +8,8 @@ import {
   FileText, MessageSquare, Target, TrendingUp, Shield,
   Users, ChevronRight, Zap, ArrowUpRight, Layers, Award,
   GraduationCap, Sparkles, LineChart, Rocket,
-  Eye, BookOpen, Check, Mic, Menu, X } from
+  Eye, BookOpen, Check, Mic, Menu, X,
+  Youtube, Linkedin, Twitter } from
 'lucide-react';
 import { OfficialLogo } from '@/components/OfficialLogo';
 import { useRef, useState, useEffect } from 'react';
@@ -98,6 +99,7 @@ const LandingContent = () => {
   const interviewPoints = t('landing.deepDive.interviewPoints', { returnObjects: true }) as string[];
   const guestFeatures = t('landing.pricing.guestFeatures', { returnObjects: true }) as string[];
   const proFeatures = t('landing.pricing.proFeatures', { returnObjects: true }) as string[];
+  const faqItems = t('landing.faq.items', { returnObjects: true }) as { q: string; a: string }[];
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
@@ -506,6 +508,28 @@ const LandingContent = () => {
         </div>
       </section>
 
+      {/* ── FAQ ── */}
+      <section id="faq" className="py-24 sm:py-32">
+        <div className="mx-auto max-w-3xl px-6">
+          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-14">
+            <p className="text-xs font-semibold text-primary uppercase tracking-[0.2em] mb-3">FAQ</p>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight">{t('landing.faq.title')}</h2>
+          </motion.div>
+          <div className="space-y-2.5">
+            {Array.isArray(faqItems) && faqItems.map((item, i) => (
+              <motion.details key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i}
+                className="group rounded-xl border border-border/40 bg-card">
+                <summary className="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer font-medium text-sm hover:bg-muted/40 transition-colors list-none rounded-xl">
+                  {item.q}
+                  <ChevronRight className="h-4 w-4 text-muted-foreground flex-shrink-0 group-open:rotate-90 transition-transform duration-200" />
+                </summary>
+                <p className="px-5 pb-5 pt-3 text-sm text-muted-foreground leading-relaxed border-t border-border/30">{item.a}</p>
+              </motion.details>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── Final CTA ── */}
       <section className="py-24 sm:py-32 bg-muted/30 border-t border-border/30">
         <div className="mx-auto max-w-2xl px-6 text-center">
@@ -553,9 +577,20 @@ const LandingContent = () => {
           </div>
           <div className="flex items-center justify-between mt-8 pt-6 border-t border-border/20">
             <p className="text-[11px] text-muted-foreground">{t('landing.footer.rights')}</p>
-            <a href="https://www.instagram.com/trymoonjab" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="Instagram">
-              <Instagram className="h-4 w-4" />
-            </a>
+            <div className="flex items-center gap-3">
+              <a href="https://www.instagram.com/trymoonjab" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="Instagram">
+                <Instagram className="h-4 w-4" />
+              </a>
+              <a href="https://www.youtube.com/@TryMoonJab" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="YouTube">
+                <Youtube className="h-4 w-4" />
+              </a>
+              <a href="https://www.linkedin.com/company/moonjab" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="LinkedIn">
+                <Linkedin className="h-4 w-4" />
+              </a>
+              <a href="https://x.com/MoonJabdotcom" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="X">
+                <Twitter className="h-4 w-4" />
+              </a>
+            </div>
           </div>
         </div>
       </footer>

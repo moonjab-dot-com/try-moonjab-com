@@ -401,6 +401,31 @@
       "privacy": "Privacidad",
       "terms": "Términos",
       "rights": "© 2025 MoonJab. Todos los derechos reservados."
+    },
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "items": [
+        {
+          "q": "¿Qué es MoonJab y para qué sirve?",
+          "a": "MoonJab es la plataforma de empleabilidad con inteligencia artificial diseñada para estudiantes universitarios y jóvenes profesionales en Latinoamérica. Te ayuda a crear tu CV profesional optimizado para ATS con IA, practicar entrevistas laborales reales con un simulador de entrevistas con IA, y descubrir tu perfil vocacional con un diagnóstico RIASEC. Está pensada para ayudarte a conseguir tu primer empleo, prácticas profesionales o mejorar tus oportunidades de carrera en empresas de cualquier industria en Perú, México, Colombia, Argentina y Chile."
+        },
+        {
+          "q": "¿Es gratis crear un CV con MoonJab?",
+          "a": "Sí. MoonJab tiene un plan gratuito (Modo Invitado) que incluye el CV builder con IA, plantilla básica y 3 simulaciones de entrevista al mes, sin tarjeta de crédito requerida. El plan Pro cuesta $5 USD/mes e incluye acceso completo: todas las plantillas de CV profesionales, entrevistas ilimitadas con feedback detallado de IA, diagnóstico RIASEC completo y exportación PDF ilimitada."
+        },
+        {
+          "q": "¿Cómo funciona el CV builder con IA?",
+          "a": "El CV builder de MoonJab usa inteligencia artificial para analizar tu perfil, experiencia y habilidades, y crea un currículum vitae profesional optimizado para pasar los filtros ATS (Applicant Tracking Systems). Ingresas tu información, la IA sugiere mejoras automáticas, eliges entre plantillas profesionales (Harvard, Modern, Minimal, Professional, Creativo) y descargas tu CV en PDF. El proceso toma menos de 10 minutos y produce un CV listo para postular a empleos en LATAM."
+        },
+        {
+          "q": "¿Cómo funciona el simulador de entrevistas con IA?",
+          "a": "El simulador de entrevistas de MoonJab genera preguntas personalizadas según tu industria, nivel de experiencia y el puesto al que postulas. Practicas respondiendo en texto o voz, y la IA evalúa tus respuestas en tiempo real aplicando el método STAR (Situación, Tarea, Acción, Resultado). Recibes feedback detallado sobre claridad, estructura y áreas de mejora para llegar confiado a tu entrevista laboral real."
+        },
+        {
+          "q": "¿Para qué países de LATAM está disponible MoonJab?",
+          "a": "MoonJab está disponible para estudiantes y profesionales de toda Latinoamérica. Tiene foco especial en Perú, México, Colombia, Argentina y Chile, pero también está disponible en Ecuador, Bolivia, Paraguay, Uruguay y Venezuela. La plataforma está completamente en español, con contenido adaptado al mercado laboral latinoamericano."
+        }
+      ]
     }
   },
   "onboarding": {

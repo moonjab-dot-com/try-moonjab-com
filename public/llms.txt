@@ -119,5 +119,5 @@ MoonJab está construido con React, TypeScript, Vite y Tailwind CSS en el fronte
 
 - Instagram: https://www.instagram.com/trymoonjab
 - LinkedIn: https://www.linkedin.com/company/moonjab
-- Twitter/X: https://twitter.com/MoonJab
-- TikTok: https://www.tiktok.com/@moonjab
+- X (Twitter): https://x.com/MoonJabdotcom
+- YouTube: https://www.youtube.com/@TryMoonJab
