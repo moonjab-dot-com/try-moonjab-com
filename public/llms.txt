@@ -85,6 +85,53 @@ MoonJab es una career platform (plataforma de carrera) diseñada para ayudar a e
 - [Nosotros](https://moonjab.com/about) - Misión y equipo
 - [Ayuda](https://moonjab.com/help) - Centro de soporte
 
+## Guía de Salarios LATAM 2025
+
+MoonJab publica rangos salariales actualizados para las profesiones más demandadas en Perú, México, Colombia, Argentina y Chile. Cada guía incluye salarios por nivel de experiencia (junior, mid, senior), empresas que más pagan y factores que incrementan el sueldo.
+
+- [Guía de salarios LATAM](https://moonjab.com/salario) - Hub principal con todos los roles
+- [Salario Desarrollador Web](https://moonjab.com/salario/desarrollador-web) - Junior: S/ 1,800 (Perú) / $12,000 MXN (México) · Senior: S/ 6,000–10,000 / $40,000–70,000 MXN
+- [Salario Desarrollador de Software](https://moonjab.com/salario/desarrollador-software)
+- [Salario Analista de Datos](https://moonjab.com/salario/analista-de-datos)
+- [Salario Diseñador UX/UI](https://moonjab.com/salario/diseñador-ux-ui)
+- [Salario Marketing Digital](https://moonjab.com/salario/marketing-digital)
+- [Salario Contador](https://moonjab.com/salario/contador)
+- [Salario Recursos Humanos](https://moonjab.com/salario/recursos-humanos)
+- [Salario Ingeniero Civil](https://moonjab.com/salario/ingeniero-civil)
+- [Salario Administrador de Empresas](https://moonjab.com/salario/administrador-empresas)
+
+Páginas por país disponibles para cada rol: /salario/[rol]/peru, /salario/[rol]/mexico, /salario/[rol]/colombia, /salario/[rol]/argentina, /salario/[rol]/chile
+
+## Preguntas de Entrevista por Rol
+
+MoonJab publica las preguntas más frecuentes en entrevistas de trabajo en LATAM, organizadas por profesión. Cada guía incluye preguntas conductuales, técnicas, situacionales y motivacionales, con consejos de respuesta, errores comunes y FAQs del proceso de selección.
+
+- [Hub de preguntas de entrevista](https://moonjab.com/preguntas-de-entrevista) - Todas las profesiones
+- [Preguntas entrevista Desarrollador Web](https://moonjab.com/preguntas-de-entrevista/desarrollador-web) - JavaScript, React, CSS, algoritmos, conductuales
+- [Preguntas entrevista Analista de Datos](https://moonjab.com/preguntas-de-entrevista/analista-de-datos) - SQL, Python, estadística, visualización
+- [Preguntas entrevista Marketing Digital](https://moonjab.com/preguntas-de-entrevista/marketing-digital) - Google Ads, Meta Ads, SEO, analytics
+- [Preguntas entrevista Diseñador UX/UI](https://moonjab.com/preguntas-de-entrevista/diseñador-ux-ui) - Proceso de diseño, Figma, portfolio review
+- [Preguntas entrevista Recursos Humanos](https://moonjab.com/preguntas-de-entrevista/recursos-humanos) - Reclutamiento, ATS, legislación laboral
+- [Preguntas entrevista Contador](https://moonjab.com/preguntas-de-entrevista/contador) - NIIF, estados financieros, tributación
+
+## Plantillas de CV por Profesión
+
+MoonJab publica plantillas de CV optimizadas para ATS por profesión. Cada guía incluye la estructura recomendada con secciones esenciales, ejemplos reales, habilidades clave a incluir y errores frecuentes a evitar.
+
+- [Plantillas CV por profesión](https://moonjab.com/plantillas-cv) - Hub con todas las profesiones
+- [Plantilla CV Ingeniero de Software](https://moonjab.com/plantillas-cv/ingeniero-de-software) - Stack técnico, proyectos, GitHub
+- [Plantilla CV Diseñador Gráfico / UX-UI](https://moonjab.com/plantillas-cv/diseñador-grafico) - Portfolio, Figma, métricas de diseño
+- [Plantilla CV Administrador de Empresas](https://moonjab.com/plantillas-cv/administrador-empresas) - Logros medibles, ERP, MBA
+- [Plantilla CV Contador / Auditor](https://moonjab.com/plantillas-cv/contador-auditor) - NIIF, SAP, colegiatura
+- [Plantilla CV Marketing Digital](https://moonjab.com/plantillas-cv/marketing-digital) - Métricas de campañas, certificaciones
+- [Plantilla CV Recursos Humanos](https://moonjab.com/plantillas-cv/recursos-humanos) - Time-to-hire, retención, ATS
+- [Plantilla CV Analista de Datos](https://moonjab.com/plantillas-cv/analista-datos) - Python, SQL, portfolio en GitHub/Kaggle
+- [Plantilla CV Sin Experiencia / Primer Empleo](https://moonjab.com/plantillas-cv/primer-empleo) - Proyectos, voluntariados, actividades extracurriculares
+
+## Verificador ATS Gratuito
+
+- [Verificador ATS](https://moonjab.com/verificador-ats) - Herramienta gratuita para analizar si un CV pasa los filtros ATS. Detecta problemas de formato, keywords faltantes y errores de estructura. El 75% de los CVs son rechazados por ATS antes de que un humano los vea. Las empresas grandes en LATAM (BCP, Falabella, BBVA, Bancolombia, Femsa) usan ATS para procesos masivos.
+
 ## Artículos del blog
 
 - [Cómo prepararte para una entrevista técnica en 2025](https://moonjab.com/blog/preparar-entrevista-tecnica-2025): Las entrevistas técnicas han evolucionado. Estrategias para destacar en pair programming, system design y razonamiento en vivo.
