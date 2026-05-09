@@ -87,12 +87,11 @@ MoonJab es una career platform (plataforma de carrera) diseñada para ayudar a e
 
 ## Artículos del blog
 
-- [Cómo hacer un CV sin experiencia](https://moonjab.com/blog/como-hacer-un-cv-sin-experiencia)
-- [Preguntas frecuentes en entrevistas de trabajo](https://moonjab.com/blog/preguntas-frecuentes-en-entrevistas-de-trabajo)
-- [Qué es ATS y cómo optimizar tu CV](https://moonjab.com/blog/que-es-ats-y-como-optimizar-tu-cv)
-- [Primer trabajo para estudiante universitario](https://moonjab.com/blog/primer-trabajo-estudiante-universitario)
-- [Cómo responder "Cuéntame sobre ti"](https://moonjab.com/blog/como-responder-cuentame-sobre-ti)
-- [Prácticas profesionales en LATAM](https://moonjab.com/blog/practicas-profesionales-latam)
+- [Cómo prepararte para una entrevista técnica en 2025](https://moonjab.com/blog/preparar-entrevista-tecnica-2025): Las entrevistas técnicas han evolucionado. Estrategias para destacar en pair programming, system design y razonamiento en vivo.
+- [Networking en la búsqueda de empleo](https://moonjab.com/blog/networking-busqueda-empleo): El 70% de los empleos se consiguen por conexiones. Cómo construir una red profesional que impulse tu carrera desde la universidad.
+- [Errores de CV que debes evitar](https://moonjab.com/blog/errores-cv-evitar): Pequeños detalles que marcan la diferencia. Cómo optimizar tu currículum y aumentar tus callbacks en un 300%.
+- [Guía para cambio de carrera](https://moonjab.com/blog/cambio-carrera-guia): Nunca es tarde para reinventarte. Guía paso a paso basada en casos reales de transición profesional exitosa.
+- [Cómo negociar tu salario](https://moonjab.com/blog/negociar-salario): La diferencia entre aceptar la primera oferta y negociar puede ser de miles de dólares al año. Técnicas con confianza.
 
 ## Preguntas frecuentes
 

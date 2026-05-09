@@ -72,6 +72,7 @@ Para las preguntas de behavioral, ten 5-7 historias STAR preparadas que demuestr
 *¿Quieres practicar entrevistas con feedback de IA? Prueba el simulador de MoonJab gratis.*
     `,
     date: '5 Dic 2024',
+    isoDate: '2024-12-05',
     readTime: '8 min',
     category: 'Entrevistas',
     author: 'María González',
@@ -146,6 +147,7 @@ No se trata de coleccionar tarjetas de presentación. El networking efectivo est
 *El networking es una inversión a largo plazo. Empieza hoy.*
     `,
     date: '2 Dic 2024',
+    isoDate: '2024-12-02',
     readTime: '6 min',
     category: 'Networking',
     author: 'Carlos Rodríguez',
@@ -227,6 +229,7 @@ Si incluyes foto, que sea profesional. Fondo neutro, buena iluminación, vestime
 *Crea un CV optimizado con IA en minutos usando el builder de MoonJab.*
     `,
     date: '28 Nov 2024',
+    isoDate: '2024-11-28',
     readTime: '7 min',
     category: 'CV',
     author: 'Ana Martínez',
@@ -311,6 +314,7 @@ A los 30, tienes algo que no tenías a los 22: experiencia, perspectiva y clarid
 *¿Listo para descubrir tu próximo capítulo? Empieza con el diagnóstico gratuito de MoonJab.*
     `,
     date: '25 Nov 2024',
+    isoDate: '2024-11-25',
     readTime: '10 min',
     category: 'Carrera',
     author: 'María González',
@@ -407,6 +411,7 @@ Si el salario es inamovible, negocia:
 *Practica tu negociación con el simulador de entrevistas de MoonJab.*
     `,
     date: '20 Nov 2024',
+    isoDate: '2024-11-20',
     readTime: '8 min',
     category: 'Salario',
     author: 'Carlos Rodríguez',
