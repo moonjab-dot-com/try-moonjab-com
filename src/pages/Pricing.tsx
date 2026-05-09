@@ -11,6 +11,43 @@ import { Check, ArrowRight, ArrowLeft, Zap, Sparkles, Loader2, Crown } from 'luc
 import { toast } from 'sonner';
 import { useSubscription, MOONJAB_PRO } from '@/hooks/useSubscription';
 
+const pricingFaqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: '¿Puedo cancelar en cualquier momento?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Sí. Puedes cancelar tu suscripción cuando quieras desde tu configuración. No hay penalizaciones ni compromisos de permanencia.' },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Qué métodos de pago aceptan?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Procesamos los pagos de forma segura a través de Stripe. Aceptamos Visa, Mastercard y las principales tarjetas de crédito y débito.' },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Qué puedo hacer en modo invitado?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Puedes explorar la plataforma con funciones limitadas: 1 plantilla de CV (Creativo) y un diagnóstico básico. Es ideal para conocer MoonJab antes de suscribirte.' },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Qué se desbloquea con el plan Pro?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Acceso a todas las plantillas de CV (Harvard, Modern, Minimal, Professional), entrevistas ilimitadas con IA, diagnóstico completo RIASEC, coach IA 24/7 y exportación PDF ilimitada.' },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Se renueva automáticamente?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Sí, la suscripción se renueva cada mes. Puedes cancelar antes de la siguiente fecha de cobro para evitar cargos futuros.' },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Mis datos están seguros?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Absolutamente. Tus datos personales y CVs están protegidos con encriptación. Nunca compartimos tu información con terceros.' },
+    },
+  ],
+};
+
 const Pricing = () => {
   const { t } = useTranslation();
   const [loading, setLoading] = useState(false);
@@ -71,6 +108,7 @@ const Pricing = () => {
         title="Precios — Plan Gratuito y Pro desde $5 USD/mes"
         description="MoonJab gratis para empezar. Plan Pro $5 USD/mes: CV builder ilimitado, plantillas ATS, entrevistas ilimitadas y coach IA para estudiantes en LATAM."
         path="/pricing"
+        schema={pricingFaqSchema}
       />
       <nav className="sticky top-0 z-50 backdrop-blur-xl bg-background/80 border-b border-border/40">
         <div className="container mx-auto px-6 h-14 flex items-center justify-between max-w-5xl">

@@ -66,4 +66,3 @@ Allow: /
 
 # Sitemaps
 Sitemap: https://moonjab.com/sitemap.xml
-Sitemap: https://moonjab.com/sitemap-blog.xml

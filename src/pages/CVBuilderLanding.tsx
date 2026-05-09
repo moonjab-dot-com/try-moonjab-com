@@ -245,8 +245,8 @@ const CVBuilderLanding = () => {
               <p className="text-sm text-muted-foreground leading-relaxed">
                 Un CV optimizado para ATS tiene el formato correcto, las palabras clave adecuadas y la estructura que estos sistemas pueden leer. Con MoonJab, tu CV es analizado y optimizado automáticamente para cada tipo de puesto.
               </p>
-              <Link to="/blog/que-es-ats-y-como-optimizar-tu-cv" className="text-sm text-primary hover:underline flex items-center gap-1">
-                Lee: ¿Qué es ATS y cómo optimizar tu CV? <ArrowRight className="h-3 w-3" />
+              <Link to="/blog/errores-cv-evitar" className="text-sm text-primary hover:underline flex items-center gap-1">
+                Lee: Errores de CV que debes evitar <ArrowRight className="h-3 w-3" />
               </Link>
             </div>
           </div>
@@ -272,6 +272,33 @@ const CVBuilderLanding = () => {
                 <h3 className="font-semibold mb-2">{faq.q}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{faq.a}</p>
               </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Country-specific pages */}
+      <section className="py-12 sm:py-16 border-y border-border/30">
+        <div className="mx-auto max-w-4xl px-6 text-center">
+          <h2 className="text-lg font-semibold mb-2">CV Builder disponible para tu país</h2>
+          <p className="text-sm text-muted-foreground mb-6">
+            Guías especializadas con las empresas, formatos y estándares del mercado laboral de cada país.
+          </p>
+          <div className="flex flex-wrap justify-center gap-3">
+            {[
+              { flag: '🇵🇪', name: 'Perú', slug: 'peru' },
+              { flag: '🇲🇽', name: 'México', slug: 'mexico' },
+              { flag: '🇨🇴', name: 'Colombia', slug: 'colombia' },
+              { flag: '🇦🇷', name: 'Argentina', slug: 'argentina' },
+              { flag: '🇨🇱', name: 'Chile', slug: 'chile' },
+            ].map(({ flag, name, slug }) => (
+              <Link
+                key={slug}
+                to={`/cv-builder/${slug}`}
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border/50 hover:border-primary/40 hover:bg-primary/5 transition-all text-sm font-medium"
+              >
+                <span>{flag}</span> CV Builder {name}
+              </Link>
             ))}
           </div>
         </div>
