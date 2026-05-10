@@ -27,10 +27,17 @@ import BlogPost from "./pages/BlogPost";
 import CVBuilderLanding from "./pages/CVBuilderLanding";
 import CVBuilderCountry from "./pages/CVBuilderCountry";
 import InterviewPrepLanding from "./pages/InterviewPrepLanding";
+import SalaryHub from "./pages/SalaryHub";
+import SalaryPage from "./pages/SalaryPage";
+import InterviewQuestionsHub from "./pages/InterviewQuestionsHub";
+import InterviewQuestionsByRole from "./pages/InterviewQuestionsByRole";
+import CVTemplatesHub from "./pages/CVTemplatesHub";
+import CVTemplatesByProfession from "./pages/CVTemplatesByProfession";
+import ATSCheckerLanding from "./pages/ATSCheckerLanding";
+import Prensa from "./pages/Prensa";
 import Help from "./pages/Help";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
-import Prensa from "./pages/Prensa";
 import Testimonios from "./pages/Testimonios";
 const Install = lazy(() => import("./pages/Install"));
 import DashboardLayout from "./layouts/DashboardLayout";
@@ -101,10 +108,18 @@ const App = () => (
                 <Route path="/cv-builder" element={<CVBuilderLanding />} />
                 <Route path="/cv-builder/:country" element={<CVBuilderCountry />} />
                 <Route path="/interview-prep" element={<InterviewPrepLanding />} />
+                <Route path="/salario" element={<SalaryHub />} />
+                <Route path="/salario/:rol" element={<SalaryPage />} />
+                <Route path="/salario/:rol/:pais" element={<SalaryPage />} />
+                <Route path="/preguntas-de-entrevista" element={<InterviewQuestionsHub />} />
+                <Route path="/preguntas-de-entrevista/:rol" element={<InterviewQuestionsByRole />} />
+                <Route path="/plantillas-cv" element={<CVTemplatesHub />} />
+                <Route path="/plantillas-cv/:profesion" element={<CVTemplatesByProfession />} />
+                <Route path="/verificador-ats" element={<ATSCheckerLanding />} />
+                <Route path="/prensa" element={<Prensa />} />
                 <Route path="/help" element={<Help />} />
                 <Route path="/privacy" element={<Privacy />} />
                 <Route path="/terms" element={<Terms />} />
-                <Route path="/prensa" element={<Prensa />} />
                 <Route path="/testimonios" element={<Testimonios />} />
                 <Route path="/onboarding" element={<ProtectedRoute><Onboarding /></ProtectedRoute>} />
 

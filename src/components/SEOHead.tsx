@@ -1,8 +1,8 @@
 import { Helmet } from 'react-helmet-async';
 
-interface Breadcrumb {
+interface BreadcrumbItem {
   name: string;
-  url: string;
+  url?: string;
 }
 
 interface SEOHeadProps {
@@ -11,30 +11,20 @@ interface SEOHeadProps {
   path?: string;
   ogImage?: string;
   ogImageAlt?: string;
-  type?: 'website' | 'article' | 'product';
+  type?: string;
   noindex?: boolean;
   keywords?: string;
+  breadcrumbs?: BreadcrumbItem[];
   publishedTime?: string;
   modifiedTime?: string;
   author?: string;
-  breadcrumbs?: Breadcrumb[];
-  schema?: Record<string, unknown> | Record<string, unknown>[];
-  hreflang?: boolean;
+  schema?: object;
 }
 
 const BASE_URL = 'https://moonjab.com';
-const DEFAULT_OG_IMAGE =
-  'https://storage.googleapis.com/gpt-engineer-file-uploads/UTzapF8dTWUuvs1ZKjSuRUh6wJR2/social-images/social-1773758809009-IOS_Icon_MoonJab.webp';
+const DEFAULT_OG_IMAGE = 'https://moonjab.com/og-image.png';
 
-const HREFLANG_LOCALES: Array<{ hreflang: string }> = [
-  { hreflang: 'es' },
-  { hreflang: 'es-PE' },
-  { hreflang: 'es-MX' },
-  { hreflang: 'es-CO' },
-  { hreflang: 'es-AR' },
-  { hreflang: 'es-CL' },
-  { hreflang: 'x-default' },
-];
+const HREFLANG_LOCALES = ['es', 'es-PE', 'es-MX', 'es-CO', 'es-AR', 'es-CL', 'es-EC', 'x-default'];
 
 export const SEOHead = ({
   title,
@@ -45,105 +35,84 @@ export const SEOHead = ({
   type = 'website',
   noindex = false,
   keywords,
+  breadcrumbs,
   publishedTime,
   modifiedTime,
   author,
-  breadcrumbs,
   schema,
-  hreflang = true,
 }: SEOHeadProps) => {
   const url = `${BASE_URL}${path}`;
   const fullTitle = path === '/' ? title : `${title} | MoonJab`;
-  const imageAlt = ogImageAlt ?? fullTitle;
 
-  const robotsContent = noindex
-    ? 'noindex, nofollow'
-    : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1';
-
-  const breadcrumbSchema: Record<string, unknown> | null =
-    breadcrumbs && breadcrumbs.length > 0
-      ? {
-          '@context': 'https://schema.org',
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${BASE_URL}/` },
-            ...breadcrumbs.map((crumb, i) => ({
-              '@type': 'ListItem',
-              position: i + 2,
-              name: crumb.name,
-              item: crumb.url,
-            })),
-          ],
-        }
-      : null;
-
-  const schemas: Record<string, unknown>[] = [
-    ...(schema ? (Array.isArray(schema) ? schema : [schema]) : []),
-    ...(breadcrumbSchema ? [breadcrumbSchema] : []),
-  ];
+  const breadcrumbSchema = breadcrumbs && breadcrumbs.length > 0
+    ? JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Inicio', item: `${BASE_URL}/` },
+          ...breadcrumbs.map((item, index) => ({
+            '@type': 'ListItem',
+            position: index + 2,
+            name: item.name,
+            item: item.url ?? url,
+          })),
+        ],
+      })
+    : null;
 
   return (
     <Helmet>
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
-      <link rel="canonical" href={url} />
-      <meta name="robots" content={robotsContent} />
       {keywords && <meta name="keywords" content={keywords} />}
+      <link rel="canonical" href={url} />
+      {noindex && <meta name="robots" content="noindex, nofollow" />}
 
-      {/* hreflang — all LATAM locales point to canonical URL */}
-      {hreflang && !noindex
-        ? HREFLANG_LOCALES.map(({ hreflang: lang }) => (
-            <link key={lang} rel="alternate" hreflang={lang} href={url} />
-          ))
-        : null}
+      {/* Hreflang — Spanish LATAM markets */}
+      {HREFLANG_LOCALES.map((locale) => (
+        <link key={locale} rel="alternate" hreflang={locale} href={url} />
+      ))}
 
       {/* Open Graph */}
-      <meta property="og:type" content={type} />
-      <meta property="og:url" content={url} />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
+      <meta property="og:url" content={url} />
+      <meta property="og:type" content={type} />
       <meta property="og:image" content={ogImage} />
-      <meta property="og:image:secure_url" content={ogImage} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
-      <meta property="og:image:alt" content={imageAlt} />
-      <meta property="og:image:type" content="image/webp" />
+      {ogImageAlt && <meta property="og:image:alt" content={ogImageAlt} />}
       <meta property="og:site_name" content="MoonJab" />
       <meta property="og:locale" content="es_LA" />
-      <meta property="og:locale:alternate" content="en_US" />
 
-      {/* Article-specific OG */}
-      {type === 'article' && publishedTime ? (
+      {/* Article meta (og:type="article" pages) */}
+      {type === 'article' && publishedTime && (
         <meta property="article:published_time" content={publishedTime} />
-      ) : null}
-      {type === 'article' && modifiedTime ? (
+      )}
+      {type === 'article' && modifiedTime && (
         <meta property="article:modified_time" content={modifiedTime} />
-      ) : null}
-      {type === 'article' && author ? (
+      )}
+      {type === 'article' && author && (
         <meta property="article:author" content={author} />
-      ) : null}
-      {type === 'article' ? (
-        <meta
-          property="article:publisher"
-          content="https://www.linkedin.com/company/moonjab"
-        />
-      ) : null}
+      )}
 
       {/* Twitter / X */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:site" content="@MoonJab" />
-      <meta name="twitter:creator" content="@MoonJab" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
-      <meta name="twitter:image:alt" content={imageAlt} />
+      {ogImageAlt && <meta name="twitter:image:alt" content={ogImageAlt} />}
+      <meta name="twitter:site" content="@MoonJabdotcom" />
 
-      {/* JSON-LD per-page schemas */}
-      {schemas.map((s, i) => (
-        <script key={`ld-${i}`} type="application/ld+json">
-          {JSON.stringify(s)}
-        </script>
-      ))}
+      {/* Breadcrumb JSON-LD */}
+      {breadcrumbSchema && (
+        <script type="application/ld+json">{breadcrumbSchema}</script>
+      )}
+
+      {/* Page-level schema (Article, SoftwareApplication, etc.) */}
+      {schema && (
+        <script type="application/ld+json">{JSON.stringify(schema)}</script>
+      )}
     </Helmet>
   );
 };

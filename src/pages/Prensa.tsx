@@ -23,6 +23,7 @@ const schema = {
     '@id': 'https://moonjab.com/#organization',
     name: 'MoonJab',
     url: 'https://moonjab.com',
+    logo: { '@type': 'ImageObject', url: 'https://moonjab.com/moonjab-logo.png' },
     foundingDate: '2024',
     description: 'Plataforma de empleabilidad con inteligencia artificial para estudiantes universitarios y jóvenes profesionales en Latinoamérica.',
     areaServed: ['PE', 'MX', 'CO', 'AR', 'CL'],
@@ -45,7 +46,7 @@ const STORY_ANGLES = [
     summary: 'Los sistemas ATS (Applicant Tracking Systems) filtran automáticamente candidatos en empresas como BCP, Falabella, BBVA y Bancolombia. MoonJab crea CVs que pasan estos filtros y equipa a los jóvenes con las herramientas para competir en igualdad de condiciones.',
   },
   {
-    headline: 'Startup fundada en 2024 que quiere resolver el desempleo juvenil en América Latina',
+    headline: 'Startup edtech peruana que quiere resolver el desempleo juvenil en América Latina',
     summary: 'El desempleo juvenil en LATAM supera el 20% en varios países. MoonJab apunta a reducir la brecha de empleabilidad combinando IA con conocimiento profundo del mercado laboral regional.',
   },
   {
@@ -73,6 +74,7 @@ function CopyButton({ text }: { text: string }) {
   return (
     <button
       onClick={handle}
+      title="Copiar"
       className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors"
     >
       <Copy className="h-3.5 w-3.5" />
@@ -83,11 +85,10 @@ function CopyButton({ text }: { text: string }) {
 
 function LogoShowcase() {
   const { theme, systemTheme } = useTheme();
-  const isDark = (theme === 'system' ? systemTheme : theme) === 'dark';
+  const _isDark = (theme === 'system' ? systemTheme : theme) === 'dark';
 
   return (
     <div className="grid sm:grid-cols-2 gap-5">
-      {/* Logo para fondo claro */}
       <div className="rounded-xl border border-border/40 overflow-hidden bg-card">
         <div className="h-32 flex items-center justify-center bg-white p-8">
           <img src={moonjabEmerald} alt="MoonJab logo esmeralda" className="max-h-14 max-w-full object-contain" />
@@ -102,7 +103,6 @@ function LogoShowcase() {
         </div>
       </div>
 
-      {/* Logo para fondo oscuro */}
       <div className="rounded-xl border border-border/40 overflow-hidden bg-card">
         <div className="h-32 flex items-center justify-center bg-slate-900 p-8">
           <img src={moonjabLight} alt="MoonJab logo claro" className="max-h-14 max-w-full object-contain" />
@@ -124,7 +124,7 @@ const Prensa = () => (
   <div className="min-h-screen bg-background text-foreground">
     <SEOHead
       title="Sala de Prensa — Kit de Medios y Recursos para Periodistas"
-      description="Sala de prensa de MoonJab: logos, datos de la empresa, ángulos de cobertura y contacto de prensa. La plataforma de empleabilidad con IA para estudiantes en LATAM."
+      description="Sala de prensa de MoonJab: logos, datos de la empresa, ángulos de cobertura y contacto de prensa. La plataforma de empleabilidad con IA #1 para estudiantes en LATAM."
       path="/prensa"
       keywords="MoonJab prensa, sala de prensa MoonJab, kit de medios, press kit, MoonJab medios, cobertura MoonJab, startup LATAM empleo IA"
       breadcrumbs={[{ name: 'Sala de Prensa', url: 'https://moonjab.com/prensa' }]}
@@ -198,7 +198,7 @@ const Prensa = () => (
             <strong className="text-foreground">MoonJab fue fundada en diciembre de 2024</strong> por Salvador con una premisa simple: en Latinoamérica, conseguir trabajo es difícil no porque los jóvenes no estén preparados, sino porque nadie les enseñó a presentarse. Un estudiante universitario en Lima, Ciudad de México o Bogotá enfrenta las mismas empresas globales que uno de Harvard — pero sin las mismas herramientas.
           </p>
           <p>
-            El problema tiene dos caras. Por un lado, <strong className="text-foreground">el 75% de los CVs son descartados automáticamente</strong> por sistemas ATS (Applicant Tracking Systems) que las grandes empresas de LATAM usan para manejar miles de postulaciones. Por el otro, la mayoría de los jóvenes en LATAM llegan a su primera entrevista sin haber practicado nunca, enfrentando preguntas para las que nadie los preparó.
+            El problema tiene dos caras. Por un lado, <strong className="text-foreground">el 75% de los CVs son descartados automáticamente</strong> por sistemas ATS (Applicant Tracking Systems) que las grandes empresas de LATAM usan para manejar miles de postulaciones. Un CV creado en Canva, con columnas dobles o sin las palabras clave correctas, nunca llega a manos de un humano. Por el otro, la mayoría de los jóvenes en LATAM llegan a su primera entrevista sin haber practicado nunca, enfrentando preguntas para las que nadie los preparó.
           </p>
           <p>
             MoonJab resuelve ambas cosas. Nuestro <strong className="text-foreground">CV Builder con IA</strong> crea currículums optimizados para ATS desde el primer trazo, con plantillas diseñadas para el mercado laboral de cada país. Nuestro <strong className="text-foreground">Simulador de Entrevistas</strong> usa inteligencia artificial para generar preguntas personalizadas según industria y puesto, y da feedback inmediato sobre cada respuesta usando el método STAR. Todo en español. Todo diseñado para LATAM. Todo accesible desde $0.
@@ -245,10 +245,10 @@ const Prensa = () => (
         <h3 className="font-bold mt-10 mb-4">Colores de marca</h3>
         <div className="flex flex-wrap gap-4">
           {[
-            { name: 'Esmeralda (primario)', hex: '#10b981' },
-            { name: 'Oscuro', hex: '#0f172a' },
-            { name: 'Claro', hex: '#f8fafc' },
-            { name: 'Gris medio', hex: '#64748b' },
+            { name: 'Esmeralda (primario)', hex: '#10b981', textDark: false },
+            { name: 'Oscuro', hex: '#0f172a', textDark: false },
+            { name: 'Claro', hex: '#f8fafc', textDark: true },
+            { name: 'Gris medio', hex: '#64748b', textDark: false },
           ].map((color, i) => (
             <div key={i} className="flex items-center gap-3 p-3 rounded-lg border border-border/40 bg-card">
               <div
@@ -288,9 +288,9 @@ const Prensa = () => (
             },
             {
               icon: <Globe className="h-5 w-5 text-primary" />,
-              title: 'Diagnóstico Vocacional',
-              desc: 'Test de personalidad profesional basado en el modelo RIASEC. Descubrimiento del perfil vocacional del usuario con recomendaciones personalizadas de carreras y puestos.',
-              url: '/registro',
+              title: 'Recursos gratuitos LATAM',
+              desc: 'Guías de salarios actualizadas por país y profesión, preguntas de entrevista por rol, plantillas de CV por sector y verificador ATS gratuito. Todo en español.',
+              url: '/verificador-ats',
             },
           ].map((item, i) => (
             <div key={i} className="p-5 rounded-xl border border-border/40 bg-background">
@@ -347,6 +347,7 @@ const Prensa = () => (
         <div className="flex gap-4">
           <Link to="/cv-builder" className="hover:text-foreground">CV Builder</Link>
           <Link to="/testimonios" className="hover:text-foreground">Testimonios</Link>
+          <Link to="/verificador-ats" className="hover:text-foreground">Verificador ATS</Link>
           <Link to="/about" className="hover:text-foreground">Nosotros</Link>
           <Link to="/privacy" className="hover:text-foreground">Privacidad</Link>
         </div>
