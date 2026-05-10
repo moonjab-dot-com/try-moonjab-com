@@ -6,6 +6,9 @@ import { ThemeToggle } from '@/components/ThemeToggle';
 import { motion } from 'framer-motion';
 import { ArrowRight, Download, Mail, Newspaper, Globe, Users, Zap, Copy, ExternalLink } from 'lucide-react';
 import { useState } from 'react';
+import { useTheme } from 'next-themes';
+import moonjabEmerald from '@/assets/moonjab-full-emerald.png';
+import moonjabLight from '@/assets/moonjab-full-light.png';
 
 const fade = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } };
 
@@ -53,18 +56,12 @@ const STORY_ANGLES = [
 ];
 
 const QUICK_FACTS = [
-  { label: 'Fundación', value: '2024' },
-  { label: 'Mercado', value: 'LATAM · 5 países' },
+  { label: 'Fundación', value: 'Diciembre 2024' },
+  { label: 'CEO', value: 'Salvador' },
+  { label: 'Mercado', value: 'LATAM · 5+ países' },
   { label: 'Idioma', value: 'Español' },
   { label: 'Precio base', value: 'Gratis · $5/mes Pro' },
-  { label: 'Tecnología', value: 'React · TypeScript · Supabase · LLMs' },
   { label: 'Contacto prensa', value: 'hey@moonjab.com' },
-];
-
-const LOGOS = [
-  { name: 'Logo principal (PNG)', file: '/moonjab-logo.png', hint: 'Fondo oscuro o neutro' },
-  { name: 'Logo completo claro (PNG)', file: '/src/assets/moonjab-full-light.png', hint: 'Para fondos oscuros' },
-  { name: 'Logo completo esmeralda (PNG)', file: '/src/assets/moonjab-full-emerald.png', hint: 'Versión de marca' },
 ];
 
 function CopyButton({ text }: { text: string }) {
@@ -77,12 +74,49 @@ function CopyButton({ text }: { text: string }) {
   return (
     <button
       onClick={handle}
-      className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors"
       title="Copiar"
+      className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground transition-colors"
     >
       <Copy className="h-3.5 w-3.5" />
       {copied ? 'Copiado' : 'Copiar'}
     </button>
+  );
+}
+
+function LogoShowcase() {
+  const { theme, systemTheme } = useTheme();
+  const _isDark = (theme === 'system' ? systemTheme : theme) === 'dark';
+
+  return (
+    <div className="grid sm:grid-cols-2 gap-5">
+      <div className="rounded-xl border border-border/40 overflow-hidden bg-card">
+        <div className="h-32 flex items-center justify-center bg-white p-8">
+          <img src={moonjabEmerald} alt="MoonJab logo esmeralda" className="max-h-14 max-w-full object-contain" />
+        </div>
+        <div className="p-4">
+          <p className="font-medium text-sm mb-1">Logo esmeralda (fondo claro)</p>
+          <p className="text-xs text-muted-foreground mb-3">Usar sobre fondos blancos o claros</p>
+          <a href={moonjabEmerald} download="moonjab-logo-emerald.png" className="inline-flex items-center gap-1.5 text-xs text-primary hover:underline">
+            <Download className="h-3.5 w-3.5" />
+            Descargar PNG
+          </a>
+        </div>
+      </div>
+
+      <div className="rounded-xl border border-border/40 overflow-hidden bg-card">
+        <div className="h-32 flex items-center justify-center bg-slate-900 p-8">
+          <img src={moonjabLight} alt="MoonJab logo claro" className="max-h-14 max-w-full object-contain" />
+        </div>
+        <div className="p-4">
+          <p className="font-medium text-sm mb-1">Logo claro (fondo oscuro)</p>
+          <p className="text-xs text-muted-foreground mb-3">Usar sobre fondos oscuros o de color</p>
+          <a href={moonjabLight} download="moonjab-logo-light.png" className="inline-flex items-center gap-1.5 text-xs text-primary hover:underline">
+            <Download className="h-3.5 w-3.5" />
+            Descargar PNG
+          </a>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -102,7 +136,7 @@ const Prensa = () => (
         <OfficialLogo size="md" to="/" />
         <div className="flex items-center gap-3">
           <ThemeToggle />
-          <Link to="/about"><Button variant="ghost" size="sm" className="h-8 text-sm">Nosotros</Button></Link>
+          <Link to="/about"><Button variant="ghost" size="sm" className="h-8 text-sm hidden sm:inline-flex">Nosotros</Button></Link>
           <Link to="/registro"><Button size="sm" className="h-8 text-sm px-4">Probar gratis</Button></Link>
         </div>
       </div>
@@ -161,16 +195,13 @@ const Prensa = () => (
         <h2 className="text-2xl font-bold mb-6">Nuestra historia</h2>
         <div className="prose prose-sm dark:prose-invert max-w-none text-muted-foreground space-y-4">
           <p>
-            <strong className="text-foreground">MoonJab nació en 2024</strong> con una premisa simple: en Latinoamérica, conseguir trabajo es difícil no porque los jóvenes no estén preparados, sino porque nadie les enseñó a presentarse. Un estudiante universitario en Lima, Ciudad de México o Bogotá enfrenta las mismas empresas globales que uno de Harvard — pero sin las mismas herramientas.
+            <strong className="text-foreground">MoonJab fue fundada en diciembre de 2024</strong> por Salvador con una premisa simple: en Latinoamérica, conseguir trabajo es difícil no porque los jóvenes no estén preparados, sino porque nadie les enseñó a presentarse. Un estudiante universitario en Lima, Ciudad de México o Bogotá enfrenta las mismas empresas globales que uno de Harvard — pero sin las mismas herramientas.
           </p>
           <p>
             El problema tiene dos caras. Por un lado, <strong className="text-foreground">el 75% de los CVs son descartados automáticamente</strong> por sistemas ATS (Applicant Tracking Systems) que las grandes empresas de LATAM usan para manejar miles de postulaciones. Un CV creado en Canva, con columnas dobles o sin las palabras clave correctas, nunca llega a manos de un humano. Por el otro, la mayoría de los jóvenes en LATAM llegan a su primera entrevista sin haber practicado nunca, enfrentando preguntas para las que nadie los preparó.
           </p>
           <p>
-            MoonJab resuelve ambas cosas. Nuestro <strong className="text-foreground">CV Builder con IA</strong> crea currículums optimizados para ATS desde el primer trazo, con plantillas diseñadas para el mercado laboral de cada país. Nuestro <strong className="text-foreground">Simulador de Entrevistas</strong> usa inteligencia artificial para generar preguntas personalizadas según industria y puesto, y da feedback inmediato sobre cada respuesta usando el método STAR.
-          </p>
-          <p>
-            Todo en español. Todo diseñado para LATAM. Todo accesible desde $0.
+            MoonJab resuelve ambas cosas. Nuestro <strong className="text-foreground">CV Builder con IA</strong> crea currículums optimizados para ATS desde el primer trazo, con plantillas diseñadas para el mercado laboral de cada país. Nuestro <strong className="text-foreground">Simulador de Entrevistas</strong> usa inteligencia artificial para generar preguntas personalizadas según industria y puesto, y da feedback inmediato sobre cada respuesta usando el método STAR. Todo en español. Todo diseñado para LATAM. Todo accesible desde $0.
           </p>
         </div>
       </div>
@@ -189,7 +220,7 @@ const Prensa = () => (
               whileInView="visible"
               viewport={{ once: true }}
               variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0, transition: { duration: 0.4, delay: i * 0.08 } } }}
-              className="p-6 rounded-xl border border-border/40 bg-background"
+              className="p-6 rounded-xl border border-border/40 bg-background hover:border-primary/20 transition-colors"
             >
               <div className="flex items-start justify-between gap-3 mb-3">
                 <h3 className="font-bold text-sm leading-snug">"{angle.headline}"</h3>
@@ -208,26 +239,10 @@ const Prensa = () => (
         <h2 className="text-2xl font-bold mb-3">Recursos de marca</h2>
         <p className="text-muted-foreground mb-10 max-w-xl">Usa estos materiales para artículos, reseñas y contenido sobre MoonJab. Por favor no modifiques los colores ni proporciones del logo.</p>
 
-        <div className="grid sm:grid-cols-3 gap-5 mb-10">
-          {LOGOS.map((logo, i) => (
-            <div key={i} className="rounded-xl border border-border/40 overflow-hidden bg-card">
-              <div className="h-28 flex items-center justify-center bg-muted/50 p-6">
-                <img src={logo.file} alt={logo.name} className="max-h-14 max-w-full object-contain" />
-              </div>
-              <div className="p-4">
-                <p className="font-medium text-sm mb-1">{logo.name}</p>
-                <p className="text-xs text-muted-foreground mb-3">{logo.hint}</p>
-                <a href={logo.file} download className="inline-flex items-center gap-1.5 text-xs text-primary hover:underline">
-                  <Download className="h-3.5 w-3.5" />
-                  Descargar
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
+        <LogoShowcase />
 
         {/* Brand colors */}
-        <h3 className="font-bold mb-4">Colores de marca</h3>
+        <h3 className="font-bold mt-10 mb-4">Colores de marca</h3>
         <div className="flex flex-wrap gap-4">
           {[
             { name: 'Esmeralda (primario)', hex: '#10b981', textDark: false },
@@ -297,7 +312,7 @@ const Prensa = () => (
         <Mail className="h-10 w-10 text-primary mx-auto mb-4" />
         <h2 className="text-3xl font-bold mb-4">Contacto de prensa</h2>
         <p className="text-muted-foreground mb-6 leading-relaxed">
-          Para entrevistas, citas, acceso a datos adicionales o acuerdos de partnership editorial, escríbenos directamente. Respondemos en menos de 24 horas.
+          Para entrevistas con Salvador (CEO), citas, acceso a datos adicionales o acuerdos de partnership editorial. Respondemos en menos de 24 horas.
         </p>
         <div className="inline-flex items-center gap-3 px-5 py-3 rounded-xl border border-border/40 bg-muted/30 mb-8">
           <Mail className="h-4 w-4 text-muted-foreground" />
@@ -331,6 +346,7 @@ const Prensa = () => (
         <p>© 2024–2026 MoonJab. Todos los derechos reservados.</p>
         <div className="flex gap-4">
           <Link to="/cv-builder" className="hover:text-foreground">CV Builder</Link>
+          <Link to="/testimonios" className="hover:text-foreground">Testimonios</Link>
           <Link to="/verificador-ats" className="hover:text-foreground">Verificador ATS</Link>
           <Link to="/about" className="hover:text-foreground">Nosotros</Link>
           <Link to="/privacy" className="hover:text-foreground">Privacidad</Link>

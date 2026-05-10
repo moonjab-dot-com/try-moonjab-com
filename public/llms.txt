@@ -134,15 +134,45 @@ MoonJab publica plantillas de CV optimizadas para ATS por profesión. Cada guía
 
 ## Artículos del blog
 
-- [Cómo prepararte para una entrevista técnica en 2025](https://moonjab.com/blog/preparar-entrevista-tecnica-2025): Las entrevistas técnicas han evolucionado. Estrategias para destacar en pair programming, system design y razonamiento en vivo.
-- [Networking en la búsqueda de empleo](https://moonjab.com/blog/networking-busqueda-empleo): El 70% de los empleos se consiguen por conexiones. Cómo construir una red profesional que impulse tu carrera desde la universidad.
-- [Errores de CV que debes evitar](https://moonjab.com/blog/errores-cv-evitar): Pequeños detalles que marcan la diferencia. Cómo optimizar tu currículum y aumentar tus callbacks en un 300%.
-- [Guía para cambio de carrera](https://moonjab.com/blog/cambio-carrera-guia): Nunca es tarde para reinventarte. Guía paso a paso basada en casos reales de transición profesional exitosa.
-- [Cómo negociar tu salario](https://moonjab.com/blog/negociar-salario): La diferencia entre aceptar la primera oferta y negociar puede ser de miles de dólares al año. Técnicas con confianza.
+**CV y candidatura:**
+- [Cómo hacer un CV sin experiencia laboral](https://moonjab.com/blog/como-hacer-un-cv-sin-experiencia): Guía paso a paso para estudiantes. Proyectos académicos, voluntariado y habilidades como experiencia real.
+- [¿Qué es ATS y cómo optimizar tu CV?](https://moonjab.com/blog/que-es-ats-y-como-optimizar-tu-cv): Por qué el 75% de CVs son rechazados por software antes de llegar a un humano, y cómo superarlo.
+- [10 errores en tu CV que cuestan entrevistas](https://moonjab.com/blog/10-errores-en-tu-cv): Los errores más comunes y cómo evitarlos para aumentar callbacks en un 300%.
+- [Las palabras clave que debes incluir en tu CV para LATAM](https://moonjab.com/blog/palabras-clave-cv-ats-latam): Keywords por industria para sistemas ATS en Perú, México, Colombia, Argentina y Chile.
+- [Cómo escribir una carta de presentación en 2025](https://moonjab.com/blog/carta-presentacion-2025): Estructura, plantilla y errores a evitar para el mercado LATAM actual.
+
+**Entrevistas:**
+- [Cómo preparar una entrevista técnica](https://moonjab.com/blog/como-preparar-una-entrevista-tecnica): Estrategias probadas para destacar en entrevistas técnicas en 2025.
+- [Las 15 preguntas conductuales más frecuentes](https://moonjab.com/blog/preguntas-conductuales-entrevista): Cómo responder con el método STAR y ejemplos reales para LATAM.
+- [Método STAR para entrevistas](https://moonjab.com/blog/metodo-star-respuestas-entrevista): La técnica definitiva para respuestas claras, convincentes y memorables.
+- [Tu primera entrevista de trabajo: guía completa](https://moonjab.com/blog/primera-entrevista-trabajo-guia): Qué hacer antes, durante y después para no cometer errores.
+- [8 errores que arruinan una entrevista](https://moonjab.com/blog/errores-fatales-entrevista): Descuidos que eliminan a buenos candidatos todos los días.
+
+**Networking:**
+- [Networking para conseguir empleo](https://moonjab.com/blog/networking-para-conseguir-empleo): El 70% de empleos se consiguen por contactos. Cómo construir una red profesional.
+- [LinkedIn para estudiantes universitarios](https://moonjab.com/blog/linkedin-estudiantes-universitarios): Cómo crear un perfil que consiga entrevistas sin años de experiencia.
+- [Entrevistas informativas: la estrategia secreta](https://moonjab.com/blog/entrevistas-informativas-como-conseguirlas): Cómo entrar a empresas sin postular formalmente.
+- [Networking para introvertidos](https://moonjab.com/blog/networking-introvertidos): Conectar auténticamente sin fingir ser extrovertido.
+- [Cómo construir tu marca personal digital](https://moonjab.com/blog/presencia-digital-profesional): Gestiona tu huella digital para atraer oportunidades laborales.
+
+**Carrera:**
+- [Cómo conseguir tu primer trabajo siendo universitario](https://moonjab.com/blog/primer-trabajo-estudiante-universitario): Estrategia completa para estudiantes LATAM.
+- [Prácticas profesionales en LATAM](https://moonjab.com/blog/practicas-profesionales-latam): Guía completa de programas de prácticas en 5 países.
+- [Cómo cambiar de carrera a los 30](https://moonjab.com/blog/como-cambiar-de-carrera-a-los-30): Guía paso a paso basada en casos reales de transición exitosa.
+- [Los primeros 90 días en tu primer trabajo](https://moonjab.com/blog/primer-empleo-90-dias): Cómo causar una excelente primera impresión y construir reputación.
+- [Las 10 habilidades digitales más demandadas en LATAM 2025](https://moonjab.com/blog/habilidades-digitales-2025-latam): Qué habilidades técnicas priorizan las empresas al contratar.
+
+**Salario:**
+- [Cómo negociar tu salario](https://moonjab.com/blog/como-negociar-tu-salario): Técnicas y scripts para negociar con confianza.
+- [Sueldos en tecnología en LATAM 2025](https://moonjab.com/blog/sueldos-tecnologia-latam-2025): Rangos reales por rol y país para desarrolladores, diseñadores y más.
+- [Cómo pedir un aumento de sueldo](https://moonjab.com/blog/pedir-aumento-sueldo-estrategia): Scripts reales y el timing correcto para conseguirlo.
+- [Beneficios laborales que negociar en LATAM](https://moonjab.com/blog/beneficios-laborales-negociar-latam): Más allá del salario base: salud, tiempo, desarrollo y más.
+- [Freelance vs. empleo formal en LATAM](https://moonjab.com/blog/freelance-vs-empleo-economia-latam): Comparativa real con números para tomar la mejor decisión en 2025.
 
 ## Sala de Prensa
 
 - [Sala de Prensa / Media Kit](https://moonjab.com/prensa) - Recursos para periodistas, bloggers y creadores de contenido. Logos de alta resolución, datos de la empresa, ángulos de cobertura sugeridos y contacto directo con el equipo de prensa de MoonJab (hey@moonjab.com).
+- [Testimonios](https://moonjab.com/testimonios) - 30+ testimonios reales de estudiantes de Perú, México, Colombia, Argentina y Chile que consiguieron su primer empleo o práctica usando MoonJab.
 
 ## Preguntas frecuentes
 

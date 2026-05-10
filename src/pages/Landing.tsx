@@ -253,41 +253,83 @@ const LandingContent = () => {
 
           <div className="grid md:grid-cols-3 gap-4">
             {/* Large card — CV */}
+            {/* Card 1 — CV Builder (wide) */}
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
-              className="md:col-span-2 group relative overflow-hidden rounded-2xl border border-border/40 bg-card p-8 hover:shadow-clovely-lg transition-all duration-500">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/[0.03] rounded-full blur-3xl pointer-events-none" />
-              <div className="relative">
+              className="md:col-span-2 group relative overflow-hidden rounded-2xl border border-border/40 bg-card p-8 hover:border-primary/20 hover:shadow-clovely-lg transition-all duration-500">
+              <div className="absolute top-0 right-0 w-72 h-72 bg-primary/[0.04] rounded-full blur-3xl pointer-events-none" />
+              <div className="relative h-full flex flex-col">
                 <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/15 transition-colors">
                   <FileText className="h-5 w-5 text-primary" />
                 </div>
                 <h3 className="text-xl font-bold mb-2">{t('landing.features.cv.title')}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed max-w-md mb-6">{t('landing.features.cv.description')}</p>
-                <div className="flex flex-wrap gap-2">
+                <div className="flex flex-wrap gap-2 mt-auto">
                   {cvTags.map((tag) =>
-                    <span key={tag} className="px-2.5 py-1 text-[11px] rounded-md bg-primary/[0.06] text-primary font-medium">{tag}</span>
+                    <span key={tag} className="px-2.5 py-1 text-[11px] rounded-md bg-primary/[0.06] text-primary font-medium border border-primary/10">{tag}</span>
                   )}
                 </div>
               </div>
             </motion.div>
 
-            {/* Small card — Diagnostic */}
+            {/* Card 2 — Diagnóstico vocacional */}
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={1}
-              className="group relative overflow-hidden rounded-2xl border border-border/40 bg-card p-8 hover:shadow-clovely-lg transition-all duration-500">
-              <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/15 transition-colors">
-                <Compass className="h-5 w-5 text-primary" />
+              className="group relative overflow-hidden rounded-2xl border border-border/40 bg-card p-8 hover:border-primary/20 hover:shadow-clovely-lg transition-all duration-500">
+              <div className="absolute bottom-0 left-0 w-40 h-40 bg-primary/[0.04] rounded-full blur-2xl pointer-events-none" />
+              <div className="relative h-full flex flex-col">
+                <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/15 transition-colors">
+                  <Compass className="h-5 w-5 text-primary" />
+                </div>
+                <h3 className="text-lg font-bold mb-2">{t('landing.features.diagnostic.title')}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed mb-6">{t('landing.features.diagnostic.description')}</p>
+                <div className="mt-auto space-y-2">
+                  {['Modelo RIASEC', 'Análisis con IA', 'Rutas de carrera'].map((tag) =>
+                    <div key={tag} className="flex items-center gap-2 text-xs text-muted-foreground">
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary/50 flex-shrink-0" />
+                      {tag}
+                    </div>
+                  )}
+                </div>
               </div>
-              <h3 className="text-lg font-bold mb-2">{t('landing.features.diagnostic.title')}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{t('landing.features.diagnostic.description')}</p>
             </motion.div>
 
-            {/* Small card — Interview */}
+            {/* Card 3 — Simulador de Entrevistas (full width) */}
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={2}
-              className="group relative overflow-hidden rounded-2xl border border-border/40 bg-card p-8 hover:shadow-clovely-lg transition-all duration-500">
-              <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/15 transition-colors">
-                <Mic className="h-5 w-5 text-primary" />
+              className="md:col-span-3 group relative overflow-hidden rounded-2xl border border-border/40 bg-card hover:border-primary/20 hover:shadow-clovely-lg transition-all duration-500">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/[0.02] to-transparent pointer-events-none" />
+              <div className="relative p-8 flex flex-col md:flex-row md:items-center gap-8">
+                <div className="flex-1">
+                  <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/15 transition-colors">
+                    <Mic className="h-5 w-5 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">{t('landing.features.interview.title')}</h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed max-w-lg">{t('landing.features.interview.description')}</p>
+                </div>
+                <div className="md:w-72 shrink-0 rounded-xl bg-muted/40 border border-border/30 p-4 space-y-3">
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-6 h-6 rounded-full bg-primary/15 flex items-center justify-center">
+                      <Mic className="h-3 w-3 text-primary" />
+                    </div>
+                    <span className="text-[11px] text-muted-foreground font-medium">IA Entrevistadora</span>
+                    <span className="ml-auto flex h-2 w-2 relative">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-40" />
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-primary/60" />
+                    </span>
+                  </div>
+                  <div className="bg-background/60 rounded-lg px-3 py-2 max-w-[85%]">
+                    <div className="h-1.5 w-full rounded-full bg-foreground/10" />
+                    <div className="h-1.5 w-3/4 rounded-full bg-foreground/10 mt-1.5" />
+                  </div>
+                  <div className="bg-primary/[0.08] rounded-lg px-3 py-2 max-w-[75%] ml-auto">
+                    <div className="h-1.5 w-full rounded-full bg-primary/20" />
+                    <div className="h-1.5 w-2/3 rounded-full bg-primary/20 mt-1.5" />
+                  </div>
+                  <div className="flex flex-wrap gap-1.5 pt-1">
+                    {['Método STAR', 'Feedback IA', 'Voz + texto'].map((tag) =>
+                      <span key={tag} className="px-2 py-0.5 text-[10px] rounded-md bg-primary/[0.06] text-primary font-medium border border-primary/10">{tag}</span>
+                    )}
+                  </div>
+                </div>
               </div>
-              <h3 className="text-lg font-bold mb-2">{t('landing.features.interview.title')}</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">{t('landing.features.interview.description')}</p>
             </motion.div>
 
           </div>
@@ -570,6 +612,8 @@ const LandingContent = () => {
               <Link to="/pricing" className="hover:text-foreground transition-colors">{t('landing.footer.pricing')}</Link>
               <Link to="/about" className="hover:text-foreground transition-colors">{t('landing.footer.about')}</Link>
               <Link to="/blog" className="hover:text-foreground transition-colors">{t('landing.footer.blog')}</Link>
+              <Link to="/testimonios" className="hover:text-foreground transition-colors">Testimonios</Link>
+              <Link to="/prensa" className="hover:text-foreground transition-colors">Prensa</Link>
               <Link to="/help" className="hover:text-foreground transition-colors">{t('landing.footer.help')}</Link>
               <Link to="/privacy" className="hover:text-foreground transition-colors">{t('landing.footer.privacy')}</Link>
               <Link to="/terms" className="hover:text-foreground transition-colors">{t('landing.footer.terms')}</Link>
