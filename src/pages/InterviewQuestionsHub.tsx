@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { OfficialLogo } from '@/components/OfficialLogo';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { motion } from 'framer-motion';
-import { ArrowRight, MessageSquare, Lightbulb, CheckCircle } from 'lucide-react';
+import { ArrowRight, MessageSquare, Lightbulb, CheckCircle, Building2 } from 'lucide-react';
 import { INTERVIEW_ROLES } from '@/data/interviewQuestions';
 
 const fade = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } };
@@ -26,10 +26,11 @@ const schema = {
   ],
 };
 
-const categories = Array.from(new Set(Object.values(INTERVIEW_ROLES).map(r => r.category)));
+const categories = Array.from(new Set(Object.values(INTERVIEW_ROLES).map(r => r.category))).filter(c => c !== 'Empresa');
 
 const InterviewQuestionsHub = () => {
-  const roles = Object.values(INTERVIEW_ROLES);
+  const roles = Object.values(INTERVIEW_ROLES).filter(r => r.category !== 'Empresa');
+  const companyRoles = Object.values(INTERVIEW_ROLES).filter(r => r.category === 'Empresa');
 
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -87,6 +88,34 @@ const InterviewQuestionsHub = () => {
             <div><p className="text-2xl font-bold text-primary">{roles.length}</p><p className="text-xs text-muted-foreground mt-1">Roles cubiertos</p></div>
             <div><p className="text-2xl font-bold text-primary">4</p><p className="text-xs text-muted-foreground mt-1">Tipos de pregunta</p></div>
             <div><p className="text-2xl font-bold text-primary">∞</p><p className="text-xs text-muted-foreground mt-1">Práctica con IA</p></div>
+          </div>
+        </div>
+      </section>
+
+      {/* Company interview pages — high-intent section */}
+      <section className="py-14 bg-muted/30 border-y border-border/30">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="flex items-center gap-2 mb-2">
+            <Building2 className="h-5 w-5 text-primary" />
+            <h2 className="text-2xl font-bold">Prepárate para empresas específicas</h2>
+          </div>
+          <p className="text-muted-foreground mb-8">Guías con las preguntas reales que hacen las empresas más importantes de LATAM, su cultura y cómo destacar en su proceso.</p>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {companyRoles.map((role, i) => (
+              <motion.div key={role.slug} initial="hidden" whileInView="visible" viewport={{ once: true }}
+                variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0, transition: { duration: 0.4, delay: i * 0.06 } } }}>
+                <Link to={`/preguntas-de-entrevista/${role.slug}`}
+                  className="group flex items-start gap-3 p-5 rounded-xl border border-border/40 bg-card hover:border-primary/40 hover:bg-primary/5 hover:shadow-sm transition-all">
+                  <span className="text-2xl">{role.emoji}</span>
+                  <div className="flex-1 min-w-0">
+                    <p className="font-semibold text-sm group-hover:text-primary transition-colors">{role.title}</p>
+                    <p className="text-xs text-muted-foreground mt-0.5 line-clamp-2">{role.description}</p>
+                    <p className="text-xs text-primary/70 mt-2 font-medium">{role.questions.length} preguntas reales</p>
+                  </div>
+                  <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors mt-0.5 flex-shrink-0" />
+                </Link>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

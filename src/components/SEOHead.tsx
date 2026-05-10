@@ -18,7 +18,7 @@ interface SEOHeadProps {
   publishedTime?: string;
   modifiedTime?: string;
   author?: string;
-  schema?: object;
+  schema?: object | object[];
 }
 
 const BASE_URL = 'https://moonjab.com';
@@ -109,10 +109,10 @@ export const SEOHead = ({
         <script type="application/ld+json">{breadcrumbSchema}</script>
       )}
 
-      {/* Page-level schema (Article, SoftwareApplication, etc.) */}
-      {schema && (
-        <script type="application/ld+json">{JSON.stringify(schema)}</script>
-      )}
+      {/* Page-level schema (Article, SoftwareApplication, FAQPage, etc.) */}
+      {schema && (Array.isArray(schema) ? schema : [schema]).map((s, i) => (
+        <script key={i} type="application/ld+json">{JSON.stringify(s)}</script>
+      ))}
     </Helmet>
   );
 };
