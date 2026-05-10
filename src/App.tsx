@@ -34,6 +34,7 @@ import InterviewQuestionsByRole from "./pages/InterviewQuestionsByRole";
 import CVTemplatesHub from "./pages/CVTemplatesHub";
 import CVTemplatesByProfession from "./pages/CVTemplatesByProfession";
 import ATSCheckerLanding from "./pages/ATSCheckerLanding";
+import Prensa from "./pages/Prensa";
 import Help from "./pages/Help";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
@@ -114,6 +115,7 @@ const App = () => (
                 <Route path="/plantillas-cv" element={<CVTemplatesHub />} />
                 <Route path="/plantillas-cv/:profesion" element={<CVTemplatesByProfession />} />
                 <Route path="/verificador-ats" element={<ATSCheckerLanding />} />
+                <Route path="/prensa" element={<Prensa />} />
                 <Route path="/help" element={<Help />} />
                 <Route path="/privacy" element={<Privacy />} />
                 <Route path="/terms" element={<Terms />} />

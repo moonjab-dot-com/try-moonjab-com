@@ -138,6 +138,16 @@
     <priority>0.50</priority>
   </url>
 
+  <!-- ── PRESS / MEDIA KIT ──────────────────────────── -->
+  <url>
+    <loc>https://moonjab.com/prensa</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/prensa"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/prensa"/>
+  </url>
+
   <!-- ── ABOUT & COMPANY ──────────────────────────── -->
   <url>
     <loc>https://moonjab.com/about</loc>
