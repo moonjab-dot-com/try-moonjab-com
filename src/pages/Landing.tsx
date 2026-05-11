@@ -386,7 +386,7 @@ const LandingContent = () => {
                 </div>
                 <div className="flex-1 flex justify-center">
                   <div className="px-4 py-1 rounded-md bg-background/60 border border-border/30 text-[11px] text-muted-foreground font-mono">
-                    app.moonjab.com/dashboard
+                    moonjab.com/cvs
                   </div>
                 </div>
                 <div className="w-14" />
@@ -662,60 +662,26 @@ const LandingContent = () => {
             </h2>
           </motion.div>
 
-          {/* Featured testimonial */}
-          <motion.div
-            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
-            className="mb-6 p-7 rounded-2xl border border-primary/20 bg-card shadow-mj-sm relative overflow-hidden"
-          >
-            <div className="absolute top-0 right-0 w-40 h-40 bg-primary/[0.05] rounded-full blur-2xl pointer-events-none" />
-            <div className="relative flex flex-col sm:flex-row sm:items-center gap-5">
-              <div className="flex gap-0.5 mb-1 sm:hidden">
-                {Array.from({ length: 5 }).map((_, j) => (
-                  <Star key={j} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
-                ))}
-              </div>
-              <div className="sm:flex-1">
-                <div className="hidden sm:flex gap-0.5 mb-3">
-                  {Array.from({ length: 5 }).map((_, j) => (
-                    <Star key={j} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
-                  ))}
-                </div>
-                <p className="text-base sm:text-lg leading-relaxed text-foreground/85 italic">
-                  &ldquo;{testimonials[0].text}&rdquo;
-                </p>
-              </div>
-              <div className="flex items-center gap-3 sm:flex-shrink-0 sm:border-l sm:border-border/40 sm:pl-6">
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-sm font-bold text-primary">
-                  {testimonials[0].name[0]}
-                </div>
-                <div>
-                  <p className="font-semibold text-sm">{testimonials[0].name}</p>
-                  <p className="text-xs text-muted-foreground">{testimonials[0].role}</p>
-                </div>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Testimonial grid */}
-          <div className="grid md:grid-cols-2 gap-4">
-            {testimonials.slice(1).map((tt, i) => (
+          {/* Testimonial grid — uniform 3-col */}
+          <div className="grid md:grid-cols-3 gap-4">
+            {testimonials.map((tt, i) => (
               <motion.div
                 key={i}
-                initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i + 1}
-                className="p-6 rounded-2xl border border-border/40 bg-card hover:border-primary/20 hover:shadow-mj-md transition-all duration-300"
+                initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i}
+                className="flex flex-col p-6 rounded-2xl border border-border/40 bg-card hover:border-primary/20 hover:shadow-mj-md transition-all duration-300"
               >
                 <div className="flex gap-0.5 mb-4">
                   {Array.from({ length: 5 }).map((_, j) => (
                     <Star key={j} className="h-3.5 w-3.5 fill-amber-400 text-amber-400" />
                   ))}
                 </div>
-                <p className="text-sm leading-relaxed text-foreground/80 mb-5">&ldquo;{tt.text}&rdquo;</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center text-xs font-bold text-primary">
+                <p className="text-sm leading-relaxed text-foreground/80 mb-5 flex-1">&ldquo;{tt.text}&rdquo;</p>
+                <div className="flex items-center gap-3 pt-3 border-t border-border/30">
+                  <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center text-xs font-bold text-primary flex-shrink-0">
                     {tt.name[0]}
                   </div>
                   <div>
-                    <p className="font-medium text-sm">{tt.name}</p>
+                    <p className="font-semibold text-sm">{tt.name}</p>
                     <p className="text-xs text-muted-foreground">{tt.role}</p>
                   </div>
                 </div>
@@ -774,14 +740,15 @@ const LandingContent = () => {
               className="rounded-2xl p-[2px] relative shadow-mj-lg"
               style={{ background: 'linear-gradient(135deg, hsl(160 84% 39%), hsl(142 71% 45%))' }}
             >
+              {/* Badge sits on the outer wrapper so overflow-hidden doesn't clip it */}
+              <div className="absolute -top-3.5 left-6 z-20">
+                <div className="px-3 py-1 rounded-full bg-primary text-primary-foreground text-[10px] font-bold tracking-wide uppercase shadow-sm">
+                  {t('landing.pricing.recommended')}
+                </div>
+              </div>
               <div className="rounded-[14px] bg-card h-full p-7 relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-primary/[0.06] rounded-full blur-2xl pointer-events-none" />
-                <div className="absolute -top-3.5 left-6 z-10">
-                  <div className="px-3 py-1 rounded-full bg-primary text-primary-foreground text-[10px] font-bold tracking-wide uppercase shadow-sm">
-                    {t('landing.pricing.recommended')}
-                  </div>
-                </div>
-                <div className="relative pt-2">
+                <div className="relative pt-4">
                   <p className="text-sm font-bold mb-1">Pro</p>
                   <p className="text-xs text-muted-foreground mb-5">{t('landing.pricing.proDesc')}</p>
                   <div className="mb-5">
@@ -916,6 +883,7 @@ const LandingContent = () => {
               <p className="text-xs text-muted-foreground leading-relaxed max-w-[180px]">
                 {t('landing.footer.tagline')}
               </p>
+              <p className="text-[10px] text-muted-foreground/60">Fundada en diciembre 2025</p>
               <div className="flex items-center gap-3 pt-1">
                 <a href="https://www.instagram.com/trymoonjab" target="_blank" rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-foreground transition-colors" aria-label="Instagram">
