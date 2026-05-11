@@ -88,9 +88,9 @@ const Register = () => {
   const strengthLabels = ['Débil', 'Regular', 'Buena', 'Fuerte'];
 
   const features = [
-    { icon: FileText, text: 'CV con IA que pasa el ATS' },
-    { icon: Mic, text: 'Entrevistas simuladas con feedback' },
-    { icon: Compass, text: 'Diagnóstico vocacional personalizado' },
+    { icon: FileText, text: 'CV con IA que pasa el ATS automáticamente' },
+    { icon: Mic, text: 'Simulador de entrevistas con feedback en tiempo real' },
+    { icon: Compass, text: 'Diagnóstico vocacional personalizado con IA' },
   ];
 
   return (
@@ -101,63 +101,58 @@ const Register = () => {
         path="/registro"
       />
 
-      {/* Left brand panel — hidden on mobile */}
-      <div className="hidden lg:flex lg:w-[42%] relative flex-col justify-between p-12 overflow-hidden gradient-primary">
-        <div className="absolute inset-0 opacity-10" style={{
-          backgroundImage: 'radial-gradient(circle at 20% 80%, white 1px, transparent 1px), radial-gradient(circle at 80% 20%, white 1px, transparent 1px)',
-          backgroundSize: '60px 60px',
-        }} />
+      {/* ── Brand panel ── */}
+      <div className="hidden lg:flex lg:w-[42%] relative flex-col justify-between p-12 overflow-hidden cta-gradient">
+        <div className="absolute inset-0 bg-dot-grid opacity-[0.08] pointer-events-none" />
+        <div className="absolute -top-24 -right-24 w-64 h-64 rounded-full bg-white/[0.04] blur-3xl pointer-events-none" />
 
         <OfficialLogo size="lg" className="relative z-10 brightness-0 invert" />
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           className="relative z-10 space-y-7"
         >
           <div>
-            <h2 className="text-3xl font-bold text-white leading-tight">
+            <h2 className="text-balance text-3xl font-bold text-white leading-[1.15] tracking-tight">
               Más de 10,000 estudiantes<br />
-              <span className="opacity-80">ya encontraron trabajo.</span>
+              <span className="text-white/75">ya encontraron trabajo.</span>
             </h2>
-            <p className="mt-3 text-white/70 text-sm leading-relaxed">
-              Crea tu cuenta gratis y accede a herramientas de IA diseñadas
-              específicamente para el mercado laboral de LATAM.
+            <p className="mt-3 text-white/60 text-sm leading-relaxed">
+              Crea tu cuenta gratis y accede a herramientas de IA diseñadas para el mercado laboral de LATAM.
             </p>
           </div>
 
           <ul className="space-y-3">
             {features.map(({ icon: Icon, text }) => (
-              <li key={text} className="flex items-center gap-3">
-                <div className="w-7 h-7 rounded-lg bg-white/15 flex items-center justify-center flex-shrink-0 border border-white/10">
-                  <Icon className="h-3.5 w-3.5 text-white" />
+              <li key={text} className="flex items-start gap-3">
+                <div className="w-7 h-7 rounded-lg bg-white/12 flex items-center justify-center flex-shrink-0 border border-white/10 mt-0.5">
+                  <Icon className="h-3.5 w-3.5 text-white/80" />
                 </div>
-                <span className="text-white/80 text-sm">{text}</span>
+                <span className="text-white/75 text-sm leading-relaxed">{text}</span>
               </li>
             ))}
           </ul>
 
-          <div className="bg-white/10 rounded-xl p-4 border border-white/10 backdrop-blur-sm">
-            <p className="text-white/90 text-sm italic leading-relaxed">
-              "Conseguí mi primer trabajo en UX a los 3 meses de usar MoonJab.
-              El simulador de entrevistas fue clave."
+          {/* Testimonial */}
+          <div className="bg-white/[0.07] rounded-xl p-4 border border-white/10">
+            <p className="text-white/80 text-sm italic leading-relaxed">
+              "Conseguí mi primer trabajo en UX a los 3 meses de usar MoonJab. El simulador de entrevistas fue clave."
             </p>
-            <p className="text-white/50 text-xs mt-2">— Valentina R., UX Designer · Buenos Aires</p>
+            <p className="text-white/45 text-[11px] mt-2">— Valentina R., UX Designer · Buenos Aires</p>
           </div>
         </motion.div>
 
-        <p className="relative z-10 text-white/40 text-xs">
-          © 2025 MoonJab · Hecho para LATAM
-        </p>
+        <p className="relative z-10 text-white/35 text-[11px]">© 2025 MoonJab · Para LATAM</p>
       </div>
 
-      {/* Right form panel */}
+      {/* ── Form panel ── */}
       <div className="flex-1 flex items-center justify-center p-6 lg:p-12 overflow-y-auto">
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.35 }}
+          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className="w-full max-w-sm py-6"
         >
           {/* Mobile logo */}
@@ -170,7 +165,7 @@ const Register = () => {
 
           <div className="mb-6">
             <h1 className="text-2xl font-bold tracking-tight">Crea tu cuenta</h1>
-            <p className="text-sm text-muted-foreground mt-1">Gratis para siempre en el plan básico</p>
+            <p className="text-sm text-muted-foreground mt-1.5">Gratis para siempre en el plan básico</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-3.5">
@@ -214,6 +209,7 @@ const Register = () => {
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
+                  aria-label={showPassword ? 'Ocultar contraseña' : 'Mostrar contraseña'}
                 >
                   {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                 </button>
@@ -251,6 +247,7 @@ const Register = () => {
                   type="button"
                   onClick={() => setShowConfirm(!showConfirm)}
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
+                  aria-label={showConfirm ? 'Ocultar contraseña' : 'Mostrar contraseña'}
                 >
                   {showConfirm ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                 </button>
@@ -280,10 +277,7 @@ const Register = () => {
                   Creando cuenta...
                 </>
               ) : (
-                <>
-                  Crear cuenta gratis
-                  <ArrowRight className="h-4 w-4" />
-                </>
+                <>Crear cuenta gratis <ArrowRight className="h-4 w-4" /></>
               )}
             </Button>
 
@@ -299,11 +293,8 @@ const Register = () => {
               className="w-full h-10 text-sm gap-2 border-border/60 hover:bg-muted/50"
               disabled={loading}
               onClick={async () => {
-                try {
-                  await useAuthStore.getState().signInWithGoogle();
-                } catch {
-                  toast.error('Error al conectar con Google');
-                }
+                try { await useAuthStore.getState().signInWithGoogle(); }
+                catch { toast.error('Error al conectar con Google'); }
               }}
             >
               <svg className="h-4 w-4 flex-shrink-0" viewBox="0 0 24 24">
@@ -318,9 +309,7 @@ const Register = () => {
 
           <p className="text-center text-xs text-muted-foreground mt-5">
             ¿Ya tienes cuenta?{' '}
-            <Link to="/login" className="text-primary hover:underline font-medium">
-              Inicia sesión
-            </Link>
+            <Link to="/login" className="text-primary hover:underline font-medium">Inicia sesión</Link>
           </p>
         </motion.div>
       </div>
