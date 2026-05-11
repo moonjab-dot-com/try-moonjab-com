@@ -91,10 +91,8 @@ const CVBuilderLanding = () => {
       </nav>
 
       {/* Hero */}
-      <section className="pt-20 pb-16 sm:pt-28 sm:pb-24 relative overflow-hidden">
-        <div className="absolute inset-0 hero-dot-grid pointer-events-none" />
-        <div className="absolute inset-0 hero-glow pointer-events-none" />
-        <div className="mx-auto max-w-3xl px-6 text-center relative">
+      <section className="pt-20 pb-16 sm:pt-28 sm:pb-24">
+        <div className="mx-auto max-w-3xl px-6 text-center">
           <motion.div initial="hidden" animate="visible" variants={fadeUp}>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/20 bg-primary/[0.06] text-xs font-medium text-primary mb-6">
               <FileText className="h-3 w-3" />
@@ -166,9 +164,9 @@ const CVBuilderLanding = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.07 }}
-                className="p-6 rounded-xl border border-border/40 bg-card card-premium group"
+                className="p-6 rounded-xl border border-border/40 bg-card"
               >
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/18 group-hover:scale-105 transition-all duration-300">
+                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-4">
                   <f.icon className="h-5 w-5 text-primary" />
                 </div>
                 <h3 className="font-semibold mb-2">{f.title}</h3>

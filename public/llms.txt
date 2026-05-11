@@ -199,16 +199,6 @@ El simulador genera preguntas de entrevista personalizadas según tu industria y
 **¿Para qué países está disponible MoonJab?**
 MoonJab está disponible para toda Latinoamérica, con foco en Perú, México, Colombia, Argentina, Chile, Ecuador, Bolivia, Paraguay, Uruguay y Venezuela.
 
-## CV Builder por País
-
-MoonJab ofrece páginas de CV builder optimizadas para cada mercado laboral de LATAM:
-
-- [CV Builder para Perú](https://moonjab.com/cv-builder/peru) — Currículum para el mercado laboral peruano. Empresas: BCP, Interbank, Alicorp, Belcorp, Minsur, Credicorp, BBVA Perú.
-- [CV Builder para México](https://moonjab.com/cv-builder/mexico) — Currículum para el mercado mexicano. Empresas: FEMSA, Cemex, Bimbo, Banorte, Liverpool, Grupo Salinas, Televisa.
-- [CV Builder para Colombia](https://moonjab.com/cv-builder/colombia) — Currículum para Colombia. Empresas: Bancolombia, Ecopetrol, Grupo Éxito, Avianca, Falabella Colombia.
-- [CV Builder para Argentina](https://moonjab.com/cv-builder/argentina) — Currículum para Argentina. Empresas: MercadoLibre, Globant, Banco Galicia, YPF, Arcos Dorados.
-- [CV Builder para Chile](https://moonjab.com/cv-builder/chile) — Currículum para Chile. Empresas: Falabella, Banco de Chile, BCI, LATAM Airlines, Cencosud.
-
 ## Tecnología
 
 MoonJab está construido con React, TypeScript, Vite y Tailwind CSS en el frontend, con Supabase como backend. Utiliza modelos avanzados de inteligencia artificial (LLMs) para el análisis de CV, simulación de entrevistas y coaching de carrera.
