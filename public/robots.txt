@@ -66,3 +66,7 @@ Allow: /
 
 # Sitemaps
 Sitemap: https://moonjab.com/sitemap.xml
+Sitemap: https://moonjab.com/sitemap-blog.xml
+
+# LLM discovery
+# llms.txt: https://moonjab.com/llms.txt
