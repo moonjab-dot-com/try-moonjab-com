@@ -88,8 +88,10 @@ const InterviewPrepLanding = () => {
       </nav>
 
       {/* Hero */}
-      <section className="pt-20 pb-16 sm:pt-28 sm:pb-24">
-        <div className="mx-auto max-w-3xl px-6 text-center">
+      <section className="pt-20 pb-16 sm:pt-28 sm:pb-24 relative overflow-hidden">
+        <div className="absolute inset-0 hero-dot-grid pointer-events-none" />
+        <div className="absolute inset-0 hero-glow pointer-events-none" />
+        <div className="mx-auto max-w-3xl px-6 text-center relative">
           <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-primary/20 bg-primary/[0.06] text-xs font-medium text-primary mb-6">
               <Mic className="h-3 w-3" />
