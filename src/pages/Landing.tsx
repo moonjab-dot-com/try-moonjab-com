@@ -159,7 +159,7 @@ const LandingContent = () => {
           <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0}>
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-primary/20 bg-primary/[0.06] text-xs font-medium text-primary mb-8">
               <Sparkles className="h-3 w-3" />
-              {t('landing.badge')} · 10,000+ estudiantes
+              {t('landing.badge')}
             </div>
           </motion.div>
 
@@ -243,40 +243,6 @@ const LandingContent = () => {
               </motion.div>
             )}
           </div>
-        </div>
-      </section>
-
-      {/* ── Company Logos Trust Strip ── */}
-      <section className="py-14 border-b border-border/30">
-        <div className="mx-auto max-w-5xl px-6">
-          <motion.p
-            initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }}
-            className="text-[11px] text-center text-muted-foreground/60 uppercase tracking-[0.2em] font-medium mb-8"
-          >
-            Estudiantes de MoonJab trabajan en
-          </motion.p>
-          <motion.div
-            initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6"
-          >
-            {[
-              { src: '/integrations/mckinsey-logo.png', alt: 'McKinsey' },
-              { src: '/integrations/deloitte-logo.png', alt: 'Deloitte' },
-              { src: '/integrations/microsoft-logo.png', alt: 'Microsoft' },
-              { src: '/integrations/amazon-logo.png', alt: 'Amazon' },
-              { src: '/integrations/kpmg-logo.png', alt: 'KPMG' },
-              { src: '/integrations/pwc-logo.png', alt: 'PwC' },
-              { src: '/integrations/ey-logo.png', alt: 'EY' },
-            ].map((logo) => (
-              <img
-                key={logo.alt}
-                src={logo.src}
-                alt={logo.alt}
-                className="h-5 sm:h-6 object-contain opacity-40 grayscale hover:opacity-70 hover:grayscale-0 transition-all duration-300"
-              />
-            ))}
-          </motion.div>
         </div>
       </section>
 
@@ -614,30 +580,6 @@ const LandingContent = () => {
         </div>
       </section>
 
-      {/* ── Founder Trust Signal ── */}
-      <section className="py-16 sm:py-20 border-t border-border/30">
-        <div className="mx-auto max-w-3xl px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }} transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            className="rounded-2xl border border-border/40 bg-card p-8 sm:p-10 text-center"
-          >
-            <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-5">
-              <span className="text-lg font-bold text-primary">S</span>
-            </div>
-            <blockquote className="text-lg sm:text-xl font-medium leading-relaxed mb-5 max-w-xl mx-auto">
-              "Vi cómo compañeros brillantes perdían oportunidades por no tener un CV que los
-              representara o por bloquearse en entrevistas. MoonJab es la herramienta que yo
-              hubiera querido tener."
-            </blockquote>
-            <div>
-              <p className="font-semibold text-sm">Salvador</p>
-              <p className="text-xs text-muted-foreground">CEO & Co-Founder de MoonJab · Lima, Perú</p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* ── Final CTA ── */}
       <section className="py-24 sm:py-32 bg-muted/30 border-t border-border/30">
         <div className="mx-auto max-w-2xl px-6 text-center">
@@ -676,7 +618,7 @@ const LandingContent = () => {
             </div>
             <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-muted-foreground">
               <Link to="/pricing" className="hover:text-foreground transition-colors">{t('landing.footer.pricing')}</Link>
-              <Link to="/about" className="hover:text-foreground transition-colors font-medium text-foreground/70">{t('landing.footer.about')}</Link>
+              <Link to="/about" className="hover:text-foreground transition-colors">{t('landing.footer.about')}</Link>
               <Link to="/blog" className="hover:text-foreground transition-colors">{t('landing.footer.blog')}</Link>
               <Link to="/testimonios" className="hover:text-foreground transition-colors">Testimonios</Link>
               <Link to="/prensa" className="hover:text-foreground transition-colors">Prensa</Link>

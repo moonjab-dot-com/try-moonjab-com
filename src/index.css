@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    /* Main colors - MoonJab emerald theme */
+    /* Main colors - Clovely emerald theme */
     --background: 208 100% 97%;
     --foreground: 220 14% 26%;
 
@@ -14,7 +14,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 220 14% 26%;
 
-    /* MoonJab Brand - Emerald */
+    /* Clovely Brand - Emerald */
     --primary: 160 84% 39%;
     --primary-light: 142 71% 45%;
     --primary-dark: 160 84% 30%;
@@ -54,7 +54,7 @@
     --chart-4: 160 84% 24%;
     --chart-5: 160 84% 20%;
 
-    /* MoonJab Gradients */
+    /* Clovely Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(160 84% 39%), hsl(142 71% 45%));
     --gradient-hero: linear-gradient(180deg, hsl(149 80% 96%), hsl(208 100% 97%), hsl(0 0% 100%));
     --gradient-premium: linear-gradient(135deg, hsl(160 84% 30%), hsl(142 71% 45%));
