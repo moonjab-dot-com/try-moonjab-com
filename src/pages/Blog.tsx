@@ -7,8 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Link, useNavigate } from 'react-router-dom';
 import { Calendar, Clock, ArrowRight, User } from 'lucide-react';
-import { useState, useEffect } from 'react';
-import { supabase } from '@/integrations/supabase/client';
+import { useState } from 'react';
 
 // Blog post data - in a real app this would come from a CMS or API
 export const blogPosts = [
@@ -1924,48 +1923,16 @@ Muchos en LATAM optan por el mejor de ambos mundos: empleo de tiempo completo + 
   }
 ];
 
-type BlogPost = typeof blogPosts[number];
-
 const Blog = () => {
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [posts, setPosts] = useState<BlogPost[]>(blogPosts);
 
-  useEffect(() => {
-    supabase
-      .from('blog_posts')
-      .select('id, title, excerpt, content, date, iso_date, read_time, category, author, author_role, image, featured')
-      .eq('published', true)
-      .order('iso_date', { ascending: false })
-      .then(({ data }) => {
-        if (data && data.length > 0) {
-          setPosts(
-            data.map((r) => ({
-              id: r.id,
-              title: r.title,
-              excerpt: r.excerpt,
-              content: r.content,
-              date: r.date,
-              isoDate: r.iso_date,
-              readTime: r.read_time,
-              category: r.category,
-              author: r.author,
-              authorRole: r.author_role,
-              image: r.image ?? '',
-              featured: r.featured,
-            }))
-          );
-        }
-        // On error or empty table, posts stay as hardcoded fallback
-      });
-  }, []);
+  const categories = [...new Set(blogPosts.map(post => post.category))];
+  const filteredPosts = selectedCategory 
+    ? blogPosts.filter(p => p.category === selectedCategory)
+    : blogPosts;
 
-  const categories = [...new Set(posts.map(post => post.category))];
-  const filteredPosts = selectedCategory
-    ? posts.filter(p => p.category === selectedCategory)
-    : posts;
-
-  const featuredPost = posts.find(p => p.featured);
+  const featuredPost = blogPosts.find(p => p.featured);
   const regularPosts = filteredPosts.filter(p => !p.featured || selectedCategory);
 
   return (
