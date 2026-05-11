@@ -4,13 +4,14 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { Progress } from "@/components/ui/progress";
-import { Loader2, ChevronRight, CheckCircle2 } from "lucide-react";
+import { Loader2, ChevronRight, CheckCircle2, Camera, AlertTriangle } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useInterviewStore } from "@/store/useInterviewStore";
 import { useToast } from "@/hooks/use-toast";
 import { VideoRecorder } from "@/components/interview/VideoRecorder";
 import { supabase } from "@/integrations/supabase/client";
 import { useTranslation } from 'react-i18next';
+import { useMediaPermissions } from "@/hooks/useMediaPermissions";
 
 type ResponseMode = 'text' | 'video';
 
@@ -24,6 +25,7 @@ export default function InterviewSession() {
   const [currentQuestion, setCurrentQuestion] = useState(getNextQuestion());
   const [isTranscribing, setIsTranscribing] = useState(false);
   const [responseMode, setResponseMode] = useState<ResponseMode>('text');
+  const { permissionState, requestPermissions, errorMessage: permissionError } = useMediaPermissions();
 
   useEffect(() => {
     const savedMode = localStorage.getItem('moonjab_interview_response_mode') as ResponseMode;
@@ -153,10 +155,46 @@ export default function InterviewSession() {
         <div className="space-y-3">
           {responseMode === 'video' ? (
             <div className="space-y-4">
-              <VideoRecorder 
-                onRecordingComplete={handleVideoComplete}
-                disabled={isLoading}
-              />
+              {permissionState === 'idle' && (
+                <div className="flex flex-col items-center gap-4 py-8 rounded-xl border-2 border-dashed border-border bg-muted/30">
+                  <div className="p-3 rounded-full bg-primary/10">
+                    <Camera className="w-6 h-6 text-primary" />
+                  </div>
+                  <div className="text-center">
+                    <p className="font-medium mb-1">Habilitar cámara y micrófono</p>
+                    <p className="text-sm text-muted-foreground">Necesitamos acceso para grabar tu respuesta</p>
+                  </div>
+                  <Button onClick={requestPermissions} variant="outline" className="min-h-[44px]">
+                    Permitir acceso
+                  </Button>
+                </div>
+              )}
+              {permissionState === 'requesting' && (
+                <div className="flex items-center justify-center gap-2 py-8 text-muted-foreground">
+                  <Loader2 className="w-4 h-4 animate-spin" />
+                  <span>Solicitando permisos...</span>
+                </div>
+              )}
+              {(permissionState === 'denied' || permissionState === 'unavailable') && permissionError && (
+                <div className="flex items-start gap-3 p-4 rounded-xl bg-destructive/10 border border-destructive/20 text-destructive">
+                  <AlertTriangle className="w-5 h-5 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <p className="font-medium text-sm">Sin acceso a cámara</p>
+                    <p className="text-xs mt-1 text-destructive/80">{permissionError}</p>
+                    {permissionState === 'denied' && (
+                      <Button variant="outline" size="sm" className="mt-3 text-xs" onClick={requestPermissions}>
+                        Intentar de nuevo
+                      </Button>
+                    )}
+                  </div>
+                </div>
+              )}
+              {permissionState === 'granted' && (
+                <VideoRecorder
+                  onRecordingComplete={handleVideoComplete}
+                  disabled={isLoading}
+                />
+              )}
               
               <div className="space-y-2">
                 <p className="text-sm font-medium">

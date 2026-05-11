@@ -469,6 +469,8 @@ export interface InterviewResponse {
   timestamp: string;
   scores: ResponseScore;
   feedbackText: string;
+  aiStrengths?: string[];
+  aiImprovements?: string[];
 }
 
 export interface InterviewRecommendation {
