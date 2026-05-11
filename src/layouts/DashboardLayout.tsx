@@ -149,11 +149,18 @@ export default function DashboardLayout() {
 
   return (
     <TooltipProvider delayDuration={200}>
+      {/* Skip navigation — WCAG 2.1 AA 2.4.1 */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[9999] focus:bg-primary focus:text-primary-foreground focus:px-4 focus:py-2 focus:rounded-lg focus:font-medium focus:shadow-lg"
+      >
+        Saltar al contenido principal
+      </a>
       <div className="min-h-screen flex w-full overflow-x-hidden bg-background">
-        {isMobile && <Button variant="ghost" size="icon" className="fixed top-3 left-3 z-50 h-9 w-9 md:hidden bg-card border border-border/40 shadow-clovely-sm" onClick={() => setDrawerOpen(true)}><Menu className="h-4 w-4" /></Button>}
+        {isMobile && <Button variant="ghost" size="icon" aria-label="Abrir menú de navegación" className="fixed top-3 left-3 z-50 h-9 w-9 md:hidden bg-card border border-border/40 shadow-clovely-sm" onClick={() => setDrawerOpen(true)}><Menu className="h-4 w-4" /></Button>}
         <Sheet open={drawerOpen} onOpenChange={setDrawerOpen}><SheetContent side="left" className="w-[240px] p-0" showCloseButton={true}><FullSidebar /></SheetContent></Sheet>
         {!isMobile && <MiniSidebar />}
-        <main className={cn('flex-1 w-full', isMobile ? 'ml-0' : 'ml-[52px]')}>
+        <main id="main-content" className={cn('flex-1 w-full', isMobile ? 'ml-0' : 'ml-[52px]')}>
           <GuestBanner />
           <Outlet />
         </main>

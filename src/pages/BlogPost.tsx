@@ -7,15 +7,48 @@ import { Badge } from '@/components/ui/badge';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { Calendar, Clock, ArrowLeft, ArrowRight, Share2, Twitter, Linkedin, User } from 'lucide-react';
 import { blogPosts } from './Blog';
+import { useState, useEffect } from 'react';
+import { supabase } from '@/integrations/supabase/client';
+
+type PostShape = typeof blogPosts[number];
 
 const BlogPost = () => {
   const { id } = useParams();
   const navigate = useNavigate();
-  
-  const post = blogPosts.find(p => p.id === id);
-  const currentIndex = blogPosts.findIndex(p => p.id === id);
-  const nextPost = blogPosts[currentIndex + 1];
-  const prevPost = blogPosts[currentIndex - 1];
+  const [allPosts, setAllPosts] = useState<PostShape[]>(blogPosts);
+
+  useEffect(() => {
+    supabase
+      .from('blog_posts')
+      .select('id, title, excerpt, content, date, iso_date, read_time, category, author, author_role, image, featured')
+      .eq('published', true)
+      .order('iso_date', { ascending: false })
+      .then(({ data }) => {
+        if (data && data.length > 0) {
+          setAllPosts(
+            data.map((r) => ({
+              id: r.id,
+              title: r.title,
+              excerpt: r.excerpt,
+              content: r.content,
+              date: r.date,
+              isoDate: r.iso_date,
+              readTime: r.read_time,
+              category: r.category,
+              author: r.author,
+              authorRole: r.author_role,
+              image: r.image ?? '',
+              featured: r.featured,
+            }))
+          );
+        }
+      });
+  }, []);
+
+  const post = allPosts.find(p => p.id === id);
+  const currentIndex = allPosts.findIndex(p => p.id === id);
+  const nextPost = allPosts[currentIndex + 1];
+  const prevPost = allPosts[currentIndex - 1];
 
   if (!post) {
     return (

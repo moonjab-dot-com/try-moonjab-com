@@ -103,6 +103,13 @@ const LandingContent = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      {/* Skip navigation — WCAG 2.1 AA 2.4.1 */}
+      <a
+        href="#landing-main"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[9999] focus:bg-primary focus:text-primary-foreground focus:px-4 focus:py-2 focus:rounded-lg focus:font-medium focus:shadow-lg"
+      >
+        Saltar al contenido principal
+      </a>
       <SEOHead
         title="MoonJab — CV Builder con IA y Simulador de Entrevistas LATAM"
         description="Crea tu CV optimizado para ATS con IA y practica entrevistas laborales reales. Plataforma de carrera #1 para estudiantes en Perú, México y Colombia."
@@ -112,7 +119,7 @@ const LandingContent = () => {
       />
       {/* ── Navbar ── */}
       <MobileNavMenu />
-      <nav className="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border/30">
+      <nav aria-label="Navegación principal" className="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border/30">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 h-14 flex items-center justify-between">
           <OfficialLogo size="md" to="/" />
           <div className="hidden md:flex items-center gap-8">
@@ -129,7 +136,7 @@ const LandingContent = () => {
             <Link to="/registro" className="hidden sm:inline-flex">
               <Button size="sm" className="text-[13px] h-8 px-4">{t('nav.start')}</Button>
             </Link>
-            <Button variant="ghost" size="icon" className="md:hidden h-9 w-9" onClick={() => document.dispatchEvent(new CustomEvent('toggle-mobile-nav'))}>
+            <Button variant="ghost" size="icon" aria-label="Abrir menú" className="md:hidden h-9 w-9" onClick={() => document.dispatchEvent(new CustomEvent('toggle-mobile-nav'))}>
               <Menu className="h-5 w-5" />
             </Button>
           </div>
@@ -138,6 +145,7 @@ const LandingContent = () => {
 
       {/* ── Hero ── */}
       <motion.section
+        id="landing-main"
         ref={heroRef}
         style={{ opacity: heroOpacity, scale: heroScale }}
         className="relative pt-28 pb-20 sm:pt-36 sm:pb-28 overflow-hidden">

@@ -241,6 +241,8 @@ export const useInterviewStore = create<InterviewState>()(
             timestamp: new Date().toISOString(),
             scores: analysis.scores,
             feedbackText: analysis.feedbackText,
+            aiStrengths: (analysis as any).strengths ?? [],
+            aiImprovements: analysis.suggestions ?? [],
           };
 
           set((state) => ({
@@ -290,6 +292,7 @@ export const useInterviewStore = create<InterviewState>()(
             },
             feedbackText: analysis.feedback,
             suggestions: analysis.improvements || [],
+            strengths: analysis.strengths || [],
           };
         } catch (error) {
           console.error('Error analyzing response:', error);
@@ -353,36 +356,51 @@ export const useInterviewStore = create<InterviewState>()(
         if (!currentSession) return [];
 
         const recommendations: InterviewRecommendation[] = [];
-        const avgScores = currentSession.responses.reduce(
-          (acc, resp) => ({
-            clarity: acc.clarity + resp.scores.clarity,
-            structure: acc.structure + resp.scores.structure,
-            evidence: acc.evidence + resp.scores.evidence,
-          }),
-          { clarity: 0, structure: 0, evidence: 0 }
-        );
 
-        const responseCount = currentSession.responses.length || 1;
+        // Aggregate AI-personalized improvements from each response
+        const aiImprovements: string[] = currentSession.responses
+          .flatMap((r) => r.aiImprovements ?? [])
+          .filter(Boolean);
 
-        if (avgScores.structure / responseCount < 20) {
-          recommendations.push({
-            type: 'practice',
-            text: 'Practica usar el método STAR en tus respuestas (Situación, Tarea, Acción, Resultado)',
-          });
+        // Deduplicate and take top 3 AI-generated improvements
+        const seen = new Set<string>();
+        for (const text of aiImprovements) {
+          if (!seen.has(text) && recommendations.length < 3) {
+            seen.add(text);
+            recommendations.push({ type: 'practice', text });
+          }
         }
 
-        if (avgScores.evidence / responseCount < 15) {
-          recommendations.push({
-            type: 'cv',
-            text: 'Añade métricas cuantificables a tu CV y úsalas en tus respuestas',
-          });
-        }
+        // Fallback to score-based tips when AI improvements aren't available
+        if (recommendations.length === 0) {
+          const avgScores = currentSession.responses.reduce(
+            (acc, resp) => ({
+              clarity: acc.clarity + resp.scores.clarity,
+              structure: acc.structure + resp.scores.structure,
+              evidence: acc.evidence + resp.scores.evidence,
+            }),
+            { clarity: 0, structure: 0, evidence: 0 }
+          );
+          const responseCount = currentSession.responses.length || 1;
 
-        if (avgScores.clarity / responseCount < 15) {
-          recommendations.push({
-            type: 'microaction',
-            text: 'Practica respuestas concisas de 1-2 minutos grabándote y revisando',
-          });
+          if (avgScores.structure / responseCount < 20) {
+            recommendations.push({
+              type: 'practice',
+              text: 'Practica usar el método STAR en tus respuestas (Situación, Tarea, Acción, Resultado)',
+            });
+          }
+          if (avgScores.evidence / responseCount < 15) {
+            recommendations.push({
+              type: 'cv',
+              text: 'Añade métricas cuantificables a tu CV y úsalas en tus respuestas',
+            });
+          }
+          if (avgScores.clarity / responseCount < 15) {
+            recommendations.push({
+              type: 'microaction',
+              text: 'Practica respuestas concisas de 1-2 minutos grabándote y revisando',
+            });
+          }
         }
 
         recommendations.push({
