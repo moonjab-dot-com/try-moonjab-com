@@ -622,16 +622,16 @@ const LandingContent = () => {
           <div className="flex items-center justify-between mt-8 pt-6 border-t border-border/20">
             <p className="text-[11px] text-muted-foreground">{t('landing.footer.rights')}</p>
             <div className="flex items-center gap-3">
-              <a href="https://www.instagram.com/trymoonjab" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="Instagram">
+              <a href="https://www.instagram.com/trymoonjab" target="_blank" rel="nofollow noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="Instagram">
                 <Instagram className="h-4 w-4" />
               </a>
-              <a href="https://www.youtube.com/@TryMoonJab" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="YouTube">
+              <a href="https://www.youtube.com/@TryMoonJab" target="_blank" rel="nofollow noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="YouTube">
                 <Youtube className="h-4 w-4" />
               </a>
-              <a href="https://www.linkedin.com/company/moonjab" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="LinkedIn">
+              <a href="https://www.linkedin.com/company/moonjab" target="_blank" rel="nofollow noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="LinkedIn">
                 <Linkedin className="h-4 w-4" />
               </a>
-              <a href="https://x.com/MoonJabdotcom" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="X">
+              <a href="https://x.com/MoonJabdotcom" target="_blank" rel="nofollow noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="X">
                 <Twitter className="h-4 w-4" />
               </a>
             </div>
