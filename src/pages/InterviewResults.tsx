@@ -2,7 +2,7 @@ import { SEOHead } from '@/components/SEOHead';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { CheckCircle2, TrendingUp, Target, Lightbulb, ThumbsUp } from "lucide-react";
+import { CheckCircle2, TrendingUp, Target, Lightbulb } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useInterviewStore } from "@/store/useInterviewStore";
 import { useEffect } from "react";
@@ -134,31 +134,6 @@ export default function InterviewResults() {
           </div>
         </Card>
       )}
-
-      {/* AI Strengths — aggregated from all responses */}
-      {(() => {
-        const allStrengths = responses.flatMap((r) => r.aiStrengths ?? []).filter(Boolean);
-        const unique = [...new Set(allStrengths)].slice(0, 3);
-        if (unique.length === 0) return null;
-        return (
-          <Card className="p-6 space-y-4 rounded-xl border-2 shadow-clovely-md">
-            <h3 className="font-semibold flex items-center gap-2">
-              <div className="p-2 rounded-lg bg-gradient-to-br from-emerald-500/10 to-green-500/10">
-                <ThumbsUp className="w-4 h-4 text-emerald-600" />
-              </div>
-              {t('interviews.results.strengths') || 'Tus fortalezas'}
-            </h3>
-            <div className="space-y-2">
-              {unique.map((s, i) => (
-                <div key={i} className="flex gap-3 p-3 rounded-xl bg-gradient-to-br from-emerald-50/50 to-green-50/30 border border-emerald-200/50">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0 mt-0.5" />
-                  <p className="text-sm">{s}</p>
-                </div>
-              ))}
-            </div>
-          </Card>
-        );
-      })()}
 
       {/* Actions */}
       <div className="flex flex-col sm:flex-row gap-3">
