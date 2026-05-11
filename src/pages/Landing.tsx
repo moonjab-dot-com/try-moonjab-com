@@ -4,16 +4,14 @@ import { Button } from '@/components/ui/button';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { Link } from 'react-router-dom';
 import {
-  ArrowRight, Star, Instagram, CheckCircle, Compass, BarChart3,
-  FileText, MessageSquare, Target, TrendingUp, Shield,
-  Users, ChevronRight, Zap, Layers, Award,
-  GraduationCap, Sparkles, LineChart, Rocket,
-  Eye, BookOpen, Check, Mic, Menu,
+  ArrowRight, Star, Instagram, CheckCircle, Compass,
+  FileText, MessageSquare, Target, TrendingUp,
+  Users, ChevronRight, Sparkles, Rocket,
+  Eye, Check, Mic, Menu,
   Youtube, Linkedin, Twitter, Brain, Cpu,
 } from 'lucide-react';
 import { OfficialLogo } from '@/components/OfficialLogo';
 import { useRef, useState } from 'react';
-import { useAuthStore } from '@/store/useAuthStore';
 import { Sheet, SheetContent } from '@/components/ui/sheet';
 import { useTranslation } from 'react-i18next';
 import { LanguageToggle } from '@/components/LanguageToggle';
