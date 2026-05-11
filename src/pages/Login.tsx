@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
-import { Eye, EyeOff, ArrowRight, TrendingUp, Star, Users } from 'lucide-react';
+import { Eye, EyeOff, ArrowRight, TrendingUp, Star, Users, CheckCircle } from 'lucide-react';
 import { useAuthStore } from '@/store/useAuthStore';
 import { toast } from 'sonner';
 import { OfficialLogo } from '@/components/OfficialLogo';
@@ -45,6 +45,12 @@ const Login = () => {
     } finally { setLoading(false); }
   };
 
+  const highlights = [
+    { icon: CheckCircle, text: 'CV optimizado para ATS con IA' },
+    { icon: CheckCircle, text: 'Entrevistas simuladas con feedback real' },
+    { icon: CheckCircle, text: 'Diagnóstico vocacional RIASEC' },
+  ];
+
   return (
     <div className="min-h-screen flex bg-background">
       <SEOHead
@@ -53,63 +59,67 @@ const Login = () => {
         path="/login"
       />
 
-      {/* Left brand panel — hidden on mobile */}
-      <div className="hidden lg:flex lg:w-[45%] relative flex-col justify-between p-12 overflow-hidden gradient-primary">
-        <div className="absolute inset-0 opacity-10" style={{
-          backgroundImage: 'radial-gradient(circle at 20% 80%, white 1px, transparent 1px), radial-gradient(circle at 80% 20%, white 1px, transparent 1px)',
-          backgroundSize: '60px 60px'
-        }} />
+      {/* ── Brand panel ── */}
+      <div className="hidden lg:flex lg:w-[44%] relative flex-col justify-between p-12 overflow-hidden cta-gradient">
+        <div className="absolute inset-0 bg-dot-grid opacity-[0.08] pointer-events-none" />
+        <div className="absolute -bottom-24 -right-24 w-64 h-64 rounded-full bg-white/[0.04] blur-3xl pointer-events-none" />
 
         <OfficialLogo size="lg" className="relative z-10 brightness-0 invert" />
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="relative z-10 space-y-6"
+          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+          className="relative z-10 space-y-7"
         >
           <div>
-            <h2 className="text-3xl font-bold text-white leading-tight">
+            <h2 className="text-balance text-3xl font-bold text-white leading-[1.15] tracking-tight">
               Tu carrera profesional<br />
-              <span className="opacity-80">empieza aquí.</span>
+              <span className="text-white/75">comienza aquí.</span>
             </h2>
-            <p className="mt-3 text-white/70 text-sm leading-relaxed">
-              CVs que pasan el ATS. Entrevistas que practicas con IA.<br />
-              La plataforma que los estudiantes de LATAM necesitaban.
+            <p className="mt-3 text-white/65 text-sm leading-relaxed">
+              La plataforma de carrera diseñada para estudiantes y profesionales de LATAM.
             </p>
           </div>
 
-          <div className="grid grid-cols-3 gap-4">
+          <ul className="space-y-3">
+            {highlights.map(({ icon: Icon, text }) => (
+              <li key={text} className="flex items-center gap-3">
+                <Icon className="h-4 w-4 text-white/60 flex-shrink-0" />
+                <span className="text-white/75 text-sm">{text}</span>
+              </li>
+            ))}
+          </ul>
+
+          <div className="grid grid-cols-3 gap-3">
             {[
-              { icon: Users, value: '10K+', label: 'Profesionales' },
-              { icon: TrendingUp, value: '87%', label: 'Consiguen trabajo' },
-              { icon: Star, value: '4.9', label: 'Satisfacción' },
+              { icon: Users, value: '10K+', label: 'Usuarios' },
+              { icon: TrendingUp, value: '87%', label: 'Empleados' },
+              { icon: Star, value: '4.9', label: 'Rating' },
             ].map(({ icon: Icon, value, label }) => (
-              <div key={label} className="bg-white/10 rounded-xl p-3 backdrop-blur-sm border border-white/10">
-                <Icon className="h-4 w-4 text-white/80 mb-1.5" />
+              <div key={label} className="bg-white/[0.08] rounded-xl p-3 border border-white/10">
+                <Icon className="h-3.5 w-3.5 text-white/60 mb-1.5" />
                 <p className="text-white font-bold text-lg leading-none">{value}</p>
-                <p className="text-white/60 text-[11px] mt-0.5 leading-tight">{label}</p>
+                <p className="text-white/50 text-[10px] mt-0.5">{label}</p>
               </div>
             ))}
           </div>
         </motion.div>
 
-        <p className="relative z-10 text-white/40 text-xs">
-          © 2025 MoonJab · Hecho para LATAM
-        </p>
+        <p className="relative z-10 text-white/35 text-[11px]">© 2025 MoonJab · Para LATAM</p>
       </div>
 
-      {/* Right form panel */}
+      {/* ── Form panel ── */}
       <div className="flex-1 flex items-center justify-center p-6 lg:p-12">
         <motion.div
-          initial={{ opacity: 0, y: 10 }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.35 }}
+          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className="w-full max-w-sm"
         >
           {/* Mobile logo */}
           <div className="flex items-center justify-between mb-8 lg:hidden">
-            <Link to="/" className="text-xs text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1">
+            <Link to="/" className="text-xs text-muted-foreground hover:text-foreground transition-colors">
               ← Volver
             </Link>
             <OfficialLogo size="md" />
@@ -117,7 +127,7 @@ const Login = () => {
 
           <div className="mb-7">
             <h1 className="text-2xl font-bold tracking-tight">Iniciar sesión</h1>
-            <p className="text-sm text-muted-foreground mt-1">Continúa tu camino profesional</p>
+            <p className="text-sm text-muted-foreground mt-1.5">Continúa tu camino profesional</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-4">
@@ -150,6 +160,7 @@ const Login = () => {
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
                   className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
+                  aria-label={showPassword ? 'Ocultar contraseña' : 'Mostrar contraseña'}
                 >
                   {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                 </button>
@@ -177,10 +188,7 @@ const Login = () => {
                   Iniciando sesión...
                 </>
               ) : (
-                <>
-                  Iniciar sesión
-                  <ArrowRight className="h-4 w-4" />
-                </>
+                <>Iniciar sesión <ArrowRight className="h-4 w-4" /></>
               )}
             </Button>
 
@@ -196,11 +204,8 @@ const Login = () => {
               className="w-full h-10 text-sm gap-2 border-border/60 hover:bg-muted/50"
               disabled={loading}
               onClick={async () => {
-                try {
-                  await useAuthStore.getState().signInWithGoogle();
-                } catch {
-                  toast.error('Error al conectar con Google');
-                }
+                try { await useAuthStore.getState().signInWithGoogle(); }
+                catch { toast.error('Error al conectar con Google'); }
               }}
             >
               <svg className="h-4 w-4 flex-shrink-0" viewBox="0 0 24 24">
@@ -215,9 +220,7 @@ const Login = () => {
 
           <p className="text-center text-xs text-muted-foreground mt-5">
             ¿No tienes cuenta?{' '}
-            <Link to="/registro" className="text-primary hover:underline font-medium">
-              Regístrate gratis
-            </Link>
+            <Link to="/registro" className="text-primary hover:underline font-medium">Regístrate gratis</Link>
           </p>
         </motion.div>
       </div>
