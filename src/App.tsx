@@ -127,6 +127,14 @@ const App = () => (
                   {dashboardChildren}
                 </Route>
 
+                <Route path="/test/dashboard" element={<ProtectedRoute><DashboardLayout /></ProtectedRoute>}>
+                  {dashboardChildren}
+                </Route>
+
+                <Route path="/usuariostest/dashboard" element={<ProtectedRoute><DashboardLayout /></ProtectedRoute>}>
+                  {dashboardChildren}
+                </Route>
+
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </Suspense>
