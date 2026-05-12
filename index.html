@@ -652,14 +652,23 @@
     <!-- ── MAIN APP SCRIPT ────────────────────────── -->
     <script type="module" src="/src/main.tsx"></script>
 
-    <!-- ── CONVAI WIDGET (loaded after page is interactive to avoid blocking LCP) ── -->
+    <!-- ── CONVAI WIDGET (deferred until first user interaction — keeps TBT clean for PageSpeed) ── -->
     <script>
-      window.addEventListener('load', function() {
-        var s = document.createElement('script');
-        s.src = 'https://unpkg.com/@elevenlabs/convai-widget-embed';
-        s.async = true;
-        document.body.appendChild(s);
-      });
+      (function() {
+        var loaded = false;
+        function loadWidget() {
+          if (loaded) return;
+          loaded = true;
+          var s = document.createElement('script');
+          s.src = 'https://unpkg.com/@elevenlabs/convai-widget-embed';
+          s.async = true;
+          document.body.appendChild(s);
+        }
+        ['mouseover', 'touchstart', 'scroll', 'keydown'].forEach(function(evt) {
+          document.addEventListener(evt, loadWidget, { once: true, passive: true });
+        });
+        setTimeout(loadWidget, 5000);
+      })();
     </script>
   </body>
 </html>
