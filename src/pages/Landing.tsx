@@ -649,64 +649,155 @@ const LandingContent = () => {
         </div>
       </section>
 
-      {/* ── SEO Content — keyword-rich text section ── */}
-      <section className="py-24 sm:py-32 border-t border-border/30 bg-muted/10">
-        <div className="mx-auto max-w-5xl px-6">
+      {/* ── Por qué MoonJab — premium content cards ── */}
+      <section className="py-24 sm:py-32 border-t border-border/30 relative overflow-hidden">
+        {/* Subtle dot-grid background */}
+        <div className="absolute inset-0 bg-dot-grid opacity-40 pointer-events-none" />
+        {/* Ambient glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[400px] bg-primary/[0.035] rounded-full blur-[100px] pointer-events-none" />
+
+        <div className="relative mx-auto max-w-6xl px-6">
+          {/* Section header */}
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={fadeUp}
-            className="text-center mb-14"
+            className="text-center mb-16"
           >
+            <p className="section-label mb-3">Por qué MoonJab</p>
             <h2 className="text-balance text-3xl sm:text-4xl font-bold tracking-tight mb-4">
-              {t('landing.seoContent.title')}
+              CV Builder con IA, Simulador de Entrevistas
+              <br className="hidden sm:block" />
+              y <span className="gradient-text">Diagnóstico Vocacional</span> — todo en uno
             </h2>
             <p className="text-pretty text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               {t('landing.seoContent.subtitle')}
             </p>
           </motion.div>
-          <div className="grid md:grid-cols-2 gap-10">
-            {/* CV Builder */}
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0} className="flex gap-4">
-              <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <FileText className="h-4 w-4 text-primary" />
-              </div>
-              <div className="space-y-2">
-                <h3 className="text-lg font-bold tracking-tight">{t('landing.seoContent.cvTitle')}</h3>
-                <p className="text-muted-foreground leading-relaxed text-[0.9375rem]">{t('landing.seoContent.cvText')}</p>
-              </div>
-            </motion.div>
-            {/* Interview Simulator */}
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={1} className="flex gap-4">
-              <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <Mic className="h-4 w-4 text-primary" />
-              </div>
-              <div className="space-y-2">
-                <h3 className="text-lg font-bold tracking-tight">{t('landing.seoContent.interviewTitle')}</h3>
-                <p className="text-muted-foreground leading-relaxed text-[0.9375rem]">{t('landing.seoContent.interviewText')}</p>
-              </div>
-            </motion.div>
-            {/* Vocational Diagnostic */}
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={2} className="flex gap-4">
-              <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <Compass className="h-4 w-4 text-primary" />
-              </div>
-              <div className="space-y-2">
-                <h3 className="text-lg font-bold tracking-tight">{t('landing.seoContent.diagnosticTitle')}</h3>
-                <p className="text-muted-foreground leading-relaxed text-[0.9375rem]">{t('landing.seoContent.diagnosticText')}</p>
-              </div>
-            </motion.div>
-            {/* LATAM coverage */}
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={3} className="flex gap-4">
-              <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-                <Target className="h-4 w-4 text-primary" />
-              </div>
-              <div className="space-y-2">
-                <h3 className="text-lg font-bold tracking-tight">{t('landing.seoContent.latamTitle')}</h3>
-                <p className="text-muted-foreground leading-relaxed text-[0.9375rem]">{t('landing.seoContent.latamText')}</p>
+
+          {/* 2 × 2 premium card grid */}
+          <div className="grid md:grid-cols-2 gap-5">
+
+            {/* ── Card 1: CV Builder + ATS ── */}
+            <motion.div
+              initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
+              className="feature-card shimmer-on-hover group p-8 flex flex-col"
+            >
+              <div className="absolute -top-10 -right-10 w-48 h-48 bg-primary/[0.06] rounded-full blur-3xl pointer-events-none" />
+              <div className="relative flex flex-col h-full">
+                {/* Icon + label */}
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/18 group-hover:scale-105 transition-all duration-300">
+                    <FileText className="h-5 w-5 text-primary" />
+                  </div>
+                  <span className="section-label">CV Builder · ATS</span>
+                </div>
+                {/* Content */}
+                <h3 className="text-xl font-bold tracking-tight mb-3 leading-snug">
+                  {t('landing.seoContent.cvTitle')}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+                  {t('landing.seoContent.cvText')}
+                </p>
+                {/* Tags */}
+                <div className="mt-6 pt-5 border-t border-border/40 flex flex-wrap gap-2">
+                  {['ATS 94%+', 'IA automática', '10 plantillas', 'PDF export'].map((tag) => (
+                    <span key={tag} className="px-2.5 py-1 text-[10px] font-semibold rounded-md bg-primary/[0.07] text-primary border border-primary/10">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </div>
             </motion.div>
+
+            {/* ── Card 2: Interview Simulator ── */}
+            <motion.div
+              initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={1}
+              className="feature-card shimmer-on-hover group p-8 flex flex-col"
+            >
+              <div className="absolute -bottom-10 -left-10 w-48 h-48 bg-violet-500/[0.05] rounded-full blur-3xl pointer-events-none" />
+              <div className="relative flex flex-col h-full">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/18 group-hover:scale-105 transition-all duration-300">
+                    <Mic className="h-5 w-5 text-primary" />
+                  </div>
+                  <span className="section-label">Simulador de Entrevistas</span>
+                </div>
+                <h3 className="text-xl font-bold tracking-tight mb-3 leading-snug">
+                  {t('landing.seoContent.interviewTitle')}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+                  {t('landing.seoContent.interviewText')}
+                </p>
+                <div className="mt-6 pt-5 border-t border-border/40 flex flex-wrap gap-2">
+                  {['Método STAR', 'Feedback IA', 'Voz + Texto', '50+ empresas'].map((tag) => (
+                    <span key={tag} className="px-2.5 py-1 text-[10px] font-semibold rounded-md bg-primary/[0.07] text-primary border border-primary/10">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+
+            {/* ── Card 3: RIASEC Diagnostic ── */}
+            <motion.div
+              initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={2}
+              className="feature-card shimmer-on-hover group p-8 flex flex-col"
+            >
+              <div className="absolute top-0 left-0 w-36 h-36 bg-amber-500/[0.05] rounded-full blur-2xl pointer-events-none" />
+              <div className="relative flex flex-col h-full">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/18 group-hover:scale-105 transition-all duration-300">
+                    <Compass className="h-5 w-5 text-primary" />
+                  </div>
+                  <span className="section-label">Diagnóstico Vocacional</span>
+                </div>
+                <h3 className="text-xl font-bold tracking-tight mb-3 leading-snug">
+                  {t('landing.seoContent.diagnosticTitle')}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+                  {t('landing.seoContent.diagnosticText')}
+                </p>
+                <div className="mt-6 pt-5 border-t border-border/40 flex flex-wrap gap-2">
+                  {['RIASEC · Holland', '10,000+ perfiles', 'Gratuito', 'IA personalizada'].map((tag) => (
+                    <span key={tag} className="px-2.5 py-1 text-[10px] font-semibold rounded-md bg-primary/[0.07] text-primary border border-primary/10">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+
+            {/* ── Card 4: LATAM coverage ── */}
+            <motion.div
+              initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={3}
+              className="feature-card shimmer-on-hover group p-8 flex flex-col"
+            >
+              <div className="absolute -top-10 -right-10 w-48 h-48 bg-blue-500/[0.04] rounded-full blur-3xl pointer-events-none" />
+              <div className="relative flex flex-col h-full">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/18 group-hover:scale-105 transition-all duration-300">
+                    <Target className="h-5 w-5 text-primary" />
+                  </div>
+                  <span className="section-label">Cobertura LATAM</span>
+                </div>
+                <h3 className="text-xl font-bold tracking-tight mb-3 leading-snug">
+                  {t('landing.seoContent.latamTitle')}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+                  {t('landing.seoContent.latamText')}
+                </p>
+                <div className="mt-6 pt-5 border-t border-border/40 flex flex-wrap gap-2">
+                  {['🇵🇪 Perú', '🇲🇽 México', '🇨🇴 Colombia', '🇦🇷 Argentina', '🇨🇱 Chile'].map((tag) => (
+                    <span key={tag} className="px-2.5 py-1 text-[10px] font-semibold rounded-md bg-muted text-foreground/60 border border-border/50">
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+
           </div>
         </div>
       </section>
