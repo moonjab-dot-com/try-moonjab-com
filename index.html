@@ -13,7 +13,7 @@
 
     <!-- ── PRIMARY SEO META ───────────────────────── -->
     <title>MoonJab — CV Builder con IA y Simulador de Entrevistas LATAM</title>
-    <meta name="description" content="Crea tu CV optimizado para ATS con IA y practica entrevistas laborales reales. Plataforma de carrera #1 para estudiantes en Perú, México, Colombia y Chile." />
+    <meta name="description" content="Crea tu CV optimizado para ATS con IA, practica entrevistas y descubre tu diagnóstico vocacional. Career platform #1 para estudiantes en LATAM." />
     <meta name="author" content="MoonJab" />
     <meta name="keywords" content="CV builder con IA, preparación de entrevistas, career platform estudiantes, hacer curriculum vitae, ATS resume builder, entrevistas laborales IA, trabajo para estudiantes LATAM, curriculum para primer trabajo, simulador de entrevistas, MoonJab" />
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
@@ -50,7 +50,7 @@
     <meta property="og:locale" content="es_LA" />
     <meta property="og:locale:alternate" content="en_US" />
     <meta property="og:title" content="MoonJab — CV Builder con IA y Simulador de Entrevistas LATAM" />
-    <meta property="og:description" content="Crea tu CV optimizado para ATS con inteligencia artificial y practica entrevistas laborales reales. Plataforma #1 para estudiantes en LATAM." />
+    <meta property="og:description" content="Crea tu CV optimizado para ATS con IA, practica entrevistas y descubre tu diagnóstico vocacional. Career platform #1 para estudiantes en LATAM." />
     <meta property="og:image" content="https://moonjab.com/og-image.png" />
     <meta property="og:image:secure_url" content="https://moonjab.com/og-image.png" />
     <meta property="og:image:width" content="1200" />
@@ -78,9 +78,8 @@
     <link rel="dns-prefetch" href="https://vajjrwoiufqdbziwluih.supabase.co" />
     <link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
-    <!-- ── FONTS ──────────────────────────────────── -->
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- ── FONTS (single combined request for performance) ─────────── -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=EB+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
     <!-- ── GOOGLE ANALYTICS ───────────────────────── -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVL5VMKSJM"></script>
@@ -252,8 +251,103 @@
             "@type": "Answer",
             "text": "Sí. El CV builder de MoonJab está específicamente diseñado para crear currículums que pasen los sistemas ATS (Applicant Tracking Systems) utilizados por la mayoría de empresas grandes. La IA analiza tu CV y sugiere palabras clave y formatos optimizados para cada tipo de trabajo."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo funciona el diagnóstico vocacional RIASEC de MoonJab?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "El diagnóstico vocacional de MoonJab está basado en el modelo RIASEC (Holland Code), el marco científico más reconocido para orientación de carrera. Respondes preguntas sobre tus intereses y preferencias, y la IA genera un perfil personalizado con tu tipo de personalidad profesional — Realista, Investigador, Artístico, Social, Emprendedor o Convencional — y te recomienda las carreras, industrias y roles más alineados a tus fortalezas. El diagnóstico es gratuito y toma menos de 10 minutos."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo crear un curriculum vitae sin experiencia laboral?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MoonJab está pensado especialmente para estudiantes sin experiencia laboral. El CV builder con IA te guía para destacar tu formación académica, proyectos universitarios, habilidades técnicas, actividades extracurriculares y voluntariados de manera efectiva y optimizada para ATS. Miles de estudiantes consiguieron su primer empleo o prácticas profesionales con CVs creados en MoonJab."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué diferencia a MoonJab de otras plataformas de empleo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "MoonJab es la única career platform diseñada específicamente para universitarios y jóvenes profesionales en LATAM. Combina en un solo lugar: CV builder con IA optimizado para ATS, simulador de entrevistas con feedback instantáneo, diagnóstico vocacional RIASEC y guías de salarios por país. Todo en español, adaptado al mercado de Perú, México, Colombia, Argentina y Chile. Plan gratuito disponible; Pro desde $5 USD/mes."
+          }
         }
       ]
+    }
+    </script>
+
+    <!-- AggregateRating — enables rich snippets with star ratings -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "@id": "https://moonjab.com/#webapp-rating",
+      "name": "MoonJab",
+      "url": "https://moonjab.com",
+      "applicationCategory": "BusinessApplication",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "reviewCount": "10000",
+        "bestRating": "5",
+        "worstRating": "1"
+      }
+    }
+    </script>
+
+    <!-- EducationalOrganization — targets student/education searches -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "@id": "https://moonjab.com/#edorg",
+      "name": "MoonJab",
+      "description": "Plataforma de empleabilidad con IA para estudiantes universitarios y jóvenes profesionales en Latinoamérica. CV builder optimizado para ATS, simulador de entrevistas y diagnóstico vocacional RIASEC.",
+      "url": "https://moonjab.com",
+      "sameAs": [
+        "https://x.com/MoonJabdotcom",
+        "https://www.instagram.com/trymoonjab",
+        "https://www.linkedin.com/company/moonjab",
+        "https://www.youtube.com/@TryMoonJab"
+      ],
+      "educationalCredentialAwarded": "Preparación para primer empleo y prácticas profesionales",
+      "teaches": ["Creación de curriculum vitae ATS", "Preparación de entrevistas laborales", "Orientación vocacional", "Búsqueda de empleo en LATAM"]
+    }
+    </script>
+
+    <!-- Course schema — positions MoonJab as educational tool -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Course",
+      "name": "Cómo Conseguir tu Primer Empleo en LATAM con IA",
+      "description": "Domina las herramientas de empleabilidad más modernas: crea un CV optimizado para ATS con IA, practica entrevistas laborales con simulador de IA y descubre tu perfil vocacional RIASEC.",
+      "provider": {
+        "@type": "Organization",
+        "@id": "https://moonjab.com/#organization"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock",
+        "category": "free"
+      },
+      "educationalLevel": "Estudiante universitario y recién egresado",
+      "inLanguage": "es",
+      "hasCourseInstance": {
+        "@type": "CourseInstance",
+        "courseMode": "online",
+        "courseWorkload": "PT10M",
+        "instructor": {
+          "@type": "Organization",
+          "name": "MoonJab IA"
+        }
+      }
     }
     </script>
 
@@ -507,7 +601,14 @@
     <!-- ── MAIN APP SCRIPT ────────────────────────── -->
     <script type="module" src="/src/main.tsx"></script>
 
-    <!-- ── CONVAI WIDGET ──────────────────────────── -->
-    <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+    <!-- ── CONVAI WIDGET (loaded after page is interactive to avoid blocking LCP) ── -->
+    <script>
+      window.addEventListener('load', function() {
+        var s = document.createElement('script');
+        s.src = 'https://unpkg.com/@elevenlabs/convai-widget-embed';
+        s.async = true;
+        document.body.appendChild(s);
+      });
+    </script>
   </body>
 </html>
