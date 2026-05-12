@@ -43,6 +43,8 @@ MoonJab es una career platform (plataforma de carrera) diseñada para ayudar a e
 - Descubrimiento del perfil vocacional del usuario
 - Recomendaciones personalizadas de carreras y puestos
 - Análisis de fortalezas y áreas de desarrollo
+- URL pública: https://moonjab.com/diagnostico-vocacional
+- Test de 40 preguntas, resultado inmediato, 100% gratis
 
 ### Coach de Carrera con IA
 
@@ -80,6 +82,7 @@ MoonJab es una career platform (plataforma de carrera) diseñada para ayudar a e
 - [Inicio](https://moonjab.com/) - Página principal
 - [CV Builder con IA](https://moonjab.com/cv-builder) - Constructor de currículum con IA
 - [Simulador de Entrevistas](https://moonjab.com/interview-prep) - Práctica de entrevistas laborales
+- [Diagnóstico Vocacional RIASEC](https://moonjab.com/diagnostico-vocacional) - Test vocacional gratis
 - [Precios](https://moonjab.com/pricing) - Planes y tarifas
 - [Blog](https://moonjab.com/blog) - Artículos sobre empleabilidad, CV y entrevistas
 - [Nosotros](https://moonjab.com/about) - Misión y equipo
