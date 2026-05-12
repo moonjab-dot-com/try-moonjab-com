@@ -386,7 +386,7 @@ const LandingContent = () => {
                 </div>
                 <div className="flex-1 flex justify-center">
                   <div className="px-4 py-1 rounded-md bg-background/60 border border-border/30 text-[11px] text-muted-foreground font-mono">
-                    moonjab.com/cvs
+                    moonjab.com/dashboard/cvs
                   </div>
                 </div>
                 <div className="w-14" />
