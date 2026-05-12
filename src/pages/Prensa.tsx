@@ -233,6 +233,103 @@ const Prensa = () => (
       </div>
     </section>
 
+    {/* Citable stats */}
+    <section className="py-16 sm:py-20">
+      <div className="mx-auto max-w-5xl px-6">
+        <h2 className="text-2xl font-bold mb-3">Estadísticas que puedes citar</h2>
+        <p className="text-muted-foreground mb-10 max-w-2xl">Datos verificados sobre el mercado laboral en LATAM y MoonJab. Cítalos libremente — solo menciona la fuente como "MoonJab, 2025".</p>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {[
+            { stat: '+10 000', label: 'Estudiantes registrados en MoonJab desde su lanzamiento en diciembre 2024', cite: 'MoonJab, 2025' },
+            { stat: '75 %', label: 'de los CVs en LATAM son rechazados automáticamente por sistemas ATS antes de llegar a un reclutador', cite: 'MoonJab Research, 2025' },
+            { stat: '+20 %', label: 'tasa de desempleo juvenil en varios países de Latinoamérica según datos de la OIT', cite: 'OIT vía MoonJab, 2024' },
+            { stat: '5 min', label: 'tiempo promedio para crear un CV profesional optimizado para ATS en MoonJab', cite: 'MoonJab, 2025' },
+            { stat: '$0', label: 'costo de entrada — el plan gratuito incluye CV builder y simulaciones de entrevista', cite: 'MoonJab, 2025' },
+            { stat: '5+ países', label: 'en LATAM donde MoonJab tiene usuarios activos: Perú, México, Colombia, Argentina y Chile', cite: 'MoonJab, 2025' },
+          ].map((item, i) => (
+            <motion.div
+              key={i}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0, transition: { duration: 0.4, delay: i * 0.07 } } }}
+              className="p-6 rounded-xl border border-border/40 bg-background"
+            >
+              <p className="text-4xl font-bold text-primary mb-2">{item.stat}</p>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-3">{item.label}</p>
+              <div className="flex items-center justify-between">
+                <code className="text-xs text-muted-foreground/60">Fuente: {item.cite}</code>
+                <CopyButton text={`${item.stat} ${item.label} (Fuente: ${item.cite})`} />
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Mention guidelines + embed badge */}
+    <section className="py-14 bg-muted/30 border-y border-border/30">
+      <div className="mx-auto max-w-5xl px-6">
+        <h2 className="text-2xl font-bold mb-3">Cómo mencionar a MoonJab</h2>
+        <p className="text-muted-foreground mb-8 max-w-2xl">Guía de estilo para menciones editoriales y digitales.</p>
+        <div className="grid sm:grid-cols-2 gap-6 mb-10">
+          <div className="p-5 rounded-xl border border-border/40 bg-background">
+            <h3 className="font-bold text-sm mb-3">Nombre correcto</h3>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li className="flex items-start gap-2"><span className="text-emerald-500 font-bold mt-0.5">✓</span> MoonJab (sin espacio, J mayúscula)</li>
+              <li className="flex items-start gap-2"><span className="text-red-400 font-bold mt-0.5">✗</span> Moon Jab / moonjab / Moonjab</li>
+            </ul>
+          </div>
+          <div className="p-5 rounded-xl border border-border/40 bg-background">
+            <h3 className="font-bold text-sm mb-3">Descripción corta recomendada</h3>
+            <div className="flex items-start justify-between gap-3">
+              <p className="text-sm text-muted-foreground italic">"MoonJab es la career platform con IA para estudiantes universitarios en LATAM."</p>
+              <CopyButton text="MoonJab es la career platform con IA para estudiantes universitarios en LATAM." />
+            </div>
+          </div>
+          <div className="p-5 rounded-xl border border-border/40 bg-background">
+            <h3 className="font-bold text-sm mb-3">Descripción larga recomendada</h3>
+            <div className="flex items-start justify-between gap-3">
+              <p className="text-sm text-muted-foreground italic">"MoonJab es una plataforma de empleabilidad con inteligencia artificial diseñada para estudiantes universitarios y jóvenes profesionales en Latinoamérica. Ofrece CV builder optimizado para ATS, simulador de entrevistas y diagnóstico vocacional RIASEC. Disponible en más de 5 países de LATAM desde 2024."</p>
+              <CopyButton text="MoonJab es una plataforma de empleabilidad con inteligencia artificial diseñada para estudiantes universitarios y jóvenes profesionales en Latinoamérica. Ofrece CV builder optimizado para ATS, simulador de entrevistas y diagnóstico vocacional RIASEC. Disponible en más de 5 países de LATAM desde 2024." />
+            </div>
+          </div>
+          <div className="p-5 rounded-xl border border-border/40 bg-background">
+            <h3 className="font-bold text-sm mb-3">URL canónica</h3>
+            <div className="flex items-center justify-between gap-3">
+              <code className="text-sm text-muted-foreground">https://moonjab.com</code>
+              <CopyButton text="https://moonjab.com" />
+            </div>
+          </div>
+        </div>
+
+        {/* Embed badge */}
+        <h3 className="font-bold mb-3">Badge embebible para tu sitio o artículo</h3>
+        <p className="text-sm text-muted-foreground mb-4">Copia este código HTML para agregar un badge de MoonJab en tu sitio web o artículo.</p>
+        <div className="rounded-xl border border-border/40 bg-background overflow-hidden">
+          <div className="flex items-center justify-between px-4 py-2.5 border-b border-border/30 bg-muted/30">
+            <span className="text-xs font-mono text-muted-foreground">HTML · Badge de MoonJab</span>
+            <CopyButton text={`<a href="https://moonjab.com" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:#10b981;color:#fff;border-radius:8px;text-decoration:none;font-family:sans-serif;font-size:14px;font-weight:600;">\n  <img src="https://moonjab.com/moonjab-logo.png" alt="MoonJab" width="20" height="20" style="border-radius:4px;" />\n  Creado con MoonJab\n</a>`} />
+          </div>
+          <pre className="p-4 text-xs text-muted-foreground overflow-x-auto whitespace-pre-wrap break-all leading-relaxed">{`<a href="https://moonjab.com" target="_blank" rel="noopener noreferrer"
+   style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;
+          background:#10b981;color:#fff;border-radius:8px;text-decoration:none;
+          font-family:sans-serif;font-size:14px;font-weight:600;">
+  <img src="https://moonjab.com/moonjab-logo.png" alt="MoonJab"
+       width="20" height="20" style="border-radius:4px;" />
+  Creado con MoonJab
+</a>`}</pre>
+        </div>
+        <div className="mt-4 p-4 rounded-lg bg-muted/50 border border-border/30">
+          <p className="text-xs text-muted-foreground mb-2 font-medium">Vista previa del badge:</p>
+          <a href="https://moonjab.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity">
+            <img src="/moonjab-logo.png" alt="MoonJab" width={20} height={20} className="rounded" />
+            Creado con MoonJab
+          </a>
+        </div>
+      </div>
+    </section>
+
     {/* Brand assets */}
     <section id="recursos-marca" className="py-16 sm:py-20">
       <div className="mx-auto max-w-5xl px-6">
