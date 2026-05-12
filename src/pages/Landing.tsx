@@ -391,15 +391,7 @@ const LandingContent = () => {
                 </div>
                 <div className="w-14" />
               </div>
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="metadata"
-                poster="/og-image.png"
-                className="w-full h-auto"
-              >
+              <video autoPlay loop muted playsInline className="w-full h-auto">
                 <source src="/moonjab-hero-video.mp4" type="video/mp4" />
               </video>
             </div>
