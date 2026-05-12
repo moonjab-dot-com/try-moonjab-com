@@ -221,9 +221,9 @@ const LandingContent = () => {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <SEOHead
         title="MoonJab — CV Builder con IA y Simulador de Entrevistas LATAM"
-        description="Crea tu CV optimizado para ATS con IA y practica entrevistas laborales reales. Plataforma de carrera #1 para estudiantes en Perú, México y Colombia."
+        description="Crea tu CV optimizado para ATS con IA, practica entrevistas y descubre tu diagnóstico vocacional. Career platform #1 para estudiantes en LATAM."
         path="/"
-        keywords="CV builder con IA, simulador de entrevistas, career platform estudiantes LATAM, hacer curriculum vitae ATS, preparar entrevista trabajo, primer empleo estudiantes"
+        keywords="CV builder con IA, simulador de entrevistas, diagnóstico vocacional, ATS curriculum, career platform estudiantes LATAM, hacer curriculum vitae ATS, preparar entrevista trabajo, primer empleo estudiantes"
         breadcrumbs={[]}
       />
 
@@ -646,6 +646,68 @@ const LandingContent = () => {
               </div>
             </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* ── SEO Content — keyword-rich text section ── */}
+      <section className="py-24 sm:py-32 border-t border-border/30 bg-muted/10">
+        <div className="mx-auto max-w-5xl px-6">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeUp}
+            className="text-center mb-14"
+          >
+            <h2 className="text-balance text-3xl sm:text-4xl font-bold tracking-tight mb-4">
+              {t('landing.seoContent.title')}
+            </h2>
+            <p className="text-pretty text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              {t('landing.seoContent.subtitle')}
+            </p>
+          </motion.div>
+          <div className="grid md:grid-cols-2 gap-10">
+            {/* CV Builder */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0} className="flex gap-4">
+              <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <FileText className="h-4 w-4 text-primary" />
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-lg font-bold tracking-tight">{t('landing.seoContent.cvTitle')}</h3>
+                <p className="text-muted-foreground leading-relaxed text-[0.9375rem]">{t('landing.seoContent.cvText')}</p>
+              </div>
+            </motion.div>
+            {/* Interview Simulator */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={1} className="flex gap-4">
+              <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <Mic className="h-4 w-4 text-primary" />
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-lg font-bold tracking-tight">{t('landing.seoContent.interviewTitle')}</h3>
+                <p className="text-muted-foreground leading-relaxed text-[0.9375rem]">{t('landing.seoContent.interviewText')}</p>
+              </div>
+            </motion.div>
+            {/* Vocational Diagnostic */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={2} className="flex gap-4">
+              <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <Compass className="h-4 w-4 text-primary" />
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-lg font-bold tracking-tight">{t('landing.seoContent.diagnosticTitle')}</h3>
+                <p className="text-muted-foreground leading-relaxed text-[0.9375rem]">{t('landing.seoContent.diagnosticText')}</p>
+              </div>
+            </motion.div>
+            {/* LATAM coverage */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={3} className="flex gap-4">
+              <div className="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <Target className="h-4 w-4 text-primary" />
+              </div>
+              <div className="space-y-2">
+                <h3 className="text-lg font-bold tracking-tight">{t('landing.seoContent.latamTitle')}</h3>
+                <p className="text-muted-foreground leading-relaxed text-[0.9375rem]">{t('landing.seoContent.latamText')}</p>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 

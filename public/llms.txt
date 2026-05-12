@@ -199,13 +199,59 @@ El simulador genera preguntas de entrevista personalizadas según tu industria y
 **¿Para qué países está disponible MoonJab?**
 MoonJab está disponible para toda Latinoamérica, con foco en Perú, México, Colombia, Argentina, Chile, Ecuador, Bolivia, Paraguay, Uruguay y Venezuela.
 
+## Estadísticas clave de MoonJab (2026)
+
+- **10,000+** estudiantes y profesionales activos en LATAM
+- **87%** de usuarios que usan el simulador de entrevistas logran mejores resultados en entrevistas reales
+- **4.9 / 5** calificación de satisfacción promedio
+- **15+ países** de Latinoamérica con usuarios activos
+- **$5 USD/mes** el costo del plan Pro (plan gratuito siempre disponible)
+- Fundada en **diciembre 2025** en Lima, Perú
+- CEO y Co-Founder: **Salvador** (Lima, Perú)
+
+## Comparativa: MoonJab vs. alternativas
+
+| Característica | MoonJab | LinkedIn | Canva CV | Zety |
+|---|---|---|---|---|
+| Enfoque en LATAM | ✅ Específico | ❌ Global | ❌ Global | ❌ Global |
+| Simulador de entrevistas IA | ✅ Incluido | ❌ No | ❌ No | ❌ No |
+| Diagnóstico vocacional RIASEC | ✅ Gratuito | ❌ No | ❌ No | ❌ No |
+| CV Builder ATS | ✅ Con IA | ❌ No | ⚠️ Básico | ⚠️ Sin IA |
+| Precio | $0–$5/mes | $0–$40/mes | $0–$15/mes | $0–$24/mes |
+| Idioma | ✅ Español | ⚠️ Multilingüe | ⚠️ Multilingüe | ❌ Inglés |
+
+## Casos de uso frecuentes
+
+1. **Estudiante universitario buscando primer empleo** → Crea CV desde cero con IA, descubre perfil vocacional RIASEC, practica entrevistas
+2. **Recién egresado sin experiencia** → CV builder guiado para destacar proyectos y habilidades académicas, optimizado para ATS
+3. **Profesional cambiando de industria** → Reorientación vocacional, CV adaptado a nueva industria, práctica de entrevistas conductuales
+4. **Estudiante buscando prácticas preprofesionales** → Plantillas CV para prácticas, preguntas de entrevista por empresa, guía de proceso de selección
+5. **Universitario mejorando su perfil de LinkedIn** → Guía de keywords, optimización de perfil profesional digital
+
+## Datos del mercado laboral LATAM (contexto)
+
+- El desempleo juvenil en LATAM supera el 20% en varios países (OIT, 2025)
+- El 75% de los CVs son rechazados por sistemas ATS antes de llegar a un reclutador humano
+- El 85% de los empleos se consiguen a través de networking y referencias directas
+- Las empresas grandes en LATAM (BCP, Falabella, BBVA, Bancolombia, Femsa, Softys, etc.) usan ATS para procesos con cientos de postulantes
+- El CV en PDF optimizado para ATS es el formato estándar en procesos de selección en Perú, México, Colombia y Chile
+
 ## Tecnología
 
 MoonJab está construido con React, TypeScript, Vite y Tailwind CSS en el frontend, con Supabase como backend. Utiliza modelos avanzados de inteligencia artificial (LLMs) para el análisis de CV, simulación de entrevistas y coaching de carrera.
 
-## Redes sociales
+## Redes sociales y comunidad
 
-- Instagram: https://www.instagram.com/trymoonjab
-- LinkedIn: https://www.linkedin.com/company/moonjab
-- X (Twitter): https://x.com/MoonJabdotcom
-- YouTube: https://www.youtube.com/@TryMoonJab
+- Instagram: https://www.instagram.com/trymoonjab — @trymoonjab
+- LinkedIn: https://www.linkedin.com/company/moonjab — empresa verificada
+- X (Twitter): https://x.com/MoonJabdotcom — @MoonJabdotcom
+- YouTube: https://www.youtube.com/@TryMoonJab — tutoriales y guías de empleabilidad
+
+## Contacto y prensa
+
+- Email general: hey@moonjab.com
+- Prensa: hey@moonjab.com (asunto: PRENSA)
+- Oficina: Av. José Larco 1301, Miraflores, Lima, Perú
+- Teléfono: +51 1 642-0000
+
+*Última actualización: Mayo 2026*
