@@ -78,14 +78,8 @@
     <link rel="dns-prefetch" href="https://vajjrwoiufqdbziwluih.supabase.co" />
     <link rel="dns-prefetch" href="https://www.google-analytics.com" />
 
-    <!-- ── LCP RESOURCE HINTS ─────────────────────── -->
-    <link rel="preload" as="image" href="/og-image.png" fetchpriority="high" />
-
-    <!-- ── FONTS (non-blocking, swap after load) ──────────────────── -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=EB+Garamond:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'" />
-    <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=EB+Garamond:wght@400;500;600;700&display=swap" />
-    </noscript>
+    <!-- ── FONTS (single combined request for performance) ─────────── -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=EB+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
     <!-- ── GOOGLE ANALYTICS ───────────────────────── -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-VVL5VMKSJM"></script>
@@ -443,47 +437,6 @@
     }
     </script>
 
-    <!-- LocalBusiness — satisfies Local SEO requirements -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "@id": "https://moonjab.com/#localbusiness",
-      "name": "MoonJab",
-      "description": "Career platform para estudiantes en LATAM. CV builder con IA y preparación de entrevistas laborales con simulador de IA.",
-      "url": "https://moonjab.com",
-      "email": "hey@moonjab.com",
-      "priceRange": "$",
-      "currenciesAccepted": "USD",
-      "paymentAccepted": "Credit Card",
-      "serviceType": ["CV Builder", "Interview Preparation", "Career Coaching", "Vocational Assessment"],
-      "areaServed": [
-        {"@type": "Country", "name": "Peru"},
-        {"@type": "Country", "name": "Mexico"},
-        {"@type": "Country", "name": "Colombia"},
-        {"@type": "Country", "name": "Argentina"},
-        {"@type": "Country", "name": "Chile"},
-        {"@type": "Country", "name": "Ecuador"},
-        {"@type": "Country", "name": "Bolivia"},
-        {"@type": "Country", "name": "Paraguay"},
-        {"@type": "Country", "name": "Uruguay"},
-        {"@type": "Country", "name": "Venezuela"}
-      ],
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
-        "opens": "00:00",
-        "closes": "23:59"
-      },
-      "sameAs": [
-        "https://x.com/MoonJabdotcom",
-        "https://www.instagram.com/trymoonjab",
-        "https://www.linkedin.com/company/moonjab",
-        "https://www.youtube.com/@TryMoonJab"
-      ]
-    }
-    </script>
-
     <!-- VideoObject — hero video -->
     <script type="application/ld+json">
     {
@@ -543,90 +496,86 @@
       body{font-family:'DM Sans','Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background:#fcfcfc;color:#2f3a4a;overflow-x:hidden}
       #root{min-height:100vh;display:flex;flex-direction:column}
       .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-      @media(prefers-color-scheme:dark){body{background:#111827;color:#d1d5db}}
-      .ns-wrap{font-family:sans-serif;background:#f0f9ff}
-      .ns-hdr{text-align:center;padding:2rem}
+      @media(prefers-color-scheme:dark){body{background:#1e293b;color:#cbd5e1}}
+      .ns-hdr{text-align:center;padding:2rem;font-family:sans-serif;background:#f0f9ff}
       .ns-lede{max-width:600px;margin:1rem auto;color:#555}
       .ns-nav{margin:1.5rem 0}
       .ns-nav a{margin:0 .5rem}
-      .ns-sec{max-width:800px;margin:1.5rem auto;text-align:left;padding:0 1rem}
-      .ns-ftr{margin-top:2rem;color:#888;font-size:.9rem;text-align:center;padding:1rem}
+      .ns-sec{max-width:800px;margin:1.5rem auto;text-align:left}
+      .ns-ftr{margin-top:2rem;color:#888;font-size:.9rem}
     </style>
   </head>
 
   <body>
     <!-- ── SEO NOSCRIPT CONTENT (Crawlers & no-JS) ── -->
     <noscript>
-      <div class="ns-wrap">
-        <header class="ns-hdr">
-          <h1>MoonJab — CV Builder con IA y Preparación de Entrevistas para Estudiantes en LATAM</h1>
-          <p class="ns-lede">
-            MoonJab es la career platform #1 para estudiantes universitarios en LATAM.
-            Crea tu CV profesional optimizado para ATS con inteligencia artificial en minutos
-            y practica entrevistas laborales reales con nuestro simulador de IA.
-            Empieza gratis hoy.
-          </p>
-          <nav aria-label="Navegación principal" class="ns-nav">
-            <a href="/">Inicio</a> |
-            <a href="/cv-builder">CV Builder con IA</a> |
-            <a href="/interview-prep">Simulador de Entrevistas</a> |
-            <a href="/pricing">Precios</a> |
-            <a href="/blog">Blog</a> |
-            <a href="/about">Nosotros</a> |
-            <a href="/help">Ayuda</a> |
-            <a href="/login">Iniciar sesión</a> |
-            <a href="/registro">Registrarse gratis</a>
-          </nav>
-        </header>
+      <header class="ns-hdr">
+        <h2>MoonJab — CV Builder con IA y Preparación de Entrevistas para Estudiantes en LATAM</h2>
+        <p class="ns-lede">
+          MoonJab es la career platform #1 para estudiantes universitarios en LATAM.
+          Crea tu CV profesional optimizado para ATS con inteligencia artificial en minutos
+          y practica entrevistas laborales reales con nuestro simulador de IA.
+          Empieza gratis hoy.
+        </p>
 
-        <main>
-          <section aria-label="Características principales" class="ns-sec">
-            <h2>¿Por qué elegir MoonJab para crear tu CV y preparar entrevistas?</h2>
-            <p>MoonJab es la plataforma de empleabilidad con inteligencia artificial diseñada específicamente para estudiantes universitarios y jóvenes profesionales en Latinoamérica. Combinamos un potente CV builder optimizado para ATS con un simulador de entrevistas laborales con IA para darte todo lo que necesitas para conseguir tu primer empleo o prácticas profesionales.</p>
-            <ul>
-              <li><strong>Crear CV con IA y optimización ATS:</strong> Nuestro constructor de currículum con inteligencia artificial analiza tu perfil, sugiere mejoras y genera un CV profesional optimizado para pasar los filtros ATS (Applicant Tracking Systems) usados por grandes empresas en Perú, México, Colombia, Argentina y Chile.</li>
-              <li><strong>Simulador de entrevistas laborales con IA:</strong> Practica entrevistas de trabajo reales con nuestro entrevistador virtual. Recibe feedback inmediato sobre tus respuestas, identifica áreas de mejora y gana confianza antes de tu entrevista real.</li>
-              <li><strong>Diagnóstico vocacional RIASEC:</strong> Descubre tu perfil profesional con nuestro test vocacional basado en el modelo RIASEC y recibe recomendaciones personalizadas de carrera.</li>
-              <li><strong>Coach de carrera con IA:</strong> Accede a orientación personalizada para tu desarrollo profesional, desde la búsqueda de trabajo hasta el crecimiento en tu carrera.</li>
-              <li><strong>Diseñado para primer empleo y prácticas profesionales:</strong> Pensado para estudiantes universitarios y recién egresados que buscan su primer trabajo o prácticas en empresas como BBVA, Deloitte, McKinsey, Google, Microsoft y más.</li>
-              <li><strong>Disponible para toda LATAM:</strong> Plataforma disponible en Perú, México, Colombia, Argentina, Chile, Ecuador, Bolivia, Paraguay, Uruguay y Venezuela.</li>
-              <li><strong>Gratis para empezar:</strong> Plan gratuito disponible. Plan Premium desde $5 USD/mes con acceso ilimitado.</li>
-            </ul>
-          </section>
+        <nav aria-label="Navegación principal" class="ns-nav">
+          <a href="/">Inicio</a> |
+          <a href="/cv-builder">CV Builder con IA</a> |
+          <a href="/interview-prep">Simulador de Entrevistas</a> |
+          <a href="/pricing">Precios</a> |
+          <a href="/blog">Blog</a> |
+          <a href="/about">Nosotros</a> |
+          <a href="/help">Ayuda</a> |
+          <a href="/login">Iniciar sesión</a> |
+          <a href="/registro">Registrarse gratis</a>
+        </nav>
 
-          <section aria-label="Cómo funciona MoonJab" class="ns-sec">
-            <h2>Cómo funciona MoonJab — De la preparación a la oferta en 3 pasos</h2>
-            <ol>
-              <li><strong>Crea tu CV optimizado para ATS:</strong> Ingresa tu información, deja que la IA analice y optimice tu currículum, elige una plantilla profesional y descarga tu CV listo para postular. Nuestro CV builder para estudiantes está diseñado para superar los filtros automáticos de las empresas más grandes de LATAM.</li>
-              <li><strong>Practica entrevistas con IA:</strong> Simula entrevistas laborales reales con nuestro simulador de entrevistas con inteligencia artificial. Practica preguntas técnicas y conductuales, recibe retroalimentación instantánea y mejora tu desempeño con cada sesión.</li>
-              <li><strong>Consigue tu empleo o prácticas profesionales:</strong> Con tu CV perfeccionado y tu confianza en entrevistas reforzada, estarás listo para postular a tu primer trabajo, prácticas preprofesionales o el empleo que siempre quisiste.</li>
-            </ol>
-          </section>
+        <section aria-label="Características principales" class="ns-sec">
+          <h2>¿Por qué elegir MoonJab para crear tu CV y preparar entrevistas?</h2>
+          <p>MoonJab es la plataforma de empleabilidad con inteligencia artificial diseñada específicamente para estudiantes universitarios y jóvenes profesionales en Latinoamérica. Combinamos un potente CV builder optimizado para ATS con un simulador de entrevistas laborales con IA para darte todo lo que necesitas para conseguir tu primer empleo o prácticas profesionales.</p>
+          <ul>
+            <li><strong>Crear CV con IA y optimización ATS:</strong> Nuestro constructor de currículum con inteligencia artificial analiza tu perfil, sugiere mejoras y genera un CV profesional optimizado para pasar los filtros ATS (Applicant Tracking Systems) usados por grandes empresas en Perú, México, Colombia, Argentina y Chile.</li>
+            <li><strong>Simulador de entrevistas laborales con IA:</strong> Practica entrevistas de trabajo reales con nuestro entrevistador virtual. Recibe feedback inmediato sobre tus respuestas, identifica áreas de mejora y gana confianza antes de tu entrevista real.</li>
+            <li><strong>Diagnóstico vocacional RIASEC:</strong> Descubre tu perfil profesional con nuestro test vocacional basado en el modelo RIASEC y recibe recomendaciones personalizadas de carrera.</li>
+            <li><strong>Coach de carrera con IA:</strong> Accede a orientación personalizada para tu desarrollo profesional, desde la búsqueda de trabajo hasta el crecimiento en tu carrera.</li>
+            <li><strong>Diseñado para primer empleo y prácticas profesionales:</strong> Pensado para estudiantes universitarios y recién egresados que buscan su primer trabajo o prácticas en empresas como BBVA, Deloitte, McKinsey, Google, Microsoft y más.</li>
+            <li><strong>Disponible para toda LATAM:</strong> Plataforma disponible en Perú, México, Colombia, Argentina, Chile, Ecuador, Bolivia, Paraguay, Uruguay y Venezuela.</li>
+            <li><strong>Gratis para empezar:</strong> Plan gratuito disponible. Plan Premium desde $5 USD/mes con acceso ilimitado.</li>
+          </ul>
+        </section>
 
-          <section aria-label="Preguntas frecuentes" class="ns-sec">
-            <h2>Preguntas Frecuentes sobre MoonJab</h2>
-            <details>
-              <summary><strong>¿Es gratis usar MoonJab para crear mi CV?</strong></summary>
-              <p>Sí, MoonJab tiene un plan gratuito que incluye acceso al CV builder con IA y simulaciones de entrevista básicas. El plan Premium cuesta $5 USD/mes e incluye acceso ilimitado a todas las funciones: plantillas premium, entrevistas ilimitadas y feedback detallado de IA.</p>
-            </details>
-            <details>
-              <summary><strong>¿MoonJab funciona para conseguir mi primer empleo o prácticas profesionales?</strong></summary>
-              <p>Absolutamente. MoonJab está diseñado específicamente para estudiantes universitarios y recién egresados que buscan su primer trabajo o prácticas preprofesionales. Nuestras herramientas te ayudan a crear un CV competitivo y a prepararte para entrevistas en empresas de cualquier industria.</p>
-            </details>
-            <details>
-              <summary><strong>¿Los CVs creados con MoonJab pasan los filtros ATS?</strong></summary>
-              <p>Sí. El CV builder de MoonJab está diseñado específicamente para crear currículums que superen los sistemas ATS (Applicant Tracking Systems) utilizados por la mayoría de empresas grandes. La IA analiza tu CV y sugiere las palabras clave y formatos óptimos para cada tipo de trabajo.</p>
-            </details>
-            <details>
-              <summary><strong>¿En qué países está disponible MoonJab?</strong></summary>
-              <p>MoonJab está disponible para estudiantes de toda Latinoamérica, con enfoque especial en Perú, México, Colombia, Argentina y Chile. También disponible en Ecuador, Bolivia, Paraguay, Uruguay y Venezuela.</p>
-            </details>
-            <details>
-              <summary><strong>¿Cómo funciona el simulador de entrevistas con IA?</strong></summary>
-              <p>El simulador de entrevistas de MoonJab usa inteligencia artificial para generar preguntas de entrevista personalizadas según tu industria, nivel de experiencia y el puesto al que postulas. Practicas respondiendo las preguntas, la IA evalúa tus respuestas y te da feedback detallado con sugerencias de mejora inmediatas.</p>
-            </details>
-          </section>
-        </main>
+        <section aria-label="Cómo funciona MoonJab" class="ns-sec">
+          <h2>Cómo funciona MoonJab — De la preparación a la oferta en 3 pasos</h2>
+          <ol>
+            <li><strong>Crea tu CV optimizado para ATS:</strong> Ingresa tu información, deja que la IA analice y optimice tu currículum, elige una plantilla profesional y descarga tu CV listo para postular. Nuestro CV builder para estudiantes está diseñado para superar los filtros automáticos de las empresas más grandes de LATAM.</li>
+            <li><strong>Practica entrevistas con IA:</strong> Simula entrevistas laborales reales con nuestro simulador de entrevistas con inteligencia artificial. Practica preguntas técnicas y conductuales, recibe retroalimentación instantánea y mejora tu desempeño con cada sesión.</li>
+            <li><strong>Consigue tu empleo o prácticas profesionales:</strong> Con tu CV perfeccionado y tu confianza en entrevistas reforzada, estarás listo para postular a tu primer trabajo, prácticas preprofesionales o el empleo que siempre quisiste.</li>
+          </ol>
+        </section>
+
+        <section aria-label="Preguntas frecuentes" class="ns-sec">
+          <h2>Preguntas Frecuentes sobre MoonJab</h2>
+          <details>
+            <summary><strong>¿Es gratis usar MoonJab para crear mi CV?</strong></summary>
+            <p>Sí, MoonJab tiene un plan gratuito que incluye acceso al CV builder con IA y simulaciones de entrevista básicas. El plan Premium cuesta $5 USD/mes e incluye acceso ilimitado a todas las funciones: plantillas premium, entrevistas ilimitadas y feedback detallado de IA.</p>
+          </details>
+          <details>
+            <summary><strong>¿MoonJab funciona para conseguir mi primer empleo o prácticas profesionales?</strong></summary>
+            <p>Absolutamente. MoonJab está diseñado específicamente para estudiantes universitarios y recién egresados que buscan su primer trabajo o prácticas preprofesionales. Nuestras herramientas te ayudan a crear un CV competitivo y a prepararte para entrevistas en empresas de cualquier industria.</p>
+          </details>
+          <details>
+            <summary><strong>¿Los CVs creados con MoonJab pasan los filtros ATS?</strong></summary>
+            <p>Sí. El CV builder de MoonJab está diseñado específicamente para crear currículums que superen los sistemas ATS (Applicant Tracking Systems) utilizados por la mayoría de empresas grandes. La IA analiza tu CV y sugiere las palabras clave y formatos óptimos para cada tipo de trabajo.</p>
+          </details>
+          <details>
+            <summary><strong>¿En qué países está disponible MoonJab?</strong></summary>
+            <p>MoonJab está disponible para estudiantes de toda Latinoamérica, con enfoque especial en Perú, México, Colombia, Argentina y Chile. También disponible en Ecuador, Bolivia, Paraguay, Uruguay y Venezuela.</p>
+          </details>
+          <details>
+            <summary><strong>¿Cómo funciona el simulador de entrevistas con IA?</strong></summary>
+            <p>El simulador de entrevistas de MoonJab usa inteligencia artificial para generar preguntas de entrevista personalizadas según tu industria, nivel de experiencia y el puesto al que postulas. Practicas respondiendo las preguntas, la IA evalúa tus respuestas y te da feedback detallado con sugerencias de mejora inmediatas.</p>
+          </details>
+        </section>
 
         <footer class="ns-ftr">
           <p>© 2024–2026 MoonJab. Todos los derechos reservados.</p>
@@ -643,7 +592,7 @@
             <a href="https://x.com/MoonJabdotcom" rel="noopener noreferrer">X (Twitter)</a>
           </p>
         </footer>
-      </div>
+      </header>
     </noscript>
 
     <!-- ── REACT APP MOUNT POINT ───────────────────── -->

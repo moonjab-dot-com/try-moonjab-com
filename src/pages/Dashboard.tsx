@@ -17,10 +17,9 @@ import {
   ChevronRight, Crown, Lock, Eye, Loader2, Compass,
 } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { getDashboardBasePath } from '@/lib/authRouting';
-import { supabase } from '@/integrations/supabase/client';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 10 },
@@ -58,40 +57,9 @@ const Dashboard = () => {
   const { cvs } = useCVStore();
   const { sessions } = useInterviewStore();
   const [upgradeModalOpen, setUpgradeModalOpen] = useState(false);
-  const [identityLoading, setIdentityLoading] = useState(!isGuestMode);
-  const [identity, setIdentity] = useState<{ name: string; email: string } | null>(null);
 
-  useEffect(() => {
-    let isMounted = true;
-    const loadIdentity = async () => {
-      if (isGuestMode) {
-        setIdentity({ name: 'Usuario de Prueba', email: '' });
-        setIdentityLoading(false);
-        return;
-      }
-      setIdentityLoading(true);
-      setIdentity(null);
-      const { data, error } = await supabase.auth.getUser();
-      const authUser = data.user;
-      if (!isMounted) return;
-      if (error || !authUser) { setIdentityLoading(false); return; }
-      const fallbackName =
-        authUser.user_metadata?.nombre ||
-        authUser.user_metadata?.name ||
-        authUser.email?.split('@')[0] ||
-        'Usuario';
-      const { data: profileData } = await supabase
-        .from('profiles').select('nombre, email').eq('id', authUser.id).maybeSingle();
-      if (!isMounted) return;
-      setIdentity({
-        name: profileData?.nombre || fallbackName,
-        email: profileData?.email || authUser.email || '',
-      });
-      setIdentityLoading(false);
-    };
-    void loadIdentity();
-    return () => { isMounted = false; };
-  }, [isGuestMode, user?.id]);
+  // useAuthSync already loaded user.name and user.email — no extra fetch needed
+  const identityLoading = !isGuestMode && !user?.name;
 
   const dashboardBasePath = getDashboardBasePath(
     user?.accessRole || (isGuestMode ? 'trial_user' : 'free_user'),
@@ -106,8 +74,8 @@ const Dashboard = () => {
   const isFree = userPlan === 'free';
   const isPremium = userPlan === 'premium';
 
-  const displayName = isTrial ? 'Usuario de Prueba' : identity?.name || user?.name || 'Usuario';
-  const displayEmail = isTrial ? '' : identity?.email || user?.email || '';
+  const displayName = isTrial ? 'Usuario de Prueba' : user?.name || 'Usuario';
+  const displayEmail = isTrial ? '' : user?.email || '';
   const firstName = displayName.split(' ')[0];
   const hasRole = !!profile?.rolActual && profile.rolActual !== 'other';
 

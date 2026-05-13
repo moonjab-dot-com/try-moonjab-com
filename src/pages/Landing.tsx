@@ -386,20 +386,12 @@ const LandingContent = () => {
                 </div>
                 <div className="flex-1 flex justify-center">
                   <div className="px-4 py-1 rounded-md bg-background/60 border border-border/30 text-[11px] text-muted-foreground font-mono">
-                    moonjab.com/cvs
+                    moonjab.com/dashboard/cvs
                   </div>
                 </div>
                 <div className="w-14" />
               </div>
-              <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                preload="metadata"
-                poster="/og-image.png"
-                className="w-full h-auto"
-              >
+              <video autoPlay loop muted playsInline className="w-full h-auto">
                 <source src="/moonjab-hero-video.mp4" type="video/mp4" />
               </video>
             </div>

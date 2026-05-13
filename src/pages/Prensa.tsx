@@ -24,7 +24,7 @@ const schema = {
     name: 'MoonJab',
     url: 'https://moonjab.com',
     logo: { '@type': 'ImageObject', url: 'https://moonjab.com/moonjab-logo.png' },
-    foundingDate: '2024',
+    foundingDate: '2025',
     description: 'Plataforma de empleabilidad con inteligencia artificial para estudiantes universitarios y jóvenes profesionales en Latinoamérica.',
     areaServed: ['PE', 'MX', 'CO', 'AR', 'CL'],
     sameAs: [
@@ -56,7 +56,7 @@ const STORY_ANGLES = [
 ];
 
 const QUICK_FACTS = [
-  { label: 'Fundación', value: 'Diciembre 2024' },
+  { label: 'Fundación', value: 'Diciembre 2025' },
   { label: 'CEO', value: 'Salvador' },
   { label: 'Mercado', value: 'LATAM · 5+ países' },
   { label: 'Idioma', value: 'Español' },
@@ -195,7 +195,7 @@ const Prensa = () => (
         <h2 className="text-2xl font-bold mb-6">Nuestra historia</h2>
         <div className="prose prose-sm dark:prose-invert max-w-none text-muted-foreground space-y-4">
           <p>
-            <strong className="text-foreground">MoonJab fue fundada en diciembre de 2024</strong> por Salvador con una premisa simple: en Latinoamérica, conseguir trabajo es difícil no porque los jóvenes no estén preparados, sino porque nadie les enseñó a presentarse. Un estudiante universitario en Lima, Ciudad de México o Bogotá enfrenta las mismas empresas globales que uno de Harvard — pero sin las mismas herramientas.
+            <strong className="text-foreground">MoonJab fue fundada en diciembre de 2025</strong> por Salvador con una premisa simple: en Latinoamérica, conseguir trabajo es difícil no porque los jóvenes no estén preparados, sino porque nadie les enseñó a presentarse. Un estudiante universitario en Lima, Ciudad de México o Bogotá enfrenta las mismas empresas globales que uno de Harvard — pero sin las mismas herramientas.
           </p>
           <p>
             El problema tiene dos caras. Por un lado, <strong className="text-foreground">el 75% de los CVs son descartados automáticamente</strong> por sistemas ATS (Applicant Tracking Systems) que las grandes empresas de LATAM usan para manejar miles de postulaciones. Un CV creado en Canva, con columnas dobles o sin las palabras clave correctas, nunca llega a manos de un humano. Por el otro, la mayoría de los jóvenes en LATAM llegan a su primera entrevista sin haber practicado nunca, enfrentando preguntas para las que nadie los preparó.
@@ -440,7 +440,7 @@ const Prensa = () => (
 
     <footer className="py-8 border-t border-border/30">
       <div className="mx-auto max-w-6xl px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
-        <p>© 2024–2026 MoonJab. Todos los derechos reservados.</p>
+        <p>© 2025 MoonJab. Todos los derechos reservados.</p>
         <div className="flex gap-4">
           <Link to="/cv-builder" className="hover:text-foreground">CV Builder</Link>
           <Link to="/testimonios" className="hover:text-foreground">Testimonios</Link>
