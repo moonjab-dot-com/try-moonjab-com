@@ -97,6 +97,29 @@ export default defineConfig(() => ({
       },
     }),
   ].filter(Boolean),
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+          'vendor-framer': ['framer-motion'],
+          'vendor-supabase': ['@supabase/supabase-js'],
+          'vendor-radix': [
+            '@radix-ui/react-dialog',
+            '@radix-ui/react-dropdown-menu',
+            '@radix-ui/react-tooltip',
+            '@radix-ui/react-tabs',
+            '@radix-ui/react-select',
+            '@radix-ui/react-popover',
+          ],
+          'vendor-charts': ['recharts'],
+          'vendor-forms': ['react-hook-form', 'zod'],
+          'vendor-i18n': ['react-i18next', 'i18next'],
+        },
+      },
+    },
+    chunkSizeWarningLimit: 600,
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, FileText, Crown, Rocket, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, FileText, Mic, Rocket, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface NextActionCardProps {
@@ -45,13 +45,12 @@ export const NextActionCard = ({
     badge = `${100 - cvScore}% restante`;
     progress = cvScore;
   } else if (hasCV && cvScore >= 70 && !isPremium && !isTrial) {
-    icon = Crown;
-    title = '¡Tu CV está listo! Hazlo destacar';
-    subtitle = 'Desbloquea la plantilla Harvard exclusiva por $5/mes.';
-    ctaLabel = 'Desbloquear Premium';
-    ctaHref = null;
-    onClick = onUpgrade;
-    badge = 'Recomendado';
+    icon = Mic;
+    title = '¡CV listo! Prepárate para la entrevista';
+    subtitle = 'Practica respuestas reales con IA y llega seguro a tu próxima entrevista.';
+    ctaLabel = 'Practicar entrevista';
+    ctaHref = `${dashboardBasePath}/interviews`;
+    badge = 'Próximo paso';
     progress = cvScore;
   } else if (hasCV && isPremium) {
     icon = CheckCircle2;
@@ -111,7 +110,7 @@ export const NextActionCard = ({
             </Link>
           ) : (
             <Button size="lg" onClick={onClick} className="w-full sm:w-auto gap-2 font-semibold shadow-md">
-              <Sparkles className="h-4 w-4" /> {ctaLabel}
+              {ctaLabel} <ArrowRight className="h-4 w-4" />
             </Button>
           )}
         </div>

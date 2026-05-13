@@ -1,89 +1,75 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { X, Sparkles } from 'lucide-react';
+import { X, FileText, Mic, Sparkles } from 'lucide-react';
 import { useAuthStore } from '@/store/useAuthStore';
 import { motion, AnimatePresence } from 'framer-motion';
-
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 interface UpgradeBannerProps {
   onUpgrade?: () => void;
 }
 
 export const UpgradeBanner = ({ onUpgrade }: UpgradeBannerProps) => {
-  const navigate = useNavigate();
   const { user } = useAuthStore();
   const [dismissed, setDismissed] = useState(false);
-  
+
   useEffect(() => {
-    const wasDismissed = sessionStorage.getItem('upgrade-banner-dismissed');
-    if (wasDismissed) {
-      setDismissed(true);
-    }
+    if (sessionStorage.getItem('upgrade-banner-dismissed')) setDismissed(true);
   }, []);
-  
+
   const handleDismiss = () => {
     setDismissed(true);
     sessionStorage.setItem('upgrade-banner-dismissed', 'true');
   };
-  
-  if (user?.plan === 'premium' || dismissed) {
-    return null;
-  }
-  
+
+  if (user?.plan === 'premium' || dismissed) return null;
+
+  const perks = [
+    { icon: FileText, label: 'Plantilla Harvard CV' },
+    { icon: Mic, label: 'Entrevistas IA ilimitadas' },
+    { icon: Sparkles, label: 'Coach IA 24/7' },
+  ];
+
   return (
     <AnimatePresence>
       <motion.div
-        initial={{ opacity: 0, y: -10 }}
+        initial={{ opacity: 0, y: -8 }}
         animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -10 }}
-        transition={{ duration: 0.3, ease: "easeOut" }}
-        className="
-          rounded-2xl border-2 border-primary/20 
-          bg-primary/5 dark:bg-primary/10
-          p-4 relative overflow-hidden
-          shadow-mj-md hover:shadow-mj-lg hover:-translate-y-0.5 transition-all duration-300
-        "
+        exit={{ opacity: 0, y: -8 }}
+        transition={{ duration: 0.3, ease: 'easeOut' }}
+        className="rounded-xl border border-border/60 bg-card p-4 relative"
       >
-        <div className="absolute inset-0 opacity-10 dark:opacity-20">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-primary rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-24 h-24 bg-primary rounded-full blur-2xl" />
-        </div>
-        
-        <div className="relative flex items-center justify-between gap-4">
-          <div className="flex items-center gap-3 flex-1">
-            <div className="p-2 rounded-full bg-primary/20">
-              <Sparkles className="h-5 w-5 text-primary" />
-            </div>
-            <div className="flex-1">
-              <p className="font-semibold text-sm text-foreground mb-0.5">
-                Desbloquea MoonJab Pro por <span className="text-primary">$5/mes</span>
-              </p>
-              <p className="text-xs text-muted-foreground">
-                Plantilla Harvard CV, todas las plantillas premium, entrevistas IA y más
-              </p>
+        <button
+          onClick={handleDismiss}
+          className="absolute top-3 right-3 p-1 rounded-md hover:bg-muted/60 text-muted-foreground hover:text-foreground transition-colors"
+          aria-label="Cerrar"
+        >
+          <X className="h-3.5 w-3.5" />
+        </button>
+
+        <div className="flex flex-col sm:flex-row sm:items-center gap-3">
+          <div className="flex-1 min-w-0">
+            <p className="text-sm font-semibold text-foreground pr-6">
+              Sigue avanzando con MoonJab Pro
+            </p>
+            <div className="flex flex-wrap gap-x-4 gap-y-1 mt-1.5">
+              {perks.map(({ icon: Icon, label }) => (
+                <span key={label} className="flex items-center gap-1 text-[11px] text-muted-foreground">
+                  <Icon className="h-3 w-3 text-primary flex-shrink-0" />
+                  {label}
+                </span>
+              ))}
             </div>
           </div>
-          
-          <div className="flex items-center gap-2">
-            <Button
-              onClick={() => navigate('/payment')}
-              variant="premium"
-              size="sm"
-              className="shadow-mj-glow hover:shadow-mj-glow-lg"
-            >
-              Suscribirse
+          <div className="flex items-center gap-2 flex-shrink-0">
+            <Link to="/pricing">
+              <Button size="sm" variant="outline" className="h-8 text-xs">
+                Ver detalles
+              </Button>
+            </Link>
+            <Button size="sm" className="h-8 text-xs" onClick={onUpgrade}>
+              Probar Pro · $5/mes
             </Button>
-            <button
-              onClick={handleDismiss}
-              className="
-                p-1.5 rounded-lg hover:bg-accent/50
-                transition-colors text-muted-foreground hover:text-foreground
-              "
-              aria-label="Cerrar banner"
-            >
-              <X className="h-4 w-4" />
-            </button>
           </div>
         </div>
       </motion.div>

@@ -13,8 +13,8 @@ import { NextActionCard } from '@/components/dashboard/NextActionCard';
 import { UpgradeBanner } from '@/components/UpgradeBanner';
 import { UpgradeModal } from '@/components/UpgradeModal';
 import {
-  FileText, ArrowRight, Sparkles, RotateCcw, Mic,
-  ChevronRight, Crown, Lock, Eye, Loader2,
+  FileText, ArrowRight, RotateCcw, Mic,
+  ChevronRight, Lock, Eye, Loader2, Sun, Sunset, Moon,
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
@@ -121,6 +121,10 @@ const Dashboard = () => {
       ? 'bg-primary/10 text-primary border-primary/20'
       : 'bg-muted text-muted-foreground';
 
+  const hour = new Date().getHours();
+  const greeting = hour < 12 ? 'Buenos días' : hour < 19 ? 'Buenas tardes' : 'Buenas noches';
+  const GreetingIcon = hour < 12 ? Sun : hour < 19 ? Sunset : Moon;
+
   if (identityLoading && !isGuestMode) {
     return (
       <div className="min-h-screen bg-background">
@@ -145,20 +149,22 @@ const Dashboard = () => {
         >
           <div className="flex items-center gap-3">
             <div>
-              <div className="flex items-center gap-2">
-                <h1 className="text-xl font-semibold tracking-tight">{firstName}</h1>
+              <div className="flex items-center gap-2 mb-0.5">
+                <GreetingIcon className="h-4 w-4 text-primary/60 flex-shrink-0" />
+                <h1 className="text-xl font-semibold tracking-tight">
+                  {greeting}{firstName !== 'Usuario' ? `, ${firstName}` : ''}
+                </h1>
                 <Badge variant="outline" className={`text-[10px] px-1.5 py-0 h-5 font-medium ${planColor}`}>
-                  {isPremium && <Crown className="h-2.5 w-2.5 mr-0.5" />}
                   {planLabel}
                 </Badge>
               </div>
-              {!!displayEmail && <p className="text-xs text-muted-foreground mt-0.5">{displayEmail}</p>}
-              <p className="text-xs text-muted-foreground mt-0.5">
+              {!!displayEmail && <p className="text-xs text-muted-foreground">{displayEmail}</p>}
+              <p className="text-xs text-muted-foreground">
                 {isTrial
-                  ? 'Entorno de prueba aislado'
+                  ? 'Entorno de prueba · tus datos son temporales'
                   : hasRole
                     ? getRoleDisplayName(profile.rolActual!)
-                    : 'Completa tu diagnóstico para comenzar'}
+                    : 'Completa tu diagnóstico para personalizar tu experiencia'}
               </p>
             </div>
           </div>

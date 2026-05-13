@@ -4,9 +4,9 @@
 
 @layer base {
   :root {
-    /* Main colors - Clovely emerald theme */
-    --background: 208 100% 97%;
-    --foreground: 220 14% 26%;
+    /* Main colors - MoonJab refined palette */
+    --background: 210 22% 98.5%;
+    --foreground: 222 15% 19%;
 
     --card: 0 0% 100%;
     --card-foreground: 220 14% 26%;
@@ -41,11 +41,11 @@
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
+    --border: 220 14% 89%;
+    --input: 220 14% 89%;
     --ring: 142 71% 45%;
 
-    --radius: 0.5rem;
+    --radius: 0.625rem;
 
     /* Chart colors */
     --chart-1: 142 71% 45%;
@@ -54,19 +54,19 @@
     --chart-4: 160 84% 24%;
     --chart-5: 160 84% 20%;
 
-    /* Clovely Gradients */
+    /* MoonJab Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(160 84% 39%), hsl(142 71% 45%));
-    --gradient-hero: linear-gradient(180deg, hsl(149 80% 96%), hsl(208 100% 97%), hsl(0 0% 100%));
+    --gradient-hero: linear-gradient(180deg, hsl(155 60% 96.5%), hsl(210 22% 98.5%), hsl(0 0% 100%));
     --gradient-premium: linear-gradient(135deg, hsl(160 84% 30%), hsl(142 71% 45%));
     --gradient-warm: linear-gradient(135deg, hsl(160 84% 39%), hsl(149 80% 50%));
     --gradient-soft: linear-gradient(180deg, hsl(0 0% 100%), hsl(208 100% 97%));
     --gradient-card: linear-gradient(135deg, hsl(0 0% 100%), hsl(149 80% 98%));
     
-    /* Shadows - Soft emerald tinted */
-    --shadow-sm: 0 1px 2px 0 rgba(16, 185, 129, 0.04);
-    --shadow-md: 0 4px 6px -1px rgba(16, 185, 129, 0.06), 0 2px 4px -2px rgba(16, 185, 129, 0.04);
-    --shadow-lg: 0 10px 15px -3px rgba(16, 185, 129, 0.08), 0 4px 6px -4px rgba(16, 185, 129, 0.06);
-    --shadow-xl: 0 20px 25px -5px rgba(16, 185, 129, 0.08), 0 8px 10px -6px rgba(16, 185, 129, 0.06);
+    /* Shadows - Neutral, sophisticated (no color tint) */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05), 0 1px 1px 0 rgba(0, 0, 0, 0.03);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.09), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
     
     /* Glassmorphism */
     --glass-bg: rgba(255, 255, 255, 0.85);
@@ -143,11 +143,11 @@
     --gradient-hero: linear-gradient(180deg, hsl(222 47% 11%), hsl(217 33% 14%), hsl(222 47% 13%));
     --gradient-premium: linear-gradient(135deg, hsl(160 84% 30%), hsl(160 64% 52%));
 
-    /* Emerald-tinted shadows for dark mode */
-    --shadow-sm: 0 1px 3px 0 rgba(52, 211, 153, 0.08), 0 1px 2px 0 rgba(0, 0, 0, 0.2);
-    --shadow-md: 0 4px 8px -2px rgba(52, 211, 153, 0.12), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
-    --shadow-lg: 0 10px 20px -5px rgba(52, 211, 153, 0.15), 0 4px 8px -4px rgba(0, 0, 0, 0.35);
-    --shadow-xl: 0 20px 30px -8px rgba(52, 211, 153, 0.18), 0 8px 12px -6px rgba(0, 0, 0, 0.4);
+    /* Dark mode shadows - depth without heavy tinting */
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.25), 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+    --shadow-md: 0 4px 8px -2px rgba(0, 0, 0, 0.32), 0 2px 4px -2px rgba(0, 0, 0, 0.2);
+    --shadow-lg: 0 10px 20px -5px rgba(0, 0, 0, 0.38), 0 4px 8px -4px rgba(0, 0, 0, 0.28);
+    --shadow-xl: 0 20px 30px -8px rgba(0, 0, 0, 0.42), 0 8px 12px -6px rgba(0, 0, 0, 0.32);
 
     /* Glass effect for dark mode */
     --glass-bg: rgba(30, 41, 59, 0.8);
@@ -174,8 +174,11 @@
     scroll-behavior: smooth;
     @apply overflow-x-hidden;
     transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Optimize text rendering */
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
   }
-  
+
   body {
     @apply overflow-x-hidden bg-background text-foreground antialiased;
     font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -183,6 +186,31 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     max-width: 100vw;
+    /* Reduce paint complexity on scroll */
+    contain: paint;
+  }
+
+  /* Reduce motion for accessibility + performance */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Improve image rendering */
+  img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Focus visible for accessibility */
+  :focus-visible {
+    outline: 2px solid hsl(var(--primary));
+    outline-offset: 2px;
+    border-radius: 4px;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -519,5 +547,129 @@
 
   .animate-spring-bounce {
     animation: spring-bounce 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  /* Subtle dot pattern — hero backgrounds, feature sections */
+  .bg-dots {
+    background-image: radial-gradient(circle, hsl(var(--foreground) / 0.055) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+
+  /* Subtle grid pattern — section backgrounds */
+  .bg-grid {
+    background-image:
+      linear-gradient(hsl(var(--border) / 0.5) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--border) / 0.5) 1px, transparent 1px);
+    background-size: 36px 36px;
+  }
+
+  /* Typography */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Premium card glow on hover */
+  .hover-card-glow:hover {
+    box-shadow:
+      0 0 0 1px hsl(var(--primary) / 0.12),
+      0 8px 24px -4px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Frosted pill badge */
+  .badge-pill {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium;
+    background: hsl(var(--primary) / 0.07);
+    border: 1px solid hsl(var(--primary) / 0.18);
+    color: hsl(var(--primary));
+  }
+
+  /* Section divider gradient */
+  .divider-fade {
+    background: linear-gradient(90deg, transparent, hsl(var(--border)), transparent);
+    height: 1px;
+  }
+
+  /* Feature card colored accent variants */
+  .feature-icon-emerald {
+    @apply bg-emerald-50 dark:bg-emerald-500/15 text-emerald-600 dark:text-emerald-400;
+  }
+  .feature-icon-violet {
+    @apply bg-violet-50 dark:bg-violet-500/15 text-violet-600 dark:text-violet-400;
+  }
+  .feature-icon-blue {
+    @apply bg-blue-50 dark:bg-blue-500/15 text-blue-600 dark:text-blue-400;
+  }
+  .feature-icon-amber {
+    @apply bg-amber-50 dark:bg-amber-500/15 text-amber-600 dark:text-amber-400;
+  }
+
+  /* ── Performance utilities ── */
+
+  /* Defer rendering of below-fold heavy sections */
+  .content-deferred {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 400px;
+  }
+
+  /* Promote interactive elements to their own layer */
+  .layer-promote {
+    will-change: transform;
+    transform: translateZ(0);
+  }
+
+  /* Stable layout containers — reduce CLS */
+  .aspect-stable-card {
+    aspect-ratio: 16 / 9;
+  }
+  .aspect-stable-avatar {
+    aspect-ratio: 1 / 1;
+  }
+
+  /* Sidebar transition — smooth width changes */
+  .sidebar-transition {
+    transition: width 200ms cubic-bezier(0.4, 0, 0.2, 1),
+                margin-left 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Prevent text/layout shift during font load */
+  .font-loading-stable {
+    font-display: swap;
+    size-adjust: 100%;
+  }
+
+  /* ── Emotional design helpers ── */
+
+  /* Gentle pulse for "new" badges / indicators */
+  .pulse-gentle {
+    animation: pulse-gentle 2.5s ease-in-out infinite;
+  }
+  @keyframes pulse-gentle {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+  }
+
+  /* Success glow — used after completing a step */
+  .success-glow {
+    box-shadow: 0 0 0 0 hsl(var(--primary) / 0.4);
+    animation: success-ring 0.6s ease-out forwards;
+  }
+  @keyframes success-ring {
+    to { box-shadow: 0 0 0 8px hsl(var(--primary) / 0); }
+  }
+
+  /* Skeleton shimmer for loading states */
+  .skeleton-shimmer {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--muted)) 25%,
+      hsl(var(--muted-foreground) / 0.08) 50%,
+      hsl(var(--muted)) 75%
+    );
+    background-size: 200% 100%;
+    animation: shimmer-move 1.6s ease-in-out infinite;
+  }
+  @keyframes shimmer-move {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
   }
 }

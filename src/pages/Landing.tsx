@@ -141,13 +141,15 @@ const LandingContent = () => {
         className="relative pt-28 pb-20 sm:pt-36 sm:pb-28 overflow-hidden">
         
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-[500px] h-[500px] rounded-full bg-primary/[0.04] blur-3xl" />
-          <div className="absolute -bottom-40 -left-40 w-[400px] h-[400px] rounded-full bg-primary/[0.03] blur-3xl" />
+          <div className="absolute inset-0 bg-dots opacity-[0.35]" />
+          <div className="absolute -top-48 -right-48 w-[650px] h-[650px] rounded-full bg-primary/[0.07] blur-3xl" />
+          <div className="absolute -bottom-48 -left-48 w-[550px] h-[550px] rounded-full bg-primary/[0.04] blur-3xl" />
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[900px] h-[200px] rounded-full bg-secondary/60 blur-3xl" />
         </div>
 
         <div className="relative mx-auto max-w-3xl px-6 text-center">
           <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0}>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-primary/20 bg-primary/[0.06] text-xs font-medium text-primary mb-8">
+            <div className="badge-pill mb-8 shadow-sm">
               <Sparkles className="h-3 w-3" />
               {t('landing.badge')}
             </div>
@@ -186,13 +188,28 @@ const LandingContent = () => {
           </motion.div>
 
           <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={4}
-            className="flex items-center justify-center gap-5 text-xs text-muted-foreground mt-8">
-            <span className="flex items-center gap-1.5">
-              <Check className="h-3.5 w-3.5 text-primary" /> {t('landing.checkGuest')}
-            </span>
-            <span className="flex items-center gap-1.5">
-              <Check className="h-3.5 w-3.5 text-primary" /> {t('landing.checkCancel')}
-            </span>
+            className="mt-10 flex flex-col items-center gap-5">
+            <div className="flex items-center gap-3">
+              <div className="flex -space-x-2.5">
+                {['#10b981','#6366f1','#f59e0b','#3b82f6','#ec4899'].map((bg, i) => (
+                  <div key={i} style={{ backgroundColor: bg, zIndex: 5 - i }}
+                    className="relative w-8 h-8 rounded-full border-2 border-background flex items-center justify-center text-[9px] font-bold text-white shadow-sm">
+                    {['A','L','M','J','R'][i]}
+                  </div>
+                ))}
+              </div>
+              <p className="text-sm text-muted-foreground">
+                <span className="font-semibold text-foreground">+10,000 estudiantes</span> mejoraron su carrera
+              </p>
+            </div>
+            <div className="flex items-center gap-5 text-xs text-muted-foreground">
+              <span className="flex items-center gap-1.5">
+                <Check className="h-3.5 w-3.5 text-primary" /> {t('landing.checkGuest')}
+              </span>
+              <span className="flex items-center gap-1.5">
+                <Check className="h-3.5 w-3.5 text-primary" /> {t('landing.checkCancel')}
+              </span>
+            </div>
           </motion.div>
         </div>
       </motion.section>
@@ -250,42 +267,64 @@ const LandingContent = () => {
           </motion.div>
 
           <div className="grid md:grid-cols-3 gap-4">
-            {/* Large card — CV */}
+            {/* Large card — CV Builder (spans 2 cols) */}
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
-              className="md:col-span-2 group relative overflow-hidden rounded-2xl border border-border/40 bg-card p-8 hover:shadow-clovely-lg transition-all duration-500">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-primary/[0.03] rounded-full blur-3xl pointer-events-none" />
+              className="md:col-span-2 group relative overflow-hidden rounded-2xl border border-border/40 bg-card p-8 hover-card-glow transition-all duration-500">
+              <div className="absolute top-0 right-0 w-72 h-72 bg-emerald-500/[0.04] rounded-full blur-3xl pointer-events-none" />
               <div className="relative">
-                <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/15 transition-colors">
-                  <FileText className="h-5 w-5 text-primary" />
+                <div className="w-11 h-11 rounded-xl feature-icon-emerald flex items-center justify-center mb-5 transition-colors">
+                  <FileText className="h-5 w-5" />
                 </div>
                 <h3 className="text-xl font-bold mb-2">{t('landing.features.cv.title')}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed max-w-md mb-6">{t('landing.features.cv.description')}</p>
                 <div className="flex flex-wrap gap-2">
                   {cvTags.map((tag) =>
-                    <span key={tag} className="px-2.5 py-1 text-[11px] rounded-md bg-primary/[0.06] text-primary font-medium">{tag}</span>
+                    <span key={tag} className="px-2.5 py-1 text-[11px] rounded-lg bg-emerald-50 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 font-medium border border-emerald-100 dark:border-emerald-500/20">{tag}</span>
                   )}
                 </div>
               </div>
             </motion.div>
 
-            {/* Small card — Diagnostic */}
+            {/* Small card — Vocational Diagnostic */}
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={1}
-              className="group relative overflow-hidden rounded-2xl border border-border/40 bg-card p-8 hover:shadow-clovely-lg transition-all duration-500">
-              <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/15 transition-colors">
-                <Compass className="h-5 w-5 text-primary" />
+              className="group relative overflow-hidden rounded-2xl border border-border/40 bg-card p-8 hover-card-glow transition-all duration-500">
+              <div className="w-11 h-11 rounded-xl feature-icon-violet flex items-center justify-center mb-5 transition-colors">
+                <Compass className="h-5 w-5" />
               </div>
               <h3 className="text-lg font-bold mb-2">{t('landing.features.diagnostic.title')}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{t('landing.features.diagnostic.description')}</p>
             </motion.div>
 
-            {/* Small card — Interview */}
+            {/* Small card — Interview Simulator */}
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={2}
-              className="group relative overflow-hidden rounded-2xl border border-border/40 bg-card p-8 hover:shadow-clovely-lg transition-all duration-500">
-              <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center mb-5 group-hover:bg-primary/15 transition-colors">
-                <Mic className="h-5 w-5 text-primary" />
+              className="group relative overflow-hidden rounded-2xl border border-border/40 bg-card p-8 hover-card-glow transition-all duration-500">
+              <div className="w-11 h-11 rounded-xl feature-icon-blue flex items-center justify-center mb-5 transition-colors">
+                <Mic className="h-5 w-5" />
               </div>
               <h3 className="text-lg font-bold mb-2">{t('landing.features.interview.title')}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{t('landing.features.interview.description')}</p>
+            </motion.div>
+
+            {/* Large card — ATS Optimization (spans 2 cols) */}
+            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={3}
+              className="md:col-span-2 group relative overflow-hidden rounded-2xl border border-border/40 bg-card p-8 hover-card-glow transition-all duration-500">
+              <div className="absolute bottom-0 left-0 w-56 h-56 bg-amber-500/[0.04] rounded-full blur-3xl pointer-events-none" />
+              <div className="relative">
+                <div className="w-11 h-11 rounded-xl feature-icon-amber flex items-center justify-center mb-5 transition-colors">
+                  <BarChart3 className="h-5 w-5" />
+                </div>
+                <h3 className="text-xl font-bold mb-2">Optimización ATS</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed max-w-md mb-6">
+                  Analiza tu CV contra los sistemas ATS de empresas reales. Obtén un score detallado con sugerencias específicas para superar los filtros automáticos de selección.
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-amber-50 dark:bg-amber-500/10 border border-amber-100 dark:border-amber-500/20">
+                    <div className="w-2 h-2 rounded-full bg-amber-500" />
+                    <span className="text-[11px] font-semibold text-amber-700 dark:text-amber-400">Score promedio: 94%</span>
+                  </div>
+                  <span className="text-[11px] text-muted-foreground px-2.5 py-1.5 rounded-lg bg-muted border border-border/50">Incluido en Pro</span>
+                </div>
+              </div>
             </motion.div>
 
           </div>
@@ -343,20 +382,70 @@ const LandingContent = () => {
               </ul>
             </div>
             <div>
-              <div className="aspect-[4/3] rounded-xl bg-gradient-to-br from-card to-muted/50 border border-border/40 p-6 flex flex-col justify-between">
-                <div className="space-y-3">
-                  <div className="h-3 w-32 rounded bg-primary/15" />
-                  <div className="h-2.5 w-full rounded bg-muted" />
-                  <div className="h-2.5 w-4/5 rounded bg-muted" />
+              <div className="rounded-xl border border-border/50 overflow-hidden shadow-clovely-lg">
+                {/* Editor chrome */}
+                <div className="px-4 py-2.5 bg-muted/50 border-b border-border/40 flex items-center justify-between">
+                  <div className="flex items-center gap-2.5">
+                    <div className="flex gap-1.5">
+                      <div className="w-2.5 h-2.5 rounded-full bg-red-400/50" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-yellow-400/50" />
+                      <div className="w-2.5 h-2.5 rounded-full bg-green-400/50" />
+                    </div>
+                    <span className="text-[10px] text-muted-foreground font-mono">CV Builder — Ana García</span>
+                  </div>
+                  <div className="px-2.5 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-500/15 border border-emerald-200/50 dark:border-emerald-500/20 text-[9px] font-bold text-emerald-700 dark:text-emerald-400">ATS 93%</div>
                 </div>
-                <div className="space-y-2">
-                  <div className="h-2 w-20 rounded bg-primary/20" />
-                  <div className="h-2 w-full rounded bg-muted/80" />
-                  <div className="h-2 w-3/4 rounded bg-muted/80" />
+                {/* CV document preview */}
+                <div className="p-5 bg-white dark:bg-card">
+                  {/* Header */}
+                  <div className="text-center pb-3 border-b border-border/40 mb-3">
+                    <div className="h-4 w-32 rounded bg-foreground/20 mx-auto mb-1.5" />
+                    <div className="h-2 w-44 rounded bg-muted mx-auto mb-1" />
+                    <div className="flex items-center justify-center gap-3 mt-2">
+                      {['Email', 'LinkedIn', 'Lima, Perú'].map(t => (
+                        <div key={t} className="h-1.5 w-12 rounded bg-muted/70" />
+                      ))}
+                    </div>
+                  </div>
+                  {/* Experience section */}
+                  <div className="mb-3">
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className="h-2 w-20 rounded bg-foreground/20" />
+                      <div className="flex-1 h-px bg-border" />
+                    </div>
+                    <div className="flex justify-between items-start mb-1">
+                      <div className="h-2.5 w-36 rounded bg-foreground/15" />
+                      <div className="h-2 w-20 rounded bg-muted" />
+                    </div>
+                    <div className="h-2 w-28 rounded bg-primary/20 mb-1.5" />
+                    <div className="space-y-1">
+                      <div className="h-1.5 w-full rounded bg-muted/60" />
+                      <div className="h-1.5 w-4/5 rounded bg-muted/60" />
+                    </div>
+                  </div>
+                  {/* Skills */}
+                  <div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <div className="h-2 w-16 rounded bg-foreground/20" />
+                      <div className="flex-1 h-px bg-border" />
+                    </div>
+                    <div className="flex flex-wrap gap-1.5">
+                      {['Python', 'React', 'SQL', 'Tableau'].map(s => (
+                        <span key={s} className="px-2 py-0.5 rounded bg-muted text-[8px] text-muted-foreground border border-border/50">{s}</span>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-                <div className="flex gap-2">
-                  <div className="px-3 py-1.5 rounded-md bg-primary/10 text-[10px] text-primary font-medium">ATS Score: 92%</div>
-                  <div className="px-3 py-1.5 rounded-md bg-muted text-[10px] text-muted-foreground">PDF Ready</div>
+                {/* Action bar */}
+                <div className="px-4 py-2.5 bg-muted/30 border-t border-border/30 flex items-center justify-between">
+                  <div className="flex gap-2">
+                    <div className="px-2.5 py-1 rounded-md bg-primary text-[9px] text-white font-semibold">Exportar PDF</div>
+                    <div className="px-2.5 py-1 rounded-md bg-muted border border-border/50 text-[9px] text-muted-foreground">Mejorar con IA ✨</div>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                    <span className="text-[9px] text-emerald-600 dark:text-emerald-400 font-medium">Guardado</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -384,28 +473,56 @@ const LandingContent = () => {
               </ul>
             </div>
             <div className="md:order-1">
-              <div className="aspect-[4/3] rounded-xl bg-gradient-to-br from-card to-muted/50 border border-border/40 p-6 flex flex-col gap-3">
-                <div className="flex items-center gap-2 mb-2">
+              <div className="rounded-xl border border-border/50 overflow-hidden shadow-clovely-lg">
+                {/* Chat header */}
+                <div className="px-4 py-2.5 bg-card border-b border-border/40 flex items-center gap-2.5">
                   <div className="w-7 h-7 rounded-full bg-primary/15 flex items-center justify-center">
                     <Mic className="h-3.5 w-3.5 text-primary" />
                   </div>
-                  <div className="text-[11px] font-medium text-foreground/70">{t('landing.deepDive.interviewerAI')}</div>
+                  <div>
+                    <div className="text-[10px] font-semibold text-foreground">{t('landing.deepDive.interviewerAI')}</div>
+                    <div className="flex items-center gap-1 mt-0.5">
+                      <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                      <span className="text-[9px] text-muted-foreground">En sesión</span>
+                    </div>
+                  </div>
+                  <div className="ml-auto px-2.5 py-0.5 rounded-full bg-red-50 dark:bg-red-500/15 border border-red-200/50 dark:border-red-500/20 text-[9px] font-bold text-red-600 dark:text-red-400 tracking-wide">LIVE</div>
                 </div>
-                <div className="flex-1 space-y-3">
-                  <div className="bg-muted/60 rounded-lg p-3 max-w-[80%]">
-                    <div className="h-2 w-full rounded bg-foreground/10" />
-                    <div className="h-2 w-3/4 rounded bg-foreground/10 mt-1.5" />
+                {/* Messages */}
+                <div className="p-4 space-y-3 bg-background">
+                  {/* AI question */}
+                  <div className="flex gap-2 max-w-[88%]">
+                    <div className="w-5 h-5 rounded-full bg-primary/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Mic className="h-2.5 w-2.5 text-primary" />
+                    </div>
+                    <div className="bg-card rounded-2xl rounded-tl-sm px-3 py-2 text-[10px] text-foreground/80 border border-border/40 leading-relaxed">
+                      ¿Puedes contarme sobre un proyecto donde demostraste liderazgo?
+                    </div>
                   </div>
-                  <div className="bg-primary/[0.08] rounded-lg p-3 max-w-[75%] ml-auto">
-                    <div className="h-2 w-full rounded bg-primary/20" />
-                    <div className="h-2 w-2/3 rounded bg-primary/20 mt-1.5" />
+                  {/* User response */}
+                  <div className="flex justify-end max-w-[80%] ml-auto">
+                    <div className="bg-primary/10 rounded-2xl rounded-tr-sm px-3 py-2 text-[10px] text-foreground/80 leading-relaxed">
+                      En mi último semestre, lideré un equipo de 4 personas para desarrollar...
+                    </div>
                   </div>
-                </div>
-                <div className="flex gap-2 items-center">
-                  <div className="flex-1 h-1.5 rounded-full bg-muted overflow-hidden">
-                    <div className="h-full w-3/4 rounded-full bg-primary/40" />
+                  {/* AI Feedback card */}
+                  <div className="bg-card rounded-xl p-3 border border-border/40 mt-2">
+                    <div className="flex items-center gap-1.5 mb-2">
+                      <Sparkles className="h-3 w-3 text-primary" />
+                      <span className="text-[9px] font-semibold text-primary uppercase tracking-wide">Retroalimentación IA</span>
+                    </div>
+                    <div className="space-y-2">
+                      {[['Claridad', '82%', 'w-[82%]', 'bg-emerald-400/60'], ['Estructura STAR', '76%', 'w-[76%]', 'bg-blue-400/50'], ['Confianza', '88%', 'w-[88%]', 'bg-violet-400/50']].map(([label, val, w, color]) => (
+                        <div key={label} className="flex items-center gap-2">
+                          <span className="text-[8.5px] text-muted-foreground w-24 flex-shrink-0">{label}</span>
+                          <div className="flex-1 h-1 rounded-full bg-border">
+                            <div className={`h-full rounded-full ${w} ${color}`} />
+                          </div>
+                          <span className="text-[8.5px] font-semibold text-foreground/70">{val}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                  <span className="text-[10px] text-primary font-medium">75%</span>
                 </div>
               </div>
             </div>
@@ -424,17 +541,22 @@ const LandingContent = () => {
           <div className="grid md:grid-cols-3 gap-5">
             {testimonials.map((tt, i) =>
               <motion.div key={i} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={i}
-                className="p-6 rounded-2xl border border-border/40 bg-card hover:shadow-clovely-md transition-all duration-300 group">
+                className="relative p-6 rounded-2xl border border-border/40 bg-card hover-card-glow transition-all duration-300 flex flex-col">
+                {/* Large decorative quote mark */}
+                <div className="absolute top-4 right-5 text-5xl leading-none text-primary/[0.08] font-serif select-none">&rdquo;</div>
+                {/* Stars */}
                 <div className="flex gap-0.5 mb-4">
                   {Array.from({ length: 5 }).map((_, j) =>
                     <Star key={j} className="h-3.5 w-3.5 fill-primary text-primary" />
                   )}
                 </div>
-                <p className="text-sm leading-relaxed text-foreground/80 mb-6">&ldquo;{tt.text}&rdquo;</p>
-                <div className="flex items-center gap-3">
-                  <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center text-xs font-bold text-primary">{tt.name[0]}</div>
+                <p className="text-sm leading-relaxed text-foreground/75 mb-6 flex-1 relative">{tt.text}</p>
+                <div className="flex items-center gap-3 pt-4 border-t border-border/30">
+                  <div className="w-9 h-9 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center text-xs font-bold text-primary flex-shrink-0">
+                    {tt.name[0]}
+                  </div>
                   <div>
-                    <p className="font-medium text-sm">{tt.name}</p>
+                    <p className="font-semibold text-sm">{tt.name}</p>
                     <p className="text-xs text-muted-foreground">{tt.role}</p>
                   </div>
                 </div>
@@ -456,15 +578,19 @@ const LandingContent = () => {
           <div className="grid sm:grid-cols-2 gap-5 max-w-2xl mx-auto">
             {/* Free / Guest */}
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
-              className="rounded-2xl border border-border/40 bg-card p-7">
-              <p className="text-sm font-semibold mb-1">{t('landing.pricing.guestMode')}</p>
-              <p className="text-xs text-muted-foreground mb-5">{t('landing.pricing.guestDesc')}</p>
-              <p className="text-3xl font-bold mb-1">$0</p>
-              <p className="text-xs text-muted-foreground mb-6">{t('landing.pricing.forever')}</p>
-              <ul className="space-y-2.5 mb-7">
+              className="rounded-2xl border border-border/40 bg-card p-7 flex flex-col">
+              <div>
+                <p className="text-base font-semibold mb-1">{t('landing.pricing.guestMode')}</p>
+                <p className="text-xs text-muted-foreground mb-5">{t('landing.pricing.guestDesc')}</p>
+                <div className="flex items-baseline gap-1 mb-1">
+                  <p className="text-4xl font-bold tracking-tight">$0</p>
+                </div>
+                <p className="text-xs text-muted-foreground mb-6">{t('landing.pricing.forever')}</p>
+              </div>
+              <ul className="space-y-2.5 mb-7 flex-1">
                 {guestFeatures.map((f) =>
-                  <li key={f} className="flex items-center gap-2.5 text-sm text-muted-foreground">
-                    <Check className="h-3.5 w-3.5 text-muted-foreground/60 flex-shrink-0" />
+                  <li key={f} className="flex items-start gap-2.5 text-sm text-muted-foreground">
+                    <Check className="h-3.5 w-3.5 text-muted-foreground/50 flex-shrink-0 mt-0.5" />
                     {f}
                   </li>
                 )}
@@ -476,27 +602,34 @@ const LandingContent = () => {
 
             {/* Pro */}
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={1}
-              className="rounded-2xl border-2 border-primary/30 bg-card p-7 relative shadow-clovely-md">
-              <div className="absolute -top-3 left-7 px-3 py-0.5 rounded-full bg-primary text-primary-foreground text-[10px] font-semibold">
-                {t('landing.pricing.recommended')}
+              className="rounded-2xl border border-primary/25 bg-gradient-to-b from-primary/[0.03] to-card p-7 relative shadow-clovely-lg flex flex-col">
+              {/* Recommended badge */}
+              <div className="absolute -top-3.5 left-7">
+                <div className="px-3 py-1 rounded-full bg-primary text-primary-foreground text-[10px] font-bold tracking-wide shadow-sm">
+                  {t('landing.pricing.recommended')}
+                </div>
               </div>
-              <p className="text-sm font-semibold mb-1">Pro</p>
-              <p className="text-xs text-muted-foreground mb-5">{t('landing.pricing.proDesc')}</p>
-              <div className="flex items-baseline gap-1 mb-1">
-                <p className="text-3xl font-bold">$5</p>
-                <span className="text-sm text-muted-foreground">/mes</span>
+              <div>
+                <p className="text-base font-semibold mb-1">Pro</p>
+                <p className="text-xs text-muted-foreground mb-5">{t('landing.pricing.proDesc')}</p>
+                <div className="flex items-baseline gap-1 mb-1">
+                  <p className="text-4xl font-bold tracking-tight">$5</p>
+                  <span className="text-sm text-muted-foreground font-normal">/mes</span>
+                </div>
+                <p className="text-xs text-muted-foreground mb-6">{t('landing.pricing.billedMonthly')}</p>
               </div>
-              <p className="text-xs text-muted-foreground mb-6">{t('landing.pricing.billedMonthly')}</p>
-              <ul className="space-y-2.5 mb-7">
+              <ul className="space-y-2.5 mb-7 flex-1">
                 {proFeatures.map((f) =>
-                  <li key={f} className="flex items-center gap-2.5 text-sm">
-                    <Check className="h-3.5 w-3.5 text-primary flex-shrink-0" />
+                  <li key={f} className="flex items-start gap-2.5 text-sm">
+                    <div className="w-4 h-4 rounded-full bg-primary/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Check className="h-2.5 w-2.5 text-primary" />
+                    </div>
                     {f}
                   </li>
                 )}
               </ul>
               <Link to="/registro" className="block">
-                <Button className="w-full h-10 text-sm font-semibold gap-2 shadow-clovely-sm">
+                <Button className="w-full h-11 text-sm font-semibold gap-2">
                   {t('landing.pricing.startNow')}
                   <ArrowRight className="h-3.5 w-3.5" />
                 </Button>

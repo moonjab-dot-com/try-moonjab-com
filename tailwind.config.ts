@@ -109,7 +109,22 @@ export default {
         'premium-md': 'var(--shadow-md)',
         'premium-lg': 'var(--shadow-lg)',
         'premium-xl': 'var(--shadow-xl)',
-        'orange': 'var(--shadow-orange)',
+        'orange': '0 4px 14px 0 rgba(255, 122, 0, 0.2)',
+        /* MoonJab shadow scale */
+        'mj-sm': 'var(--shadow-sm)',
+        'mj-md': 'var(--shadow-md)',
+        'mj-lg': 'var(--shadow-lg)',
+        'mj-xl': 'var(--shadow-xl)',
+        'mj-glow': '0 0 20px rgba(16, 185, 129, 0.20)',
+        'mj-glow-lg': '0 0 32px rgba(16, 185, 129, 0.28)',
+        /* Legacy clovely aliases */
+        'clovely-sm': 'var(--shadow-sm)',
+        'clovely-md': 'var(--shadow-md)',
+        'clovely-lg': 'var(--shadow-lg)',
+        'clovely-xl': 'var(--shadow-xl)',
+        'clovely-glow': '0 0 20px rgba(16, 185, 129, 0.20)',
+        'clovely-glow-lg': '0 0 32px rgba(16, 185, 129, 0.28)',
+        'clovely-xl': 'var(--shadow-xl)',
       },
       transitionDuration: {
         '400': '400ms',

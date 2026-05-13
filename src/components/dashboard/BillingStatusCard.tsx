@@ -58,9 +58,9 @@ export function BillingStatusCard() {
       )}
 
       <Button
-        variant={isPremium ? 'outline' : 'default'}
+        variant={isPremium ? 'outline' : 'ghost'}
         size="sm"
-        className="w-full h-8 text-xs"
+        className={`w-full h-8 text-xs ${!isPremium ? 'text-muted-foreground hover:text-foreground' : ''}`}
         onClick={handleAction}
         disabled={loading}
       >
@@ -71,7 +71,7 @@ export function BillingStatusCard() {
         ) : (
           <Crown className="h-3 w-3 mr-1" />
         )}
-        {isPremium ? 'Gestionar suscripción' : 'Upgrade a Pro — $5/mes'}
+        {isPremium ? 'Gestionar suscripción' : 'Ver beneficios Pro'}
       </Button>
     </div>
   );
