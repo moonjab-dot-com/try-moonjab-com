@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ThumbsUp, Minus, ThumbsDown, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Sparkles, Brain } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
 import { RIASEC_QUESTIONS, getShuffledQuestions, RIASECQuestion } from '@/lib/riasecQuestions';
@@ -13,10 +13,18 @@ interface RIASECQuizStepProps {
   initialAnswers?: Record<string, AnswerValue>;
 }
 
-const answerOptions = [
-  { value: 2 as AnswerValue, label: 'Me gusta', icon: ThumbsUp, color: 'text-green-500 bg-green-500/10 border-green-500/30 hover:bg-green-500/20' },
-  { value: 1 as AnswerValue, label: 'Neutro', icon: Minus, color: 'text-muted-foreground bg-muted/50 border-border hover:bg-muted' },
-  { value: 0 as AnswerValue, label: 'No me gusta', icon: ThumbsDown, color: 'text-red-500 bg-red-500/10 border-red-500/30 hover:bg-red-500/20' },
+const SCALE_OPTIONS: { value: AnswerValue; label: string; shortLabel: string; bg: string; activeBg: string; dot: string }[] = [
+  { value: 0, label: 'No es para mí',  shortLabel: '1', bg: 'bg-muted/50 border-border', activeBg: 'bg-red-500/15 border-red-500 ring-red-500/30',   dot: 'bg-red-500' },
+  { value: 1, label: 'Lo evito',        shortLabel: '2', bg: 'bg-muted/50 border-border', activeBg: 'bg-orange-500/15 border-orange-500 ring-orange-500/30', dot: 'bg-orange-500' },
+  { value: 2, label: 'Me da igual',     shortLabel: '3', bg: 'bg-muted/50 border-border', activeBg: 'bg-yellow-500/15 border-yellow-500 ring-yellow-500/30', dot: 'bg-yellow-500' },
+  { value: 3, label: 'Me gusta',        shortLabel: '4', bg: 'bg-muted/50 border-border', activeBg: 'bg-emerald-500/15 border-emerald-500 ring-emerald-500/30', dot: 'bg-emerald-500' },
+  { value: 4, label: 'Me encanta',      shortLabel: '5', bg: 'bg-muted/50 border-border', activeBg: 'bg-primary/15 border-primary ring-primary/30', dot: 'bg-primary' },
+];
+
+const MILESTONE_MESSAGES = [
+  { at: 0.25, text: 'Cada respuesta afina tu perfil — sigues bien.' },
+  { at: 0.50, text: 'Mitad del camino. Tu perfil está tomando forma.' },
+  { at: 0.75, text: 'Ya casi. Las últimas preguntas son las más reveladoras.' },
 ];
 
 export function RIASECQuizStep({ onComplete, initialAnswers = {} }: RIASECQuizStepProps) {
@@ -24,111 +32,111 @@ export function RIASECQuizStep({ onComplete, initialAnswers = {} }: RIASECQuizSt
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<Record<string, AnswerValue>>(initialAnswers);
   const [direction, setDirection] = useState(0);
+  const [shownMilestones, setShownMilestones] = useState<Set<number>>(new Set());
+  const [milestoneVisible, setMilestoneVisible] = useState(false);
+  const [milestoneText, setMilestoneText] = useState('');
 
-  const currentQuestion = questions[currentIndex] || questions[0];
-  const progress = (Object.keys(answers).length / questions.length) * 100;
-  const isComplete = Object.keys(answers).length === questions.length;
-  
-  // Safety check - ensure currentIndex is within bounds
+  const currentQuestion = questions[currentIndex] ?? questions[0];
+  const answeredCount = Object.keys(answers).length;
+  const progress = (answeredCount / questions.length) * 100;
+  const isComplete = answeredCount === questions.length;
+
+  // Check milestones
   useEffect(() => {
-    if (currentIndex >= questions.length) {
-      setCurrentIndex(questions.length - 1);
-    }
-  }, [currentIndex, questions.length]);
-
-  // Find first unanswered question index
-  const findFirstUnanswered = (): number => {
-    for (let i = 0; i < questions.length; i++) {
-      if (answers[questions[i].id] === undefined) {
-        return i;
+    const ratio = answeredCount / questions.length;
+    for (const milestone of MILESTONE_MESSAGES) {
+      if (ratio >= milestone.at && !shownMilestones.has(milestone.at)) {
+        setShownMilestones(prev => new Set([...prev, milestone.at]));
+        setMilestoneText(milestone.text);
+        setMilestoneVisible(true);
+        const t = setTimeout(() => setMilestoneVisible(false), 2500);
+        return () => clearTimeout(t);
       }
     }
+  }, [answeredCount, questions.length, shownMilestones]);
+
+  const findFirstUnanswered = useCallback((): number => {
+    for (let i = 0; i < questions.length; i++) {
+      if (answers[questions[i].id] === undefined) return i;
+    }
     return -1;
-  };
+  }, [questions, answers]);
 
-  const handleAnswer = (value: AnswerValue) => {
-    setAnswers(prev => ({
-      ...prev,
-      [currentQuestion.id]: value,
-    }));
+  const goTo = useCallback((idx: number) => {
+    setDirection(idx > currentIndex ? 1 : -1);
+    setCurrentIndex(idx);
+  }, [currentIndex]);
 
-    // Auto-advance after a short delay
+  const handleAnswer = useCallback((value: AnswerValue) => {
+    setAnswers(prev => ({ ...prev, [currentQuestion.id]: value }));
     setTimeout(() => {
       if (currentIndex < questions.length - 1) {
         setDirection(1);
         setCurrentIndex(prev => prev + 1);
       }
-    }, 200);
-  };
+    }, 180);
+  }, [currentQuestion.id, currentIndex, questions.length]);
 
-  const handlePrevious = () => {
-    if (currentIndex > 0) {
-      setDirection(-1);
-      setCurrentIndex(prev => prev - 1);
-    }
-  };
-
-  const handleNext = () => {
-    if (currentIndex < questions.length - 1) {
-      setDirection(1);
-      setCurrentIndex(prev => prev + 1);
-    }
-  };
-
-  const handleTryComplete = () => {
+  const handleTryComplete = useCallback(() => {
     if (isComplete) {
       onComplete(answers);
     } else {
-      const firstUnanswered = findFirstUnanswered();
-      const missing = questions.length - Object.keys(answers).length;
-      
-      toast.error(`Te faltan ${missing} preguntas`, {
-        description: 'Responde todas las preguntas para ver tus resultados'
+      const missing = questions.length - answeredCount;
+      toast.error(`Faltan ${missing} preguntas`, {
+        description: 'Respóndelas todas para ver tu perfil completo',
       });
-      
-      if (firstUnanswered !== -1) {
-        setDirection(firstUnanswered > currentIndex ? 1 : -1);
-        setCurrentIndex(firstUnanswered);
-      }
+      const firstUnanswered = findFirstUnanswered();
+      if (firstUnanswered !== -1) goTo(firstUnanswered);
     }
-  };
+  }, [isComplete, answers, questions.length, answeredCount, findFirstUnanswered, goTo, onComplete]);
 
   const slideVariants = {
-    enter: (direction: number) => ({
-      x: direction > 0 ? 300 : -300,
-      opacity: 0,
-    }),
-    center: {
-      x: 0,
-      opacity: 1,
-    },
-    exit: (direction: number) => ({
-      x: direction < 0 ? 300 : -300,
-      opacity: 0,
-    }),
+    enter: (d: number) => ({ x: d > 0 ? 280 : -280, opacity: 0 }),
+    center: { x: 0, opacity: 1 },
+    exit: (d: number) => ({ x: d < 0 ? 280 : -280, opacity: 0 }),
   };
 
+  const currentAnswer = answers[currentQuestion.id];
+  const hasAnswered = currentAnswer !== undefined;
+
   return (
-    <div className="space-y-6">
+    <div className="space-y-5">
       {/* Header */}
-      <div className="text-center space-y-2">
-        <h2 className="text-2xl font-bold">Descubre tu perfil vocacional</h2>
-        <p className="text-muted-foreground">
-          Indica qué tanto te gustaría hacer cada actividad
-        </p>
+      <div className="text-center space-y-1">
+        <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
+          <Brain className="w-4 h-4 text-primary" />
+          <span>Diagnóstico vocacional · {questions.length} preguntas</span>
+        </div>
+        <h2 className="text-xl font-bold">¿Cuánto disfrutarías esta actividad?</h2>
       </div>
 
-      {/* Progress */}
-      <div className="space-y-2">
-        <div className="flex justify-between text-sm text-muted-foreground">
-          <span>Pregunta {currentIndex + 1} de {questions.length}</span>
+      {/* Progress row */}
+      <div className="space-y-1.5">
+        <div className="flex justify-between text-xs text-muted-foreground">
+          <span>{currentIndex + 1} / {questions.length}</span>
           <span>{Math.round(progress)}% completado</span>
         </div>
-        <Progress value={progress} className="h-2" />
+        <Progress value={progress} className="h-1.5" />
       </div>
 
-      {/* Question Card */}
-      <div className="relative min-h-[280px] flex items-center justify-center">
+      {/* Milestone toast */}
+      <AnimatePresence>
+        {milestoneVisible && (
+          <motion.div
+            key="milestone"
+            initial={{ opacity: 0, y: -8 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -8 }}
+            className="flex items-center gap-2 text-sm text-primary bg-primary/8 border border-primary/20 rounded-lg px-4 py-2"
+          >
+            <Sparkles className="w-4 h-4 shrink-0" />
+            <span>{milestoneText}</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Question card */}
+      <div className="relative min-h-[300px] flex items-center justify-center">
         <AnimatePresence mode="wait" custom={direction}>
           <motion.div
             key={currentQuestion.id}
@@ -137,32 +145,54 @@ export function RIASECQuizStep({ onComplete, initialAnswers = {} }: RIASECQuizSt
             initial="enter"
             animate="center"
             exit="exit"
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            transition={{ duration: 0.25, ease: 'easeInOut' }}
             className="w-full"
           >
-            <div className="bg-card border border-border rounded-2xl p-8 shadow-sm">
-              <p className="text-xl font-medium text-center mb-8">
+            <div className="bg-card border border-border rounded-2xl p-6 sm:p-8 shadow-sm">
+              {/* Question number badge */}
+              <div className="flex items-center gap-2 mb-4">
+                <span className="text-xs font-mono text-muted-foreground bg-muted rounded-full px-2 py-0.5">
+                  #{currentIndex + 1}
+                </span>
+                {hasAnswered && (
+                  <span className="text-xs text-emerald-600 font-medium">✓ respondida</span>
+                )}
+              </div>
+
+              <p className="text-lg sm:text-xl font-semibold text-center leading-snug mb-2">
                 {currentQuestion.text}
               </p>
 
-              {/* Answer Options */}
-              <div className="flex justify-center gap-4">
-                {answerOptions.map((option) => {
-                  const Icon = option.icon;
-                  const isSelected = answers[currentQuestion.id] === option.value;
-                  
+              {currentQuestion.hint && (
+                <p className="text-sm text-center text-muted-foreground mb-6 italic">
+                  {currentQuestion.hint}
+                </p>
+              )}
+              {!currentQuestion.hint && <div className="mb-6" />}
+
+              {/* 5-point scale */}
+              <div className="flex gap-2 justify-center flex-wrap sm:flex-nowrap">
+                {SCALE_OPTIONS.map(opt => {
+                  const isSelected = currentAnswer === opt.value;
                   return (
                     <button
-                      key={option.value}
-                      onClick={() => handleAnswer(option.value)}
+                      key={opt.value}
+                      onClick={() => handleAnswer(opt.value)}
                       className={cn(
-                        'flex flex-col items-center gap-2 p-4 rounded-xl border-2 transition-all duration-200 min-w-[100px]',
-                        option.color,
-                        isSelected && 'ring-2 ring-primary ring-offset-2 ring-offset-background scale-105'
+                        'flex flex-col items-center gap-1.5 px-3 py-3 rounded-xl border-2 transition-all duration-150',
+                        'min-w-[56px] flex-1 max-w-[80px]',
+                        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2',
+                        isSelected
+                          ? `${opt.activeBg} ring-2 ring-offset-1 ring-offset-background scale-105 shadow-md`
+                          : `${opt.bg} hover:border-muted-foreground/50 hover:bg-muted`,
                       )}
+                      aria-pressed={isSelected}
+                      aria-label={opt.label}
                     >
-                      <Icon className="w-8 h-8" />
-                      <span className="text-sm font-medium">{option.label}</span>
+                      <span className={cn('w-2.5 h-2.5 rounded-full', isSelected ? opt.dot : 'bg-muted-foreground/30')} />
+                      <span className="text-[11px] sm:text-xs font-medium text-center leading-tight text-muted-foreground">
+                        {opt.label}
+                      </span>
                     </button>
                   );
                 })}
@@ -176,65 +206,66 @@ export function RIASECQuizStep({ onComplete, initialAnswers = {} }: RIASECQuizSt
       <div className="flex items-center justify-between">
         <Button
           variant="ghost"
-          onClick={handlePrevious}
+          size="sm"
+          onClick={() => goTo(currentIndex - 1)}
           disabled={currentIndex === 0}
         >
-          <ChevronLeft className="w-4 h-4 mr-2" />
+          <ChevronLeft className="w-4 h-4 mr-1" />
           Anterior
         </Button>
 
-        <div className="flex gap-1">
-          {questions.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => {
-                setDirection(idx > currentIndex ? 1 : -1);
-                setCurrentIndex(idx);
-              }}
-              className={cn(
-                'w-2 h-2 rounded-full transition-all',
-                idx === currentIndex 
-                  ? 'bg-primary w-6' 
-                  : answers[questions[idx].id] !== undefined 
-                    ? 'bg-primary/50' 
-                    : 'bg-muted'
-              )}
-            />
-          ))}
+        {/* Dot navigation (collapsed for many questions) */}
+        <div className="flex gap-1 max-w-[180px] overflow-hidden">
+          {questions.slice(Math.max(0, currentIndex - 4), currentIndex + 5).map((q, relIdx) => {
+            const absIdx = Math.max(0, currentIndex - 4) + relIdx;
+            return (
+              <button
+                key={q.id}
+                onClick={() => goTo(absIdx)}
+                className={cn(
+                  'rounded-full transition-all duration-200 shrink-0',
+                  absIdx === currentIndex
+                    ? 'w-5 h-2 bg-primary'
+                    : answers[q.id] !== undefined
+                    ? 'w-2 h-2 bg-primary/50'
+                    : 'w-2 h-2 bg-muted-foreground/30',
+                )}
+                aria-label={`Ir a pregunta ${absIdx + 1}`}
+              />
+            );
+          })}
         </div>
 
-{currentIndex === questions.length - 1 ? (
+        {currentIndex === questions.length - 1 ? (
           <Button
             onClick={handleTryComplete}
-            className={!isComplete ? 'opacity-70' : ''}
+            size="sm"
+            className={!isComplete ? 'opacity-80' : ''}
           >
-            Ver Resultados {!isComplete && `(${Object.keys(answers).length}/${questions.length})`}
+            {isComplete ? 'Ver mi perfil →' : `Ver perfil (${answeredCount}/${questions.length})`}
           </Button>
         ) : (
           <Button
             variant="ghost"
-            onClick={handleNext}
-            disabled={answers[currentQuestion.id] === undefined}
+            size="sm"
+            onClick={() => goTo(currentIndex + 1)}
+            disabled={!hasAnswered}
           >
             Siguiente
-            <ChevronRight className="w-4 h-4 ml-2" />
+            <ChevronRight className="w-4 h-4 ml-1" />
           </Button>
         )}
       </div>
 
-      {/* Quick Stats */}
-      <div className="flex justify-center gap-8 text-sm text-muted-foreground">
+      {/* Quick stats */}
+      <div className="flex justify-center gap-6 text-xs text-muted-foreground pt-1">
         <span className="flex items-center gap-1">
-          <ThumbsUp className="w-4 h-4 text-green-500" />
-          {Object.values(answers).filter(v => v === 2).length}
+          <span className="w-2 h-2 rounded-full bg-primary inline-block" />
+          {Object.values(answers).filter(v => v >= 3).length} que disfruto
         </span>
         <span className="flex items-center gap-1">
-          <Minus className="w-4 h-4" />
-          {Object.values(answers).filter(v => v === 1).length}
-        </span>
-        <span className="flex items-center gap-1">
-          <ThumbsDown className="w-4 h-4 text-red-500" />
-          {Object.values(answers).filter(v => v === 0).length}
+          <span className="w-2 h-2 rounded-full bg-muted-foreground/40 inline-block" />
+          {questions.length - answeredCount} sin responder
         </span>
       </div>
     </div>
