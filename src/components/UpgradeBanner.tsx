@@ -1,28 +1,21 @@
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { X, Sparkles, Check } from 'lucide-react';
+import { X, FileText, Mic, Sparkles } from 'lucide-react';
 import { useAuthStore } from '@/store/useAuthStore';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 interface UpgradeBannerProps {
   onUpgrade?: () => void;
 }
 
-const PERKS = [
-  'Plantilla Harvard exclusiva',
-  'Entrevistas IA ilimitadas',
-  'Feedback detallado con IA',
-];
 
 export const UpgradeBanner = ({ onUpgrade }: UpgradeBannerProps) => {
-  const navigate = useNavigate();
   const { user } = useAuthStore();
   const [dismissed, setDismissed] = useState(false);
 
   useEffect(() => {
-    const wasDismissed = sessionStorage.getItem('upgrade-banner-dismissed');
-    if (wasDismissed) setDismissed(true);
+    if (sessionStorage.getItem('upgrade-banner-dismissed')) setDismissed(true);
   }, []);
 
   const handleDismiss = () => {
@@ -32,57 +25,51 @@ export const UpgradeBanner = ({ onUpgrade }: UpgradeBannerProps) => {
 
   if (user?.plan === 'premium' || dismissed) return null;
 
+  const perks = [
+    { icon: FileText, label: 'Plantilla Harvard CV' },
+    { icon: Mic, label: 'Entrevistas IA ilimitadas' },
+    { icon: Sparkles, label: 'Coach IA 24/7' },
+  ];
+
   return (
     <AnimatePresence>
       <motion.div
-        initial={{ opacity: 0, y: 6 }}
+        initial={{ opacity: 0, y: -8 }}
         animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -6 }}
+        exit={{ opacity: 0, y: -8 }}
         transition={{ duration: 0.3, ease: 'easeOut' }}
-        className="relative rounded-xl border border-border/50 bg-card p-4 overflow-hidden"
+        className="rounded-xl border border-border/60 bg-card p-4 relative"
       >
-        {/* Subtle background accent */}
-        <div className="absolute top-0 right-0 w-24 h-24 bg-primary/[0.06] rounded-full blur-2xl pointer-events-none" />
+        <button
+          onClick={handleDismiss}
+          className="absolute top-3 right-3 p-1 rounded-md hover:bg-muted/60 text-muted-foreground hover:text-foreground transition-colors"
+          aria-label="Cerrar"
+        >
+          <X className="h-3.5 w-3.5" />
+        </button>
 
-        <div className="relative flex items-start gap-3">
-          <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5">
-            <Sparkles className="h-4 w-4 text-primary" />
-          </div>
-
+        <div className="flex flex-col sm:flex-row sm:items-center gap-3">
           <div className="flex-1 min-w-0">
-            <div className="flex items-start justify-between gap-2">
-              <div>
-                <p className="text-sm font-semibold leading-tight">
-                  MoonJab Pro — <span className="text-primary">$5/mes</span>
-                </p>
-                <p className="text-[11px] text-muted-foreground mt-0.5">
-                  Desbloquea el 100% de tu potencial
-                </p>
-              </div>
-              <button
-                onClick={handleDismiss}
-                className="p-1 rounded-md text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors flex-shrink-0"
-                aria-label="Cerrar"
-              >
-                <X className="h-3.5 w-3.5" />
-              </button>
-            </div>
-
-            <ul className="mt-2.5 flex flex-wrap gap-x-4 gap-y-1">
-              {PERKS.map((perk) => (
-                <li key={perk} className="flex items-center gap-1.5">
-                  <Check className="h-3 w-3 text-primary flex-shrink-0" />
-                  <span className="text-[11px] text-muted-foreground">{perk}</span>
-                </li>
+            <p className="text-sm font-semibold text-foreground pr-6">
+              Sigue avanzando con MoonJab Pro
+            </p>
+            <div className="flex flex-wrap gap-x-4 gap-y-1 mt-1.5">
+              {perks.map(({ icon: Icon, label }) => (
+                <span key={label} className="flex items-center gap-1 text-[11px] text-muted-foreground">
+                  <Icon className="h-3 w-3 text-primary flex-shrink-0" />
+                  {label}
+                </span>
               ))}
-            </ul>
-
-            <Button
-              size="sm"
-              className="mt-3 h-7 text-xs gap-1.5 font-medium"
-              onClick={() => onUpgrade ? onUpgrade() : navigate('/payment')}
-            >
-              <Sparkles className="h-3 w-3" /> Ver planes Pro
+            </div>
+          </div>
+          <div className="flex items-center gap-2 flex-shrink-0">
+            <Link to="/pricing">
+              <Button size="sm" variant="outline" className="h-8 text-xs">
+                Ver detalles
+              </Button>
+            </Link>
+            <Button size="sm" className="h-8 text-xs" onClick={onUpgrade}>
+              Probar Pro · $5/mes
             </Button>
           </div>
         </div>

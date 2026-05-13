@@ -16,7 +16,10 @@ export default function InterviewLanding() {
   const { sessions, metrics } = useInterviewStore();
   const { isGuestMode, user } = useAuthStore();
   const isPremium = user?.plan === 'premium';
-  const isLocked = isGuestMode || !isPremium;
+  const isGuestLocked = isGuestMode;
+  const userSessionCount = sessions.filter(s => s.userId === user?.id).length;
+  const FREE_LIMIT = 3;
+  const freeExhausted = !isPremium && !isGuestMode && userSessionCount >= FREE_LIMIT;
   const [showUpgrade, setShowUpgrade] = useState(false);
   const recentSessions = sessions.slice(-3).reverse();
 
@@ -36,7 +39,7 @@ export default function InterviewLanding() {
   ];
 
   const handleStartInterview = (path: string) => {
-    if (isLocked) {
+    if (isGuestLocked || freeExhausted) {
       setShowUpgrade(true);
     } else {
       navigate(path);
@@ -44,7 +47,7 @@ export default function InterviewLanding() {
   };
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-10 space-y-10">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-10 pt-14 sm:pt-10 space-y-10">
       <SEOHead title="Entrevistas con IA" description="Practica entrevistas laborales con inteligencia artificial. Recibe feedback en tiempo real y mejora tus respuestas." path="/interview" />
       {/* Hero */}
       <motion.div 
@@ -60,27 +63,39 @@ export default function InterviewLanding() {
         </div>
         
         <div className="flex flex-col sm:flex-row gap-3">
-          <Button 
-            size="lg" 
-            onClick={() => handleStartInterview('/dashboard/interviews/ai')} 
+          <Button
+            size="lg"
+            onClick={() => handleStartInterview('/dashboard/interviews/ai')}
             className="h-12 gap-2 font-semibold"
-            variant={isLocked ? "outline" : "default"}
+            variant={isGuestLocked ? "outline" : "default"}
           >
-            {isLocked && <Lock className="w-4 h-4" />}
+            {isGuestLocked && <Lock className="w-4 h-4" />}
             <Bot className="w-4.5 h-4.5" style={{ width: 18, height: 18 }} />
             {t('interviews.landing.voiceBtn')}
-            {!isLocked && <Sparkles className="w-4 h-4" />}
+            {!isGuestLocked && !freeExhausted && <Sparkles className="w-4 h-4" />}
           </Button>
-          <Button 
-            size="lg" 
-            onClick={() => handleStartInterview('/dashboard/interviews/setup')} 
+          <Button
+            size="lg"
+            onClick={() => handleStartInterview('/dashboard/interviews/setup')}
             variant="outline"
             className="h-12 gap-2"
           >
-            {isLocked && <Lock className="w-4 h-4" />}
+            {isGuestLocked && <Lock className="w-4 h-4" />}
             <Mic className="w-4.5 h-4.5" style={{ width: 18, height: 18 }} />
             {t('interviews.landing.textBtn')}
           </Button>
+
+          {/* Soft limit notice for free users */}
+          {!isPremium && !isGuestMode && (
+            <p className="text-xs text-muted-foreground self-center">
+              {freeExhausted
+                ? 'Alcanzaste el límite gratuito (3 entrevistas). '
+                : `${FREE_LIMIT - userSessionCount} entrevista${FREE_LIMIT - userSessionCount !== 1 ? 's' : ''} gratis restante${FREE_LIMIT - userSessionCount !== 1 ? 's' : ''}. `}
+              <button onClick={() => setShowUpgrade(true)} className="text-primary hover:underline">
+                Ver Pro →
+              </button>
+            </p>
+          )}
         </div>
       </motion.div>
 

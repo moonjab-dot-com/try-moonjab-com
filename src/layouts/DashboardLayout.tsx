@@ -290,7 +290,6 @@ export default function DashboardLayout() {
   return (
     <TooltipProvider delayDuration={200}>
       <div className="min-h-screen flex w-full overflow-x-hidden bg-background">
-
         {/* Mobile hamburger */}
         {isMobile && (
           <Button

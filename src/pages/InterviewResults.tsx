@@ -41,7 +41,7 @@ export default function InterviewResults() {
   };
 
   return (
-    <div className="container max-w-4xl py-8 space-y-6">
+    <div className="container max-w-4xl py-8 pt-14 sm:pt-8 space-y-6">
       <SEOHead title="Resultados de Entrevista" description="Revisa tu desempeño y feedback detallado de tu entrevista con IA." path="/interview-results" noindex />
       {/* Success header */}
       <Card className="p-8 text-center space-y-4 rounded-3xl shadow-clovely-xl border-2 border-green-200 bg-gradient-to-br from-green-50/50 to-emerald-50/30">

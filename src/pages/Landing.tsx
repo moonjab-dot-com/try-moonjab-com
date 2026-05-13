@@ -256,16 +256,17 @@ const LandingContent = () => {
         style={{ opacity: heroOpacity, scale: heroScale }}
         className="relative pt-28 pb-20 sm:pt-36 sm:pb-28 overflow-hidden"
       >
-        {/* Dot grid background */}
-        <div className="absolute inset-0 bg-dot-grid opacity-60 pointer-events-none" />
-        {/* Gradient orbs */}
-        <div className="absolute -top-32 -right-32 w-[520px] h-[520px] rounded-full bg-primary/[0.06] blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full bg-primary/[0.04] blur-3xl pointer-events-none" />
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute inset-0 bg-dots opacity-[0.35]" />
+          <div className="absolute -top-48 -right-48 w-[650px] h-[650px] rounded-full bg-primary/[0.07] blur-3xl" />
+          <div className="absolute -bottom-48 -left-48 w-[550px] h-[550px] rounded-full bg-primary/[0.04] blur-3xl" />
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[900px] h-[200px] rounded-full bg-secondary/60 blur-3xl" />
+        </div>
 
         <div className="relative mx-auto max-w-3xl px-6 text-center">
           {/* Badge */}
           <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0}>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-primary/25 bg-primary/[0.07] text-xs font-semibold text-primary mb-8">
+            <div className="badge-pill mb-8 shadow-sm">
               <Sparkles className="h-3 w-3" />
               {t('landing.badge')}
             </div>
@@ -332,7 +333,6 @@ const LandingContent = () => {
             </Link>
           </motion.div>
 
-          {/* Social proof row */}
           <motion.div
             initial="hidden"
             animate="visible"
@@ -340,7 +340,6 @@ const LandingContent = () => {
             custom={4}
             className="flex items-center justify-center gap-4"
           >
-            {/* Avatar stack */}
             <div className="flex items-center -space-x-2">
               {avatarInitials.map((initial, i) => (
                 <div
@@ -358,7 +357,7 @@ const LandingContent = () => {
                 ))}
               </div>
               <p className="text-[11px] text-muted-foreground">
-                <span className="font-semibold text-foreground">10,000+</span> profesionales de LATAM
+                <span className="font-semibold text-foreground">+10,000 estudiantes</span> mejoraron su carrera
               </p>
             </div>
           </motion.div>
@@ -464,7 +463,6 @@ const LandingContent = () => {
                     </span>
                   ))}
                 </div>
-                {/* CV mockup preview */}
                 <div className="mt-auto max-w-xs">
                   <CVMockup />
                 </div>
@@ -836,7 +834,6 @@ const LandingContent = () => {
             </h2>
           </motion.div>
 
-          {/* Testimonial grid — uniform 3-col */}
           <div className="grid md:grid-cols-3 gap-4">
             {testimonials.map((tt, i) => (
               <motion.div
@@ -882,7 +879,7 @@ const LandingContent = () => {
           </motion.div>
 
           <div className="grid sm:grid-cols-2 gap-5 max-w-2xl mx-auto">
-            {/* Free */}
+            {/* Free / Guest */}
             <motion.div
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={0}
               className="rounded-2xl border border-border/50 bg-card p-7"
@@ -914,7 +911,6 @@ const LandingContent = () => {
               className="rounded-2xl p-[2px] relative shadow-mj-lg"
               style={{ background: 'linear-gradient(135deg, hsl(160 84% 39%), hsl(142 71% 45%))' }}
             >
-              {/* Badge sits on the outer wrapper so overflow-hidden doesn't clip it */}
               <div className="absolute -top-3.5 left-6 z-20">
                 <div className="px-3 py-1 rounded-full bg-primary text-primary-foreground text-[10px] font-bold tracking-wide uppercase shadow-sm">
                   {t('landing.pricing.recommended')}

@@ -15,6 +15,7 @@ import { UpgradeModal } from '@/components/UpgradeModal';
 import {
   FileText, ArrowRight, Sparkles, RotateCcw, Mic,
   ChevronRight, Crown, Lock, Eye, Loader2, Compass,
+  Sun, Sunset, Moon,
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
@@ -86,6 +87,10 @@ const Dashboard = () => {
     .join('')
     .toUpperCase();
 
+  const hour = new Date().getHours();
+  const greeting = hour < 12 ? 'Buenos días' : hour < 19 ? 'Buenas tardes' : 'Buenas noches';
+  const GreetingIcon = hour < 12 ? Sun : hour < 19 ? Sunset : Moon;
+
   if (identityLoading && !isGuestMode) {
     return (
       <div className="min-h-screen bg-background">
@@ -149,9 +154,10 @@ const Dashboard = () => {
             </div>
             {/* Name + context */}
             <div>
-              <div className="flex items-center gap-2">
-                <h1 className="text-lg font-semibold tracking-tight">
-                  {getGreeting()}, {firstName}
+              <div className="flex items-center gap-2 mb-0.5">
+                <GreetingIcon className="h-4 w-4 text-primary/60 flex-shrink-0" />
+                <h1 className="text-xl font-semibold tracking-tight">
+                  {greeting}{firstName !== 'Usuario' ? `, ${firstName}` : ''}
                 </h1>
                 <Badge
                   variant="outline"
@@ -166,14 +172,13 @@ const Dashboard = () => {
                   {isPremium ? 'Pro' : isTrial ? 'Prueba' : 'Free'}
                 </Badge>
               </div>
-              <p className="text-xs text-muted-foreground mt-0.5">
+              {!!displayEmail && <p className="text-xs text-muted-foreground">{displayEmail}</p>}
+              <p className="text-xs text-muted-foreground">
                 {isTrial
-                  ? 'Entorno de prueba aislado'
-                  : displayEmail
-                    ? displayEmail
-                    : hasRole
-                      ? getRoleDisplayName(profile.rolActual!)
-                      : 'Completa tu diagnóstico para comenzar'}
+                  ? 'Entorno de prueba · tus datos son temporales'
+                  : hasRole
+                    ? getRoleDisplayName(profile.rolActual!)
+                    : 'Completa tu diagnóstico para personalizar tu experiencia'}
               </p>
             </div>
           </div>
