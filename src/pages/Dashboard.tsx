@@ -14,7 +14,7 @@ import { UpgradeBanner } from '@/components/UpgradeBanner';
 import { UpgradeModal } from '@/components/UpgradeModal';
 import {
   FileText, ArrowRight, Sparkles, RotateCcw, Mic,
-  ChevronRight, Crown, Lock, Eye, Loader2, Zap, Compass,
+  ChevronRight, Crown, Lock, Eye, Loader2, Compass,
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
@@ -276,13 +276,6 @@ const Dashboard = () => {
           </motion.div>
         )}
 
-        {/* ── Upgrade banner (free plan) ── */}
-        {isFree && (
-          <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={3}>
-            <UpgradeBanner onUpgrade={() => setUpgradeModalOpen(true)} />
-          </motion.div>
-        )}
-
         {/* ── Quick actions ── */}
         <motion.div
           initial="hidden" animate="visible" variants={fadeUp} custom={4}
@@ -339,6 +332,13 @@ const Dashboard = () => {
           })}
         </motion.div>
 
+        {/* ── Upgrade banner — shown contextually below quick actions, dismissible ── */}
+        {isFree && (
+          <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={4.5}>
+            <UpgradeBanner onUpgrade={() => setUpgradeModalOpen(true)} />
+          </motion.div>
+        )}
+
         {/* ── Analytics (authenticated, non-trial) ── */}
         {!isTrial && !isGuestMode && (
           <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={5}>
@@ -372,27 +372,6 @@ const Dashboard = () => {
               </motion.div>
             )}
 
-            {/* Guest / Trial CTA for non-premium */}
-            {!isPremium && !isTrial && !isGuestMode && (
-              <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={7}>
-                <div className="flex items-center gap-3.5 p-4 rounded-xl border border-border/40 bg-card">
-                  <div className="w-8 h-8 rounded-lg bg-primary/8 flex items-center justify-center flex-shrink-0">
-                    <Zap className="h-3.5 w-3.5 text-primary" />
-                  </div>
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm font-medium">Desbloquea todas las plantillas</p>
-                    <p className="text-[11px] text-muted-foreground mt-0.5">Plantilla Harvard + Entrevistas IA ilimitadas por $5/mes</p>
-                  </div>
-                  <Button
-                    size="sm"
-                    className="h-8 text-xs gap-1 flex-shrink-0"
-                    onClick={() => setUpgradeModalOpen(true)}
-                  >
-                    <Crown className="h-3 w-3" /> Pro
-                  </Button>
-                </div>
-              </motion.div>
-            )}
           </div>
 
           {/* Sidebar cards */}
