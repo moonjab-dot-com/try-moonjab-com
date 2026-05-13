@@ -4,6 +4,7 @@ import { useAuthStore } from '@/store/useAuthStore';
 import { useProfileStore } from '@/store/useProfileStore';
 import { useCVStore } from '@/store/useCVStore';
 import { useInterviewStore } from '@/store/useInterviewStore';
+import { toast } from 'sonner';
 import type { CVData, InterviewSession, Profile, ProfessionalRole } from '@/types';
 
 function clearUserScopedStores() {
@@ -131,8 +132,11 @@ export function useDataPersistence() {
       };
 
       useProfileStore.setState({ profile });
-    } catch {
-      // silent fail — don't crash the app if profile can't be loaded
+    } catch (error) {
+      console.error('Error loading user data:', error);
+      toast.error('No se pudieron cargar tus datos. Verifica tu conexión.', {
+        duration: 4000,
+      });
     }
   }
 

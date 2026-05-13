@@ -6,6 +6,9 @@ import { toast } from 'sonner';
 
 const generateId = () => crypto.randomUUID();
 
+const isValidUuid = (id: string) =>
+  /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id);
+
 interface CVState {
   cvs: CVData[];
   currentCV: CVData | null;
@@ -15,6 +18,7 @@ interface CVState {
   // CRUD
   createCV: (userId: string, title: string) => CVData;
   updateCV: (id: string, updates: Partial<CVData>) => void;
+  saveToDatabase: (id: string) => Promise<void>;
   deleteCV: (id: string) => void;
   duplicateCV: (id: string) => CVData;
   setCurrentCV: (cv: CVData | null) => void;
@@ -93,8 +97,9 @@ export const useCVStore = create<CVState>()(
           currentCV: newCV,
         }));
         
-        // Guardar en Supabase
+        // Persist to Supabase — include the local UUID so UPDATE calls can find this row
         supabase.from('cvs').insert({
+          id: newCV.id,
           user_id: userId,
           nombre_cv: title,
           template: newCV.template,
@@ -109,7 +114,7 @@ export const useCVStore = create<CVState>()(
         }).then(({ error }) => {
           if (error) {
             console.error('Error saving CV to Supabase:', error);
-            toast.error('Error al guardar el CV');
+            toast.error('Error al crear el CV. Verifica tu conexión.');
           }
         });
         
@@ -124,35 +129,35 @@ export const useCVStore = create<CVState>()(
               : cv
           );
           const updatedCV = updatedCVs.find((cv) => cv.id === id);
-          
-          // Guardar en Supabase (solo si es un UUID válido — los CVs de muestra/demo usan IDs locales)
-          const isUuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id);
-          if (updatedCV && isUuid) {
-            supabase.from('cvs').update({
-              nombre_cv: updatedCV.title,
-              template: updatedCV.template,
-              info_personal: updatedCV.personal as any,
-              resumen: updatedCV.summary,
-              educacion: updatedCV.education as any,
-              experiencia: updatedCV.experience as any,
-              habilidades: updatedCV.skills as any,
-              certificaciones: updatedCV.certifications as any,
-              idiomas: updatedCV.languages as any,
-              proyectos: updatedCV.projects as any,
-              updated_at: new Date().toISOString(),
-            }).eq('id', id).then(({ error }) => {
-              if (error) {
-                console.error('Error updating CV in Supabase:', error);
-                toast.error('Error al actualizar el CV');
-              }
-            });
-          }
-          
           return {
             cvs: updatedCVs,
-            currentCV: state.currentCV?.id === id ? updatedCV : state.currentCV,
+            currentCV: state.currentCV?.id === id ? updatedCV ?? null : state.currentCV,
           };
         });
+      },
+
+      saveToDatabase: async (id) => {
+        const cv = get().cvs.find((c) => c.id === id);
+        if (!cv || !isValidUuid(id)) return;
+
+        const { error } = await supabase.from('cvs').update({
+          nombre_cv: cv.title,
+          template: cv.template,
+          info_personal: cv.personal as any,
+          resumen: cv.summary,
+          educacion: cv.education as any,
+          experiencia: cv.experience as any,
+          habilidades: cv.skills as any,
+          certificaciones: cv.certifications as any,
+          idiomas: cv.languages as any,
+          proyectos: cv.projects as any,
+          updated_at: new Date().toISOString(),
+        }).eq('id', id);
+
+        if (error) {
+          console.error('Error saving CV to Supabase:', error);
+          throw error;
+        }
       },
 
       deleteCV: (id) => {

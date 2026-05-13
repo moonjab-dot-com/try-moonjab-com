@@ -1,10 +1,10 @@
 import { SEOHead } from '@/components/SEOHead';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState, useRef, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useCVStore } from '@/store/useCVStore';
 import { useAuthStore } from '@/store/useAuthStore';
 import { Button } from '@/components/ui/button';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -22,6 +22,7 @@ import AIAnalysisModal from '@/components/cv/AIAnalysisModal';
 import VersionHistoryModal from '@/components/cv/VersionHistoryModal';
 import VersionCompareModal from '@/components/cv/VersionCompareModal';
 import { UpgradeModal } from '@/components/UpgradeModal';
+import { AIUpgradeModal } from '@/components/AIUpgradeModal';
 
 import { cn } from '@/lib/utils';
 import { useAI } from '@/hooks/useAI';
@@ -32,8 +33,8 @@ import { useAnalytics } from '@/hooks/useAnalytics';
 export default function CVBuilder() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const { user } = useAuthStore();
-  const { cvs, currentCV, loadCV, setCurrentCV, createCV, updateCV, saveVersion, analyzeCV, isAnalyzing } = useCVStore();
+  const { user, isGuestMode } = useAuthStore();
+  const { currentCV, loadCV, setCurrentCV, createCV, updateCV, saveToDatabase, saveVersion } = useCVStore();
   const { improveText, analyzeCV: analyzeCVintense, isLoading: isAILoading } = useAI();
   const [showAnalysis, setShowAnalysis] = useState(false);
   const [analysisData, setAnalysisData] = useState<any>(null);
@@ -42,7 +43,9 @@ export default function CVBuilder() {
   const [showVersionHistory, setShowVersionHistory] = useState(false);
   const [showVersionCompare, setShowVersionCompare] = useState(false);
   const [showUpgradeModal, setShowUpgradeModal] = useState(false);
+  const [showAIUpgradeModal, setShowAIUpgradeModal] = useState(false);
   const previewRef = useRef<HTMLDivElement>(null);
+  const autosaveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const isMobile = useIsMobile();
   const { subscribed, productId } = useSubscription();
   const isPremium = subscribed && productId === MOONJAB_PRO.product_id;
@@ -71,21 +74,39 @@ export default function CVBuilder() {
     };
   }, [id, user, loadCV, createCV, setCurrentCV, navigate]);
 
-  const handleSave = async () => {
+  // Debounced autosave: 3 seconds after last change
+  useEffect(() => {
     if (!currentCV) return;
-    
+    if (autosaveTimerRef.current) clearTimeout(autosaveTimerRef.current);
+    autosaveTimerRef.current = setTimeout(() => {
+      void saveToDatabase(currentCV.id);
+    }, 3000);
+    return () => {
+      if (autosaveTimerRef.current) clearTimeout(autosaveTimerRef.current);
+    };
+  }, [currentCV, saveToDatabase]);
+
+  const handleSave = useCallback(async () => {
+    if (!currentCV) return;
+    if (autosaveTimerRef.current) clearTimeout(autosaveTimerRef.current);
+
     setIsSaving(true);
-    await new Promise((resolve) => setTimeout(resolve, 500));
-    
-    updateCV(currentCV.id, { updatedAt: new Date().toISOString() });
-    
-    toast({
-      title: 'CV guardado',
-      description: 'Los cambios se han guardado correctamente',
-    });
-    
-    setIsSaving(false);
-  };
+    try {
+      await saveToDatabase(currentCV.id);
+      toast({
+        title: 'CV guardado',
+        description: 'Los cambios se han guardado correctamente',
+      });
+    } catch {
+      toast({
+        title: 'Error al guardar',
+        description: 'No se pudo guardar el CV. Verifica tu conexión e intenta de nuevo.',
+        variant: 'destructive',
+      });
+    } finally {
+      setIsSaving(false);
+    }
+  }, [currentCV, saveToDatabase]);
 
   const handleSaveVersion = () => {
     if (!currentCV) return;
@@ -101,13 +122,9 @@ export default function CVBuilder() {
 
   const handleAnalyze = async () => {
     if (!currentCV) return;
-    
-    if (isGuestMode || user?.plan !== 'premium') {
-      toast({
-        title: 'Función Premium',
-        description: 'Suscríbete al plan Pro por $5/mes para analizar tu CV con IA.',
-        variant: 'destructive',
-      });
+
+    if (isGuestMode || !isPremium) {
+      setShowAIUpgradeModal(true);
       return;
     }
 
@@ -129,18 +146,21 @@ export default function CVBuilder() {
   const handleImproveText = async (
     text: string,
     type: 'summary' | 'experience' | 'education' | 'general',
-    context?: string
+    context?: string,
+    language?: 'es' | 'en'
   ) => {
+    if (isGuestMode || !isPremium) {
+      setShowAIUpgradeModal(true);
+      throw new Error('upgrade_required');
+    }
     try {
-      const improved = await improveText(text, type, context);
+      const improved = await improveText(text, type, context, language);
       return improved;
     } catch (error) {
       console.error('Error improving text:', error);
       throw error;
     }
   };
-
-  const { isGuestMode } = useAuthStore();
 
   const handleExportPDF = () => {
     // Conversion trigger: free / guest users see upgrade modal
@@ -434,6 +454,11 @@ export default function CVBuilder() {
         open={showUpgradeModal}
         onClose={() => setShowUpgradeModal(false)}
         feature="descarga de PDF"
+      />
+
+      <AIUpgradeModal
+        open={showAIUpgradeModal}
+        onClose={() => setShowAIUpgradeModal(false)}
       />
     </div>
   );
