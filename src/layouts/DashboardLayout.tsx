@@ -8,7 +8,6 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/comp
 import { Sheet, SheetContent } from '@/components/ui/sheet';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { LanguageToggle } from '@/components/LanguageToggle';
-import { UpgradeModal } from '@/components/UpgradeModal';
 import { GuestBanner } from '@/components/GuestBanner';
 import { useAuthStore } from '@/store/useAuthStore';
 import { supabase } from '@/integrations/supabase/client';
@@ -25,10 +24,9 @@ const SIDEBAR_STORAGE_KEY = 'mj-sidebar-collapsed';
 
 export default function DashboardLayout() {
   const { t } = useTranslation();
-  const { user, updateUser, startPremiumTrial } = useAuthStore();
+  const { user, updateUser } = useAuthStore();
   const location = useLocation();
   const isMobile = useIsMobile();
-  const [upgradeModalOpen, setUpgradeModalOpen] = useState(false);
   const [drawerOpen, setDrawerOpen] = useState(false);
   const [isAdmin, setIsAdmin] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(() => {
@@ -73,13 +71,6 @@ export default function DashboardLayout() {
       const { data, error } = await supabase.from('user_roles').select('role').eq('user_id', user.id).single();
       setIsAdmin(!error && data?.role === 'admin');
     } catch { setIsAdmin(false); }
-  };
-
-  const handleStartTrial = async () => {
-    try {
-      await startPremiumTrial();
-      toast.success(t('common.success'), { description: 'Disfruta 7 días gratis.' });
-    } catch { toast.error(t('common.error')); }
   };
 
   const toggleCollapse = () => {
@@ -238,13 +229,11 @@ export default function DashboardLayout() {
           <ThemeToggle />
         </div>
         {!isPremium && !isTrial && (
-          <Button
-            className="w-full text-xs h-8 mt-2 gap-1.5 font-medium"
-            size="sm"
-            onClick={() => { setUpgradeModalOpen(true); if (inDrawer) setDrawerOpen(false); }}
-          >
-            <Sparkles className="h-3 w-3" /> Upgrade a Pro
-          </Button>
+          <Link to="/pricing" onClick={inDrawer ? () => setDrawerOpen(false) : undefined}>
+            <Button className="w-full text-xs h-8 mt-2 gap-1.5 font-medium" size="sm">
+              <Sparkles className="h-3 w-3" /> Upgrade a Pro
+            </Button>
+          </Link>
         )}
       </div>
     </div>
@@ -333,11 +322,6 @@ export default function DashboardLayout() {
           <Outlet />
         </main>
 
-        <UpgradeModal
-          open={upgradeModalOpen}
-          onClose={() => setUpgradeModalOpen(false)}
-          onStartTrial={handleStartTrial}
-        />
       </div>
     </TooltipProvider>
   );
