@@ -19,6 +19,7 @@ import {
 import { motion } from 'framer-motion';
 import { Badge } from '@/components/ui/badge';
 import { getDashboardBasePath } from '@/lib/authRouting';
+import { getRoleDefinition } from '@/lib/roleDetection';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 10 },
@@ -28,20 +29,7 @@ const fadeUp = {
   }),
 };
 
-const getRoleDisplayName = (role: string) => {
-  const roleNames: Record<string, string> = {
-    ux_designer: 'UX Designer',
-    ui_designer: 'UI Designer',
-    product_designer: 'Product Designer',
-    developer_frontend: 'Frontend Developer',
-    developer_backend: 'Backend Developer',
-    developer_fullstack: 'Fullstack Developer',
-    product_manager: 'Product Manager',
-    data_analyst: 'Data Analyst',
-    other: 'Sin definir',
-  };
-  return roleNames[role] || role;
-};
+const getRoleDisplayName = (role: string) => getRoleDefinition(role as any)?.label ?? role;
 
 const getGreeting = () => {
   const h = new Date().getHours();
@@ -74,7 +62,7 @@ const Dashboard = () => {
   const displayName = isTrial ? 'Usuario de Prueba' : user?.name || 'Usuario';
   const displayEmail = isTrial ? '' : user?.email || '';
   const firstName = displayName.split(' ')[0];
-  const hasRole = !!profile?.rolActual && profile.rolActual !== 'other';
+  const hasRole = !!profile?.rolActual && profile.rolActual !== 'other' && profile.rolActual !== 'student';
 
   const initials = displayName
     .split(' ')
