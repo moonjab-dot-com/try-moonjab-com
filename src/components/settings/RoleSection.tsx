@@ -23,6 +23,7 @@ import {
 } from '@/components/ui/alert-dialog';
 import { useProfileStore } from '@/store/useProfileStore';
 import { useAuthStore } from '@/store/useAuthStore';
+import { supabase } from '@/integrations/supabase/client';
 import { PROFESSIONAL_ROLES, getRoleDefinition, detectRole } from '@/lib/roleDetection';
 import { RIASEC_TYPE_INFO, RIASECType } from '@/lib/riasecQuestions';
 import { getCompatibleRoles } from '@/lib/riasecScoring';
@@ -39,7 +40,7 @@ const TYPE_COLORS: Record<RIASECType, string> = {
 
 export const RoleSection = () => {
   const navigate = useNavigate();
-  const { updateUser } = useAuthStore();
+  const { user, updateUser } = useAuthStore();
   const { profile, updateRole } = useProfileStore();
   const [isReanalyzing, setIsReanalyzing] = useState(false);
   const [showHistory, setShowHistory] = useState(false);
@@ -98,13 +99,20 @@ export const RoleSection = () => {
   );
 
   // ── Handlers ─────────────────────────────────────────────────────────────
+  const persistRole = async (role: ProfessionalRole) => {
+    if (!user?.id) return;
+    await supabase.from('profiles').update({ rol_profesional: role }).eq('id', user.id);
+  };
+
   const handleReanalyze = () => {
     setIsReanalyzing(true);
     setTimeout(() => {
       if (profile.preferencias) {
         const suggestions = detectRole(profile.preferencias);
         if (suggestions.length > 0) {
-          updateRole(suggestions[0].role, suggestions[0].confidence);
+          const newRole = suggestions[0].role;
+          updateRole(newRole, suggestions[0].confidence);
+          void persistRole(newRole);
           toast.success('Perfil actualizado según tus actividades recientes');
         }
       }
@@ -114,6 +122,7 @@ export const RoleSection = () => {
 
   const handleSelectRole = (role: ProfessionalRole) => {
     updateRole(role, 100);
+    void persistRole(role);
     toast.success('Rol profesional actualizado');
     setShowRoleSelector(false);
   };

@@ -36,30 +36,34 @@ export function useDataPersistence() {
 
       // ── CVs ──────────────────────────────────────────────────────────
       if (!cvsResult.error) {
-        const transformedCVs: CVData[] = (cvsResult.data || []).map((cv) => ({
-          id: cv.id,
-          userId: cv.user_id,
-          title: cv.nombre_cv,
-          template: (cv.template as any) || 'creative',
-          language: 'es',
-          personal: (cv.info_personal as any) || {},
-          summary: cv.resumen || '',
-          education: (cv.educacion as any) || [],
-          experience: (cv.experiencia as any) || [],
-          research: [],
-          projects: (cv.proyectos as any) || [],
-          teaching: [],
-          skills: (cv.habilidades as any) || [],
-          certifications: (cv.certificaciones as any) || [],
-          languages: (cv.idiomas as any) || [],
-          awards: [],
-          references: [],
-          createdAt: cv.created_at,
-          updatedAt: cv.updated_at,
-          versions: [],
-          score: { overall: 0, clarity: 0, impact: 0, keywords: 0, format: 0 },
-          metadata: { industryTags: [], targetKeywords: [] },
-        }));
+        const calculateScore = useCVStore.getState().calculateScore;
+        const transformedCVs: CVData[] = (cvsResult.data || []).map((cv) => {
+          const cvData: CVData = {
+            id: cv.id,
+            userId: cv.user_id,
+            title: cv.nombre_cv,
+            template: (cv.template as any) || 'creative',
+            language: 'es',
+            personal: (cv.info_personal as any) || {},
+            summary: cv.resumen || '',
+            education: (cv.educacion as any) || [],
+            experience: (cv.experiencia as any) || [],
+            research: [],
+            projects: (cv.proyectos as any) || [],
+            teaching: [],
+            skills: (cv.habilidades as any) || [],
+            certifications: (cv.certificaciones as any) || [],
+            languages: (cv.idiomas as any) || [],
+            awards: [],
+            references: [],
+            createdAt: cv.created_at,
+            updatedAt: cv.updated_at,
+            versions: [],
+            score: { overall: 0, clarity: 0, impact: 0, keywords: 0, format: 0 },
+            metadata: { industryTags: [], targetKeywords: [] },
+          };
+          return { ...cvData, score: calculateScore(cvData) };
+        });
         useCVStore.setState({ cvs: transformedCVs, currentCV: null });
       }
 
