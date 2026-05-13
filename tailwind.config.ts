@@ -38,10 +38,10 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-geist-sans)", "Inter", "system-ui", "sans-serif"],
-        mono: ["var(--font-geist-mono)", "monospace"],
-        heading: ["var(--font-poppins)", "Poppins", "system-ui", "sans-serif"],
-        body: ["var(--font-geist-sans)", "Inter", "system-ui", "sans-serif"],
+        sans: ["'DM Sans'", "'Plus Jakarta Sans'", "system-ui", "sans-serif"],
+        mono: ["ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
+        heading: ["'Plus Jakarta Sans'", "'DM Sans'", "system-ui", "sans-serif"],
+        body: ["'DM Sans'", "'Plus Jakarta Sans'", "system-ui", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -107,6 +107,10 @@ export default {
         "brand-md": "var(--shadow-md)",
         "brand-lg": "var(--shadow-lg)",
         "brand-xl": "var(--shadow-xl)",
+        "mj-sm":    "var(--shadow-sm)",
+        "mj-md":    "var(--shadow-md)",
+        "mj-lg":    "var(--shadow-lg)",
+        "mj-xl":    "var(--shadow-xl)",
         "card":     "var(--shadow-card)",
         "orange":   "var(--shadow-orange)",
         "orange-lg":"var(--shadow-orange-lg)",
