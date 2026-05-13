@@ -46,11 +46,12 @@ export const NextActionCard = ({
     progress = cvScore;
   } else if (hasCV && cvScore >= 70 && !isPremium && !isTrial) {
     icon = Mic;
-    title = '¡CV listo! Prepárate para la entrevista';
-    subtitle = 'Practica respuestas reales con IA y llega seguro a tu próxima entrevista.';
-    ctaLabel = 'Practicar entrevista';
-    ctaHref = `${dashboardBasePath}/interviews`;
-    badge = 'Próximo paso';
+    title = '¡CV listo! Practica entrevistas con IA';
+    subtitle = 'Las entrevistas simuladas con IA son exclusivas de Pro. Consigue tu primer empleo más rápido.';
+    ctaLabel = 'Ver plan Pro';
+    ctaHref = null;
+    onClick = onUpgrade;
+    badge = 'Pro exclusivo';
     progress = cvScore;
   } else if (hasCV && isPremium) {
     icon = CheckCircle2;

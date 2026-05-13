@@ -16,10 +16,7 @@ export default function InterviewLanding() {
   const { sessions, metrics } = useInterviewStore();
   const { isGuestMode, user } = useAuthStore();
   const isPremium = user?.plan === 'premium';
-  const isGuestLocked = isGuestMode;
-  const userSessionCount = sessions.filter(s => s.userId === user?.id).length;
-  const FREE_LIMIT = 3;
-  const freeExhausted = !isPremium && !isGuestMode && userSessionCount >= FREE_LIMIT;
+  const isLocked = isGuestMode || !isPremium;
   const [showUpgrade, setShowUpgrade] = useState(false);
   const recentSessions = sessions.slice(-3).reverse();
 
@@ -39,7 +36,7 @@ export default function InterviewLanding() {
   ];
 
   const handleStartInterview = (path: string) => {
-    if (isGuestLocked || freeExhausted) {
+    if (isLocked) {
       setShowUpgrade(true);
     } else {
       navigate(path);
@@ -67,12 +64,12 @@ export default function InterviewLanding() {
             size="lg"
             onClick={() => handleStartInterview('/dashboard/interviews/ai')}
             className="h-12 gap-2 font-semibold"
-            variant={isGuestLocked ? "outline" : "default"}
+            variant={isLocked ? "outline" : "default"}
           >
-            {isGuestLocked && <Lock className="w-4 h-4" />}
+            {isLocked && <Lock className="w-4 h-4" />}
             <Bot className="w-4.5 h-4.5" style={{ width: 18, height: 18 }} />
             {t('interviews.landing.voiceBtn')}
-            {!isGuestLocked && !freeExhausted && <Sparkles className="w-4 h-4" />}
+            {!isLocked && <Sparkles className="w-4 h-4" />}
           </Button>
           <Button
             size="lg"
@@ -80,19 +77,17 @@ export default function InterviewLanding() {
             variant="outline"
             className="h-12 gap-2"
           >
-            {isGuestLocked && <Lock className="w-4 h-4" />}
+            {isLocked && <Lock className="w-4 h-4" />}
             <Mic className="w-4.5 h-4.5" style={{ width: 18, height: 18 }} />
             {t('interviews.landing.textBtn')}
           </Button>
 
-          {/* Soft limit notice for free users */}
-          {!isPremium && !isGuestMode && (
+          {/* Pro-only notice for non-premium users */}
+          {isLocked && (
             <p className="text-xs text-muted-foreground self-center">
-              {freeExhausted
-                ? 'Alcanzaste el límite gratuito (3 entrevistas). '
-                : `${FREE_LIMIT - userSessionCount} entrevista${FREE_LIMIT - userSessionCount !== 1 ? 's' : ''} gratis restante${FREE_LIMIT - userSessionCount !== 1 ? 's' : ''}. `}
-              <button onClick={() => setShowUpgrade(true)} className="text-primary hover:underline">
-                Ver Pro →
+              Función exclusiva de Pro.{' '}
+              <button onClick={() => setShowUpgrade(true)} className="text-primary hover:underline font-medium">
+                Ver planes →
               </button>
             </p>
           )}
