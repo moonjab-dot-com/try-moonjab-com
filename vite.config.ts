@@ -19,7 +19,7 @@ export default defineConfig(() => ({
         short_name: "MoonJab",
         description:
           "Plataforma de empleabilidad con IA. Mejora tu CV, practica entrevistas y encuentra oportunidades alineadas a tu perfil.",
-        theme_color: "#FF7A00",
+        theme_color: "#10b981",
         background_color: "#ffffff",
         display: "standalone",
         orientation: "portrait",
