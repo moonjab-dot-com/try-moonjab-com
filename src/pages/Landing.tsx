@@ -221,9 +221,9 @@ const LandingContent = () => {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <SEOHead
         title="MoonJab — CV Builder con IA y Simulador de Entrevistas LATAM"
-        description="Crea tu CV optimizado para ATS con IA y practica entrevistas laborales reales. Plataforma de carrera #1 para estudiantes en Perú, México y Colombia."
+        description="Crea tu CV optimizado para ATS con IA, practica entrevistas y descubre tu diagnóstico vocacional. Career platform #1 para estudiantes en LATAM."
         path="/"
-        keywords="CV builder con IA, simulador de entrevistas, career platform estudiantes LATAM, hacer curriculum vitae ATS, preparar entrevista trabajo, primer empleo estudiantes"
+        keywords="CV builder con IA, simulador de entrevistas, diagnóstico vocacional, ATS curriculum, career platform estudiantes LATAM, hacer curriculum vitae ATS, preparar entrevista trabajo, primer empleo estudiantes"
         breadcrumbs={[]}
       />
 
@@ -386,7 +386,7 @@ const LandingContent = () => {
                 </div>
                 <div className="flex-1 flex justify-center">
                   <div className="px-4 py-1 rounded-md bg-background/60 border border-border/30 text-[11px] text-muted-foreground font-mono">
-                    moonjab.com/cvs
+                    moonjab.com/dashboard/cvs
                   </div>
                 </div>
                 <div className="w-14" />
@@ -645,6 +645,180 @@ const LandingContent = () => {
                 <ChatMockup />
               </div>
             </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ── Conversion: De la duda al empleo ── */}
+      <section className="py-24 sm:py-32 border-t border-border/30 relative overflow-hidden">
+        <div className="absolute inset-0 bg-dot-grid opacity-40 pointer-events-none" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-primary/[0.03] rounded-full blur-[120px] pointer-events-none" />
+
+        <div className="relative mx-auto max-w-6xl px-6">
+          {/* Header */}
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
+            className="text-center mb-12"
+          >
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-primary/25 bg-primary/[0.07] text-xs font-semibold text-primary mb-6">
+              <Rocket className="h-3 w-3" />
+              {t('landing.conversion.badge')}
+            </div>
+            <h2 className="text-balance text-3xl sm:text-4xl font-bold tracking-tight mb-4">
+              {t('landing.conversion.title')}{' '}
+              <span className="gradient-text">{t('landing.conversion.titleHighlight')}</span>
+            </h2>
+            <p className="text-pretty text-muted-foreground max-w-xl mx-auto leading-relaxed">
+              {t('landing.conversion.subtitle')}
+            </p>
+          </motion.div>
+
+          {/* Journey strip */}
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={1}
+            className="flex items-center justify-center gap-2 sm:gap-3 mb-12 flex-wrap"
+          >
+            {[
+              { label: t('landing.conversion.step1'), icon: Compass },
+              { label: t('landing.conversion.step2'), icon: FileText },
+              { label: t('landing.conversion.step3'), icon: Mic },
+              { label: t('landing.conversion.step4'), icon: Rocket },
+            ].map(({ label, icon: Icon }, i) => (
+              <div key={label} className="flex items-center gap-2 sm:gap-3">
+                <div className={`flex items-center gap-2 px-3.5 py-2 rounded-full border text-xs font-semibold ${
+                  i === 0
+                    ? 'bg-primary/[0.1] border-primary/30 text-primary'
+                    : 'bg-card border-border/50 text-muted-foreground'
+                }`}>
+                  <Icon className="h-3.5 w-3.5" />
+                  {label}
+                </div>
+                {i < 3 && <ArrowRight className="h-3.5 w-3.5 text-muted-foreground/30 hidden sm:block flex-shrink-0" />}
+              </div>
+            ))}
+          </motion.div>
+
+          {/* Outcome cards */}
+          <div className="grid md:grid-cols-3 gap-5">
+
+            {/* Card 1: CV ATS — spans 2 cols */}
+            <motion.div
+              initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={2}
+              className="feature-card shimmer-on-hover group p-8 flex flex-col md:col-span-2"
+            >
+              <div className="absolute -top-10 -right-10 w-64 h-64 bg-primary/[0.05] rounded-full blur-3xl pointer-events-none" />
+              <div className="relative flex flex-col h-full">
+                <div className="flex items-center justify-between mb-4">
+                  <span className="section-label">{t('landing.conversion.card1Label')}</span>
+                  <div className="w-9 h-9 rounded-xl bg-primary/10 flex items-center justify-center group-hover:scale-105 transition-transform">
+                    <FileText className="h-5 w-5 text-primary" />
+                  </div>
+                </div>
+                <div className="mb-5">
+                  <span className="text-5xl font-black text-primary leading-none">{t('landing.conversion.card1Stat')}</span>
+                  <p className="text-xs text-muted-foreground mt-1">{t('landing.conversion.card1StatDesc')}</p>
+                </div>
+                <h3 className="text-xl font-bold tracking-tight mb-3 leading-snug">
+                  {t('landing.conversion.card1Title')}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+                  {t('landing.conversion.card1Text')}
+                </p>
+                <div className="mt-6">
+                  <Link to="/registro">
+                    <Button size="sm" className="h-9 text-xs gap-1.5 shadow-mj-sm">
+                      {t('landing.conversion.card1Cta')} <ArrowRight className="h-3 w-3" />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Card 2: Diagnostic */}
+            <motion.div
+              initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={3}
+              className="feature-card shimmer-on-hover group p-8 flex flex-col"
+            >
+              <div className="absolute top-0 left-0 w-40 h-40 bg-amber-500/[0.06] rounded-full blur-2xl pointer-events-none" />
+              <div className="absolute top-4 right-4 z-10">
+                <span className="px-2.5 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-bold border border-primary/20">
+                  {t('landing.conversion.card2Badge')}
+                </span>
+              </div>
+              <div className="relative flex flex-col h-full">
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="section-label">{t('landing.conversion.card2Label')}</span>
+                </div>
+                <div className="mb-5">
+                  <span className="text-5xl font-black text-amber-500 leading-none">{t('landing.conversion.card2Stat')}</span>
+                  <p className="text-xs text-muted-foreground mt-1">{t('landing.conversion.card2StatDesc')}</p>
+                </div>
+                <h3 className="text-xl font-bold tracking-tight mb-3 leading-snug">
+                  {t('landing.conversion.card2Title')}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+                  {t('landing.conversion.card2Text')}
+                </p>
+                <div className="mt-6">
+                  <Link to="/diagnostico-vocacional">
+                    <Button variant="outline" size="sm" className="h-9 text-xs gap-1.5 w-full">
+                      {t('landing.conversion.card2Cta')} <ArrowRight className="h-3 w-3" />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Card 3: Interviews — full width */}
+            <motion.div
+              initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={4}
+              className="feature-card shimmer-on-hover group md:col-span-3 p-8"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/[0.02] via-transparent to-violet-500/[0.02] pointer-events-none rounded-2xl" />
+              <div className="relative flex flex-col md:flex-row md:items-center gap-8">
+                {/* Stat */}
+                <div className="md:w-52 shrink-0 text-center md:text-left md:border-r md:border-border/40 md:pr-8">
+                  <div className="text-6xl font-black text-primary leading-none">{t('landing.conversion.card3Stat')}</div>
+                  <p className="text-xs text-muted-foreground mt-2 max-w-[140px] mx-auto md:mx-0 leading-relaxed">{t('landing.conversion.card3StatDesc')}</p>
+                </div>
+                {/* Content */}
+                <div className="flex-1">
+                  <span className="section-label mb-3 block">{t('landing.conversion.card3Label')}</span>
+                  <h3 className="text-xl font-bold tracking-tight mb-2 leading-snug">
+                    {t('landing.conversion.card3Title')}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed max-w-lg">
+                    {t('landing.conversion.card3Text')}
+                  </p>
+                </div>
+                {/* CTA */}
+                <div className="md:w-44 shrink-0 flex justify-center md:justify-end">
+                  <Link to="/registro">
+                    <Button size="sm" className="h-9 text-xs gap-1.5 shadow-mj-sm whitespace-nowrap">
+                      {t('landing.conversion.card3Cta')} <ArrowRight className="h-3 w-3" />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+
+          </div>
+
+          {/* Trust bar */}
+          <motion.div
+            initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} custom={5}
+            className="flex items-center justify-center gap-6 sm:gap-10 mt-10 flex-wrap"
+          >
+            {[
+              { icon: Check, text: t('landing.conversion.trustFree') },
+              { icon: Rocket, text: t('landing.conversion.trustTime') },
+              { icon: Users, text: t('landing.conversion.trustCountries') },
+            ].map(({ icon: Icon, text }) => (
+              <div key={text} className="flex items-center gap-2 text-xs text-muted-foreground">
+                <Icon className="h-3.5 w-3.5 text-primary/60" />
+                {text}
+              </div>
+            ))}
           </motion.div>
         </div>
       </section>

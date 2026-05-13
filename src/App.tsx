@@ -39,6 +39,7 @@ import Help from "./pages/Help";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Testimonios from "./pages/Testimonios";
+import DiagnosticoVocacionalLanding from "./pages/DiagnosticoVocacionalLanding";
 const Install = lazy(() => import("./pages/Install"));
 import DashboardLayout from "./layouts/DashboardLayout";
 import { ProtectedRoute } from "./components/ProtectedRoute";
@@ -121,6 +122,7 @@ const App = () => (
                 <Route path="/privacy" element={<Privacy />} />
                 <Route path="/terms" element={<Terms />} />
                 <Route path="/testimonios" element={<Testimonios />} />
+                <Route path="/diagnostico-vocacional" element={<DiagnosticoVocacionalLanding />} />
                 <Route path="/onboarding" element={<ProtectedRoute><Onboarding /></ProtectedRoute>} />
 
                 <Route path="/dashboard" element={<ProtectedRoute><DashboardLayout /></ProtectedRoute>}>

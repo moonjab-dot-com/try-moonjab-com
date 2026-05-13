@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset
   xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
   xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
-  <!-- ── HOMEPAGE ────────────────────────────────── -->
+  <!-- â”€â”€ HOMEPAGE â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
   <url>
     <loc>https://moonjab.com/</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/"/>
@@ -20,15 +20,31 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/"/>
     <image:image>
       <image:loc>https://moonjab.com/og-image.png</image:loc>
-      <image:title>MoonJab — CV Builder con IA y Simulador de Entrevistas</image:title>
+      <image:title>MoonJab â€” CV Builder con IA y Simulador de Entrevistas</image:title>
       <image:caption>Plataforma de carrera para estudiantes en LATAM</image:caption>
     </image:image>
   </url>
 
-  <!-- ── SEO PRODUCT LANDING PAGES ───────────────── -->
+  <!-- ── DIAGNOSTIC VOCACIONAL ──────────────────────── -->
+  <url>
+    <loc>https://moonjab.com/diagnostico-vocacional</loc>
+    <lastmod>2026-05-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.90</priority>
+    <xhtml:link rel=”alternate” hreflang=”es” href=”https://moonjab.com/diagnostico-vocacional”/>
+    <xhtml:link rel=”alternate” hreflang=”es-PE” href=”https://moonjab.com/diagnostico-vocacional”/>
+    <xhtml:link rel=”alternate” hreflang=”es-MX” href=”https://moonjab.com/diagnostico-vocacional”/>
+    <xhtml:link rel=”alternate” hreflang=”es-CO” href=”https://moonjab.com/diagnostico-vocacional”/>
+    <xhtml:link rel=”alternate” hreflang=”es-AR” href=”https://moonjab.com/diagnostico-vocacional”/>
+    <xhtml:link rel=”alternate” hreflang=”es-CL” href=”https://moonjab.com/diagnostico-vocacional”/>
+    <xhtml:link rel=”alternate” hreflang=”es-EC” href=”https://moonjab.com/diagnostico-vocacional”/>
+    <xhtml:link rel=”alternate” hreflang=”x-default” href=”https://moonjab.com/diagnostico-vocacional”/>
+  </url>
+
+  <!-- ── SEO PRODUCT LANDING PAGES ─────────────────── -->
   <url>
     <loc>https://moonjab.com/cv-builder</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/cv-builder"/>
@@ -43,7 +59,7 @@
 
   <url>
     <loc>https://moonjab.com/interview-prep</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/interview-prep"/>
@@ -56,10 +72,10 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/interview-prep"/>
   </url>
 
-  <!-- ── CV BUILDER BY COUNTRY (Programmatic SEO) ── -->
+  <!-- â”€â”€ CV BUILDER BY COUNTRY (Programmatic SEO) â”€â”€ -->
   <url>
     <loc>https://moonjab.com/cv-builder/peru</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
     <xhtml:link rel="alternate" hreflang="es-PE" href="https://moonjab.com/cv-builder/peru"/>
@@ -69,7 +85,7 @@
 
   <url>
     <loc>https://moonjab.com/cv-builder/mexico</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
     <xhtml:link rel="alternate" hreflang="es-MX" href="https://moonjab.com/cv-builder/mexico"/>
@@ -79,7 +95,7 @@
 
   <url>
     <loc>https://moonjab.com/cv-builder/colombia</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.88</priority>
     <xhtml:link rel="alternate" hreflang="es-CO" href="https://moonjab.com/cv-builder/colombia"/>
@@ -89,7 +105,7 @@
 
   <url>
     <loc>https://moonjab.com/cv-builder/argentina</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.88</priority>
     <xhtml:link rel="alternate" hreflang="es-AR" href="https://moonjab.com/cv-builder/argentina"/>
@@ -99,7 +115,7 @@
 
   <url>
     <loc>https://moonjab.com/cv-builder/chile</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.88</priority>
     <xhtml:link rel="alternate" hreflang="es-CL" href="https://moonjab.com/cv-builder/chile"/>
@@ -107,10 +123,10 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/cv-builder/chile"/>
   </url>
 
-  <!-- ── PRICING & CONVERSION ─────────────────────── -->
+  <!-- â”€â”€ PRICING & CONVERSION â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
   <url>
     <loc>https://moonjab.com/pricing</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/pricing"/>
@@ -123,65 +139,65 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/pricing"/>
   </url>
 
-  <!-- ── AUTH PAGES ───────────────────────────────── -->
+  <!-- â”€â”€ AUTH PAGES â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
   <url>
     <loc>https://moonjab.com/registro</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
 
   <url>
     <loc>https://moonjab.com/login</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.50</priority>
   </url>
 
-  <!-- ── SOCIAL PROOF & PRESS ─────────────────────── -->
+  <!-- â”€â”€ SOCIAL PROOF & PRESS â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
   <url>
     <loc>https://moonjab.com/testimonios</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/testimonios"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/testimonios"/>
   </url>
 
-  <!-- ── PRESS / MEDIA KIT ──────────────────────────── -->
+  <!-- â”€â”€ PRESS / MEDIA KIT â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
   <url>
     <loc>https://moonjab.com/prensa</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/prensa"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/prensa"/>
   </url>
 
-  <!-- ── ABOUT & COMPANY ──────────────────────────── -->
+  <!-- â”€â”€ ABOUT & COMPANY â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
   <url>
     <loc>https://moonjab.com/about</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.70</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/about"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/about"/>
   </url>
 
-  <!-- ── HELP ─────────────────────────────────────── -->
+  <!-- â”€â”€ HELP â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
   <url>
     <loc>https://moonjab.com/help</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.65</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/help"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/help"/>
   </url>
 
-  <!-- ── BLOG ─────────────────────────────────────── -->
+  <!-- â”€â”€ BLOG â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
   <url>
     <loc>https://moonjab.com/blog</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/blog"/>
@@ -233,40 +249,40 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/negociar-salario"/>
   </url>
 
-  <!-- ── BLOG: CV category (2025) ──────────────────── -->
+  <!-- â”€â”€ BLOG: CV category (2025) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
   <url><loc>https://moonjab.com/blog/como-hacer-un-cv-sin-experiencia</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.78</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/blog/como-hacer-un-cv-sin-experiencia"/><xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/como-hacer-un-cv-sin-experiencia"/></url>
   <url><loc>https://moonjab.com/blog/que-es-ats-y-como-optimizar-tu-cv</loc><lastmod>2025-01-10</lastmod><changefreq>monthly</changefreq><priority>0.78</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/blog/que-es-ats-y-como-optimizar-tu-cv"/><xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/que-es-ats-y-como-optimizar-tu-cv"/></url>
   <url><loc>https://moonjab.com/blog/carta-presentacion-2025</loc><lastmod>2025-02-12</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/blog/carta-presentacion-2025"/><xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/carta-presentacion-2025"/></url>
   <url><loc>https://moonjab.com/blog/palabras-clave-cv-ats-latam</loc><lastmod>2025-01-18</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/blog/palabras-clave-cv-ats-latam"/><xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/palabras-clave-cv-ats-latam"/></url>
 
-  <!-- ── BLOG: Carrera category (2025) ─────────────── -->
+  <!-- â”€â”€ BLOG: Carrera category (2025) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
   <url><loc>https://moonjab.com/blog/primer-trabajo-estudiante-universitario</loc><lastmod>2025-01-05</lastmod><changefreq>monthly</changefreq><priority>0.78</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/blog/primer-trabajo-estudiante-universitario"/><xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/primer-trabajo-estudiante-universitario"/></url>
   <url><loc>https://moonjab.com/blog/practicas-profesionales-latam</loc><lastmod>2025-01-02</lastmod><changefreq>monthly</changefreq><priority>0.78</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/blog/practicas-profesionales-latam"/><xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/practicas-profesionales-latam"/></url>
   <url><loc>https://moonjab.com/blog/primer-empleo-90-dias</loc><lastmod>2025-02-18</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/blog/primer-empleo-90-dias"/><xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/primer-empleo-90-dias"/></url>
   <url><loc>https://moonjab.com/blog/habilidades-digitales-2025-latam</loc><lastmod>2025-02-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/blog/habilidades-digitales-2025-latam"/><xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/habilidades-digitales-2025-latam"/></url>
 
-  <!-- ── BLOG: Entrevistas category (2025) ─────────── -->
+  <!-- â”€â”€ BLOG: Entrevistas category (2025) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
   <url><loc>https://moonjab.com/blog/preguntas-conductuales-entrevista</loc><lastmod>2025-02-10</lastmod><changefreq>monthly</changefreq><priority>0.78</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/blog/preguntas-conductuales-entrevista"/><xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/preguntas-conductuales-entrevista"/></url>
   <url><loc>https://moonjab.com/blog/primera-entrevista-trabajo-guia</loc><lastmod>2025-02-05</lastmod><changefreq>monthly</changefreq><priority>0.78</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/blog/primera-entrevista-trabajo-guia"/><xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/primera-entrevista-trabajo-guia"/></url>
   <url><loc>https://moonjab.com/blog/metodo-star-respuestas-entrevista</loc><lastmod>2025-01-28</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/blog/metodo-star-respuestas-entrevista"/><xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/metodo-star-respuestas-entrevista"/></url>
   <url><loc>https://moonjab.com/blog/errores-fatales-entrevista</loc><lastmod>2025-01-22</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/blog/errores-fatales-entrevista"/><xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/errores-fatales-entrevista"/></url>
 
-  <!-- ── BLOG: Networking category (2025) ──────────── -->
+  <!-- â”€â”€ BLOG: Networking category (2025) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
   <url><loc>https://moonjab.com/blog/linkedin-estudiantes-universitarios</loc><lastmod>2025-02-15</lastmod><changefreq>monthly</changefreq><priority>0.78</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/blog/linkedin-estudiantes-universitarios"/><xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/linkedin-estudiantes-universitarios"/></url>
   <url><loc>https://moonjab.com/blog/entrevistas-informativas-como-conseguirlas</loc><lastmod>2025-02-08</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/blog/entrevistas-informativas-como-conseguirlas"/><xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/entrevistas-informativas-como-conseguirlas"/></url>
   <url><loc>https://moonjab.com/blog/networking-introvertidos</loc><lastmod>2025-02-01</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/blog/networking-introvertidos"/><xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/networking-introvertidos"/></url>
   <url><loc>https://moonjab.com/blog/presencia-digital-profesional</loc><lastmod>2025-01-25</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/blog/presencia-digital-profesional"/><xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/presencia-digital-profesional"/></url>
 
-  <!-- ── BLOG: Salario category (2025) ─────────────── -->
+  <!-- â”€â”€ BLOG: Salario category (2025) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
   <url><loc>https://moonjab.com/blog/sueldos-tecnologia-latam-2025</loc><lastmod>2025-02-20</lastmod><changefreq>monthly</changefreq><priority>0.78</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/blog/sueldos-tecnologia-latam-2025"/><xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/sueldos-tecnologia-latam-2025"/></url>
   <url><loc>https://moonjab.com/blog/pedir-aumento-sueldo-estrategia</loc><lastmod>2025-01-30</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/blog/pedir-aumento-sueldo-estrategia"/><xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/pedir-aumento-sueldo-estrategia"/></url>
   <url><loc>https://moonjab.com/blog/beneficios-laborales-negociar-latam</loc><lastmod>2025-01-15</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/blog/beneficios-laborales-negociar-latam"/><xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/beneficios-laborales-negociar-latam"/></url>
   <url><loc>https://moonjab.com/blog/freelance-vs-empleo-economia-latam</loc><lastmod>2025-01-08</lastmod><changefreq>monthly</changefreq><priority>0.75</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/blog/freelance-vs-empleo-economia-latam"/><xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/freelance-vs-empleo-economia-latam"/></url>
 
-  <!-- ── SALARY HUB (Programmatic SEO) ──────────────── -->
+  <!-- â”€â”€ SALARY HUB (Programmatic SEO) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
   <url>
     <loc>https://moonjab.com/salario</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.92</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/salario"/>
@@ -274,83 +290,83 @@
   </url>
 
   <!-- Salary by role -->
-  <url><loc>https://moonjab.com/salario/desarrollador-web</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/salario/desarrollador-web"/></url>
-  <url><loc>https://moonjab.com/salario/desarrollador-software</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/salario/desarrollador-software"/></url>
-  <url><loc>https://moonjab.com/salario/analista-de-datos</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/salario/analista-de-datos"/></url>
-  <url><loc>https://moonjab.com/salario/diseñador-ux-ui</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/salario/diseñador-ux-ui"/></url>
-  <url><loc>https://moonjab.com/salario/marketing-digital</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/salario/marketing-digital"/></url>
-  <url><loc>https://moonjab.com/salario/contador</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/salario/contador"/></url>
-  <url><loc>https://moonjab.com/salario/recursos-humanos</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/salario/recursos-humanos"/></url>
-  <url><loc>https://moonjab.com/salario/ingeniero-civil</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/salario/ingeniero-civil"/></url>
-  <url><loc>https://moonjab.com/salario/administrador-empresas</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/salario/administrador-empresas"/></url>
+  <url><loc>https://moonjab.com/salario/desarrollador-web</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/salario/desarrollador-web"/></url>
+  <url><loc>https://moonjab.com/salario/desarrollador-software</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/salario/desarrollador-software"/></url>
+  <url><loc>https://moonjab.com/salario/analista-de-datos</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/salario/analista-de-datos"/></url>
+  <url><loc>https://moonjab.com/salario/diseÃ±ador-ux-ui</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/salario/diseÃ±ador-ux-ui"/></url>
+  <url><loc>https://moonjab.com/salario/marketing-digital</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/salario/marketing-digital"/></url>
+  <url><loc>https://moonjab.com/salario/contador</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/salario/contador"/></url>
+  <url><loc>https://moonjab.com/salario/recursos-humanos</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/salario/recursos-humanos"/></url>
+  <url><loc>https://moonjab.com/salario/ingeniero-civil</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/salario/ingeniero-civil"/></url>
+  <url><loc>https://moonjab.com/salario/administrador-empresas</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/salario/administrador-empresas"/></url>
 
-  <!-- Salary by role + country (Perú) -->
-  <url><loc>https://moonjab.com/salario/desarrollador-web/peru</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-PE" href="https://moonjab.com/salario/desarrollador-web/peru"/></url>
-  <url><loc>https://moonjab.com/salario/desarrollador-software/peru</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-PE" href="https://moonjab.com/salario/desarrollador-software/peru"/></url>
-  <url><loc>https://moonjab.com/salario/analista-de-datos/peru</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-PE" href="https://moonjab.com/salario/analista-de-datos/peru"/></url>
-  <url><loc>https://moonjab.com/salario/diseñador-ux-ui/peru</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-PE" href="https://moonjab.com/salario/diseñador-ux-ui/peru"/></url>
-  <url><loc>https://moonjab.com/salario/marketing-digital/peru</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-PE" href="https://moonjab.com/salario/marketing-digital/peru"/></url>
-  <url><loc>https://moonjab.com/salario/contador/peru</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-PE" href="https://moonjab.com/salario/contador/peru"/></url>
-  <url><loc>https://moonjab.com/salario/recursos-humanos/peru</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-PE" href="https://moonjab.com/salario/recursos-humanos/peru"/></url>
-  <url><loc>https://moonjab.com/salario/ingeniero-civil/peru</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-PE" href="https://moonjab.com/salario/ingeniero-civil/peru"/></url>
-  <url><loc>https://moonjab.com/salario/administrador-empresas/peru</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-PE" href="https://moonjab.com/salario/administrador-empresas/peru"/></url>
+  <!-- Salary by role + country (PerÃº) -->
+  <url><loc>https://moonjab.com/salario/desarrollador-web/peru</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-PE" href="https://moonjab.com/salario/desarrollador-web/peru"/></url>
+  <url><loc>https://moonjab.com/salario/desarrollador-software/peru</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-PE" href="https://moonjab.com/salario/desarrollador-software/peru"/></url>
+  <url><loc>https://moonjab.com/salario/analista-de-datos/peru</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-PE" href="https://moonjab.com/salario/analista-de-datos/peru"/></url>
+  <url><loc>https://moonjab.com/salario/diseÃ±ador-ux-ui/peru</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-PE" href="https://moonjab.com/salario/diseÃ±ador-ux-ui/peru"/></url>
+  <url><loc>https://moonjab.com/salario/marketing-digital/peru</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-PE" href="https://moonjab.com/salario/marketing-digital/peru"/></url>
+  <url><loc>https://moonjab.com/salario/contador/peru</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-PE" href="https://moonjab.com/salario/contador/peru"/></url>
+  <url><loc>https://moonjab.com/salario/recursos-humanos/peru</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-PE" href="https://moonjab.com/salario/recursos-humanos/peru"/></url>
+  <url><loc>https://moonjab.com/salario/ingeniero-civil/peru</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-PE" href="https://moonjab.com/salario/ingeniero-civil/peru"/></url>
+  <url><loc>https://moonjab.com/salario/administrador-empresas/peru</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-PE" href="https://moonjab.com/salario/administrador-empresas/peru"/></url>
 
-  <!-- Salary by role + country (México) -->
-  <url><loc>https://moonjab.com/salario/desarrollador-web/mexico</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-MX" href="https://moonjab.com/salario/desarrollador-web/mexico"/></url>
-  <url><loc>https://moonjab.com/salario/desarrollador-software/mexico</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-MX" href="https://moonjab.com/salario/desarrollador-software/mexico"/></url>
-  <url><loc>https://moonjab.com/salario/analista-de-datos/mexico</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-MX" href="https://moonjab.com/salario/analista-de-datos/mexico"/></url>
-  <url><loc>https://moonjab.com/salario/diseñador-ux-ui/mexico</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-MX" href="https://moonjab.com/salario/diseñador-ux-ui/mexico"/></url>
-  <url><loc>https://moonjab.com/salario/marketing-digital/mexico</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-MX" href="https://moonjab.com/salario/marketing-digital/mexico"/></url>
-  <url><loc>https://moonjab.com/salario/contador/mexico</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-MX" href="https://moonjab.com/salario/contador/mexico"/></url>
-  <url><loc>https://moonjab.com/salario/recursos-humanos/mexico</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-MX" href="https://moonjab.com/salario/recursos-humanos/mexico"/></url>
-  <url><loc>https://moonjab.com/salario/ingeniero-civil/mexico</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-MX" href="https://moonjab.com/salario/ingeniero-civil/mexico"/></url>
-  <url><loc>https://moonjab.com/salario/administrador-empresas/mexico</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-MX" href="https://moonjab.com/salario/administrador-empresas/mexico"/></url>
+  <!-- Salary by role + country (MÃ©xico) -->
+  <url><loc>https://moonjab.com/salario/desarrollador-web/mexico</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-MX" href="https://moonjab.com/salario/desarrollador-web/mexico"/></url>
+  <url><loc>https://moonjab.com/salario/desarrollador-software/mexico</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-MX" href="https://moonjab.com/salario/desarrollador-software/mexico"/></url>
+  <url><loc>https://moonjab.com/salario/analista-de-datos/mexico</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-MX" href="https://moonjab.com/salario/analista-de-datos/mexico"/></url>
+  <url><loc>https://moonjab.com/salario/diseÃ±ador-ux-ui/mexico</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-MX" href="https://moonjab.com/salario/diseÃ±ador-ux-ui/mexico"/></url>
+  <url><loc>https://moonjab.com/salario/marketing-digital/mexico</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-MX" href="https://moonjab.com/salario/marketing-digital/mexico"/></url>
+  <url><loc>https://moonjab.com/salario/contador/mexico</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-MX" href="https://moonjab.com/salario/contador/mexico"/></url>
+  <url><loc>https://moonjab.com/salario/recursos-humanos/mexico</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-MX" href="https://moonjab.com/salario/recursos-humanos/mexico"/></url>
+  <url><loc>https://moonjab.com/salario/ingeniero-civil/mexico</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-MX" href="https://moonjab.com/salario/ingeniero-civil/mexico"/></url>
+  <url><loc>https://moonjab.com/salario/administrador-empresas/mexico</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-MX" href="https://moonjab.com/salario/administrador-empresas/mexico"/></url>
 
   <!-- Salary by role + country (Colombia) -->
-  <url><loc>https://moonjab.com/salario/desarrollador-web/colombia</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-CO" href="https://moonjab.com/salario/desarrollador-web/colombia"/></url>
-  <url><loc>https://moonjab.com/salario/desarrollador-software/colombia</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-CO" href="https://moonjab.com/salario/desarrollador-software/colombia"/></url>
-  <url><loc>https://moonjab.com/salario/analista-de-datos/colombia</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-CO" href="https://moonjab.com/salario/analista-de-datos/colombia"/></url>
-  <url><loc>https://moonjab.com/salario/marketing-digital/colombia</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-CO" href="https://moonjab.com/salario/marketing-digital/colombia"/></url>
-  <url><loc>https://moonjab.com/salario/contador/colombia</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-CO" href="https://moonjab.com/salario/contador/colombia"/></url>
-  <url><loc>https://moonjab.com/salario/recursos-humanos/colombia</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-CO" href="https://moonjab.com/salario/recursos-humanos/colombia"/></url>
-  <url><loc>https://moonjab.com/salario/ingeniero-civil/colombia</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-CO" href="https://moonjab.com/salario/ingeniero-civil/colombia"/></url>
-  <url><loc>https://moonjab.com/salario/administrador-empresas/colombia</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-CO" href="https://moonjab.com/salario/administrador-empresas/colombia"/></url>
+  <url><loc>https://moonjab.com/salario/desarrollador-web/colombia</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-CO" href="https://moonjab.com/salario/desarrollador-web/colombia"/></url>
+  <url><loc>https://moonjab.com/salario/desarrollador-software/colombia</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-CO" href="https://moonjab.com/salario/desarrollador-software/colombia"/></url>
+  <url><loc>https://moonjab.com/salario/analista-de-datos/colombia</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-CO" href="https://moonjab.com/salario/analista-de-datos/colombia"/></url>
+  <url><loc>https://moonjab.com/salario/marketing-digital/colombia</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-CO" href="https://moonjab.com/salario/marketing-digital/colombia"/></url>
+  <url><loc>https://moonjab.com/salario/contador/colombia</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-CO" href="https://moonjab.com/salario/contador/colombia"/></url>
+  <url><loc>https://moonjab.com/salario/recursos-humanos/colombia</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-CO" href="https://moonjab.com/salario/recursos-humanos/colombia"/></url>
+  <url><loc>https://moonjab.com/salario/ingeniero-civil/colombia</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-CO" href="https://moonjab.com/salario/ingeniero-civil/colombia"/></url>
+  <url><loc>https://moonjab.com/salario/administrador-empresas/colombia</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-CO" href="https://moonjab.com/salario/administrador-empresas/colombia"/></url>
 
   <!-- Salary by role + country (Argentina) -->
-  <url><loc>https://moonjab.com/salario/desarrollador-web/argentina</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-AR" href="https://moonjab.com/salario/desarrollador-web/argentina"/></url>
-  <url><loc>https://moonjab.com/salario/desarrollador-software/argentina</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-AR" href="https://moonjab.com/salario/desarrollador-software/argentina"/></url>
-  <url><loc>https://moonjab.com/salario/analista-de-datos/argentina</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-AR" href="https://moonjab.com/salario/analista-de-datos/argentina"/></url>
-  <url><loc>https://moonjab.com/salario/marketing-digital/argentina</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-AR" href="https://moonjab.com/salario/marketing-digital/argentina"/></url>
-  <url><loc>https://moonjab.com/salario/contador/argentina</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-AR" href="https://moonjab.com/salario/contador/argentina"/></url>
-  <url><loc>https://moonjab.com/salario/recursos-humanos/argentina</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-AR" href="https://moonjab.com/salario/recursos-humanos/argentina"/></url>
-  <url><loc>https://moonjab.com/salario/ingeniero-civil/argentina</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-AR" href="https://moonjab.com/salario/ingeniero-civil/argentina"/></url>
-  <url><loc>https://moonjab.com/salario/administrador-empresas/argentina</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-AR" href="https://moonjab.com/salario/administrador-empresas/argentina"/></url>
+  <url><loc>https://moonjab.com/salario/desarrollador-web/argentina</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-AR" href="https://moonjab.com/salario/desarrollador-web/argentina"/></url>
+  <url><loc>https://moonjab.com/salario/desarrollador-software/argentina</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-AR" href="https://moonjab.com/salario/desarrollador-software/argentina"/></url>
+  <url><loc>https://moonjab.com/salario/analista-de-datos/argentina</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-AR" href="https://moonjab.com/salario/analista-de-datos/argentina"/></url>
+  <url><loc>https://moonjab.com/salario/marketing-digital/argentina</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-AR" href="https://moonjab.com/salario/marketing-digital/argentina"/></url>
+  <url><loc>https://moonjab.com/salario/contador/argentina</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-AR" href="https://moonjab.com/salario/contador/argentina"/></url>
+  <url><loc>https://moonjab.com/salario/recursos-humanos/argentina</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-AR" href="https://moonjab.com/salario/recursos-humanos/argentina"/></url>
+  <url><loc>https://moonjab.com/salario/ingeniero-civil/argentina</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-AR" href="https://moonjab.com/salario/ingeniero-civil/argentina"/></url>
+  <url><loc>https://moonjab.com/salario/administrador-empresas/argentina</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-AR" href="https://moonjab.com/salario/administrador-empresas/argentina"/></url>
 
   <!-- Salary by role + country (Chile) -->
-  <url><loc>https://moonjab.com/salario/desarrollador-web/chile</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-CL" href="https://moonjab.com/salario/desarrollador-web/chile"/></url>
-  <url><loc>https://moonjab.com/salario/desarrollador-software/chile</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-CL" href="https://moonjab.com/salario/desarrollador-software/chile"/></url>
-  <url><loc>https://moonjab.com/salario/analista-de-datos/chile</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-CL" href="https://moonjab.com/salario/analista-de-datos/chile"/></url>
-  <url><loc>https://moonjab.com/salario/marketing-digital/chile</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-CL" href="https://moonjab.com/salario/marketing-digital/chile"/></url>
-  <url><loc>https://moonjab.com/salario/contador/chile</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-CL" href="https://moonjab.com/salario/contador/chile"/></url>
-  <url><loc>https://moonjab.com/salario/recursos-humanos/chile</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-CL" href="https://moonjab.com/salario/recursos-humanos/chile"/></url>
-  <url><loc>https://moonjab.com/salario/ingeniero-civil/chile</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-CL" href="https://moonjab.com/salario/ingeniero-civil/chile"/></url>
-  <url><loc>https://moonjab.com/salario/administrador-empresas/chile</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-CL" href="https://moonjab.com/salario/administrador-empresas/chile"/></url>
+  <url><loc>https://moonjab.com/salario/desarrollador-web/chile</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-CL" href="https://moonjab.com/salario/desarrollador-web/chile"/></url>
+  <url><loc>https://moonjab.com/salario/desarrollador-software/chile</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-CL" href="https://moonjab.com/salario/desarrollador-software/chile"/></url>
+  <url><loc>https://moonjab.com/salario/analista-de-datos/chile</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-CL" href="https://moonjab.com/salario/analista-de-datos/chile"/></url>
+  <url><loc>https://moonjab.com/salario/marketing-digital/chile</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-CL" href="https://moonjab.com/salario/marketing-digital/chile"/></url>
+  <url><loc>https://moonjab.com/salario/contador/chile</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-CL" href="https://moonjab.com/salario/contador/chile"/></url>
+  <url><loc>https://moonjab.com/salario/recursos-humanos/chile</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-CL" href="https://moonjab.com/salario/recursos-humanos/chile"/></url>
+  <url><loc>https://moonjab.com/salario/ingeniero-civil/chile</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-CL" href="https://moonjab.com/salario/ingeniero-civil/chile"/></url>
+  <url><loc>https://moonjab.com/salario/administrador-empresas/chile</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.85</priority><xhtml:link rel="alternate" hreflang="es-CL" href="https://moonjab.com/salario/administrador-empresas/chile"/></url>
 
-  <!-- ── INTERVIEW QUESTIONS (Programmatic SEO) ─────── -->
+  <!-- â”€â”€ INTERVIEW QUESTIONS (Programmatic SEO) â”€â”€â”€â”€â”€â”€â”€ -->
   <url>
     <loc>https://moonjab.com/preguntas-de-entrevista</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.92</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/preguntas-de-entrevista"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/preguntas-de-entrevista"/>
   </url>
-  <url><loc>https://moonjab.com/preguntas-de-entrevista/desarrollador-web</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/preguntas-de-entrevista/desarrollador-web"/></url>
-  <url><loc>https://moonjab.com/preguntas-de-entrevista/analista-de-datos</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/preguntas-de-entrevista/analista-de-datos"/></url>
-  <url><loc>https://moonjab.com/preguntas-de-entrevista/marketing-digital</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/preguntas-de-entrevista/marketing-digital"/></url>
-  <url><loc>https://moonjab.com/preguntas-de-entrevista/diseñador-ux-ui</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/preguntas-de-entrevista/diseñador-ux-ui"/></url>
-  <url><loc>https://moonjab.com/preguntas-de-entrevista/recursos-humanos</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/preguntas-de-entrevista/recursos-humanos"/></url>
-  <url><loc>https://moonjab.com/preguntas-de-entrevista/contador</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/preguntas-de-entrevista/contador"/></url>
+  <url><loc>https://moonjab.com/preguntas-de-entrevista/desarrollador-web</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/preguntas-de-entrevista/desarrollador-web"/></url>
+  <url><loc>https://moonjab.com/preguntas-de-entrevista/analista-de-datos</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/preguntas-de-entrevista/analista-de-datos"/></url>
+  <url><loc>https://moonjab.com/preguntas-de-entrevista/marketing-digital</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/preguntas-de-entrevista/marketing-digital"/></url>
+  <url><loc>https://moonjab.com/preguntas-de-entrevista/diseÃ±ador-ux-ui</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/preguntas-de-entrevista/diseÃ±ador-ux-ui"/></url>
+  <url><loc>https://moonjab.com/preguntas-de-entrevista/recursos-humanos</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/preguntas-de-entrevista/recursos-humanos"/></url>
+  <url><loc>https://moonjab.com/preguntas-de-entrevista/contador</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/preguntas-de-entrevista/contador"/></url>
 
   <!-- Interview questions by company (high-intent programmatic SEO) -->
   <url><loc>https://moonjab.com/preguntas-de-entrevista/google</loc><lastmod>2026-05-10</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/preguntas-de-entrevista/google"/></url>
@@ -359,45 +375,45 @@
   <url><loc>https://moonjab.com/preguntas-de-entrevista/falabella</loc><lastmod>2026-05-10</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/preguntas-de-entrevista/falabella"/></url>
   <url><loc>https://moonjab.com/preguntas-de-entrevista/mercadolibre</loc><lastmod>2026-05-10</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/preguntas-de-entrevista/mercadolibre"/></url>
 
-  <!-- ── CV TEMPLATES (Programmatic SEO) ──────────────── -->
+  <!-- â”€â”€ CV TEMPLATES (Programmatic SEO) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
   <url>
     <loc>https://moonjab.com/plantillas-cv</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.92</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/plantillas-cv"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/plantillas-cv"/>
   </url>
-  <url><loc>https://moonjab.com/plantillas-cv/ingeniero-de-software</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/plantillas-cv/ingeniero-de-software"/></url>
-  <url><loc>https://moonjab.com/plantillas-cv/diseñador-grafico</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/plantillas-cv/diseñador-grafico"/></url>
-  <url><loc>https://moonjab.com/plantillas-cv/administrador-empresas</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/plantillas-cv/administrador-empresas"/></url>
-  <url><loc>https://moonjab.com/plantillas-cv/contador-auditor</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/plantillas-cv/contador-auditor"/></url>
-  <url><loc>https://moonjab.com/plantillas-cv/marketing-digital</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/plantillas-cv/marketing-digital"/></url>
-  <url><loc>https://moonjab.com/plantillas-cv/recursos-humanos</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/plantillas-cv/recursos-humanos"/></url>
-  <url><loc>https://moonjab.com/plantillas-cv/analista-datos</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/plantillas-cv/analista-datos"/></url>
-  <url><loc>https://moonjab.com/plantillas-cv/primer-empleo</loc><lastmod>2026-05-09</lastmod><changefreq>monthly</changefreq><priority>0.90</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/plantillas-cv/primer-empleo"/></url>
+  <url><loc>https://moonjab.com/plantillas-cv/ingeniero-de-software</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/plantillas-cv/ingeniero-de-software"/></url>
+  <url><loc>https://moonjab.com/plantillas-cv/diseÃ±ador-grafico</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/plantillas-cv/diseÃ±ador-grafico"/></url>
+  <url><loc>https://moonjab.com/plantillas-cv/administrador-empresas</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/plantillas-cv/administrador-empresas"/></url>
+  <url><loc>https://moonjab.com/plantillas-cv/contador-auditor</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/plantillas-cv/contador-auditor"/></url>
+  <url><loc>https://moonjab.com/plantillas-cv/marketing-digital</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/plantillas-cv/marketing-digital"/></url>
+  <url><loc>https://moonjab.com/plantillas-cv/recursos-humanos</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/plantillas-cv/recursos-humanos"/></url>
+  <url><loc>https://moonjab.com/plantillas-cv/analista-datos</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/plantillas-cv/analista-datos"/></url>
+  <url><loc>https://moonjab.com/plantillas-cv/primer-empleo</loc><lastmod>2026-05-11</lastmod><changefreq>monthly</changefreq><priority>0.90</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/plantillas-cv/primer-empleo"/></url>
 
-  <!-- ── FREE TOOL: ATS CHECKER ─────────────────────── -->
+  <!-- â”€â”€ FREE TOOL: ATS CHECKER â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
   <url>
     <loc>https://moonjab.com/verificador-ats</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.90</priority>
     <xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/verificador-ats"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/verificador-ats"/>
   </url>
 
-  <!-- ── LEGAL ─────────────────────────────────────── -->
+  <!-- â”€â”€ LEGAL â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ -->
   <url>
     <loc>https://moonjab.com/privacy</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.40</priority>
   </url>
 
   <url>
     <loc>https://moonjab.com/terms</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-11</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.40</priority>
   </url>

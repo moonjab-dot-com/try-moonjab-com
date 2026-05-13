@@ -14,7 +14,7 @@ import { UpgradeBanner } from '@/components/UpgradeBanner';
 import { UpgradeModal } from '@/components/UpgradeModal';
 import {
   FileText, ArrowRight, Sparkles, RotateCcw, Mic,
-  ChevronRight, Crown, Lock, Eye, Loader2, Zap,
+  ChevronRight, Crown, Lock, Eye, Loader2, Zap, Compass,
 } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
@@ -115,6 +115,14 @@ const Dashboard = () => {
       locked: isTrial,
       badge: 'IA',
     },
+    {
+      icon: Compass,
+      label: 'Diagnóstico',
+      desc: hasRole ? 'Actualizar mi perfil RIASEC' : 'Descubre tu carrera ideal',
+      path: '/onboarding',
+      locked: isTrial,
+      badge: hasRole ? null : 'Gratis',
+    },
   ];
 
   return (
@@ -210,6 +218,32 @@ const Dashboard = () => {
           />
         </motion.div>
 
+        {/* ── Diagnostic CTA (user hasn't done it yet) ── */}
+        {!hasRole && !isTrial && (
+          <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={2.5}>
+            <Link to="/onboarding">
+              <div className="relative flex items-center gap-4 p-5 rounded-xl border border-primary/25 bg-primary/[0.04] hover:border-primary/40 hover:shadow-mj-md transition-all duration-200 group overflow-hidden cursor-pointer">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-primary/[0.06] rounded-full blur-2xl pointer-events-none" />
+                <div className="w-10 h-10 rounded-xl bg-primary/12 flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform duration-200">
+                  <Compass className="h-5 w-5 text-primary" />
+                </div>
+                <div className="flex-1 relative">
+                  <div className="flex items-center gap-2 mb-0.5">
+                    <p className="text-sm font-semibold">Hacer mi diagnóstico vocacional</p>
+                    <span className="px-1.5 py-0.5 text-[9px] font-bold rounded bg-primary/10 text-primary border border-primary/15 uppercase tracking-wide">
+                      Gratis
+                    </span>
+                  </div>
+                  <p className="text-[11px] text-muted-foreground">
+                    Descubre tu perfil RIASEC y las carreras donde vas a brillar — 10 min
+                  </p>
+                </div>
+                <ArrowRight className="h-4 w-4 text-primary/50 group-hover:text-primary group-hover:translate-x-0.5 transition-all flex-shrink-0" />
+              </div>
+            </Link>
+          </motion.div>
+        )}
+
         {/* ── Upgrade banner (free plan) ── */}
         {isFree && (
           <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={3}>
@@ -220,7 +254,7 @@ const Dashboard = () => {
         {/* ── Quick actions ── */}
         <motion.div
           initial="hidden" animate="visible" variants={fadeUp} custom={4}
-          className="grid sm:grid-cols-2 gap-3"
+          className="grid sm:grid-cols-3 gap-3"
         >
           {quickActions.map((action) => {
             const Icon = action.icon;
