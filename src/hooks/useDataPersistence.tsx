@@ -3,6 +3,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { useAuthStore } from '@/store/useAuthStore';
 import { useCVStore } from '@/store/useCVStore';
 import { useInterviewStore } from '@/store/useInterviewStore';
+import { toast } from 'sonner';
 import type { CVData, InterviewSession } from '@/types';
 
 function clearUserScopedStores() {
@@ -85,7 +86,10 @@ export function useDataPersistence() {
         useInterviewStore.setState({ sessions: transformedSessions, currentSession: null });
       }
     } catch (error) {
-      // silent fail
+      console.error('Error loading user data:', error);
+      toast.error('No se pudieron cargar tus datos. Verifica tu conexión.', {
+        duration: 4000,
+      });
     }
   }
 
