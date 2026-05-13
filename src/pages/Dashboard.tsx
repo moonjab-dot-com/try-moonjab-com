@@ -11,14 +11,12 @@ import { BillingStatusCard } from '@/components/dashboard/BillingStatusCard';
 import { AnalyticsPanel } from '@/components/dashboard/AnalyticsPanel';
 import { NextActionCard } from '@/components/dashboard/NextActionCard';
 import { UpgradeBanner } from '@/components/UpgradeBanner';
-import { UpgradeModal } from '@/components/UpgradeModal';
 import {
   FileText, ArrowRight, Sparkles, RotateCcw, Mic,
   ChevronRight, Crown, Lock, Eye, Loader2, Compass,
   Sun, Sunset, Moon,
 } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { useState } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { getDashboardBasePath } from '@/lib/authRouting';
 
@@ -57,8 +55,6 @@ const Dashboard = () => {
   const { profile } = useProfileStore();
   const { cvs } = useCVStore();
   const { sessions } = useInterviewStore();
-  const [upgradeModalOpen, setUpgradeModalOpen] = useState(false);
-
   // useAuthSync already loaded user.name and user.email — no extra fetch needed
   const identityLoading = !isGuestMode && !user?.name;
 
@@ -219,7 +215,6 @@ const Dashboard = () => {
             isPremium={isPremium}
             isTrial={isTrial}
             dashboardBasePath={dashboardBasePath}
-            onUpgrade={() => setUpgradeModalOpen(true)}
           />
         </motion.div>
 
@@ -308,7 +303,7 @@ const Dashboard = () => {
         {/* ── Upgrade banner — shown contextually below quick actions, dismissible ── */}
         {isFree && (
           <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={4.5}>
-            <UpgradeBanner onUpgrade={() => setUpgradeModalOpen(true)} />
+            <UpgradeBanner />
           </motion.div>
         )}
 
@@ -364,11 +359,6 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <UpgradeModal
-        open={upgradeModalOpen}
-        onClose={() => setUpgradeModalOpen(false)}
-        onStartTrial={async () => {}}
-      />
     </div>
   );
 };

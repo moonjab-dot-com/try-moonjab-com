@@ -1,13 +1,11 @@
 import { SEOHead } from '@/components/SEOHead';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Mic, TrendingUp, Target, Clock, Bot, Sparkles, Lock, Crown } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Mic, TrendingUp, Target, Clock, Bot, Sparkles, Lock } from "lucide-react";
+import { useNavigate, Link } from "react-router-dom";
 import { useInterviewStore } from "@/store/useInterviewStore";
 import { useAuthStore } from "@/store/useAuthStore";
 import { motion } from "framer-motion";
-import { useState } from "react";
-import { UpgradeModal } from "@/components/UpgradeModal";
 import { useTranslation } from 'react-i18next';
 
 export default function InterviewLanding() {
@@ -17,7 +15,6 @@ export default function InterviewLanding() {
   const { isGuestMode, user } = useAuthStore();
   const isPremium = user?.plan === 'premium';
   const isLocked = isGuestMode || !isPremium;
-  const [showUpgrade, setShowUpgrade] = useState(false);
   const recentSessions = sessions.slice(-3).reverse();
 
   const locale = i18n.language?.startsWith('es') ? 'es-ES' : 'en-US';
@@ -37,7 +34,7 @@ export default function InterviewLanding() {
 
   const handleStartInterview = (path: string) => {
     if (isLocked) {
-      setShowUpgrade(true);
+      navigate('/pricing');
     } else {
       navigate(path);
     }
@@ -86,9 +83,9 @@ export default function InterviewLanding() {
           {isLocked && (
             <p className="text-xs text-muted-foreground self-center">
               Función exclusiva de Pro.{' '}
-              <button onClick={() => setShowUpgrade(true)} className="text-primary hover:underline font-medium">
+              <Link to="/pricing" className="text-primary hover:underline font-medium">
                 Ver planes →
-              </button>
+              </Link>
             </p>
           )}
         </div>
@@ -164,7 +161,6 @@ export default function InterviewLanding() {
         ))}
       </motion.div>
 
-      <UpgradeModal open={showUpgrade} onClose={() => setShowUpgrade(false)} feature={t('interviews.landing.aiInterviews')} />
     </div>
   );
 }

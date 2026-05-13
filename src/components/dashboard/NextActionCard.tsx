@@ -10,7 +10,6 @@ interface NextActionCardProps {
   isPremium: boolean;
   isTrial: boolean;
   dashboardBasePath: string;
-  onUpgrade: () => void;
 }
 
 /**
@@ -24,15 +23,13 @@ export const NextActionCard = ({
   isPremium,
   isTrial,
   dashboardBasePath,
-  onUpgrade,
 }: NextActionCardProps) => {
   // Decision tree → exactly ONE next action
   let icon = Rocket;
   let title = 'Crea tu CV en 2 minutos';
   let subtitle = 'El primer paso para destacar frente a recruiters.';
   let ctaLabel = 'Empezar ahora';
-  let ctaHref: string | null = `${dashboardBasePath}/cvs/new`;
-  let onClick: (() => void) | undefined;
+  let ctaHref = `${dashboardBasePath}/cvs/new`;
   let badge = 'Paso 1 · 2 min';
   let progress: number | null = null;
 
@@ -49,8 +46,7 @@ export const NextActionCard = ({
     title = '¡CV listo! Practica entrevistas con IA';
     subtitle = 'Las entrevistas simuladas con IA son exclusivas de Pro. Consigue tu primer empleo más rápido.';
     ctaLabel = 'Ver plan Pro';
-    ctaHref = null;
-    onClick = onUpgrade;
+    ctaHref = '/pricing';
     badge = 'Pro exclusivo';
     progress = cvScore;
   } else if (hasCV && isPremium) {
@@ -103,17 +99,11 @@ export const NextActionCard = ({
           </div>
         </div>
         <div className="flex-shrink-0 sm:self-center">
-          {ctaHref ? (
-            <Link to={ctaHref}>
-              <Button size="lg" className="w-full sm:w-auto gap-2 font-semibold shadow-md">
-                {ctaLabel} <ArrowRight className="h-4 w-4" />
-              </Button>
-            </Link>
-          ) : (
-            <Button size="lg" onClick={onClick} className="w-full sm:w-auto gap-2 font-semibold shadow-md">
+          <Link to={ctaHref}>
+            <Button size="lg" className="w-full sm:w-auto gap-2 font-semibold shadow-md">
               {ctaLabel} <ArrowRight className="h-4 w-4" />
             </Button>
-          )}
+          </Link>
         </div>
       </div>
     </motion.div>

@@ -5,12 +5,7 @@ import { useAuthStore } from '@/store/useAuthStore';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
-interface UpgradeBannerProps {
-  onUpgrade?: () => void;
-}
-
-
-export const UpgradeBanner = ({ onUpgrade }: UpgradeBannerProps) => {
+export const UpgradeBanner = () => {
   const { user } = useAuthStore();
   const [dismissed, setDismissed] = useState(false);
 
@@ -62,15 +57,12 @@ export const UpgradeBanner = ({ onUpgrade }: UpgradeBannerProps) => {
               ))}
             </div>
           </div>
-          <div className="flex items-center gap-2 flex-shrink-0">
+          <div className="flex-shrink-0">
             <Link to="/pricing">
-              <Button size="sm" variant="outline" className="h-8 text-xs">
-                Ver detalles
+              <Button size="sm" className="h-8 text-xs gap-1.5">
+                <Sparkles className="h-3 w-3" /> Ver planes Pro
               </Button>
             </Link>
-            <Button size="sm" className="h-8 text-xs" onClick={onUpgrade}>
-              Probar Pro · $5/mes
-            </Button>
           </div>
         </div>
       </motion.div>
