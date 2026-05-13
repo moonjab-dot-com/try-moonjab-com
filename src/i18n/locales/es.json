@@ -401,6 +401,87 @@
       "privacy": "Privacidad",
       "terms": "Términos",
       "rights": "© 2025 MoonJab. Todos los derechos reservados."
+    },
+    "faq": {
+      "title": "Preguntas frecuentes",
+      "items": [
+        {
+          "q": "¿Qué es MoonJab y para qué sirve?",
+          "a": "MoonJab es la plataforma de empleabilidad con inteligencia artificial diseñada para estudiantes universitarios y jóvenes profesionales en Latinoamérica. Te ayuda a crear tu CV profesional optimizado para ATS con IA, practicar entrevistas laborales reales con un simulador de entrevistas con IA, y descubrir tu perfil vocacional con un diagnóstico RIASEC. Está pensada para ayudarte a conseguir tu primer empleo, prácticas profesionales o mejorar tus oportunidades de carrera en empresas de cualquier industria en Perú, México, Colombia, Argentina y Chile."
+        },
+        {
+          "q": "¿Es gratis crear un CV con MoonJab?",
+          "a": "Sí. MoonJab tiene un plan gratuito (Modo Invitado) que incluye el CV builder con IA, plantilla básica y 3 simulaciones de entrevista al mes, sin tarjeta de crédito requerida. El plan Pro cuesta $5 USD/mes e incluye acceso completo: todas las plantillas de CV profesionales, entrevistas ilimitadas con feedback detallado de IA, diagnóstico RIASEC completo y exportación PDF ilimitada."
+        },
+        {
+          "q": "¿Cómo funciona el CV builder con IA?",
+          "a": "El CV builder de MoonJab usa inteligencia artificial para analizar tu perfil, experiencia y habilidades, y crea un currículum vitae profesional optimizado para pasar los filtros ATS (Applicant Tracking Systems). Ingresas tu información, la IA sugiere mejoras automáticas, eliges entre plantillas profesionales (Harvard, Modern, Minimal, Professional, Creativo) y descargas tu CV en PDF. El proceso toma menos de 10 minutos y produce un CV listo para postular a empleos en LATAM."
+        },
+        {
+          "q": "¿Cómo funciona el simulador de entrevistas con IA?",
+          "a": "El simulador de entrevistas de MoonJab genera preguntas personalizadas según tu industria, nivel de experiencia y el puesto al que postulas. Practicas respondiendo en texto o voz, y la IA evalúa tus respuestas en tiempo real aplicando el método STAR (Situación, Tarea, Acción, Resultado). Recibes feedback detallado sobre claridad, estructura y áreas de mejora para llegar confiado a tu entrevista laboral real."
+        },
+        {
+          "q": "¿Para qué países de LATAM está disponible MoonJab?",
+          "a": "MoonJab está disponible para estudiantes y profesionales de toda Latinoamérica. Tiene foco especial en Perú, México, Colombia, Argentina y Chile, pero también está disponible en Ecuador, Bolivia, Paraguay, Uruguay y Venezuela. La plataforma está completamente en español, con contenido adaptado al mercado laboral latinoamericano."
+        },
+        {
+          "q": "¿Cómo funciona el diagnóstico vocacional RIASEC de MoonJab?",
+          "a": "El diagnóstico vocacional de MoonJab está basado en el modelo RIASEC (Holland Code), el marco científico más reconocido para orientación de carrera. Respondes preguntas sobre tus intereses y preferencias, y la IA genera un perfil personalizado con tu tipo de personalidad profesional — Realista, Investigador, Artístico, Social, Emprendedor o Convencional — y te recomienda las carreras, industrias y roles más alineados a tus fortalezas naturales. El diagnóstico es gratuito y toma menos de 10 minutos."
+        },
+        {
+          "q": "¿Cómo crear un curriculum vitae sin experiencia laboral?",
+          "a": "MoonJab está diseñado especialmente para estudiantes sin experiencia previa. Nuestro CV builder con IA te guía para destacar tu formación académica, proyectos universitarios, habilidades técnicas, actividades extracurriculares y voluntariados de forma efectiva y optimizada para filtros ATS. La IA sabe cómo presentar tu perfil de estudiante de manera atractiva para reclutadores. Miles de universitarios consiguieron su primer empleo o prácticas profesionales con CVs creados en MoonJab."
+        },
+        {
+          "q": "¿Qué diferencia a MoonJab de otras plataformas de empleo o CV?",
+          "a": "MoonJab es la única career platform diseñada específicamente para universitarios y jóvenes profesionales en LATAM. Combina en un solo lugar: CV builder con IA optimizado para ATS, simulador de entrevistas laborales con feedback instantáneo de IA, y diagnóstico vocacional RIASEC. Todo en español y adaptado al mercado de Perú, México, Colombia, Argentina y Chile. Además es la opción más accesible: plan gratuito completo y Pro desde $5 USD/mes sin compromisos."
+        }
+      ]
+    },
+    "seoContent": {
+      "title": "MoonJab — CV Builder con IA y Simulador de Entrevistas para Estudiantes LATAM",
+      "subtitle": "La plataforma de empleabilidad con inteligencia artificial más completa para universitarios que buscan su primer empleo, prácticas profesionales o quieren mejorar su carrera en Perú, México, Colombia, Argentina y Chile.",
+      "cvTitle": "CV Builder con IA y Optimización ATS",
+      "cvText": "Crear un currículum profesional que pase los filtros ATS ya no tiene que ser complicado. Nuestro CV builder con inteligencia artificial analiza cada sección de tu currículum, detecta palabras clave faltantes, mejora tu redacción y adapta el formato a cada industria. Con plantillas diseñadas para el mercado latinoamericano — Harvard, Modern, Minimal, Professional y Creativo — puedes tener un currículum ATS listo en menos de 10 minutos. La IA compara tu CV con la descripción del puesto y te indica exactamente qué mejorar para maximizar tus chances de pasar a entrevista en empresas de toda la región.",
+      "interviewTitle": "Simulador de Entrevistas Laborales con IA",
+      "interviewText": "Nuestro simulador de entrevistas con IA reproduce escenarios reales de entrevista laboral adaptados a tu industria, nivel de experiencia y el puesto al que postulas. Practicas entrevistas técnicas y conductuales, aplicas el método STAR (Situación, Tarea, Acción, Resultado) y recibes feedback instantáneo sobre claridad, estructura y confianza. El simulador incluye preguntas reales de empresas como Google, Rappi, BCP, Falabella y MercadoLibre. Con cada sesión de práctica aumentas tu seguridad y llegas mejor preparado a tu entrevista real.",
+      "diagnosticTitle": "Diagnóstico Vocacional RIASEC con IA",
+      "diagnosticText": "Descubrir tu camino profesional es el primer paso para construir la carrera que mereces. El diagnóstico vocacional RIASEC de MoonJab analiza tu perfil de personalidad profesional y te recomienda industrias, carreras y roles donde tienes más probabilidad de éxito y satisfacción laboral a largo plazo. El diagnóstico es completamente gratuito, toma menos de 10 minutos y la inteligencia artificial procesa tus respuestas para generar un informe personalizado. Más de 10,000 estudiantes en Perú, México, Colombia, Argentina y Chile ya descubrieron su perfil vocacional con MoonJab.",
+      "latamTitle": "La Plataforma para Estudiantes de toda Latinoamérica",
+      "latamText": "MoonJab está disponible para universitarios y jóvenes profesionales en toda Latinoamérica. Contamos con guías salariales actualizadas por rol y país, bancos de preguntas de entrevista por empresa, y plantillas de CV adaptadas al mercado de Perú, México, Colombia, Argentina y Chile. Todo el contenido está en español, pensado para conseguir prácticas preprofesionales o tu primer empleo en empresas grandes de la región como BBVA, Deloitte, McKinsey, Rappi, MercadoLibre, Falabella y más."
+    },
+    "conversion": {
+      "badge": "Tu camino al empleo",
+      "title": "De la duda al empleo,",
+      "titleHighlight": "en 3 pasos",
+      "subtitle": "Miles de estudiantes en LATAM ya transformaron su búsqueda de empleo con MoonJab. Ahora es tu turno.",
+      "step1": "Diagnóstico",
+      "step2": "CV con IA",
+      "step3": "Entrevistas",
+      "step4": "Tu empleo",
+      "card1Stat": "94%",
+      "card1StatDesc": "pasan el filtro ATS",
+      "card1Label": "CV Builder · ATS",
+      "card1Title": "Tu CV pasa el filtro ATS — o lo mejoramos",
+      "card1Text": "El 75% de los CVs son rechazados antes de que un humano los vea. La IA de MoonJab construye y optimiza tu currículum para sistemas ATS en menos de 10 minutos.",
+      "card1Cta": "Crear mi CV gratis",
+      "card2Stat": "10 min",
+      "card2StatDesc": "para conocerte mejor",
+      "card2Label": "Diagnóstico Vocacional",
+      "card2Badge": "100% Gratis",
+      "card2Title": "Descubre en qué carrera vas a brillar",
+      "card2Text": "El test RIASEC analiza tu personalidad e intereses para orientarte hacia roles donde tienes mayor probabilidad de éxito. +10,000 estudiantes ya lo usaron.",
+      "card2Cta": "Hacer mi diagnóstico",
+      "card3Stat": "87%",
+      "card3StatDesc": "de usuarios consigue entrevista en 30 días",
+      "card3Label": "Simulador de Entrevistas",
+      "card3Title": "Llega preparado — y consigue el puesto",
+      "card3Text": "Practica con una IA que actúa como reclutador real. Feedback inmediato, método STAR, adaptado a 50+ empresas de LATAM.",
+      "card3Cta": "Practicar ahora",
+      "trustFree": "Sin tarjeta de crédito",
+      "trustTime": "Listo en 5 minutos",
+      "trustCountries": "+15 países de LATAM"
     }
   },
   "onboarding": {

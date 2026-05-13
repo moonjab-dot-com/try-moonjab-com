@@ -9,6 +9,7 @@ interface UpgradeBannerProps {
   onUpgrade?: () => void;
 }
 
+
 export const UpgradeBanner = ({ onUpgrade }: UpgradeBannerProps) => {
   const { user } = useAuthStore();
   const [dismissed, setDismissed] = useState(false);

@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { Card } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { BookOpen, Video, ExternalLink, Award, Globe, DollarSign, ChevronDown, ChevronUp } from 'lucide-react';
+import { BookOpen, Video, ExternalLink, Award, ChevronDown, ChevronUp } from 'lucide-react';
 import type { ProfessionalRole } from '@/types';
 
 interface Resource {
@@ -82,16 +81,16 @@ const RESOURCES_BY_ROLE: Record<string, Resource[]> = {
 };
 
 const ROLE_MAPPING: Record<string, string> = {
-  'technical_support': 'technical_support', 'Technical Support': 'technical_support',
-  'ux_designer': 'ux_designer', 'ui_designer': 'ux_designer',
-  'developer_frontend': 'developer_frontend', 'frontend_developer': 'developer_frontend',
-  'developer_backend': 'developer_backend', 'backend_developer': 'developer_backend',
-  'developer_fullstack': 'developer_frontend', 'fullstack_developer': 'developer_frontend',
-  'product_manager': 'product_manager', 'project_manager': 'product_manager',
-  'data_analyst': 'data_analyst', 'data_scientist': 'data_analyst',
-  'marketing': 'marketing', 'marketing_digital': 'marketing',
-  'hr': 'hr', 'human_resources': 'hr',
-  'sales': 'sales', 'business_development': 'sales',
+  technical_support: 'technical_support', 'Technical Support': 'technical_support',
+  ux_designer: 'ux_designer', ui_designer: 'ux_designer',
+  developer_frontend: 'developer_frontend', frontend_developer: 'developer_frontend',
+  developer_backend: 'developer_backend', backend_developer: 'developer_backend',
+  developer_fullstack: 'developer_frontend', fullstack_developer: 'developer_frontend',
+  product_manager: 'product_manager', project_manager: 'product_manager',
+  data_analyst: 'data_analyst', data_scientist: 'data_analyst',
+  marketing: 'marketing', marketing_digital: 'marketing',
+  hr: 'hr', human_resources: 'hr',
+  sales: 'sales', business_development: 'sales',
 };
 
 const getResourceIcon = (type: Resource['type']) => {
@@ -103,80 +102,83 @@ const getResourceIcon = (type: Resource['type']) => {
   }
 };
 
+const priceStyles: Record<string, string> = {
+  Gratis: 'bg-primary/8 text-primary border-primary/15',
+  Freemium: 'bg-blue-500/8 text-blue-600 dark:text-blue-400 border-blue-500/15',
+  Pago: 'bg-muted text-muted-foreground border-border/50',
+};
+
 interface RecommendedResourcesProps {
   role?: ProfessionalRole;
 }
 
 export function RecommendedResources({ role }: RecommendedResourcesProps) {
   const [expanded, setExpanded] = useState(false);
-  
+
   const resourceKey = role ? (ROLE_MAPPING[role] || ROLE_MAPPING[role as string]) : null;
-  const resources = resourceKey && RESOURCES_BY_ROLE[resourceKey] 
-    ? RESOURCES_BY_ROLE[resourceKey] 
+  const resources = resourceKey && RESOURCES_BY_ROLE[resourceKey]
+    ? RESOURCES_BY_ROLE[resourceKey]
     : RESOURCES_BY_ROLE.default;
 
   const displayedResources = expanded ? resources : resources.slice(0, 3);
   const hasMore = resources.length > 3;
 
   return (
-    <Card className="p-5 border-border/50">
-      <div className="space-y-4">
-        <div className="flex items-center justify-between">
-          <div>
-            <h3 className="font-semibold text-sm mb-0.5">Recursos Recomendados</h3>
-            <p className="text-xs text-muted-foreground">Cursos y herramientas para tu perfil</p>
-          </div>
-          <BookOpen className="h-4 w-4 text-muted-foreground" />
+    <Card className="p-5 border-border/50 bg-card">
+      <div className="flex items-center justify-between mb-4">
+        <div>
+          <h3 className="font-semibold text-sm">Recursos Recomendados</h3>
+          <p className="text-[11px] text-muted-foreground mt-0.5">Para tu perfil profesional</p>
         </div>
+        <div className="w-7 h-7 rounded-lg bg-primary/8 flex items-center justify-center">
+          <BookOpen className="h-3.5 w-3.5 text-primary" />
+        </div>
+      </div>
 
-        <div className="space-y-2">
-          {displayedResources.map((resource) => {
-            const Icon = getResourceIcon(resource.type);
-            return (
-              <div
-                key={resource.id}
-                className="p-3 rounded-lg border border-border/50 hover:border-primary/20 transition-colors duration-200"
-              >
-                <div className="flex items-start gap-2.5">
-                  <div className="p-1.5 bg-primary/8 rounded-md shrink-0 mt-0.5">
-                    <Icon className="h-3.5 w-3.5 text-primary" />
-                  </div>
-                  <div className="flex-1 min-w-0 space-y-1">
-                    <h4 className="font-medium text-xs leading-tight">{resource.title}</h4>
-                    <div className="flex items-center gap-1.5 flex-wrap text-[10px] text-muted-foreground">
-                      <span className="font-medium text-foreground">{resource.platform}</span>
-                      {resource.duration && (<><span>·</span><span>{resource.duration}</span></>)}
-                      <span>·</span>
-                      <span className={resource.price === 'Gratis' ? 'text-primary font-medium' : ''}>
-                        {resource.price}
-                      </span>
-                    </div>
-                    <Button
-                      size="sm"
-                      variant="ghost"
-                      className="h-7 text-xs px-2 text-primary hover:text-primary hover:bg-primary/8 -ml-2"
-                      onClick={() => window.open(resource.url, '_blank')}
-                    >
-                      Ver Recurso <ExternalLink className="h-3 w-3 ml-1" />
-                    </Button>
-                  </div>
+      <div className="space-y-2">
+        {displayedResources.map((resource) => {
+          const Icon = getResourceIcon(resource.type);
+          return (
+            <a
+              key={resource.id}
+              href={resource.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-start gap-3 p-3 rounded-xl border border-border/40 bg-background/50 hover:border-primary/20 hover:bg-primary/[0.02] transition-all duration-200 cursor-pointer"
+            >
+              <div className="w-7 h-7 rounded-lg bg-primary/8 border border-primary/10 flex items-center justify-center flex-shrink-0 mt-0.5 group-hover:bg-primary/12 transition-colors">
+                <Icon className="h-3.5 w-3.5 text-primary" />
+              </div>
+              <div className="flex-1 min-w-0 space-y-1">
+                <p className="font-medium text-xs leading-tight group-hover:text-primary transition-colors">{resource.title}</p>
+                <div className="flex items-center gap-1.5 flex-wrap">
+                  <span className="text-[10px] font-medium text-foreground/60">{resource.platform}</span>
+                  {resource.duration && (
+                    <>
+                      <span className="text-[10px] text-muted-foreground">·</span>
+                      <span className="text-[10px] text-muted-foreground">{resource.duration}</span>
+                    </>
+                  )}
+                  <span className={`text-[9px] font-semibold px-1.5 py-0.5 rounded border ${priceStyles[resource.price]}`}>
+                    {resource.price}
+                  </span>
                 </div>
               </div>
-            );
-          })}
-        </div>
-
-        {hasMore && (
-          <Button
-            variant="ghost"
-            className="w-full text-xs h-8 text-muted-foreground hover:text-foreground"
-            onClick={() => setExpanded(!expanded)}
-          >
-            {expanded ? (<>Ver menos <ChevronUp className="h-3 w-3 ml-1" /></>) 
-              : (<>Ver más <ChevronDown className="h-3 w-3 ml-1" /></>)}
-          </Button>
-        )}
+              <ExternalLink className="h-3 w-3 text-muted-foreground/30 group-hover:text-primary/50 flex-shrink-0 mt-1 transition-colors" />
+            </a>
+          );
+        })}
       </div>
+
+      {hasMore && (
+        <Button
+          variant="ghost"
+          className="w-full text-xs h-8 mt-2 text-muted-foreground hover:text-foreground gap-1"
+          onClick={() => setExpanded(!expanded)}
+        >
+          {expanded ? (<>Ver menos <ChevronUp className="h-3 w-3" /></>) : (<>Ver más <ChevronDown className="h-3 w-3" /></>)}
+        </Button>
+      )}
     </Card>
   );
 }

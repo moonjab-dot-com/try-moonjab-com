@@ -3,8 +3,6 @@
 
 User-agent: *
 Allow: /
-
-# Private / app-only routes
 Disallow: /dashboard/
 Disallow: /settings/
 Disallow: /api/
@@ -12,23 +10,9 @@ Disallow: /admin/
 Disallow: /profile/edit/
 Disallow: /_next/
 Disallow: /src/
-Disallow: /onboarding/
-Disallow: /payment/
-Disallow: /verify-email/
-Disallow: /forgot-password/
-Disallow: /reset-password/
-Disallow: /auth/
-Disallow: /test/
-Disallow: /usuariostest/
-
-# Allow key public assets
 Allow: /moonjab-logo.png
 Allow: /og-image.png
 Allow: /sitemap.xml
-Allow: /sitemap-blog.xml
-Allow: /llms.txt
-
-# ── SEARCH ENGINE BOTS ────────────────────────────────
 
 User-agent: Googlebot
 Allow: /
@@ -38,78 +22,47 @@ User-agent: Bingbot
 Allow: /
 Crawl-delay: 1
 
-User-agent: Slurp
-Allow: /
-Crawl-delay: 2
-
-User-agent: DuckDuckBot
-Allow: /
-Crawl-delay: 1
-
-# ── AI / LLM BOTS ─────────────────────────────────────
-
+# OpenAI / ChatGPT
 User-agent: GPTBot
-Allow: /blog/
-Allow: /about/
-Allow: /pricing/
-Allow: /help/
-Allow: /llms.txt
+Allow: /
 Disallow: /dashboard/
 Disallow: /api/
-Disallow: /payment/
+Disallow: /settings/
 
 User-agent: ChatGPT-User
-Allow: /blog/
-Allow: /about/
-Allow: /pricing/
-Allow: /llms.txt
-Disallow: /api/
-Disallow: /dashboard/
-
-User-agent: Perplexity-User
-Allow: /blog/
-Allow: /about/
-Allow: /pricing/
-Allow: /help/
-Allow: /llms.txt
-Disallow: /dashboard/
-Disallow: /api/
-
-User-agent: anthropic-ai
 Allow: /
 Disallow: /dashboard/
 Disallow: /api/
+
+# Anthropic / Claude
+User-agent: anthropic-ai
+Allow: /
 
 User-agent: ClaudeBot
 Allow: /
-Disallow: /dashboard/
-Disallow: /api/
 
-User-agent: cohere-ai
-Allow: /blog/
-Allow: /about/
-Allow: /llms.txt
-Disallow: /dashboard/
-Disallow: /api/
-
-User-agent: Meta-ExternalAgent
-Allow: /blog/
-Allow: /about/
-Allow: /pricing/
-Allow: /llms.txt
-Disallow: /dashboard/
-Disallow: /api/
-
-User-agent: Diffbot
+# Google Gemini / Bard
+User-agent: Google-Extended
 Allow: /
 Disallow: /dashboard/
 Disallow: /api/
 
-# Block Common Crawl (raw training data scraper)
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+Disallow: /dashboard/
+Disallow: /api/
+
+# Meta / Llama
+User-agent: FacebookBot
+Allow: /
+
+# Common research & AI crawlers
 User-agent: CCBot
-Disallow: /
+Allow: /
 
-# ── SITEMAPS ───────────────────────────────────────────
+User-agent: Omgilibot
+Allow: /
 
+# Sitemaps
 Sitemap: https://moonjab.com/sitemap.xml
-Sitemap: https://moonjab.com/sitemap-blog.xml

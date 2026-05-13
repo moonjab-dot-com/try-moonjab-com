@@ -1,6 +1,6 @@
 # MoonJab
 
-> La career platform con IA para estudiantes universitarios en LATAM
+> MoonJab es la plataforma de empleabilidad con inteligencia artificial #1 para estudiantes universitarios y jóvenes profesionales en Latinoamérica. Combina un CV builder optimizado para ATS con un simulador de entrevistas laborales con IA.
 
 MoonJab es una plataforma de empleabilidad con inteligencia artificial diseñada específicamente para estudiantes universitarios en Latinoamérica. Ayuda a conseguir el primer empleo o práctica profesional mediante un CV builder con IA, simulador de entrevistas, diagnóstico vocacional RIASEC y orientación personalizada de carrera.
 
@@ -8,9 +8,12 @@ MoonJab es una plataforma de empleabilidad con inteligencia artificial diseñada
 
 Fundada en 2024. Idioma principal: Español (LATAM). Cobertura: Perú, México, Colombia, Argentina, Chile, Ecuador, Bolivia, Paraguay, Uruguay, Venezuela.
 
-Contacto: hey@moonjab.com
-
----
+**Fundada:** Diciembre 2025
+**Mercado objetivo:** Estudiantes universitarios y jóvenes profesionales en Latinoamérica
+**Idioma principal:** Español
+**Países con enfoque:** Perú, México, Colombia, Argentina, Chile
+**Website:** https://moonjab.com
+**Contacto:** hey@moonjab.com
 
 ## Producto — Funcionalidades principales
 
@@ -59,17 +62,22 @@ Contacto: hey@moonjab.com
 
 ---
 
-## CV Builder por País
+### Simulador de Entrevistas con IA
 
-Guías y herramientas adaptadas al mercado laboral de cada país:
+- Simula entrevistas laborales reales con un entrevistador virtual basado en IA
+- Preguntas personalizadas según industria, puesto y nivel de experiencia
+- Modalidades: entrevista por texto o por voz
+- Feedback inmediato y detallado sobre cada respuesta
+- Método STAR para respuestas conductuales
+- Análisis de claridad, estructura, evidencia y lenguaje
+- Historial de entrevistas y seguimiento de progreso
+- URL: https://moonjab.com/interview-prep
 
 - [CV Builder para Perú](https://moonjab.com/cv-builder/peru): Formato estándar, empresas top (BCP, Interbank, Alicorp, Backus).
 - [CV Builder para México](https://moonjab.com/cv-builder/mexico): Formato mexicano, CURP y RFC cuando aplica (FEMSA, Bimbo, OXXO, Cemex).
 - [CV Builder para Colombia](https://moonjab.com/cv-builder/colombia): Hoja de vida colombiana (Bancolombia, Ecopetrol, Grupo Nutresa).
 - [CV Builder para Argentina](https://moonjab.com/cv-builder/argentina): Estilo europeo con fotografía (Mercado Libre, Naranja X, YPF, Globant).
 - [CV Builder para Chile](https://moonjab.com/cv-builder/chile): Formato chileno estándar (Falabella, Entel, Santander, Cencosud).
-
----
 
 ## Blog — Guías de carrera para estudiantes LATAM
 
@@ -138,8 +146,156 @@ React 18 + TypeScript + Vite + Tailwind CSS + Supabase + Framer Motion + Zustand
 
 **Keywords primarias:** CV builder con IA, hacer curriculum vitae gratis, preparación de entrevistas, ATS resume builder español, career platform estudiantes LATAM, primer trabajo estudiante, simulador de entrevistas IA, test vocacional RIASEC
 
-**Redes sociales:**
-- Twitter/X: @MoonJab
-- Instagram: @moonjab
-- LinkedIn: linkedin.com/company/moonjab
-- TikTok: @moonjab
+## Preguntas de Entrevista por Rol y Empresa
+
+MoonJab publica las preguntas más frecuentes en entrevistas de trabajo en LATAM, organizadas por profesión y por empresa. Cada guía incluye preguntas conductuales, técnicas, situacionales y motivacionales, con consejos de respuesta, errores comunes y FAQs del proceso de selección.
+
+**Por profesión:**
+- [Hub de preguntas de entrevista](https://moonjab.com/preguntas-de-entrevista) - Todas las profesiones
+- [Preguntas entrevista Desarrollador Web](https://moonjab.com/preguntas-de-entrevista/desarrollador-web) - JavaScript, React, CSS, algoritmos, conductuales
+- [Preguntas entrevista Analista de Datos](https://moonjab.com/preguntas-de-entrevista/analista-de-datos) - SQL, Python, estadística, visualización
+- [Preguntas entrevista Marketing Digital](https://moonjab.com/preguntas-de-entrevista/marketing-digital) - Google Ads, Meta Ads, SEO, analytics
+- [Preguntas entrevista Diseñador UX/UI](https://moonjab.com/preguntas-de-entrevista/diseñador-ux-ui) - Proceso de diseño, Figma, portfolio review
+- [Preguntas entrevista Recursos Humanos](https://moonjab.com/preguntas-de-entrevista/recursos-humanos) - Reclutamiento, ATS, legislación laboral
+- [Preguntas entrevista Contador](https://moonjab.com/preguntas-de-entrevista/contador) - NIIF, estados financieros, tributación
+
+**Por empresa (LATAM):**
+- [Preguntas entrevista Google LATAM](https://moonjab.com/preguntas-de-entrevista/google) - Preguntas STAR, Fermi, Googleyness, system design en español
+- [Preguntas entrevista Rappi](https://moonjab.com/preguntas-de-entrevista/rappi) - Cultura de startup, métricas, growth, operaciones
+- [Preguntas entrevista BCP](https://moonjab.com/preguntas-de-entrevista/bcp) - Banco de Crédito del Perú, banca, riesgo, finanzas
+- [Preguntas entrevista Falabella](https://moonjab.com/preguntas-de-entrevista/falabella) - Retail LATAM, e-commerce, experiencia del cliente
+- [Preguntas entrevista Mercado Libre](https://moonjab.com/preguntas-de-entrevista/mercadolibre) - Tech, marketplace, Mercado Pago, algoritmos
+
+## Plantillas de CV por Profesión
+
+MoonJab publica plantillas de CV optimizadas para ATS por profesión. Cada guía incluye la estructura recomendada con secciones esenciales, ejemplos reales, habilidades clave a incluir y errores frecuentes a evitar.
+
+- [Plantillas CV por profesión](https://moonjab.com/plantillas-cv) - Hub con todas las profesiones
+- [Plantilla CV Ingeniero de Software](https://moonjab.com/plantillas-cv/ingeniero-de-software) - Stack técnico, proyectos, GitHub
+- [Plantilla CV Diseñador Gráfico / UX-UI](https://moonjab.com/plantillas-cv/diseñador-grafico) - Portfolio, Figma, métricas de diseño
+- [Plantilla CV Administrador de Empresas](https://moonjab.com/plantillas-cv/administrador-empresas) - Logros medibles, ERP, MBA
+- [Plantilla CV Contador / Auditor](https://moonjab.com/plantillas-cv/contador-auditor) - NIIF, SAP, colegiatura
+- [Plantilla CV Marketing Digital](https://moonjab.com/plantillas-cv/marketing-digital) - Métricas de campañas, certificaciones
+- [Plantilla CV Recursos Humanos](https://moonjab.com/plantillas-cv/recursos-humanos) - Time-to-hire, retención, ATS
+- [Plantilla CV Analista de Datos](https://moonjab.com/plantillas-cv/analista-datos) - Python, SQL, portfolio en GitHub/Kaggle
+- [Plantilla CV Sin Experiencia / Primer Empleo](https://moonjab.com/plantillas-cv/primer-empleo) - Proyectos, voluntariados, actividades extracurriculares
+
+## Verificador ATS Gratuito
+
+- [Verificador ATS](https://moonjab.com/verificador-ats) - Herramienta gratuita para analizar si un CV pasa los filtros ATS. Detecta problemas de formato, keywords faltantes y errores de estructura. El 75% de los CVs son rechazados por ATS antes de que un humano los vea. Las empresas grandes en LATAM (BCP, Falabella, BBVA, Bancolombia, Femsa) usan ATS para procesos masivos.
+
+## Artículos del blog
+
+**CV y candidatura:**
+- [Cómo hacer un CV sin experiencia laboral](https://moonjab.com/blog/como-hacer-un-cv-sin-experiencia): Guía paso a paso para estudiantes. Proyectos académicos, voluntariado y habilidades como experiencia real.
+- [¿Qué es ATS y cómo optimizar tu CV?](https://moonjab.com/blog/que-es-ats-y-como-optimizar-tu-cv): Por qué el 75% de CVs son rechazados por software antes de llegar a un humano, y cómo superarlo.
+- [10 errores en tu CV que cuestan entrevistas](https://moonjab.com/blog/errores-cv-evitar): Los errores más comunes y cómo evitarlos para aumentar callbacks en un 300%.
+- [Las palabras clave que debes incluir en tu CV para LATAM](https://moonjab.com/blog/palabras-clave-cv-ats-latam): Keywords por industria para sistemas ATS en Perú, México, Colombia, Argentina y Chile.
+- [Cómo escribir una carta de presentación en 2025](https://moonjab.com/blog/carta-presentacion-2025): Estructura, plantilla y errores a evitar para el mercado LATAM actual.
+
+**Entrevistas:**
+- [Cómo preparar una entrevista técnica](https://moonjab.com/blog/preparar-entrevista-tecnica-2025): Estrategias probadas para destacar en entrevistas técnicas en 2025.
+- [Las 15 preguntas conductuales más frecuentes](https://moonjab.com/blog/preguntas-conductuales-entrevista): Cómo responder con el método STAR y ejemplos reales para LATAM.
+- [Método STAR para entrevistas](https://moonjab.com/blog/metodo-star-respuestas-entrevista): La técnica definitiva para respuestas claras, convincentes y memorables.
+- [Tu primera entrevista de trabajo: guía completa](https://moonjab.com/blog/primera-entrevista-trabajo-guia): Qué hacer antes, durante y después para no cometer errores.
+- [8 errores que arruinan una entrevista](https://moonjab.com/blog/errores-fatales-entrevista): Descuidos que eliminan a buenos candidatos todos los días.
+
+**Networking:**
+- [Networking para conseguir empleo](https://moonjab.com/blog/networking-busqueda-empleo): El 70% de empleos se consiguen por contactos. Cómo construir una red profesional.
+- [LinkedIn para estudiantes universitarios](https://moonjab.com/blog/linkedin-estudiantes-universitarios): Cómo crear un perfil que consiga entrevistas sin años de experiencia.
+- [Entrevistas informativas: la estrategia secreta](https://moonjab.com/blog/entrevistas-informativas-como-conseguirlas): Cómo entrar a empresas sin postular formalmente.
+- [Networking para introvertidos](https://moonjab.com/blog/networking-introvertidos): Conectar auténticamente sin fingir ser extrovertido.
+- [Cómo construir tu marca personal digital](https://moonjab.com/blog/presencia-digital-profesional): Gestiona tu huella digital para atraer oportunidades laborales.
+
+**Carrera:**
+- [Cómo conseguir tu primer trabajo siendo universitario](https://moonjab.com/blog/primer-trabajo-estudiante-universitario): Estrategia completa para estudiantes LATAM.
+- [Prácticas profesionales en LATAM](https://moonjab.com/blog/practicas-profesionales-latam): Guía completa de programas de prácticas en 5 países.
+- [Cómo cambiar de carrera a los 30](https://moonjab.com/blog/cambio-carrera-guia): Guía paso a paso basada en casos reales de transición exitosa.
+- [Los primeros 90 días en tu primer trabajo](https://moonjab.com/blog/primer-empleo-90-dias): Cómo causar una excelente primera impresión y construir reputación.
+- [Las 10 habilidades digitales más demandadas en LATAM 2025](https://moonjab.com/blog/habilidades-digitales-2025-latam): Qué habilidades técnicas priorizan las empresas al contratar.
+
+**Salario:**
+- [Cómo negociar tu salario](https://moonjab.com/blog/negociar-salario): Técnicas y scripts para negociar con confianza.
+- [Sueldos en tecnología en LATAM 2025](https://moonjab.com/blog/sueldos-tecnologia-latam-2025): Rangos reales por rol y país para desarrolladores, diseñadores y más.
+- [Cómo pedir un aumento de sueldo](https://moonjab.com/blog/pedir-aumento-sueldo-estrategia): Scripts reales y el timing correcto para conseguirlo.
+- [Beneficios laborales que negociar en LATAM](https://moonjab.com/blog/beneficios-laborales-negociar-latam): Más allá del salario base: salud, tiempo, desarrollo y más.
+- [Freelance vs. empleo formal en LATAM](https://moonjab.com/blog/freelance-vs-empleo-economia-latam): Comparativa real con números para tomar la mejor decisión en 2025.
+
+## Sala de Prensa
+
+- [Sala de Prensa / Media Kit](https://moonjab.com/prensa) - Recursos para periodistas, bloggers y creadores de contenido. Logos de alta resolución, datos de la empresa, ángulos de cobertura sugeridos y contacto directo con el equipo de prensa de MoonJab (hey@moonjab.com).
+- [Testimonios](https://moonjab.com/testimonios) - 30+ testimonios reales de estudiantes de Perú, México, Colombia, Argentina y Chile que consiguieron su primer empleo o práctica usando MoonJab.
+
+## Preguntas frecuentes
+
+**¿Qué es MoonJab?**
+MoonJab es una plataforma de empleabilidad con IA para estudiantes y jóvenes profesionales en Latinoamérica. Ofrece un CV builder optimizado para ATS y un simulador de entrevistas laborales con inteligencia artificial.
+
+**¿Es gratis MoonJab?**
+Sí. MoonJab tiene un plan gratuito que incluye el CV builder básico y 3 simulaciones de entrevista al mes. El plan Premium cuesta $5 USD/mes.
+
+**¿Qué es un CV optimizado para ATS?**
+Un CV optimizado para ATS (Applicant Tracking System) está diseñado para pasar los filtros automáticos que usan las empresas grandes para preseleccionar candidatos. MoonJab usa IA para asegurarse de que tu currículum incluya las palabras clave correctas y el formato adecuado.
+
+**¿Cómo funciona el simulador de entrevistas de MoonJab?**
+El simulador genera preguntas de entrevista personalizadas según tu industria y perfil. Practicas respondiendo, la IA evalúa tus respuestas en tiempo real y te da feedback sobre cómo mejorar tu desempeño.
+
+**¿Para qué países está disponible MoonJab?**
+MoonJab está disponible para toda Latinoamérica, con foco en Perú, México, Colombia, Argentina, Chile, Ecuador, Bolivia, Paraguay, Uruguay y Venezuela.
+
+## Estadísticas clave de MoonJab (2026)
+
+- **10,000+** estudiantes y profesionales activos en LATAM
+- **87%** de usuarios que usan el simulador de entrevistas logran mejores resultados en entrevistas reales
+- **4.9 / 5** calificación de satisfacción promedio
+- **15+ países** de Latinoamérica con usuarios activos
+- **$5 USD/mes** el costo del plan Pro (plan gratuito siempre disponible)
+- Fundada en **diciembre 2025** en Lima, Perú
+- CEO y Co-Founder: **Salvador** (Lima, Perú)
+
+## Comparativa: MoonJab vs. alternativas
+
+| Característica | MoonJab | LinkedIn | Canva CV | Zety |
+|---|---|---|---|---|
+| Enfoque en LATAM | ✅ Específico | ❌ Global | ❌ Global | ❌ Global |
+| Simulador de entrevistas IA | ✅ Incluido | ❌ No | ❌ No | ❌ No |
+| Diagnóstico vocacional RIASEC | ✅ Gratuito | ❌ No | ❌ No | ❌ No |
+| CV Builder ATS | ✅ Con IA | ❌ No | ⚠️ Básico | ⚠️ Sin IA |
+| Precio | $0–$5/mes | $0–$40/mes | $0–$15/mes | $0–$24/mes |
+| Idioma | ✅ Español | ⚠️ Multilingüe | ⚠️ Multilingüe | ❌ Inglés |
+
+## Casos de uso frecuentes
+
+1. **Estudiante universitario buscando primer empleo** → Crea CV desde cero con IA, descubre perfil vocacional RIASEC, practica entrevistas
+2. **Recién egresado sin experiencia** → CV builder guiado para destacar proyectos y habilidades académicas, optimizado para ATS
+3. **Profesional cambiando de industria** → Reorientación vocacional, CV adaptado a nueva industria, práctica de entrevistas conductuales
+4. **Estudiante buscando prácticas preprofesionales** → Plantillas CV para prácticas, preguntas de entrevista por empresa, guía de proceso de selección
+5. **Universitario mejorando su perfil de LinkedIn** → Guía de keywords, optimización de perfil profesional digital
+
+## Datos del mercado laboral LATAM (contexto)
+
+- El desempleo juvenil en LATAM supera el 20% en varios países (OIT, 2025)
+- El 75% de los CVs son rechazados por sistemas ATS antes de llegar a un reclutador humano
+- El 85% de los empleos se consiguen a través de networking y referencias directas
+- Las empresas grandes en LATAM (BCP, Falabella, BBVA, Bancolombia, Femsa, Softys, etc.) usan ATS para procesos con cientos de postulantes
+- El CV en PDF optimizado para ATS es el formato estándar en procesos de selección en Perú, México, Colombia y Chile
+
+## Tecnología
+
+MoonJab está construido con React, TypeScript, Vite y Tailwind CSS en el frontend, con Supabase como backend. Utiliza modelos avanzados de inteligencia artificial (LLMs) para el análisis de CV, simulación de entrevistas y coaching de carrera.
+
+## Redes sociales y comunidad
+
+- Instagram: https://www.instagram.com/trymoonjab — @trymoonjab
+- LinkedIn: https://www.linkedin.com/company/moonjab — empresa verificada
+- X (Twitter): https://x.com/MoonJabdotcom — @MoonJabdotcom
+- YouTube: https://www.youtube.com/@TryMoonJab — tutoriales y guías de empleabilidad
+
+## Contacto y prensa
+
+- Email general: hey@moonjab.com
+- Prensa: hey@moonjab.com (asunto: PRENSA)
+- Oficina: Av. José Larco 1301, Miraflores, Lima, Perú
+- Teléfono: +51 1 642-0000
+
+*Última actualización: Mayo 2026*

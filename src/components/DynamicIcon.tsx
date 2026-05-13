@@ -1,4 +1,99 @@
-import { icons } from 'lucide-react';
+import {
+  Code, Palette, BarChart3, FlaskConical, BookOpen, Megaphone,
+  Settings, Globe, Users, DollarSign, Scale, Landmark, ChefHat,
+  Plane, Rocket, Target, Trophy, Lightbulb, Building2, Home,
+  RefreshCw, Move, Clock, Calendar, Moon, GraduationCap, Award,
+  Briefcase, TrendingUp, Sprout, Compass, Sparkles, Circle,
+  Newspaper, Video, Search, Zap, Server, Database, Package,
+  Wrench, Bot, PenTool, Camera, Smartphone, CheckCircle, Shield,
+  FileText, GitBranch, Bug, BookMarked, Star, Microscope,
+  LayoutTemplate, Image, Factory, Scissors, Terminal, ClipboardList,
+  LineChart, Pencil, Handshake, UserCheck, Brain, Scroll, HardHat,
+  Leaf, HeartPulse, Stethoscope, Film, Monitor, Presentation,
+  Utensils, Clapperboard,
+} from 'lucide-react';
+import type { LucideProps } from 'lucide-react';
+import type { ComponentType } from 'react';
+
+type IconComponent = ComponentType<LucideProps>;
+
+const ICON_MAP: Record<string, IconComponent> = {
+  'code': Code,
+  'palette': Palette,
+  'bar-chart-3': BarChart3,
+  'flask-conical': FlaskConical,
+  'book-open': BookOpen,
+  'megaphone': Megaphone,
+  'settings': Settings,
+  'globe': Globe,
+  'users': Users,
+  'dollar-sign': DollarSign,
+  'scale': Scale,
+  'landmark': Landmark,
+  'chef-hat': ChefHat,
+  'plane': Plane,
+  'rocket': Rocket,
+  'target': Target,
+  'trophy': Trophy,
+  'lightbulb': Lightbulb,
+  'building-2': Building2,
+  'home': Home,
+  'refresh-cw': RefreshCw,
+  'move': Move,
+  'clock': Clock,
+  'calendar': Calendar,
+  'moon': Moon,
+  'graduation-cap': GraduationCap,
+  'award': Award,
+  'briefcase': Briefcase,
+  'trending-up': TrendingUp,
+  'sprout': Sprout,
+  'compass': Compass,
+  'sparkles': Sparkles,
+  'newspaper': Newspaper,
+  'video': Video,
+  'search': Search,
+  'zap': Zap,
+  'server': Server,
+  'database': Database,
+  'container': Package,
+  'wrench': Wrench,
+  'bot': Bot,
+  'pen-tool': PenTool,
+  'camera': Camera,
+  'smartphone': Smartphone,
+  'check-circle': CheckCircle,
+  'shield': Shield,
+  'file-text': FileText,
+  'git-branch': GitBranch,
+  'bug': Bug,
+  'book': BookMarked,
+  'star': Star,
+  'microscope': Microscope,
+  'layout-template': LayoutTemplate,
+  'image': Image,
+  'factory': Factory,
+  'scissors': Scissors,
+  'terminal': Terminal,
+  'clipboard-list': ClipboardList,
+  'line-chart': LineChart,
+  'candlestick-chart': LineChart,
+  'pencil': Pencil,
+  'handshake': Handshake,
+  'user-check': UserCheck,
+  'brain': Brain,
+  'scroll': Scroll,
+  'hard-hat': HardHat,
+  'leaf': Leaf,
+  'heart-pulse': HeartPulse,
+  'stethoscope': Stethoscope,
+  'film': Film,
+  'monitor': Monitor,
+  'presentation': Presentation,
+  'utensils': Utensils,
+  'clapperboard': Clapperboard,
+  'circle': Circle,
+};
 
 interface DynamicIconProps {
   name: string;
@@ -7,19 +102,6 @@ interface DynamicIconProps {
 }
 
 export const DynamicIcon = ({ name, className = '', size = 24 }: DynamicIconProps) => {
-  // Convert kebab-case to PascalCase for lucide-react
-  const pascalName = name
-    .split('-')
-    .map(part => part.charAt(0).toUpperCase() + part.slice(1))
-    .join('');
-  
-  const LucideIcon = (icons as Record<string, any>)[pascalName];
-  
-  if (!LucideIcon) {
-    // Fallback to a generic icon
-    const FallbackIcon = icons.Circle;
-    return <FallbackIcon className={className} size={size} />;
-  }
-  
-  return <LucideIcon className={className} size={size} />;
+  const Icon = ICON_MAP[name] ?? Circle;
+  return <Icon className={className} size={size} />;
 };
