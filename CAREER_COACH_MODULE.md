@@ -1,4 +1,4 @@
-# Módulo Career Coach - Clovely
+# Módulo Career Coach - MoonJab
 
 ## Descripción General
 
@@ -194,10 +194,10 @@ src/
 ## Persistencia (localStorage)
 
 ### Claves Utilizadas:
-- `clovely-coach`: Estado completo del coach (mensajes, contextos, análisis)
-- `clovely-action-plan`: Microacciones y planes semanales
-- `clovely-cvs`: CVs guardados
-- `clovely-interviews`: Sesiones de entrevistas guardadas
+- `MoonJab-coach`: Estado completo del coach (mensajes, contextos, análisis)
+- `MoonJab-action-plan`: Microacciones y planes semanales
+- `MoonJab-cvs`: CVs guardados
+- `MoonJab-interviews`: Sesiones de entrevistas guardadas
 
 ## Integraciones con Otros Módulos
 
@@ -415,4 +415,4 @@ Para más información sobre componentes individuales, revisa los comentarios en
 
 **Última actualización**: 2025-11-08
 **Versión**: 1.0.0
-**Mantenedor**: Equipo Clovely
+**Mantenedor**: Equipo MoonJab
