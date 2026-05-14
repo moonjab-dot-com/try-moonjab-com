@@ -1,4 +1,4 @@
-# Clovely - Production Testing Checklist
+# MoonJab - Production Testing Checklist
 
 ## 📱 Cross-Browser Testing
 
@@ -184,7 +184,7 @@
 - [ ] All buttons use design tokens
 - [ ] Consistent spacing (gap-4, p-6, etc.)
 - [ ] Border radius consistent (rounded-2xl)
-- [ ] Shadows use shadow-clovely-* tokens
+- [ ] Shadows use shadow-MoonJab-* tokens
 - [ ] Colors use HSL variables
 - [ ] Typography follows system
 
