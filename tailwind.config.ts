@@ -119,13 +119,13 @@ export default {
         "card":      "var(--shadow-card)",
         "orange":    "var(--shadow-orange)",
         "orange-lg": "var(--shadow-orange-lg)",
-        /* Legacy clovely aliases — used by Button, GuestBanner, WelcomeStep */
-        "clovely-sm":     "var(--shadow-sm)",
-        "clovely-md":     "var(--shadow-md)",
-        "clovely-lg":     "var(--shadow-lg)",
-        "clovely-xl":     "var(--shadow-xl)",
-        "clovely-glow":    "0 0 20px rgba(16, 185, 129, 0.20)",
-        "clovely-glow-lg": "0 0 32px rgba(16, 185, 129, 0.28)",
+        /* Legacy MoonJab aliases — used by Button, GuestBanner, WelcomeStep */
+        "moonjab-sm":     "var(--shadow-sm)",
+        "moonjab-md":     "var(--shadow-md)",
+        "moonjab-lg":     "var(--shadow-lg)",
+        "moonjab-xl":     "var(--shadow-xl)",
+        "moonjab-glow":    "0 0 20px rgba(16, 185, 129, 0.20)",
+        "moonjab-glow-lg": "0 0 32px rgba(16, 185, 129, 0.28)",
       },
       keyframes: {
         "accordion-down": {
