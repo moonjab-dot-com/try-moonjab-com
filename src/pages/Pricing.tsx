@@ -1,4 +1,4 @@
-import { SEOHead } from '@/components/SEOHead';
+﻿import { SEOHead } from '@/components/SEOHead';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
@@ -10,6 +10,43 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Check, ArrowRight, ArrowLeft, Zap, Sparkles, Loader2, Crown } from 'lucide-react';
 import { toast } from 'sonner';
 import { useSubscription, MOONJAB_PRO } from '@/hooks/useSubscription';
+
+const pricingFaqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: '¿Puedo cancelar en cualquier momento?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Sí. Puedes cancelar tu suscripción cuando quieras desde tu configuración. No hay penalizaciones ni compromisos de permanencia.' },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Qué métodos de pago aceptan?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Procesamos los pagos de forma segura a través de Stripe. Aceptamos Visa, Mastercard y las principales tarjetas de crédito y débito.' },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Qué puedo hacer en modo invitado?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Puedes explorar la plataforma con funciones limitadas: 1 plantilla de CV (Creativo) y un diagnóstico básico. Es ideal para conocer MoonJab antes de suscribirte.' },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Qué se desbloquea con el plan Pro?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Acceso a todas las plantillas de CV (Harvard, Modern, Minimal, Professional), entrevistas ilimitadas con IA, diagnóstico completo RIASEC, coach IA 24/7 y exportación PDF ilimitada.' },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Se renueva automáticamente?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Sí, la suscripción se renueva cada mes. Puedes cancelar antes de la siguiente fecha de cobro para evitar cargos futuros.' },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Mis datos están seguros?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Absolutamente. Tus datos personales y CVs están protegidos con encriptación. Nunca compartimos tu información con terceros.' },
+    },
+  ],
+};
 
 const Pricing = () => {
   const { t } = useTranslation();
@@ -65,62 +102,15 @@ const Pricing = () => {
 
   const faqKeys = ['q1', 'q2', 'q3', 'q4', 'q5', 'q6'] as const;
 
-  const pricingSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: '¿Cuánto cuesta MoonJab?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'MoonJab tiene un plan gratuito con acceso básico al CV builder e entrevistas de práctica. El plan Pro cuesta $5 USD al mes con acceso ilimitado a todas las funciones.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: '¿El plan gratuito de MoonJab requiere tarjeta de crédito?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'No. El plan gratuito de MoonJab no requiere tarjeta de crédito. Puedes empezar a crear tu CV y practicar entrevistas sin pagar nada.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: '¿Puedo cancelar el plan Pro en cualquier momento?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Sí. Puedes cancelar tu suscripción Pro de MoonJab en cualquier momento desde la configuración de tu cuenta, sin penalizaciones.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: '¿Qué incluye el plan Pro de MoonJab?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'El plan Pro incluye CV builder ilimitado con IA, simulaciones de entrevista ilimitadas, feedback detallado con inteligencia artificial, plantillas premium y acceso prioritario a nuevas funciones.',
-        },
-      },
-      {
-        '@type': 'Question',
-        name: '¿MoonJab está disponible en toda Latinoamérica?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: 'Sí. MoonJab está disponible para estudiantes y profesionales en Perú, México, Colombia, Argentina, Chile, Ecuador, Bolivia, Paraguay, Uruguay, Venezuela y todos los países de LATAM.',
-        },
-      },
-    ],
-  };
-
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Planes y Precios — MoonJab"
-        description="Plan gratuito sin tarjeta de crédito y Pro desde $5/mes. CV builder con IA y simulador de entrevistas ilimitado para estudiantes en LATAM."
+        title="Precios — Plan Gratuito y Pro desde $5 USD/mes"
+        description="MoonJab gratis para empezar. Plan Pro $5 USD/mes: CV builder ilimitado, plantillas ATS, entrevistas ilimitadas y coach IA para estudiantes en LATAM."
         path="/pricing"
-        keywords="precios MoonJab, cuánto cuesta MoonJab, plan gratuito CV con IA, plan pro entrevistas inteligencia artificial, career platform LATAM precio"
+        keywords="precios moonjab, plan pro moonjab, cv builder precio, simulador entrevistas precio, moonjab gratis"
         breadcrumbs={[{ name: 'Precios', url: 'https://moonjab.com/pricing' }]}
-        schema={pricingSchema}
+        schema={pricingFaqSchema}
       />
       <nav className="sticky top-0 z-50 backdrop-blur-xl bg-background/80 border-b border-border/40">
         <div className="container mx-auto px-6 h-14 flex items-center justify-between max-w-5xl">
@@ -157,7 +147,7 @@ const Pricing = () => {
               <motion.div key={i} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.06 }}
                 className={plan.popular ? 'lg:-mt-3' : ''}>
                 <div className={`p-6 h-full rounded-xl border transition-all duration-200 flex flex-col ${
-                  plan.popular ? 'border-primary/30 bg-primary/[0.02] shadow-clovely-md' : 'border-border/50 hover:border-primary/15'
+                  plan.popular ? 'border-primary/30 bg-primary/[0.02] shadow-mj-md' : 'border-border/50 hover:border-primary/15'
                 }`}>
                   {plan.popular && (
                     <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary/10 text-primary text-[10px] font-medium mb-4 w-fit">

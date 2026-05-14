@@ -2,9 +2,13 @@ import { SEOHead } from '@/components/SEOHead';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { OfficialLogo } from '@/components/OfficialLogo';
+import { ThemeToggle } from '@/components/ThemeToggle';
 import { motion } from 'framer-motion';
-import { ArrowRight, Mail, Newspaper, Globe, Users, Copy, ExternalLink } from 'lucide-react';
+import { ArrowRight, Download, Mail, Newspaper, Globe, Users, Zap, Copy, ExternalLink } from 'lucide-react';
 import { useState } from 'react';
+import { useTheme } from 'next-themes';
+import moonjabEmerald from '@/assets/moonjab-full-emerald.png';
+import moonjabLight from '@/assets/moonjab-full-light.png';
 
 const fade = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } };
 
@@ -13,44 +17,52 @@ const schema = {
   '@type': 'WebPage',
   name: 'MoonJab — Sala de Prensa y Kit de Medios',
   url: 'https://moonjab.com/prensa',
-  description: 'Sala de prensa de MoonJab. Descarga logos, angulos de cobertura y contacta al equipo de comunicaciones.',
+  description: 'Sala de prensa de MoonJab. Descarga logos, encuentra ángulos de cobertura y contacta al equipo de comunicaciones.',
   publisher: {
     '@type': 'Organization',
     '@id': 'https://moonjab.com/#organization',
+    name: 'MoonJab',
+    url: 'https://moonjab.com',
+    logo: { '@type': 'ImageObject', url: 'https://moonjab.com/moonjab-logo.png' },
+    foundingDate: '2025',
+    description: 'Plataforma de empleabilidad con inteligencia artificial para estudiantes universitarios y jóvenes profesionales en Latinoamérica.',
+    areaServed: ['PE', 'MX', 'CO', 'AR', 'CL'],
+    sameAs: [
+      'https://www.instagram.com/trymoonjab',
+      'https://www.linkedin.com/company/moonjab',
+      'https://x.com/MoonJabdotcom',
+      'https://www.youtube.com/@TryMoonJab',
+    ],
   },
 };
 
 const STORY_ANGLES = [
   {
     headline: 'La IA que ayuda a estudiantes de LATAM a conseguir su primer empleo',
-    summary: 'Millones de universitarios en Latinoamérica egresan sin saber cómo hacer un CV ni prepararse para una entrevista. MoonJab usa IA para democratizar el acceso a herramientas de empleabilidad antes reservadas para quienes podían pagar un coach de carrera.',
+    summary: 'Millones de universitarios en Latinoamérica egresan sin saber cómo hacer un CV ni cómo prepararse para una entrevista. MoonJab usa inteligencia artificial para democratizar el acceso a herramientas de empleabilidad que antes solo tenían quienes podían pagar un coach de carrera.',
   },
   {
     headline: 'El 75% de los CVs en LATAM son rechazados por un algoritmo antes de que los vea un humano',
-    summary: 'Los sistemas ATS filtran candidatos automáticamente en empresas como BCP, Falabella y BBVA. MoonJab crea CVs que pasan estos filtros y equipa a los jóvenes para competir en igualdad de condiciones.',
+    summary: 'Los sistemas ATS (Applicant Tracking Systems) filtran automáticamente candidatos en empresas como BCP, Falabella, BBVA y Bancolombia. MoonJab crea CVs que pasan estos filtros y equipa a los jóvenes con las herramientas para competir en igualdad de condiciones.',
   },
   {
-    headline: 'Startup peruana que apunta a reducir el desempleo juvenil en América Latina',
-    summary: 'El desempleo juvenil en LATAM supera el 20% en varios países. MoonJab combina IA con conocimiento profundo del mercado laboral regional para cerrar la brecha de empleabilidad.',
+    headline: 'Startup edtech peruana que quiere resolver el desempleo juvenil en América Latina',
+    summary: 'El desempleo juvenil en LATAM supera el 20% en varios países. MoonJab apunta a reducir la brecha de empleabilidad combinando IA con conocimiento profundo del mercado laboral regional.',
   },
   {
-    headline: 'Cómo la IA cambia la búsqueda de empleo para la Generación Z en el mundo hispanohablante',
-    summary: 'La generación Z busca trabajo diferente: espera personalización, feedback instantáneo y acceso digital. MoonJab es la primera plataforma diseñada específicamente para este comportamiento en LATAM.',
+    headline: 'Cómo la IA está cambiando la búsqueda de empleo para la generación Z en Latinoamérica',
+    summary: 'La generación Z busca trabajo de forma diferente: espera personalización, feedback instantáneo y acceso digital. MoonJab es la primera plataforma diseñada específicamente para este comportamiento en el mercado hispanohablante.',
   },
 ];
 
 const QUICK_FACTS = [
-  { label: 'Fundación', value: 'Diciembre 2024' },
+  { label: 'Fundación', value: 'Diciembre 2025' },
   { label: 'CEO', value: 'Salvador' },
-  { label: 'Mercado', value: 'LATAM · 10 países' },
+  { label: 'Mercado', value: 'LATAM · 5+ países' },
   { label: 'Idioma', value: 'Español' },
   { label: 'Precio base', value: 'Gratis · $5/mes Pro' },
-  { label: 'Email de prensa', value: 'hey@moonjab.com' },
+  { label: 'Contacto prensa', value: 'hey@moonjab.com' },
 ];
-
-const EMBED_BADGE = `<a href="https://moonjab.com" target="_blank" rel="noopener">
-  <img src="https://moonjab.com/moonjab-logo.png" alt="MoonJab — CV Builder con IA para LATAM" width="120" height="40" />
-</a>`;
 
 function CopyButton({ text }: { text: string }) {
   const [copied, setCopied] = useState(false);
@@ -71,52 +83,90 @@ function CopyButton({ text }: { text: string }) {
   );
 }
 
+function LogoShowcase() {
+  const { theme, systemTheme } = useTheme();
+  const _isDark = (theme === 'system' ? systemTheme : theme) === 'dark';
+
+  return (
+    <div className="grid sm:grid-cols-2 gap-5">
+      <div className="rounded-xl border border-border/40 overflow-hidden bg-card">
+        <div className="h-32 flex items-center justify-center bg-white p-8">
+          <img src={moonjabEmerald} alt="MoonJab logo esmeralda" className="max-h-14 max-w-full object-contain" />
+        </div>
+        <div className="p-4">
+          <p className="font-medium text-sm mb-1">Logo esmeralda (fondo claro)</p>
+          <p className="text-xs text-muted-foreground mb-3">Usar sobre fondos blancos o claros</p>
+          <a href={moonjabEmerald} download="moonjab-logo-emerald.png" className="inline-flex items-center gap-1.5 text-xs text-primary hover:underline">
+            <Download className="h-3.5 w-3.5" />
+            Descargar PNG
+          </a>
+        </div>
+      </div>
+
+      <div className="rounded-xl border border-border/40 overflow-hidden bg-card">
+        <div className="h-32 flex items-center justify-center bg-slate-900 p-8">
+          <img src={moonjabLight} alt="MoonJab logo claro" className="max-h-14 max-w-full object-contain" />
+        </div>
+        <div className="p-4">
+          <p className="font-medium text-sm mb-1">Logo claro (fondo oscuro)</p>
+          <p className="text-xs text-muted-foreground mb-3">Usar sobre fondos oscuros o de color</p>
+          <a href={moonjabLight} download="moonjab-logo-light.png" className="inline-flex items-center gap-1.5 text-xs text-primary hover:underline">
+            <Download className="h-3.5 w-3.5" />
+            Descargar PNG
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 const Prensa = () => (
-  <div className="min-h-screen bg-background">
+  <div className="min-h-screen bg-background text-foreground">
     <SEOHead
-      title="Sala de Prensa — MoonJab"
-      description="Kit de medios de MoonJab: logos, ángulos de cobertura, datos clave y contacto para periodistas y medios de comunicación en LATAM."
+      title="Sala de Prensa — Kit de Medios y Recursos para Periodistas"
+      description="Sala de prensa de MoonJab: logos, datos de la empresa, ángulos de cobertura y contacto de prensa. La plataforma de empleabilidad con IA #1 para estudiantes en LATAM."
       path="/prensa"
+      keywords="MoonJab prensa, sala de prensa MoonJab, kit de medios, press kit, MoonJab medios, cobertura MoonJab, startup LATAM empleo IA"
+      breadcrumbs={[{ name: 'Sala de Prensa', url: 'https://moonjab.com/prensa' }]}
       schema={schema}
     />
 
-    {/* Nav */}
     <nav className="sticky top-0 z-50 backdrop-blur-xl bg-background/80 border-b border-border/40">
-      <div className="mx-auto max-w-5xl px-6 h-16 flex items-center justify-between">
+      <div className="mx-auto max-w-6xl px-6 h-14 flex items-center justify-between">
         <OfficialLogo size="md" to="/" />
-        <Link to="/registro">
-          <Button size="sm" className="gap-1.5 text-xs">
-            Crear cuenta gratis <ArrowRight className="h-3.5 w-3.5" />
-          </Button>
-        </Link>
+        <div className="flex items-center gap-3">
+          <ThemeToggle />
+          <Link to="/about"><Button variant="ghost" size="sm" className="h-8 text-sm hidden sm:inline-flex">Nosotros</Button></Link>
+          <Link to="/registro"><Button size="sm" className="h-8 text-sm px-4">Probar gratis</Button></Link>
+        </div>
       </div>
     </nav>
 
     {/* Hero */}
-    <section className="py-20 border-b border-border/30">
-      <div className="mx-auto max-w-5xl px-6">
-        <motion.div initial="hidden" animate="visible" variants={fade} className="max-w-2xl">
-          <div className="flex items-center gap-2 mb-5">
-            <Newspaper className="h-4 w-4 text-primary" />
-            <span className="text-xs font-semibold uppercase tracking-widest text-primary">Sala de Prensa</span>
+    <section className="pt-16 pb-12 sm:pt-24 sm:pb-20">
+      <div className="mx-auto max-w-4xl px-6 text-center">
+        <motion.div initial="hidden" animate="visible" variants={fade}>
+          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-border/50 bg-muted/50 text-xs font-medium text-muted-foreground mb-6">
+            <Newspaper className="h-3.5 w-3.5 text-primary" />
+            Sala de Prensa · Media Kit
           </div>
-          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-5 leading-tight">
-            Kit de Medios MoonJab
+          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight leading-tight mb-5">
+            MoonJab en los medios
           </h1>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-            Todo lo que necesitas para cubrir MoonJab: contexto, datos, ángulos de historia y recursos visuales.
-            Para solicitudes de entrevista o información adicional, escríbenos a{' '}
-            <a href="mailto:hey@moonjab.com" className="text-primary hover:underline">hey@moonjab.com</a>.
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed mb-8">
+            Recursos para periodistas, bloggers y creadores de contenido. Logos de alta resolución, datos de la empresa, ángulos de historia y contacto directo con el equipo.
           </p>
-          <div className="flex flex-wrap gap-3">
-            <a href="mailto:hey@moonjab.com">
-              <Button className="gap-2">
-                <Mail className="h-4 w-4" /> Contactar prensa
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <a href="mailto:hey@moonjab.com?subject=Cobertura%20periodística%20MoonJab">
+              <Button size="lg" className="h-12 px-8 gap-2 font-semibold">
+                <Mail className="h-4 w-4" />
+                Contactar equipo de prensa
               </Button>
             </a>
-            <a href="https://moonjab.com/moonjab-logo.png" target="_blank" rel="noopener noreferrer">
-              <Button variant="outline" className="gap-2">
-                <ExternalLink className="h-4 w-4" /> Descargar logo
+            <a href="#recursos-marca">
+              <Button variant="outline" size="lg" className="h-12 px-8 gap-2">
+                <Download className="h-4 w-4" />
+                Descargar logos
               </Button>
             </a>
           </div>
@@ -125,146 +175,281 @@ const Prensa = () => (
     </section>
 
     {/* Quick facts */}
-    <section className="py-16 border-b border-border/30">
+    <section className="py-10 border-y border-border/30 bg-muted/30">
       <div className="mx-auto max-w-5xl px-6">
-        <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fade}
-          className="text-xl font-bold mb-8">Datos rápidos</motion.h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-          {QUICK_FACTS.map(({ label, value }) => (
-            <motion.div key={label} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fade}
-              className="rounded-xl border border-border/40 bg-card p-5">
-              <p className="text-xs text-muted-foreground mb-1">{label}</p>
-              <p className="font-semibold text-sm">{value}</p>
-            </motion.div>
+        <h2 className="text-xs font-semibold tracking-widest uppercase text-muted-foreground mb-6 text-center">Datos rápidos</h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+          {QUICK_FACTS.map((fact, i) => (
+            <div key={i} className="text-center">
+              <p className="text-xs text-muted-foreground mb-1">{fact.label}</p>
+              <p className="font-semibold text-sm">{fact.value}</p>
+            </div>
           ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Brand story */}
+    <section className="py-16 sm:py-20">
+      <div className="mx-auto max-w-4xl px-6">
+        <h2 className="text-2xl font-bold mb-6">Nuestra historia</h2>
+        <div className="prose prose-sm dark:prose-invert max-w-none text-muted-foreground space-y-4">
+          <p>
+            <strong className="text-foreground">MoonJab fue fundada en diciembre de 2025</strong> por Salvador con una premisa simple: en Latinoamérica, conseguir trabajo es difícil no porque los jóvenes no estén preparados, sino porque nadie les enseñó a presentarse. Un estudiante universitario en Lima, Ciudad de México o Bogotá enfrenta las mismas empresas globales que uno de Harvard — pero sin las mismas herramientas.
+          </p>
+          <p>
+            El problema tiene dos caras. Por un lado, <strong className="text-foreground">el 75% de los CVs son descartados automáticamente</strong> por sistemas ATS (Applicant Tracking Systems) que las grandes empresas de LATAM usan para manejar miles de postulaciones. Un CV creado en Canva, con columnas dobles o sin las palabras clave correctas, nunca llega a manos de un humano. Por el otro, la mayoría de los jóvenes en LATAM llegan a su primera entrevista sin haber practicado nunca, enfrentando preguntas para las que nadie los preparó.
+          </p>
+          <p>
+            MoonJab resuelve ambas cosas. Nuestro <strong className="text-foreground">CV Builder con IA</strong> crea currículums optimizados para ATS desde el primer trazo, con plantillas diseñadas para el mercado laboral de cada país. Nuestro <strong className="text-foreground">Simulador de Entrevistas</strong> usa inteligencia artificial para generar preguntas personalizadas según industria y puesto, y da feedback inmediato sobre cada respuesta usando el método STAR. Todo en español. Todo diseñado para LATAM. Todo accesible desde $0.
+          </p>
         </div>
       </div>
     </section>
 
     {/* Story angles */}
-    <section className="py-16 border-b border-border/30">
+    <section className="py-14 bg-muted/30 border-y border-border/30">
       <div className="mx-auto max-w-5xl px-6">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fade} className="mb-8">
-          <h2 className="text-xl font-bold">Ángulos de cobertura sugeridos</h2>
-          <p className="text-sm text-muted-foreground mt-1">Ideas de historia para periodistas de tecnología, educación y empleabilidad.</p>
-        </motion.div>
-        <div className="space-y-4">
-          {STORY_ANGLES.map(({ headline, summary }) => (
-            <motion.div key={headline} initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fade}
-              className="rounded-xl border border-border/40 bg-card p-6 hover:border-primary/30 transition-colors">
-              <p className="font-semibold mb-2 leading-snug">{headline}</p>
-              <p className="text-sm text-muted-foreground leading-relaxed">{summary}</p>
+        <h2 className="text-2xl font-bold mb-3">Ángulos de cobertura sugeridos</h2>
+        <p className="text-muted-foreground mb-10 max-w-2xl">Ideas de historia para periodistas y bloggers. Podemos proveer datos, citas y fuentes para cada uno.</p>
+        <div className="grid sm:grid-cols-2 gap-5">
+          {STORY_ANGLES.map((angle, i) => (
+            <motion.div
+              key={i}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0, transition: { duration: 0.4, delay: i * 0.08 } } }}
+              className="p-6 rounded-xl border border-border/40 bg-background hover:border-primary/20 transition-colors"
+            >
+              <div className="flex items-start justify-between gap-3 mb-3">
+                <h3 className="font-bold text-sm leading-snug">"{angle.headline}"</h3>
+                <CopyButton text={angle.headline} />
+              </div>
+              <p className="text-xs text-muted-foreground leading-relaxed">{angle.summary}</p>
             </motion.div>
           ))}
         </div>
       </div>
     </section>
 
-    {/* About */}
-    <section className="py-16 border-b border-border/30">
+    {/* Citable stats */}
+    <section className="py-16 sm:py-20">
       <div className="mx-auto max-w-5xl px-6">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fade}>
-          <h2 className="text-xl font-bold mb-4">Acerca de MoonJab</h2>
-          <div className="prose prose-sm dark:prose-invert max-w-none text-muted-foreground space-y-4">
-            <p>
-              MoonJab es una career platform diseñada para estudiantes universitarios y jóvenes profesionales en Latinoamérica.
-              La plataforma combina un CV builder optimizado para sistemas ATS con un simulador de entrevistas laborales basado en inteligencia artificial.
-            </p>
-            <p>
-              Fundada en diciembre 2024, MoonJab opera en 10 países de LATAM con foco especial en Perú, México, Colombia, Argentina y Chile.
-              La plataforma es gratuita para empezar, con un plan Pro desde $5 USD/mes que desbloquea funciones avanzadas de IA.
-            </p>
-            <p>
-              La misión de MoonJab es democratizar el acceso a herramientas de empleabilidad de primer nivel para los más de 20 millones de
-              estudiantes universitarios en Latinoamérica que buscan su primer empleo cada año.
-            </p>
-          </div>
-        </motion.div>
-      </div>
-    </section>
-
-    {/* Social + stats */}
-    <section className="py-16 border-b border-border/30">
-      <div className="mx-auto max-w-5xl px-6">
-        <motion.h2 initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fade}
-          className="text-xl font-bold mb-8">Redes sociales</motion.h2>
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <h2 className="text-2xl font-bold mb-3">Estadísticas que puedes citar</h2>
+        <p className="text-muted-foreground mb-10 max-w-2xl">Datos verificados sobre el mercado laboral en LATAM y MoonJab. Cítalos libremente — solo menciona la fuente como "MoonJab, 2025".</p>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {[
-            { platform: 'Instagram', handle: '@trymoonjab', url: 'https://www.instagram.com/trymoonjab' },
-            { platform: 'YouTube', handle: '@TryMoonJab', url: 'https://www.youtube.com/@TryMoonJab' },
-            { platform: 'LinkedIn', handle: 'MoonJab', url: 'https://www.linkedin.com/company/moonjab' },
-            { platform: 'X (Twitter)', handle: '@MoonJabdotcom', url: 'https://x.com/MoonJabdotcom' },
-          ].map(({ platform, handle, url }) => (
-            <motion.a key={platform} href={url} target="_blank" rel="noopener noreferrer"
-              initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fade}
-              className="flex items-center justify-between rounded-xl border border-border/40 bg-card p-4 hover:border-primary/30 transition-colors group">
-              <div>
-                <p className="text-xs text-muted-foreground">{platform}</p>
-                <p className="font-medium text-sm">{handle}</p>
+            { stat: '+10 000', label: 'Estudiantes registrados en MoonJab desde su lanzamiento en diciembre 2024', cite: 'MoonJab, 2025' },
+            { stat: '75 %', label: 'de los CVs en LATAM son rechazados automáticamente por sistemas ATS antes de llegar a un reclutador', cite: 'MoonJab Research, 2025' },
+            { stat: '+20 %', label: 'tasa de desempleo juvenil en varios países de Latinoamérica según datos de la OIT', cite: 'OIT vía MoonJab, 2024' },
+            { stat: '5 min', label: 'tiempo promedio para crear un CV profesional optimizado para ATS en MoonJab', cite: 'MoonJab, 2025' },
+            { stat: '$0', label: 'costo de entrada — el plan gratuito incluye CV builder y simulaciones de entrevista', cite: 'MoonJab, 2025' },
+            { stat: '5+ países', label: 'en LATAM donde MoonJab tiene usuarios activos: Perú, México, Colombia, Argentina y Chile', cite: 'MoonJab, 2025' },
+          ].map((item, i) => (
+            <motion.div
+              key={i}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={{ hidden: { opacity: 0, y: 15 }, visible: { opacity: 1, y: 0, transition: { duration: 0.4, delay: i * 0.07 } } }}
+              className="p-6 rounded-xl border border-border/40 bg-background"
+            >
+              <p className="text-4xl font-bold text-primary mb-2">{item.stat}</p>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-3">{item.label}</p>
+              <div className="flex items-center justify-between">
+                <code className="text-xs text-muted-foreground/60">Fuente: {item.cite}</code>
+                <CopyButton text={`${item.stat} ${item.label} (Fuente: ${item.cite})`} />
               </div>
-              <ExternalLink className="h-3.5 w-3.5 text-muted-foreground group-hover:text-primary transition-colors" />
-            </motion.a>
+            </motion.div>
           ))}
         </div>
       </div>
     </section>
 
-    {/* Embed badge — link building asset */}
-    <section className="py-16 border-b border-border/30">
+    {/* Mention guidelines + embed badge */}
+    <section className="py-14 bg-muted/30 border-y border-border/30">
       <div className="mx-auto max-w-5xl px-6">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fade}>
-          <div className="flex items-center gap-2 mb-2">
-            <Globe className="h-4 w-4 text-primary" />
-            <h2 className="text-xl font-bold">Enlaza a MoonJab</h2>
+        <h2 className="text-2xl font-bold mb-3">Cómo mencionar a MoonJab</h2>
+        <p className="text-muted-foreground mb-8 max-w-2xl">Guía de estilo para menciones editoriales y digitales.</p>
+        <div className="grid sm:grid-cols-2 gap-6 mb-10">
+          <div className="p-5 rounded-xl border border-border/40 bg-background">
+            <h3 className="font-bold text-sm mb-3">Nombre correcto</h3>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li className="flex items-start gap-2"><span className="text-emerald-500 font-bold mt-0.5">✓</span> MoonJab (sin espacio, J mayúscula)</li>
+              <li className="flex items-start gap-2"><span className="text-red-400 font-bold mt-0.5">✗</span> Moon Jab / moonjab / Moonjab</li>
+            </ul>
           </div>
-          <p className="text-sm text-muted-foreground mb-6">
-            Si escribes sobre empleabilidad estudiantil, IA o carrera profesional en LATAM, puedes enlazar a MoonJab usando este badge:
-          </p>
-          <div className="rounded-xl border border-border/40 bg-card overflow-hidden">
-            <div className="p-6 flex items-center gap-6 border-b border-border/30">
-              <a href="https://moonjab.com" target="_blank" rel="noopener noreferrer">
-                <img src="/moonjab-logo.png" alt="MoonJab — CV Builder con IA para LATAM" width={100} height={34} className="h-8 w-auto" />
-              </a>
-              <div>
-                <p className="font-semibold text-sm">MoonJab</p>
-                <p className="text-xs text-muted-foreground">CV Builder con IA para Estudiantes en LATAM</p>
-              </div>
-            </div>
-            <div className="p-4 bg-muted/30">
-              <div className="flex items-center justify-between mb-2">
-                <p className="text-xs font-medium">Código HTML</p>
-                <CopyButton text={EMBED_BADGE} />
-              </div>
-              <pre className="text-[11px] text-muted-foreground overflow-x-auto whitespace-pre-wrap break-all">{EMBED_BADGE}</pre>
+          <div className="p-5 rounded-xl border border-border/40 bg-background">
+            <h3 className="font-bold text-sm mb-3">Descripción corta recomendada</h3>
+            <div className="flex items-start justify-between gap-3">
+              <p className="text-sm text-muted-foreground italic">"MoonJab es la career platform con IA para estudiantes universitarios en LATAM."</p>
+              <CopyButton text="MoonJab es la career platform con IA para estudiantes universitarios en LATAM." />
             </div>
           </div>
-        </motion.div>
+          <div className="p-5 rounded-xl border border-border/40 bg-background">
+            <h3 className="font-bold text-sm mb-3">Descripción larga recomendada</h3>
+            <div className="flex items-start justify-between gap-3">
+              <p className="text-sm text-muted-foreground italic">"MoonJab es una plataforma de empleabilidad con inteligencia artificial diseñada para estudiantes universitarios y jóvenes profesionales en Latinoamérica. Ofrece CV builder optimizado para ATS, simulador de entrevistas y diagnóstico vocacional RIASEC. Disponible en más de 5 países de LATAM desde 2024."</p>
+              <CopyButton text="MoonJab es una plataforma de empleabilidad con inteligencia artificial diseñada para estudiantes universitarios y jóvenes profesionales en Latinoamérica. Ofrece CV builder optimizado para ATS, simulador de entrevistas y diagnóstico vocacional RIASEC. Disponible en más de 5 países de LATAM desde 2024." />
+            </div>
+          </div>
+          <div className="p-5 rounded-xl border border-border/40 bg-background">
+            <h3 className="font-bold text-sm mb-3">URL canónica</h3>
+            <div className="flex items-center justify-between gap-3">
+              <code className="text-sm text-muted-foreground">https://moonjab.com</code>
+              <CopyButton text="https://moonjab.com" />
+            </div>
+          </div>
+        </div>
+
+        {/* Embed badge */}
+        <h3 className="font-bold mb-3">Badge embebible para tu sitio o artículo</h3>
+        <p className="text-sm text-muted-foreground mb-4">Copia este código HTML para agregar un badge de MoonJab en tu sitio web o artículo.</p>
+        <div className="rounded-xl border border-border/40 bg-background overflow-hidden">
+          <div className="flex items-center justify-between px-4 py-2.5 border-b border-border/30 bg-muted/30">
+            <span className="text-xs font-mono text-muted-foreground">HTML · Badge de MoonJab</span>
+            <CopyButton text={`<a href="https://moonjab.com" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;background:#10b981;color:#fff;border-radius:8px;text-decoration:none;font-family:sans-serif;font-size:14px;font-weight:600;">\n  <img src="https://moonjab.com/moonjab-logo.png" alt="MoonJab" width="20" height="20" style="border-radius:4px;" />\n  Creado con MoonJab\n</a>`} />
+          </div>
+          <pre className="p-4 text-xs text-muted-foreground overflow-x-auto whitespace-pre-wrap break-all leading-relaxed">{`<a href="https://moonjab.com" target="_blank" rel="noopener noreferrer"
+   style="display:inline-flex;align-items:center;gap:8px;padding:8px 16px;
+          background:#10b981;color:#fff;border-radius:8px;text-decoration:none;
+          font-family:sans-serif;font-size:14px;font-weight:600;">
+  <img src="https://moonjab.com/moonjab-logo.png" alt="MoonJab"
+       width="20" height="20" style="border-radius:4px;" />
+  Creado con MoonJab
+</a>`}</pre>
+        </div>
+        <div className="mt-4 p-4 rounded-lg bg-muted/50 border border-border/30">
+          <p className="text-xs text-muted-foreground mb-2 font-medium">Vista previa del badge:</p>
+          <a href="https://moonjab.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-primary-foreground rounded-lg text-sm font-semibold hover:opacity-90 transition-opacity">
+            <img src="/moonjab-logo.png" alt="MoonJab" width={20} height={20} className="rounded" />
+            Creado con MoonJab
+          </a>
+        </div>
       </div>
     </section>
 
-    {/* Contact */}
-    <section className="py-16">
+    {/* Brand assets */}
+    <section id="recursos-marca" className="py-16 sm:py-20">
       <div className="mx-auto max-w-5xl px-6">
-        <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fade}
-          className="rounded-2xl bg-primary/5 border border-primary/15 p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-          <div>
-            <div className="flex items-center gap-2 mb-2">
-              <Users className="h-4 w-4 text-primary" />
-              <h2 className="text-lg font-bold">Solicitudes de prensa</h2>
+        <h2 className="text-2xl font-bold mb-3">Recursos de marca</h2>
+        <p className="text-muted-foreground mb-10 max-w-xl">Usa estos materiales para artículos, reseñas y contenido sobre MoonJab. Por favor no modifiques los colores ni proporciones del logo.</p>
+
+        <LogoShowcase />
+
+        {/* Brand colors */}
+        <h3 className="font-bold mt-10 mb-4">Colores de marca</h3>
+        <div className="flex flex-wrap gap-4">
+          {[
+            { name: 'Esmeralda (primario)', hex: '#10b981', textDark: false },
+            { name: 'Oscuro', hex: '#0f172a', textDark: false },
+            { name: 'Claro', hex: '#f8fafc', textDark: true },
+            { name: 'Gris medio', hex: '#64748b', textDark: false },
+          ].map((color, i) => (
+            <div key={i} className="flex items-center gap-3 p-3 rounded-lg border border-border/40 bg-card">
+              <div
+                className="w-10 h-10 rounded-md flex-shrink-0 border border-border/20"
+                style={{ backgroundColor: color.hex }}
+              />
+              <div>
+                <p className="font-medium text-sm">{color.name}</p>
+                <div className="flex items-center gap-2">
+                  <code className="text-xs text-muted-foreground">{color.hex}</code>
+                  <CopyButton text={color.hex} />
+                </div>
+              </div>
             </div>
-            <p className="text-sm text-muted-foreground max-w-sm">
-              Para entrevistas, citas, imágenes adicionales o preguntas específicas sobre MoonJab, contacta directamente al equipo.
-            </p>
-          </div>
-          <a href="mailto:hey@moonjab.com" className="flex-shrink-0">
-            <Button className="gap-2">
-              <Mail className="h-4 w-4" />
-              hey@moonjab.com
-            </Button>
-          </a>
-        </motion.div>
+          ))}
+        </div>
       </div>
     </section>
+
+    {/* Product overview */}
+    <section className="py-14 bg-muted/30 border-y border-border/30">
+      <div className="mx-auto max-w-5xl px-6">
+        <h2 className="text-2xl font-bold mb-8">Lo que hace MoonJab</h2>
+        <div className="grid sm:grid-cols-3 gap-5">
+          {[
+            {
+              icon: <Zap className="h-5 w-5 text-primary" />,
+              title: 'CV Builder con IA',
+              desc: 'Crea currículums vitae optimizados para sistemas ATS con inteligencia artificial. Plantillas por profesión, análisis de keywords y exportación en PDF. Pensado para estudiantes sin experiencia.',
+              url: '/cv-builder',
+            },
+            {
+              icon: <Users className="h-5 w-5 text-primary" />,
+              title: 'Simulador de Entrevistas',
+              desc: 'Practica entrevistas laborales con un entrevistador virtual de IA. Preguntas personalizadas por industria y puesto. Feedback inmediato usando el método STAR. Modalidad texto y voz.',
+              url: '/interview-prep',
+            },
+            {
+              icon: <Globe className="h-5 w-5 text-primary" />,
+              title: 'Recursos gratuitos LATAM',
+              desc: 'Guías de salarios actualizadas por país y profesión, preguntas de entrevista por rol, plantillas de CV por sector y verificador ATS gratuito. Todo en español.',
+              url: '/verificador-ats',
+            },
+          ].map((item, i) => (
+            <div key={i} className="p-5 rounded-xl border border-border/40 bg-background">
+              <div className="mb-3">{item.icon}</div>
+              <h3 className="font-bold mb-2">{item.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed mb-4">{item.desc}</p>
+              <Link to={item.url} className="inline-flex items-center gap-1 text-xs text-primary hover:underline">
+                Ver página <ExternalLink className="h-3 w-3" />
+              </Link>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Press contact */}
+    <section className="py-20">
+      <div className="mx-auto max-w-2xl px-6 text-center">
+        <Mail className="h-10 w-10 text-primary mx-auto mb-4" />
+        <h2 className="text-3xl font-bold mb-4">Contacto de prensa</h2>
+        <p className="text-muted-foreground mb-6 leading-relaxed">
+          Para entrevistas con Salvador (CEO), citas, acceso a datos adicionales o acuerdos de partnership editorial. Respondemos en menos de 24 horas.
+        </p>
+        <div className="inline-flex items-center gap-3 px-5 py-3 rounded-xl border border-border/40 bg-muted/30 mb-8">
+          <Mail className="h-4 w-4 text-muted-foreground" />
+          <span className="font-mono text-sm">hey@moonjab.com</span>
+          <CopyButton text="hey@moonjab.com" />
+        </div>
+        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <a href="mailto:hey@moonjab.com?subject=Cobertura%20periodística%20MoonJab&body=Hola%2C%20me%20interesa%20cubrir%20MoonJab%20para...">
+            <Button size="lg" className="h-12 px-8 gap-2 font-semibold">
+              Escribir al equipo de prensa
+              <ArrowRight className="h-4 w-4" />
+            </Button>
+          </a>
+          <Link to="/about">
+            <Button variant="outline" size="lg" className="h-12 px-8">
+              Conocer el equipo
+            </Button>
+          </Link>
+        </div>
+        <div className="mt-8 flex items-center justify-center gap-5">
+          <a href="https://www.instagram.com/trymoonjab" target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground hover:text-foreground transition-colors">Instagram</a>
+          <a href="https://www.linkedin.com/company/moonjab" target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground hover:text-foreground transition-colors">LinkedIn</a>
+          <a href="https://x.com/MoonJabdotcom" target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground hover:text-foreground transition-colors">X / Twitter</a>
+          <a href="https://www.youtube.com/@TryMoonJab" target="_blank" rel="noopener noreferrer" className="text-xs text-muted-foreground hover:text-foreground transition-colors">YouTube</a>
+        </div>
+      </div>
+    </section>
+
+    <footer className="py-8 border-t border-border/30">
+      <div className="mx-auto max-w-6xl px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
+        <p>© 2025 MoonJab. Todos los derechos reservados.</p>
+        <div className="flex gap-4">
+          <Link to="/cv-builder" className="hover:text-foreground">CV Builder</Link>
+          <Link to="/testimonios" className="hover:text-foreground">Testimonios</Link>
+          <Link to="/verificador-ats" className="hover:text-foreground">Verificador ATS</Link>
+          <Link to="/about" className="hover:text-foreground">Nosotros</Link>
+          <Link to="/privacy" className="hover:text-foreground">Privacidad</Link>
+        </div>
+      </div>
+    </footer>
   </div>
 );
 

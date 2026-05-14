@@ -1,4 +1,4 @@
-import { Card } from '@/components/ui/card';
+﻿import { Card } from '@/components/ui/card';
 import { DynamicIcon } from '@/components/DynamicIcon';
 import { Textarea } from '@/components/ui/textarea';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
@@ -37,8 +37,8 @@ export const ExperienceStep = ({ data, onChange }: ExperienceStepProps) => {
                 onClick={() => onChange({ ...data, experience: level.id })}
                 className={`p-4 rounded-2xl border-2 transition-all duration-300 text-left ${
                   data.experience === level.id
-                    ? 'border-primary bg-gradient-to-br from-primary/10 to-primary/5 shadow-clovely-md hover:shadow-clovely-lg hover:-translate-y-1'
-                    : 'border-border hover:border-primary/50 hover:shadow-clovely-sm hover:-translate-y-0.5'
+                    ? 'border-primary bg-gradient-to-br from-primary/10 to-primary/5 shadow-mj-md hover:shadow-mj-lg hover:-translate-y-1'
+                    : 'border-border hover:border-primary/50 hover:shadow-mj-sm hover:-translate-y-0.5'
                 }`}
               >
                 <div className="text-3xl mb-2"><DynamicIcon name={level.icon} size={28} className="text-primary" /></div>

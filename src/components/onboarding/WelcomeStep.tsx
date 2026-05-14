@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+﻿import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Sparkles, ClipboardList, Brain, Rocket } from 'lucide-react';
@@ -75,7 +75,7 @@ export const WelcomeStep = ({
       }} transition={{
         delay: 0.5
       }}>
-          <Card className="max-w-md mx-auto p-8 space-y-6 shadow-clovely-xl">
+          <Card className="max-w-md mx-auto p-8 space-y-6 shadow-mj-xl">
             <div className="space-y-5 text-left">
               <motion.div initial={{
               x: -20,

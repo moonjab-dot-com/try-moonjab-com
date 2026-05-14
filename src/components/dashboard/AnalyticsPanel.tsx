@@ -94,7 +94,7 @@ export function AnalyticsPanel({ dashboardBasePath }: { dashboardBasePath: strin
       label: 'CV completado',
       value: `${cvScore}%`,
       icon: TrendingUp,
-      tone: 'bg-emerald-500/10 text-emerald-600',
+      tone: 'bg-primary/10 text-primary',
     },
     {
       label: 'CVs creados',
@@ -257,9 +257,6 @@ export function AnalyticsPanel({ dashboardBasePath }: { dashboardBasePath: strin
                     </div>
                     <div className="flex items-center gap-2 flex-shrink-0">
                       <span className="text-[10px] text-muted-foreground">{formatDate(e.created_at)}</span>
-                      <Badge variant="outline" className="text-[9px] h-4 px-1 bg-emerald-500/5 text-emerald-700 border-emerald-200">
-                        OK
-                      </Badge>
                     </div>
                   </li>
                 );

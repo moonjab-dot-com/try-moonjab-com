@@ -1,4 +1,4 @@
-import { SEOHead } from '@/components/SEOHead';
+﻿import { SEOHead } from '@/components/SEOHead';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCVStore } from '@/store/useCVStore';
@@ -47,7 +47,7 @@ export default function CVList() {
   };
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-10 pt-14 sm:pt-10">
       <SEOHead title="Mis CVs" description="Gestiona todos tus currículums en un solo lugar." path="/cv" noindex />
       <motion.div 
         initial={{ opacity: 0, y: 8 }} 
@@ -66,15 +66,18 @@ export default function CVList() {
 
       {userCVs.length === 0 ? (
         <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}>
-          <Card className="p-12 text-center border-border/40 border-dashed">
-            <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-5">
-              <FileText className="h-7 w-7 text-primary" />
+          <Card className="p-10 sm:p-14 text-center border-border/40 border-dashed">
+            <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-5">
+              <FileText className="h-8 w-8 text-primary" />
             </div>
-            <h3 className="text-lg font-semibold mb-2">Aún no tienes CVs</h3>
-            <p className="text-sm text-muted-foreground mb-6 max-w-xs mx-auto">
-              Crea tu primer CV profesional y comienza a destacar
+            <h3 className="text-lg font-semibold mb-2">Tu primer CV te está esperando</h3>
+            <p className="text-sm text-muted-foreground mb-2 max-w-sm mx-auto leading-relaxed">
+              La mayoría de recruiters pasan menos de 10 segundos leyendo un CV. Te ayudamos a hacer los primeros que cuentan.
             </p>
-            <Button onClick={() => navigate('/dashboard/cvs/new')} className="gap-2">
+            <p className="text-xs text-muted-foreground mb-6">
+              ⏱ Listo en 2 minutos con IA
+            </p>
+            <Button onClick={() => navigate('/dashboard/cvs/new')} className="gap-2" size="lg">
               <Plus className="h-4 w-4" />
               Crear mi primer CV
             </Button>
@@ -90,7 +93,7 @@ export default function CVList() {
               transition={{ delay: i * 0.05 }}
             >
               <Card
-                className="p-5 border-border/40 hover:border-primary/20 hover:shadow-clovely-md transition-all duration-300 cursor-pointer group"
+                className="p-5 border-border/40 hover:border-primary/20 hover:shadow-mj-md transition-all duration-300 cursor-pointer group"
                 onClick={() => navigate(`/dashboard/cvs/${cv.id}`)}
               >
                 <div className="flex items-start justify-between mb-4">

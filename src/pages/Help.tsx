@@ -12,6 +12,53 @@ import { Link } from 'react-router-dom';
 import { Search, MessageCircle, Mail, FileText, Target, Sparkles, HelpCircle, ArrowRight, BookOpen, Video, Users } from 'lucide-react';
 import { ElevenLabsWidget } from '@/components/help/ElevenLabsWidget';
 
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: '¿Cómo funciona el diagnóstico de carrera?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Nuestro diagnóstico utiliza el modelo RIASEC (Holland Codes), un framework científico reconocido mundialmente y utilizado por el Departamento de Trabajo de EE.UU. Responderás 42 preguntas sobre tus intereses y preferencias, y recibirás un perfil personalizado con tu código Holland junto con recomendaciones de carreras que mejor se adaptan a tu personalidad profesional.' },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Puedo cancelar mi suscripción en cualquier momento?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Sí, puedes cancelar tu suscripción cuando quieras desde la sección de Configuración > Suscripción. No hay penalizaciones ni preguntas. Tu acceso continuará hasta el final del período de facturación actual. Si cancelas dentro de los primeros 7 días, recibirás un reembolso completo.' },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Cómo exporto mi CV a PDF?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Una vez que hayas creado tu CV en el editor, simplemente haz clic en el botón "Exportar" en la esquina superior derecha. Tu CV se descargará automáticamente en formato PDF, optimizado para sistemas ATS y listo para enviar a empleadores.' },
+    },
+    {
+      '@type': 'Question',
+      name: '¿MoonJab está pensado realmente para estudiantes?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Sí, MoonJab está diseñado específicamente para estudiantes universitarios y recién graduados en LATAM.' },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Cómo funciona el simulador de entrevistas?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Nuestro simulador genera 10 preguntas realistas basadas en el puesto, nivel de experiencia y descripción del trabajo que proporciones. Puedes responder por texto o video. Nuestra IA analiza tus respuestas y te da feedback detallado sobre contenido, estructura, y áreas de mejora específicas.' },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Qué métodos de pago aceptan?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Aceptamos todas las tarjetas principales (Visa, Mastercard, American Express), PayPal, y en algunos países transferencia bancaria. Todos los pagos son procesados de forma segura a través de Stripe.' },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Hay descuento para estudiantes?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Sí, ofrecemos 50% de descuento para estudiantes con email .edu verificado. Contáctanos en moonjab.com@gmail.com con tu correo institucional para obtener tu código de descuento.' },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Mis datos están seguros?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Absolutamente. Utilizamos encriptación de nivel bancario (256-bit SSL), almacenamiento seguro en la nube, y nunca vendemos ni compartimos tu información personal. Cumplimos con GDPR y las mejores prácticas de privacidad de datos.' },
+    },
+  ],
+};
+
 const Help = () => {
   const { t } = useTranslation();
 
@@ -40,7 +87,14 @@ const Help = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEOHead title="Centro de Ayuda" description="¿Necesitas ayuda con MoonJab? Encuentra respuestas a preguntas frecuentes y contacta a nuestro equipo de soporte." path="/help" />
+      <SEOHead
+        title="Centro de Ayuda — Soporte MoonJab"
+        description="Centro de ayuda MoonJab: preguntas frecuentes sobre CV builder, simulador de entrevistas, planes y pagos. Soporte en español para estudiantes en LATAM."
+        path="/help"
+        keywords="ayuda moonjab, soporte moonjab, preguntas frecuentes moonjab, como usar moonjab, cancelar moonjab, exportar cv moonjab"
+        breadcrumbs={[{ name: 'Centro de Ayuda', url: 'https://moonjab.com/help' }]}
+        schema={faqSchema}
+      />
       <nav className="sticky top-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border/50">
         <div className="container mx-auto px-6 h-20 flex items-center justify-between max-w-7xl">
           <OfficialLogo size="lg" to="/" />

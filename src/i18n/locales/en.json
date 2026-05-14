@@ -401,6 +401,87 @@
       "privacy": "Privacy",
       "terms": "Terms",
       "rights": "© 2025 MoonJab. All rights reserved."
+    },
+    "faq": {
+      "title": "Frequently asked questions",
+      "items": [
+        {
+          "q": "What is MoonJab and what does it do?",
+          "a": "MoonJab is the AI-powered employability platform designed for university students and young professionals in Latin America. It helps you create an ATS-optimized professional CV with AI, practice real job interviews with an AI interview simulator, and discover your vocational profile through a RIASEC diagnostic. It is designed to help you land your first job, internships, or advance your career at companies in any industry across Peru, Mexico, Colombia, Argentina, and Chile."
+        },
+        {
+          "q": "Is it free to create a CV with MoonJab?",
+          "a": "Yes. MoonJab has a free plan (Guest Mode) that includes the AI CV builder, basic template, and 3 interview simulations per month, with no credit card required. The Pro plan costs $5 USD/month and includes full access: all professional CV templates, unlimited AI interviews with detailed feedback, full RIASEC diagnostic, and unlimited PDF export."
+        },
+        {
+          "q": "How does the AI CV builder work?",
+          "a": "MoonJab's AI CV builder analyzes your profile, experience, and skills to create a professional resume optimized to pass ATS (Applicant Tracking System) filters. You enter your information, the AI suggests automatic improvements, you choose from professional templates (Harvard, Modern, Minimal, Professional, Creative), and download your CV as a PDF. The process takes less than 10 minutes and produces a CV ready to apply for jobs across LATAM."
+        },
+        {
+          "q": "How does the AI interview simulator work?",
+          "a": "MoonJab's interview simulator generates personalized questions based on your industry, experience level, and the position you're applying for. You practice answering by text or voice, and the AI evaluates your responses in real time using the STAR method (Situation, Task, Action, Result). You receive detailed feedback on clarity, structure, and areas of improvement so you arrive confident at your real job interview."
+        },
+        {
+          "q": "Which LATAM countries is MoonJab available in?",
+          "a": "MoonJab is available for students and professionals across all of Latin America. It has special focus on Peru, Mexico, Colombia, Argentina, and Chile, but is also available in Ecuador, Bolivia, Paraguay, Uruguay, and Venezuela. The platform is fully in Spanish, with content adapted to the Latin American job market."
+        },
+        {
+          "q": "How does MoonJab's RIASEC vocational diagnostic work?",
+          "a": "MoonJab's vocational diagnostic is based on the RIASEC model (Holland Code), the most scientifically recognized career orientation framework. You answer questions about your interests and preferences, and the AI generates a personalized profile with your professional personality type — Realistic, Investigative, Artistic, Social, Enterprising, or Conventional — and recommends the careers, industries, and roles best aligned with your natural strengths. The diagnostic is free and takes less than 10 minutes."
+        },
+        {
+          "q": "How do I create a resume with no work experience?",
+          "a": "MoonJab is designed especially for students with no prior work experience. Our AI CV builder guides you to effectively highlight your academic background, university projects, technical skills, extracurricular activities, and volunteer work — all optimized for ATS filters. The AI knows how to present your student profile attractively to recruiters. Thousands of students have landed their first job or internship with CVs created on MoonJab."
+        },
+        {
+          "q": "What sets MoonJab apart from other job or CV platforms?",
+          "a": "MoonJab is the only career platform designed specifically for university students and young professionals in LATAM. It combines in one place: an AI-powered ATS-optimized CV builder, an AI interview simulator with instant feedback, and the RIASEC vocational diagnostic. Everything in Spanish, tailored to the job markets of Peru, Mexico, Colombia, Argentina, and Chile. Free plan available; Pro from $5 USD/month, no commitments."
+        }
+      ]
+    },
+    "seoContent": {
+      "title": "MoonJab — AI CV Builder and Interview Simulator for LATAM Students",
+      "subtitle": "The most complete AI-powered employability platform for university students seeking their first job, internships, or career advancement in Peru, Mexico, Colombia, Argentina, and Chile.",
+      "cvTitle": "AI CV Builder with ATS Optimization",
+      "cvText": "Creating a professional resume that passes ATS filters doesn't have to be hard. Our AI-powered CV builder analyzes every section of your resume, detects missing keywords, improves your writing, and adapts the format to each industry. With templates designed for the Latin American job market — Harvard, Modern, Minimal, Professional, and Creative — you can have an ATS-ready resume in under 10 minutes. The AI compares your CV against the job description and tells you exactly what to improve to maximize your chances of landing an interview.",
+      "interviewTitle": "AI-Powered Job Interview Simulator",
+      "interviewText": "Our AI interview simulator reproduces real job interview scenarios adapted to your industry, experience level, and target position. Practice technical and behavioral interviews, apply the STAR method (Situation, Task, Action, Result), and get instant feedback on clarity, structure, and confidence. The simulator includes real questions from companies like Google, Rappi, BCP, Falabella, and MercadoLibre. With each practice session your confidence grows for your real interview.",
+      "diagnosticTitle": "RIASEC Vocational Diagnostic with AI",
+      "diagnosticText": "Discovering your professional path is the first step to building the career you deserve. MoonJab's RIASEC vocational diagnostic analyzes your professional personality profile and recommends industries, careers, and roles where you have the highest probability of success and long-term satisfaction. The diagnostic is completely free, takes less than 10 minutes, and AI generates a personalized report. More than 10,000 students across Peru, Mexico, Colombia, Argentina, and Chile have discovered their vocational profile with MoonJab.",
+      "latamTitle": "The Platform for Students Across Latin America",
+      "latamText": "MoonJab is available for university students and young professionals across all of Latin America. We offer updated salary guides by role and country, interview question banks by company, and CV templates adapted to the markets of Peru, Mexico, Colombia, Argentina, and Chile. All content is in Spanish, designed to help you land internships or your first job at major regional companies like BBVA, Deloitte, McKinsey, Rappi, MercadoLibre, Falabella, and more."
+    },
+    "conversion": {
+      "badge": "Your path to employment",
+      "title": "From uncertainty to employment,",
+      "titleHighlight": "in 3 steps",
+      "subtitle": "Thousands of students in LATAM have already transformed their job search with MoonJab. Now it's your turn.",
+      "step1": "Diagnostic",
+      "step2": "AI CV",
+      "step3": "Interviews",
+      "step4": "Your job",
+      "card1Stat": "94%",
+      "card1StatDesc": "pass the ATS filter",
+      "card1Label": "CV Builder · ATS",
+      "card1Title": "Your CV passes the ATS filter — or we improve it",
+      "card1Text": "75% of CVs are rejected before a human sees them. MoonJab's AI builds and optimizes your resume for ATS systems in under 10 minutes.",
+      "card1Cta": "Create my CV free",
+      "card2Stat": "10 min",
+      "card2StatDesc": "to know yourself better",
+      "card2Label": "Vocational Diagnostic",
+      "card2Badge": "100% Free",
+      "card2Title": "Discover which career you'll thrive in",
+      "card2Text": "The RIASEC test analyzes your personality and interests to guide you toward roles where you have the highest probability of success. +10,000 students have used it.",
+      "card2Cta": "Take my diagnostic",
+      "card3Stat": "87%",
+      "card3StatDesc": "of users get an interview in 30 days",
+      "card3Label": "Interview Simulator",
+      "card3Title": "Arrive prepared — and get the job",
+      "card3Text": "Practice with an AI that acts as a real recruiter. Immediate feedback, STAR method, adapted to 50+ companies in LATAM.",
+      "card3Cta": "Practice now",
+      "trustFree": "No credit card required",
+      "trustTime": "Ready in 5 minutes",
+      "trustCountries": "+15 LATAM countries"
     }
   },
   "onboarding": {

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { Card } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { VALUES } from '@/lib/constants';
@@ -71,7 +71,7 @@ export const ValuesStep = ({ selected, onChange }: ValuesStepProps) => {
               <button
                 key={value.id}
                 onClick={() => toggleValue(value.id)}
-                className="p-3 rounded-xl border-2 hover:border-primary transition-all duration-300 text-left hover:shadow-clovely-sm hover:-translate-y-0.5"
+                className="p-3 rounded-xl border-2 hover:border-primary transition-all duration-300 text-left hover:shadow-mj-sm hover:-translate-y-0.5"
               >
                 <div className="flex items-center gap-3">
                   <DynamicIcon name={value.icon} size={20} className="text-primary" />
@@ -105,7 +105,7 @@ export const ValuesStep = ({ selected, onChange }: ValuesStepProps) => {
                     onDragStart={(e) => handleDragStart(e, id)}
                     onDragOver={handleDragOver}
                     onDrop={(e) => handleDrop(e, id)}
-                    className="p-3 rounded-2xl border-2 bg-card cursor-move hover:shadow-clovely-lg transition-all duration-300 hover:-translate-y-1 border-primary/20"
+                    className="p-3 rounded-2xl border-2 bg-card cursor-move hover:shadow-mj-lg transition-all duration-300 hover:-translate-y-1 border-primary/20"
                   >
                     <div className="flex items-center gap-3">
                       <GripVertical className="h-4 w-4 text-muted-foreground" />

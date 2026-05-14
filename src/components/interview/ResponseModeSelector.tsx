@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next';
+﻿import { useTranslation } from 'react-i18next';
 import { Card } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
@@ -24,7 +24,7 @@ export function ResponseModeSelector({ value, onChange }: ResponseModeSelectorPr
       >
         <Label htmlFor="mode-text" className="cursor-pointer">
           <Card className={`p-4 flex flex-col items-center gap-2 transition-all hover:border-primary/50 ${
-            value === 'text' ? 'border-primary bg-primary/5 shadow-clovely-md' : 'border-border'
+            value === 'text' ? 'border-primary bg-primary/5 shadow-mj-md' : 'border-border'
           }`}>
             <RadioGroupItem value="text" id="mode-text" className="sr-only" />
             <div className={`p-3 rounded-xl ${value === 'text' ? 'bg-primary/10' : 'bg-muted'}`}>
@@ -38,7 +38,7 @@ export function ResponseModeSelector({ value, onChange }: ResponseModeSelectorPr
 
         <Label htmlFor="mode-video" className="cursor-pointer">
           <Card className={`p-4 flex flex-col items-center gap-2 transition-all hover:border-primary/50 ${
-            value === 'video' ? 'border-primary bg-primary/5 shadow-clovely-md' : 'border-border'
+            value === 'video' ? 'border-primary bg-primary/5 shadow-mj-md' : 'border-border'
           }`}>
             <RadioGroupItem value="video" id="mode-video" className="sr-only" />
             <div className={`p-3 rounded-xl ${value === 'video' ? 'bg-primary/10' : 'bg-muted'}`}>

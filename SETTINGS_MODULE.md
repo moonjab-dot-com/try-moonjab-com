@@ -1,4 +1,4 @@
-# Módulo de Configuración (Settings) - Clovely
+﻿# Módulo de Configuración (Settings) - MoonJab
 
 ## Descripción General
 
@@ -68,7 +68,7 @@ El módulo de Configuración centraliza la administración de cuenta, privacidad
 
 ### Store Principal: `useSettingsStore.ts`
 
-**Estado persistente (localStorage: `clovely-settings`):**
+**Estado persistente (localStorage: `MoonJab-settings`):**
 ```typescript
 {
   theme: 'system' | 'light' | 'dark',
@@ -231,8 +231,8 @@ const passwordSchema = z.object({
 ## Persistencia
 
 **LocalStorage Keys:**
-- `clovely-settings` - Configuración completa del usuario
-- `clovely-auth` - Datos de usuario (incluye perfil)
+- `MoonJab-settings` - Configuración completa del usuario
+- `MoonJab-auth` - Datos de usuario (incluye perfil)
 
 **Estructura en localStorage:**
 ```json

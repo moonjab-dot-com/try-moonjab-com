@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+﻿import { cn } from "@/lib/utils";
 
 function Skeleton({
   className,
@@ -14,7 +14,7 @@ function Skeleton({
 
 function SkeletonCard() {
   return (
-    <div className="rounded-2xl border border-border bg-card p-6 shadow-clovely-md">
+    <div className="rounded-2xl border border-border bg-card p-6 shadow-mj-md">
       <div className="space-y-4">
         <Skeleton className="h-12 w-12 rounded-xl" />
         <div className="space-y-2">

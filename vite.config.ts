@@ -97,6 +97,35 @@ export default defineConfig(() => ({
       },
     }),
   ].filter(Boolean),
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor-react': ['react', 'react-dom', 'react-router-dom'],
+          'vendor-framer': ['framer-motion'],
+          'vendor-supabase': ['@supabase/supabase-js'],
+          'vendor-radix-core': [
+            '@radix-ui/react-dialog',
+            '@radix-ui/react-dropdown-menu',
+            '@radix-ui/react-tooltip',
+            '@radix-ui/react-tabs',
+          ],
+          'vendor-radix-ui': [
+            '@radix-ui/react-select',
+            '@radix-ui/react-popover',
+            '@radix-ui/react-accordion',
+            '@radix-ui/react-scroll-area',
+          ],
+          'vendor-charts': ['recharts'],
+          'vendor-forms': ['react-hook-form', 'zod'],
+          'vendor-i18n': ['react-i18next', 'i18next'],
+          'vendor-date': ['date-fns'],
+          'vendor-utils': ['clsx', 'tailwind-merge', 'class-variance-authority'],
+        },
+      },
+    },
+    chunkSizeWarningLimit: 600,
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

@@ -4,17 +4,17 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml"
   xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
 
-  <!-- ── BLOG ARTICLES ─────────────────────────────────────────────────── -->
-  <!-- IDs match blogPosts array in src/pages/Blog.tsx                     -->
-  <!-- Update <lastmod> when each article is revised                        -->
+  <!-- ── BLOG ARTICLES ──────────────────────────────────────────────────── -->
+  <!-- Slugs match the `id` field in blogPosts array in src/pages/Blog.tsx  -->
 
+  <!-- ENTREVISTAS -->
   <url>
-    <loc>https://moonjab.com/blog/como-preparar-una-entrevista-tecnica</loc>
+    <loc>https://moonjab.com/blog/preparar-entrevista-tecnica-2025</loc>
     <lastmod>2024-12-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.82</priority>
-    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/como-preparar-una-entrevista-tecnica"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/como-preparar-una-entrevista-tecnica"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/preparar-entrevista-tecnica-2025"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/preparar-entrevista-tecnica-2025"/>
     <news:news>
       <news:publication>
         <news:name>MoonJab Blog</news:name>
@@ -26,63 +26,339 @@
   </url>
 
   <url>
-    <loc>https://moonjab.com/blog/networking-para-conseguir-empleo</loc>
-    <lastmod>2024-12-02</lastmod>
+    <loc>https://moonjab.com/blog/preguntas-conductuales-entrevista</loc>
+    <lastmod>2025-02-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.78</priority>
-    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/networking-para-conseguir-empleo"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/networking-para-conseguir-empleo"/>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/preguntas-conductuales-entrevista"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/preguntas-conductuales-entrevista"/>
     <news:news>
       <news:publication>
         <news:name>MoonJab Blog</news:name>
         <news:language>es</news:language>
       </news:publication>
-      <news:publication_date>2024-12-02</news:publication_date>
-      <news:title>El poder del networking en tu búsqueda de empleo</news:title>
+      <news:publication_date>2025-02-10</news:publication_date>
+      <news:title>Las 15 preguntas conductuales más frecuentes en entrevistas de trabajo</news:title>
     </news:news>
   </url>
 
   <url>
-    <loc>https://moonjab.com/blog/10-errores-en-tu-cv</loc>
-    <lastmod>2024-11-28</lastmod>
+    <loc>https://moonjab.com/blog/primera-entrevista-trabajo-guia</loc>
+    <lastmod>2025-02-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.82</priority>
-    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/10-errores-en-tu-cv"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/10-errores-en-tu-cv"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/primera-entrevista-trabajo-guia"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/primera-entrevista-trabajo-guia"/>
+    <news:news>
+      <news:publication>
+        <news:name>MoonJab Blog</news:name>
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>2025-02-05</news:publication_date>
+      <news:title>Tu primera entrevista de trabajo: guía completa para no fallar</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://moonjab.com/blog/metodo-star-respuestas-entrevista</loc>
+    <lastmod>2025-01-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/metodo-star-respuestas-entrevista"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/metodo-star-respuestas-entrevista"/>
+    <news:news>
+      <news:publication>
+        <news:name>MoonJab Blog</news:name>
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>2025-01-28</news:publication_date>
+      <news:title>Método STAR para entrevistas: la técnica definitiva para respuestas memorables</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://moonjab.com/blog/errores-fatales-entrevista</loc>
+    <lastmod>2025-01-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/errores-fatales-entrevista"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/errores-fatales-entrevista"/>
+    <news:news>
+      <news:publication>
+        <news:name>MoonJab Blog</news:name>
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>2025-01-22</news:publication_date>
+      <news:title>8 errores que arruinan una entrevista de trabajo (y cómo evitarlos)</news:title>
+    </news:news>
+  </url>
+
+  <!-- CV -->
+  <url>
+    <loc>https://moonjab.com/blog/como-hacer-un-cv-sin-experiencia</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/como-hacer-un-cv-sin-experiencia"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/como-hacer-un-cv-sin-experiencia"/>
+    <news:news>
+      <news:publication>
+        <news:name>MoonJab Blog</news:name>
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>2025-01-15</news:publication_date>
+      <news:title>Cómo hacer un CV sin experiencia laboral (guía completa 2026)</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://moonjab.com/blog/que-es-ats-y-como-optimizar-tu-cv</loc>
+    <lastmod>2025-01-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/que-es-ats-y-como-optimizar-tu-cv"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/que-es-ats-y-como-optimizar-tu-cv"/>
+    <news:news>
+      <news:publication>
+        <news:name>MoonJab Blog</news:name>
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>2025-01-10</news:publication_date>
+      <news:title>¿Qué es ATS y cómo optimizar tu CV para pasar los filtros automáticos?</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://moonjab.com/blog/errores-cv-evitar</loc>
+    <lastmod>2024-11-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/errores-cv-evitar"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/errores-cv-evitar"/>
     <news:news>
       <news:publication>
         <news:name>MoonJab Blog</news:name>
         <news:language>es</news:language>
       </news:publication>
       <news:publication_date>2024-11-28</news:publication_date>
-      <news:title>10 errores en tu CV que te están costando entrevistas</news:title>
+      <news:title>10 errores en tu CV que te están costando entrevistas (y cómo evitarlos)</news:title>
     </news:news>
   </url>
 
   <url>
-    <loc>https://moonjab.com/blog/como-cambiar-de-carrera-a-los-30</loc>
+    <loc>https://moonjab.com/blog/carta-presentacion-2025</loc>
+    <lastmod>2025-02-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.78</priority>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/carta-presentacion-2025"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/carta-presentacion-2025"/>
+    <news:news>
+      <news:publication>
+        <news:name>MoonJab Blog</news:name>
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>2025-02-12</news:publication_date>
+      <news:title>Cómo escribir una carta de presentación efectiva en 2025</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://moonjab.com/blog/palabras-clave-cv-ats-latam</loc>
+    <lastmod>2025-01-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.78</priority>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/palabras-clave-cv-ats-latam"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/palabras-clave-cv-ats-latam"/>
+    <news:news>
+      <news:publication>
+        <news:name>MoonJab Blog</news:name>
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>2025-01-18</news:publication_date>
+      <news:title>Las palabras clave que debes incluir en tu CV para sistemas ATS en LATAM</news:title>
+    </news:news>
+  </url>
+
+  <!-- NETWORKING -->
+  <url>
+    <loc>https://moonjab.com/blog/networking-busqueda-empleo</loc>
+    <lastmod>2024-12-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.78</priority>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/networking-busqueda-empleo"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/networking-busqueda-empleo"/>
+    <news:news>
+      <news:publication>
+        <news:name>MoonJab Blog</news:name>
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>2024-12-02</news:publication_date>
+      <news:title>El poder del networking en tu búsqueda de empleo en LATAM</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://moonjab.com/blog/linkedin-estudiantes-universitarios</loc>
+    <lastmod>2025-02-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/linkedin-estudiantes-universitarios"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/linkedin-estudiantes-universitarios"/>
+    <news:news>
+      <news:publication>
+        <news:name>MoonJab Blog</news:name>
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>2025-02-15</news:publication_date>
+      <news:title>LinkedIn para estudiantes universitarios: cómo crear un perfil que consiga entrevistas</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://moonjab.com/blog/entrevistas-informativas-como-conseguirlas</loc>
+    <lastmod>2025-02-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.78</priority>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/entrevistas-informativas-como-conseguirlas"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/entrevistas-informativas-como-conseguirlas"/>
+    <news:news>
+      <news:publication>
+        <news:name>MoonJab Blog</news:name>
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>2025-02-08</news:publication_date>
+      <news:title>Entrevistas informativas: la estrategia secreta para entrar a empresas sin postular</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://moonjab.com/blog/networking-introvertidos</loc>
+    <lastmod>2025-02-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/networking-introvertidos"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/networking-introvertidos"/>
+    <news:news>
+      <news:publication>
+        <news:name>MoonJab Blog</news:name>
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>2025-02-01</news:publication_date>
+      <news:title>Networking para introvertidos: conecta auténticamente sin fingir ser extrovertido</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://moonjab.com/blog/presencia-digital-profesional</loc>
+    <lastmod>2025-01-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/presencia-digital-profesional"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/presencia-digital-profesional"/>
+    <news:news>
+      <news:publication>
+        <news:name>MoonJab Blog</news:name>
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>2025-01-25</news:publication_date>
+      <news:title>Cómo construir tu marca personal digital para atraer oportunidades laborales</news:title>
+    </news:news>
+  </url>
+
+  <!-- CARRERA -->
+  <url>
+    <loc>https://moonjab.com/blog/primer-trabajo-estudiante-universitario</loc>
+    <lastmod>2025-01-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/primer-trabajo-estudiante-universitario"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/primer-trabajo-estudiante-universitario"/>
+    <news:news>
+      <news:publication>
+        <news:name>MoonJab Blog</news:name>
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>2025-01-05</news:publication_date>
+      <news:title>Cómo conseguir tu primer trabajo siendo estudiante universitario en LATAM</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://moonjab.com/blog/practicas-profesionales-latam</loc>
+    <lastmod>2025-01-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/practicas-profesionales-latam"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/practicas-profesionales-latam"/>
+    <news:news>
+      <news:publication>
+        <news:name>MoonJab Blog</news:name>
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>2025-01-02</news:publication_date>
+      <news:title>Prácticas profesionales en LATAM: cómo conseguirlas y destacar en 2025</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://moonjab.com/blog/cambio-carrera-guia</loc>
     <lastmod>2024-11-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
-    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/como-cambiar-de-carrera-a-los-30"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/como-cambiar-de-carrera-a-los-30"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/cambio-carrera-guia"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/cambio-carrera-guia"/>
     <news:news>
       <news:publication>
         <news:name>MoonJab Blog</news:name>
         <news:language>es</news:language>
       </news:publication>
       <news:publication_date>2024-11-25</news:publication_date>
-      <news:title>Guía completa para cambiar de carrera a los 30</news:title>
+      <news:title>Cómo cambiar de carrera profesional: guía completa paso a paso</news:title>
     </news:news>
   </url>
 
   <url>
-    <loc>https://moonjab.com/blog/como-negociar-tu-salario</loc>
+    <loc>https://moonjab.com/blog/primer-empleo-90-dias</loc>
+    <lastmod>2025-02-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.78</priority>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/primer-empleo-90-dias"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/primer-empleo-90-dias"/>
+    <news:news>
+      <news:publication>
+        <news:name>MoonJab Blog</news:name>
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>2025-02-18</news:publication_date>
+      <news:title>Los primeros 90 días en tu primer trabajo: cómo destacar desde el inicio</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://moonjab.com/blog/habilidades-digitales-2025-latam</loc>
+    <lastmod>2025-02-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.78</priority>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/habilidades-digitales-2025-latam"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/habilidades-digitales-2025-latam"/>
+    <news:news>
+      <news:publication>
+        <news:name>MoonJab Blog</news:name>
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>2025-02-03</news:publication_date>
+      <news:title>Las 10 habilidades digitales más demandadas en LATAM 2025</news:title>
+    </news:news>
+  </url>
+
+  <!-- SALARIO -->
+  <url>
+    <loc>https://moonjab.com/blog/negociar-salario</loc>
     <lastmod>2024-11-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
-    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/como-negociar-tu-salario"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/como-negociar-tu-salario"/>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/negociar-salario"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/negociar-salario"/>
     <news:news>
       <news:publication>
         <news:name>MoonJab Blog</news:name>
@@ -90,6 +366,74 @@
       </news:publication>
       <news:publication_date>2024-11-20</news:publication_date>
       <news:title>Cómo negociar tu salario (sin sentir que pides demasiado)</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://moonjab.com/blog/sueldos-tecnologia-latam-2025</loc>
+    <lastmod>2025-02-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/sueldos-tecnologia-latam-2025"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/sueldos-tecnologia-latam-2025"/>
+    <news:news>
+      <news:publication>
+        <news:name>MoonJab Blog</news:name>
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>2025-02-20</news:publication_date>
+      <news:title>Sueldos en tecnología en LATAM 2025: rangos reales por rol y país</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://moonjab.com/blog/pedir-aumento-sueldo-estrategia</loc>
+    <lastmod>2025-01-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.78</priority>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/pedir-aumento-sueldo-estrategia"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/pedir-aumento-sueldo-estrategia"/>
+    <news:news>
+      <news:publication>
+        <news:name>MoonJab Blog</news:name>
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>2025-01-30</news:publication_date>
+      <news:title>Cómo pedir un aumento de sueldo: scripts reales y el timing correcto</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://moonjab.com/blog/beneficios-laborales-negociar-latam</loc>
+    <lastmod>2025-01-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/beneficios-laborales-negociar-latam"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/beneficios-laborales-negociar-latam"/>
+    <news:news>
+      <news:publication>
+        <news:name>MoonJab Blog</news:name>
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>2025-01-15</news:publication_date>
+      <news:title>Beneficios laborales que puedes negociar más allá del salario en LATAM</news:title>
+    </news:news>
+  </url>
+
+  <url>
+    <loc>https://moonjab.com/blog/freelance-vs-empleo-economia-latam</loc>
+    <lastmod>2025-01-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/blog/freelance-vs-empleo-economia-latam"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/blog/freelance-vs-empleo-economia-latam"/>
+    <news:news>
+      <news:publication>
+        <news:name>MoonJab Blog</news:name>
+        <news:language>es</news:language>
+      </news:publication>
+      <news:publication_date>2025-01-08</news:publication_date>
+      <news:title>Freelance vs empleo formal en LATAM 2025: comparativa real con números</news:title>
     </news:news>
   </url>
 

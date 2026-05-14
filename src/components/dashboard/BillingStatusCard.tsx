@@ -37,41 +37,50 @@ export function BillingStatusCard() {
     : null;
 
   return (
-    <div className={`rounded-xl border p-4 transition-all ${isPremium ? 'border-primary/20 bg-primary/[0.03]' : 'border-border/50'}`}>
+    <div className={`rounded-xl border p-4 transition-all ${isPremium ? 'border-primary/25 bg-primary/[0.03]' : 'border-border/40 bg-card'}`}>
       <div className="flex items-center justify-between mb-3">
         <div className="flex items-center gap-2">
-          {isPremium && <Crown className="h-4 w-4 text-primary" />}
-          <p className="text-sm font-semibold">
-            Plan {isPremium ? 'Pro' : 'Free'}
-          </p>
+          <div className={`w-6 h-6 rounded-md flex items-center justify-center ${isPremium ? 'bg-primary/10' : 'bg-muted'}`}>
+            <Crown className={`h-3 w-3 ${isPremium ? 'text-primary' : 'text-muted-foreground'}`} />
+          </div>
+          <p className="text-sm font-semibold">Plan {isPremium ? 'Pro' : 'Free'}</p>
         </div>
-        <Badge variant={isPremium ? 'default' : 'secondary'} className="text-[10px] h-5">
+        <Badge
+          variant={isPremium ? 'default' : 'secondary'}
+          className={`text-[10px] h-5 ${isPremium ? 'bg-primary/10 text-primary border-primary/20 hover:bg-primary/10' : ''}`}
+        >
           {isPremium ? 'Activo' : 'Básico'}
         </Badge>
       </div>
 
       {isPremium && renewalDate && (
-        <div className="flex items-center gap-1.5 text-xs text-muted-foreground mb-3">
-          <Calendar className="h-3 w-3" />
-          <span>Próxima renovación: {renewalDate}</span>
+        <div className="flex items-center gap-1.5 text-[11px] text-muted-foreground mb-3">
+          <Calendar className="h-3 w-3 flex-shrink-0" />
+          <span>Renueva el {renewalDate}</span>
         </div>
       )}
 
+      {!isPremium && (
+        <p className="text-[11px] text-muted-foreground mb-3 leading-relaxed">
+          CV Harvard + Entrevistas ilimitadas por $5/mes
+        </p>
+      )}
+
       <Button
-        variant={isPremium ? 'outline' : 'default'}
+        variant={isPremium ? 'outline' : 'ghost'}
         size="sm"
-        className="w-full h-8 text-xs"
+        className={`w-full h-8 text-xs gap-1.5 ${!isPremium ? 'text-muted-foreground hover:text-foreground' : ''}`}
         onClick={handleAction}
         disabled={loading}
       >
         {loading ? (
-          <Loader2 className="h-3 w-3 animate-spin mr-1" />
+          <Loader2 className="h-3 w-3 animate-spin" />
         ) : isPremium ? (
-          <ExternalLink className="h-3 w-3 mr-1" />
+          <ExternalLink className="h-3 w-3" />
         ) : (
-          <Crown className="h-3 w-3 mr-1" />
+          <Crown className="h-3 w-3" />
         )}
-        {isPremium ? 'Gestionar suscripción' : 'Upgrade a Pro — $5/mes'}
+        {isPremium ? 'Gestionar suscripción' : 'Ver beneficios Pro'}
       </Button>
     </div>
   );

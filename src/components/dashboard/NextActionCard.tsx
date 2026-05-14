@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, FileText, Crown, Rocket, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, FileText, Mic, Rocket, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface NextActionCardProps {
@@ -10,7 +10,6 @@ interface NextActionCardProps {
   isPremium: boolean;
   isTrial: boolean;
   dashboardBasePath: string;
-  onUpgrade: () => void;
 }
 
 /**
@@ -24,15 +23,13 @@ export const NextActionCard = ({
   isPremium,
   isTrial,
   dashboardBasePath,
-  onUpgrade,
 }: NextActionCardProps) => {
   // Decision tree → exactly ONE next action
   let icon = Rocket;
   let title = 'Crea tu CV en 2 minutos';
   let subtitle = 'El primer paso para destacar frente a recruiters.';
   let ctaLabel = 'Empezar ahora';
-  let ctaHref: string | null = `${dashboardBasePath}/cvs/new`;
-  let onClick: (() => void) | undefined;
+  let ctaHref = `${dashboardBasePath}/cvs/new`;
   let badge = 'Paso 1 · 2 min';
   let progress: number | null = null;
 
@@ -45,13 +42,12 @@ export const NextActionCard = ({
     badge = `${100 - cvScore}% restante`;
     progress = cvScore;
   } else if (hasCV && cvScore >= 70 && !isPremium && !isTrial) {
-    icon = Crown;
-    title = '¡Tu CV está listo! Hazlo destacar';
-    subtitle = 'Desbloquea la plantilla Harvard exclusiva por $5/mes.';
-    ctaLabel = 'Desbloquear Premium';
-    ctaHref = null;
-    onClick = onUpgrade;
-    badge = 'Recomendado';
+    icon = Mic;
+    title = '¡CV listo! Practica entrevistas con IA';
+    subtitle = 'Las entrevistas simuladas con IA son exclusivas de Pro. Consigue tu primer empleo más rápido.';
+    ctaLabel = 'Ver plan Pro';
+    ctaHref = '/pricing';
+    badge = 'Pro exclusivo';
     progress = cvScore;
   } else if (hasCV && isPremium) {
     icon = CheckCircle2;
@@ -103,17 +99,11 @@ export const NextActionCard = ({
           </div>
         </div>
         <div className="flex-shrink-0 sm:self-center">
-          {ctaHref ? (
-            <Link to={ctaHref}>
-              <Button size="lg" className="w-full sm:w-auto gap-2 font-semibold shadow-md">
-                {ctaLabel} <ArrowRight className="h-4 w-4" />
-              </Button>
-            </Link>
-          ) : (
-            <Button size="lg" onClick={onClick} className="w-full sm:w-auto gap-2 font-semibold shadow-md">
-              <Sparkles className="h-4 w-4" /> {ctaLabel}
+          <Link to={ctaHref}>
+            <Button size="lg" className="w-full sm:w-auto gap-2 font-semibold shadow-md">
+              {ctaLabel} <ArrowRight className="h-4 w-4" />
             </Button>
-          )}
+          </Link>
         </div>
       </div>
     </motion.div>

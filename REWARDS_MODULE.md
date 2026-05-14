@@ -1,12 +1,12 @@
-# Módulo de Recompensas y Coins - Clovely
+﻿# Módulo de Recompensas y Coins - MoonJab
 
 ## Descripción General
 
-El módulo de Recompensas gamifica la experiencia del usuario mediante un sistema de puntos (Clovely Coins), logros, niveles y recompensas canjeables. Aumenta la retención y motiva a los usuarios a completar acciones constructivas.
+El módulo de Recompensas gamifica la experiencia del usuario mediante un sistema de puntos (MoonJab Coins), logros, niveles y recompensas canjeables. Aumenta la retención y motiva a los usuarios a completar acciones constructivas.
 
 ## Características Principales
 
-### 1. Sistema de Coins (Clovely Coins)
+### 1. Sistema de Coins (MoonJab Coins)
 
 **Formas de ganar coins:**
 - Completar microacción: +10 coins
@@ -27,7 +27,7 @@ El módulo de Recompensas gamifica la experiencia del usuario mediante un sistem
 
 | ID | Título | Descripción | Coins | Condición |
 |---|---|---|---|---|
-| `cv_created` | Primer CV | Creaste tu primer CV en Clovely | 20 | Crear primer CV |
+| `cv_created` | Primer CV | Creaste tu primer CV en MoonJab | 20 | Crear primer CV |
 | `first_interview` | Primera Entrevista | Completaste tu primera simulación | 30 | Completar primera entrevista |
 | `microactions_10` | 10 Microacciones | Completaste 10 microacciones | 15 | 10 microacciones completadas |
 | `microactions_50` | 50 Microacciones | Completaste 50 microacciones | 50 | 50 microacciones completadas |
@@ -163,7 +163,7 @@ Al aplicar a oferta:
 
 ## Persistencia
 
-**LocalStorage key:** `clovely-rewards`
+**LocalStorage key:** `MoonJab-rewards`
 
 **Estructura persistida:**
 ```json

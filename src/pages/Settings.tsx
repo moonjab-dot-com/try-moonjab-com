@@ -1,4 +1,4 @@
-import { SEOHead } from '@/components/SEOHead';
+﻿import { SEOHead } from '@/components/SEOHead';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { User, Lock, Bell, Palette, CreditCard, Briefcase, Globe, Download } from 'lucide-react';
@@ -50,7 +50,7 @@ export default function Settings() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-10">
+    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-10 pt-14 sm:pt-10">
       <SEOHead title="Configuración" description="Personaliza tu experiencia en MoonJab." path="/settings" noindex />
       <div className="mb-8">
         <h1 className="text-2xl sm:text-3xl font-bold tracking-tight mb-1">{t('settings.title')}</h1>
@@ -99,7 +99,7 @@ export default function Settings() {
                     className={cn(
                       'w-full flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-sm text-left transition-all duration-200',
                       isActive
-                        ? 'bg-primary text-primary-foreground font-medium shadow-clovely-sm'
+                        ? 'bg-primary text-primary-foreground font-medium shadow-mj-sm'
                         : 'text-muted-foreground hover:text-foreground hover:bg-muted/60'
                     )}
                   >

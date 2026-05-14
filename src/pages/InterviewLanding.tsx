@@ -1,13 +1,11 @@
-import { SEOHead } from '@/components/SEOHead';
+﻿import { SEOHead } from '@/components/SEOHead';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Mic, TrendingUp, Target, Clock, Bot, Sparkles, Lock, Crown } from "lucide-react";
-import { useNavigate } from "react-router-dom";
+import { Mic, TrendingUp, Target, Clock, Bot, Sparkles, Lock } from "lucide-react";
+import { useNavigate, Link } from "react-router-dom";
 import { useInterviewStore } from "@/store/useInterviewStore";
 import { useAuthStore } from "@/store/useAuthStore";
 import { motion } from "framer-motion";
-import { useState } from "react";
-import { UpgradeModal } from "@/components/UpgradeModal";
 import { useTranslation } from 'react-i18next';
 
 export default function InterviewLanding() {
@@ -17,7 +15,6 @@ export default function InterviewLanding() {
   const { isGuestMode, user } = useAuthStore();
   const isPremium = user?.plan === 'premium';
   const isLocked = isGuestMode || !isPremium;
-  const [showUpgrade, setShowUpgrade] = useState(false);
   const recentSessions = sessions.slice(-3).reverse();
 
   const locale = i18n.language?.startsWith('es') ? 'es-ES' : 'en-US';
@@ -37,14 +34,14 @@ export default function InterviewLanding() {
 
   const handleStartInterview = (path: string) => {
     if (isLocked) {
-      setShowUpgrade(true);
+      navigate('/pricing');
     } else {
       navigate(path);
     }
   };
 
   return (
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-10 space-y-10">
+    <div className="max-w-5xl mx-auto px-4 sm:px-6 py-8 sm:py-10 pt-14 sm:pt-10 space-y-10">
       <SEOHead title="Entrevistas con IA" description="Practica entrevistas laborales con inteligencia artificial. Recibe feedback en tiempo real y mejora tus respuestas." path="/interview" />
       {/* Hero */}
       <motion.div 
@@ -60,9 +57,9 @@ export default function InterviewLanding() {
         </div>
         
         <div className="flex flex-col sm:flex-row gap-3">
-          <Button 
-            size="lg" 
-            onClick={() => handleStartInterview('/dashboard/interviews/ai')} 
+          <Button
+            size="lg"
+            onClick={() => handleStartInterview('/dashboard/interviews/ai')}
             className="h-12 gap-2 font-semibold"
             variant={isLocked ? "outline" : "default"}
           >
@@ -71,9 +68,9 @@ export default function InterviewLanding() {
             {t('interviews.landing.voiceBtn')}
             {!isLocked && <Sparkles className="w-4 h-4" />}
           </Button>
-          <Button 
-            size="lg" 
-            onClick={() => handleStartInterview('/dashboard/interviews/setup')} 
+          <Button
+            size="lg"
+            onClick={() => handleStartInterview('/dashboard/interviews/setup')}
             variant="outline"
             className="h-12 gap-2"
           >
@@ -81,6 +78,16 @@ export default function InterviewLanding() {
             <Mic className="w-4.5 h-4.5" style={{ width: 18, height: 18 }} />
             {t('interviews.landing.textBtn')}
           </Button>
+
+          {/* Pro-only notice for non-premium users */}
+          {isLocked && (
+            <p className="text-xs text-muted-foreground self-center">
+              Función exclusiva de Pro.{' '}
+              <Link to="/pricing" className="text-primary hover:underline font-medium">
+                Ver planes →
+              </Link>
+            </p>
+          )}
         </div>
       </motion.div>
 
@@ -115,7 +122,7 @@ export default function InterviewLanding() {
           <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-wider">{t('interviews.landing.recentSessions')}</h2>
           <div className="space-y-2">
             {recentSessions.map((session) => (
-              <Card key={session.id} className="p-4 border-border/40 hover:border-primary/20 hover:shadow-clovely-sm transition-all duration-200">
+              <Card key={session.id} className="p-4 border-border/40 hover:border-primary/20 hover:shadow-mj-sm transition-all duration-200">
                 <div className="flex items-center justify-between">
                   <div className="space-y-0.5">
                     <h3 className="font-medium text-sm">{session.role}</h3>
@@ -144,7 +151,7 @@ export default function InterviewLanding() {
         className="grid md:grid-cols-3 gap-4"
       >
         {benefits.map((benefit, i) => (
-          <Card key={i} className="p-6 border-border/40 hover:border-primary/20 hover:shadow-clovely-md transition-all duration-300 group">
+          <Card key={i} className="p-6 border-border/40 hover:border-primary/20 hover:shadow-mj-md transition-all duration-300 group">
             <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/15 transition-colors">
               <benefit.icon className="w-5 h-5 text-primary" />
             </div>
@@ -154,7 +161,6 @@ export default function InterviewLanding() {
         ))}
       </motion.div>
 
-      <UpgradeModal open={showUpgrade} onClose={() => setShowUpgrade(false)} feature={t('interviews.landing.aiInterviews')} />
     </div>
   );
 }

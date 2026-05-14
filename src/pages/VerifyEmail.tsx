@@ -1,3 +1,4 @@
+import { SEOHead } from '@/components/SEOHead';
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -35,6 +36,7 @@ const VerifyEmail = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-background p-6">
+      <SEOHead title="Verifica tu Email" description="Revisa tu correo para confirmar tu cuenta MoonJab." path="/verify-email" noindex />
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}

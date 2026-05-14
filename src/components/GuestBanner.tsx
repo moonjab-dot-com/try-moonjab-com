@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { Alert, AlertDescription } from '@/components/ui/alert';
@@ -25,7 +25,7 @@ export function GuestBanner() {
             transition={{ duration: 0.4, ease: "easeOut" }}
             className="sticky top-0 z-40"
           >
-            <Alert className="rounded-none border-x-0 bg-primary/5 border-2 border-primary/20 shadow-clovely-md">
+            <Alert className="rounded-none border-x-0 bg-primary/5 border-2 border-primary/20 shadow-moonjab-md">
               <Sparkles className="h-4 w-4 text-primary animate-pulse hidden sm:block" />
               <AlertDescription className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 sm:gap-4">
                 <span className="text-xs sm:text-sm">
@@ -37,7 +37,7 @@ export function GuestBanner() {
                     size="sm"
                     onClick={() => setShowModal(true)}
                     variant="premium"
-                    className="shrink-0 shadow-clovely-glow text-xs h-8"
+                    className="shrink-0 shadow-moonjab-glow text-xs h-8"
                   >
                     Crear mi cuenta
                   </Button>
