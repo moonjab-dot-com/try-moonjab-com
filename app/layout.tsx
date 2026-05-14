@@ -38,8 +38,8 @@ export const metadata: Metadata = {
     "inteligencia artificial carrera",
   ],
   icons: {
-    icon: "/clovely-logo.png",
-    apple: "/clovely-logo.png",
+    icon: "/moonjab-logo.png",
+    apple: "/moonjab-logo.png",
   },
   openGraph: {
     title: "MoonJab — Tu carrera LATAM con IA",
