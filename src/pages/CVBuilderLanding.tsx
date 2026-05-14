@@ -60,12 +60,18 @@ const CVBuilderLanding = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEOHead
-        title="CV Builder con IA para Estudiantes LATAM"
+        title="CV Builder con IA — Crear Currículum ATS para Estudiantes"
         description="Crea tu CV profesional con IA en minutos. Optimizado para ATS, plantillas profesionales y análisis IA. Diseñado para estudiantes en Perú, México, Colombia y LATAM."
         path="/cv-builder"
-        keywords="cv builder con IA, curriculum vitae ATS, hacer cv estudiante, crear currículum gratis, cv sin experiencia LATAM"
-        breadcrumbs={[{ name: 'CV Builder', url: 'https://moonjab.com/cv-builder' }]}
-        schema={[jsonLd, faqSchema]}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
       {/* Nav */}

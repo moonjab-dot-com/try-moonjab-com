@@ -9,32 +9,22 @@ import { INTERVIEW_ROLES } from '@/data/interviewQuestions';
 
 const fade = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } };
 
-const schema = [
-  {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: '¿Cómo me preparo para una entrevista de trabajo en LATAM?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Para prepararte para una entrevista en LATAM: 1) Investiga la empresa y el rol con 2-3 días de anticipación. 2) Prepara respuestas para las preguntas conductuales más comunes usando la metodología STAR (Situación, Tarea, Acción, Resultado). 3) Practica las preguntas técnicas específicas del rol. 4) Prepara 3-4 preguntas inteligentes para hacerle al entrevistador. 5) Simula la entrevista con herramientas como MoonJab.' },
-      },
-      {
-        '@type': 'Question',
-        name: '¿Cuáles son las preguntas más comunes en entrevistas de trabajo?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Las preguntas más frecuentes en entrevistas en LATAM son: "Cuéntame sobre ti", "¿Por qué quieres trabajar aquí?", "¿Cuáles son tus fortalezas y debilidades?", "¿Dónde te ves en 5 años?", y preguntas conductuales tipo "Cuéntame de una vez que...". Las preguntas técnicas varían por rol y empresa.' },
-      },
-    ],
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    name: 'Preguntas de Entrevista por Rol 2025 — Guía LATAM',
-    url: 'https://moonjab.com/preguntas-de-entrevista',
-    description: 'Las preguntas más frecuentes en entrevistas de trabajo por profesión en LATAM, con consejos de respuesta y guía de preparación.',
-    publisher: { '@id': 'https://moonjab.com/#organization' },
-  },
-];
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: '¿Cómo me preparo para una entrevista de trabajo en LATAM?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Para prepararte para una entrevista en LATAM: 1) Investiga la empresa y el rol con 2-3 días de anticipación. 2) Prepara respuestas para las preguntas conductuales más comunes usando la metodología STAR (Situación, Tarea, Acción, Resultado). 3) Practica las preguntas técnicas específicas del rol. 4) Prepara 3-4 preguntas inteligentes para hacerle al entrevistador. 5) Simula la entrevista con herramientas como MoonJab.' },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Cuáles son las preguntas más comunes en entrevistas de trabajo?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Las preguntas más frecuentes en entrevistas en LATAM son: "Cuéntame sobre ti", "¿Por qué quieres trabajar aquí?", "¿Cuáles son tus fortalezas y debilidades?", "¿Dónde te ves en 5 años?", y preguntas conductuales tipo "Cuéntame de una vez que...". Las preguntas técnicas varían por rol y empresa.' },
+    },
+  ],
+};
 
 const categories = Array.from(new Set(Object.values(INTERVIEW_ROLES).map(r => r.category))).filter(c => c !== 'Empresa');
 
