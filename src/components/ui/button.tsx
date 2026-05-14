@@ -1,4 +1,4 @@
-import * as React from "react";
+﻿import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 import { useRipple } from "@/hooks/useRipple";
@@ -10,13 +10,13 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-clovely-sm hover:shadow-clovely-md",
+        default: "bg-primary text-primary-foreground hover:bg-primary/90 shadow-mj-sm hover:shadow-mj-md",
         destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline: "border border-input bg-background hover:bg-muted hover:text-foreground",
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-muted hover:text-foreground",
         link: "text-primary underline-offset-4 hover:underline",
-        premium: "bg-primary text-primary-foreground shadow-clovely-md hover:shadow-clovely-lg font-semibold hover:bg-primary/90",
+        premium: "bg-primary text-primary-foreground shadow-mj-md hover:shadow-mj-lg font-semibold hover:bg-primary/90",
       },
       size: {
         default: "h-9 px-4 py-2",

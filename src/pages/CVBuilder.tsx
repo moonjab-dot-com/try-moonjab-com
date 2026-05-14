@@ -1,4 +1,4 @@
-import { SEOHead } from '@/components/SEOHead';
+﻿import { SEOHead } from '@/components/SEOHead';
 import { useEffect, useState, useRef, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useCVStore } from '@/store/useCVStore';
@@ -239,7 +239,7 @@ export default function CVBuilder() {
   return (
     <div className="h-dvh flex flex-col bg-background">
       {/* Header */}
-      <div className="border-b bg-card/80 backdrop-blur-md shadow-clovely-md sticky top-0 z-10">
+      <div className="border-b bg-card/80 backdrop-blur-md shadow-mj-md sticky top-0 z-10">
         <div className="flex items-center justify-between px-4 sm:px-6 py-4 sm:py-5">
           <div className="flex items-center gap-2 sm:gap-4 flex-1 min-w-0">
             <Button variant="ghost" size="icon" onClick={() => navigate('/dashboard/cvs')} className="min-h-[44px] min-w-[44px] flex-shrink-0">
@@ -328,33 +328,33 @@ export default function CVBuilder() {
               />
               
               
-              <Button variant="outline" onClick={() => setShowVersionHistory(true)} className="shadow-clovely-sm min-h-[44px]">
+              <Button variant="outline" onClick={() => setShowVersionHistory(true)} className="shadow-mj-sm min-h-[44px]">
                 <History className="mr-2 h-4 w-4" />
                 Historial
               </Button>
               
               {currentCV.versions.length > 0 && (
-                <Button variant="outline" onClick={() => setShowVersionCompare(true)} className="shadow-clovely-sm min-h-[44px]">
+                <Button variant="outline" onClick={() => setShowVersionCompare(true)} className="shadow-mj-sm min-h-[44px]">
                   <GitCompare className="mr-2 h-4 w-4" />
                   Comparar
                 </Button>
               )}
               
-              <Button variant="outline" onClick={handleSaveVersion} className="shadow-clovely-sm min-h-[44px]">
+              <Button variant="outline" onClick={handleSaveVersion} className="shadow-mj-sm min-h-[44px]">
                 Guardar versión
               </Button>
               
-              <Button variant="outline" onClick={handleAnalyze} disabled={isAILoading} className="shadow-clovely-sm min-h-[44px]">
+              <Button variant="outline" onClick={handleAnalyze} disabled={isAILoading} className="shadow-mj-sm min-h-[44px]">
                 <Sparkles className="mr-2 h-4 w-4" />
                 {isAILoading ? 'Analizando...' : 'Analizar'}
               </Button>
               
-              <Button variant="outline" onClick={handleExportPDF} className="shadow-clovely-sm min-h-[44px]">
+              <Button variant="outline" onClick={handleExportPDF} className="shadow-mj-sm min-h-[44px]">
                 <Download className="mr-2 h-4 w-4" />
                 Exportar
               </Button>
               
-              <Button variant="premium" onClick={handleSave} disabled={isSaving} className="shadow-clovely-glow min-h-[44px]">
+              <Button variant="premium" onClick={handleSave} disabled={isSaving} className="shadow-mj-glow min-h-[44px]">
                 <Save className="mr-2 h-4 w-4" />
                 {isSaving ? 'Guardando...' : 'Guardar'}
               </Button>

@@ -99,6 +99,7 @@ const Register = () => {
         title="Crear Cuenta"
         description="Regístrate gratis en MoonJab. Crea tu CV y practica entrevistas con IA en LATAM."
         path="/registro"
+        noindex
       />
 
       {/* ── Brand panel ── */}

@@ -1,4 +1,4 @@
-# Módulo de Recompensas y Coins - MoonJab
+﻿# Módulo de Recompensas y Coins - MoonJab
 
 ## Descripción General
 

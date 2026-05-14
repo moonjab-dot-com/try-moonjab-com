@@ -1,4 +1,4 @@
-# MoonJab — Playbook de Backlinks y PR
+﻿# MoonJab — Playbook de Backlinks y PR
 
 Objetivo: conseguir backlinks de calidad (DA 40+) de sitios relevantes en LATAM para escalar el Domain Authority de moonjab.com desde 0 hasta un nivel competitivo.
 

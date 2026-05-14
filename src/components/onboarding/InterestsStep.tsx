@@ -1,4 +1,4 @@
-import { Badge } from '@/components/ui/badge';
+﻿import { Badge } from '@/components/ui/badge';
 import { INTERESTS } from '@/lib/constants';
 import { DynamicIcon } from '@/components/DynamicIcon';
 
@@ -39,8 +39,8 @@ export const InterestsStep = ({ selected, onChange }: InterestsStepProps) => {
               onClick={() => toggleInterest(interest.id)}
               className={`p-4 rounded-2xl border-2 transition-all duration-300 text-left ${
                 isSelected
-                  ? 'border-primary bg-gradient-to-br from-primary/10 to-primary/5 shadow-clovely-md hover:shadow-clovely-lg hover:-translate-y-1'
-                  : 'border-border hover:border-primary/50 hover:shadow-clovely-sm hover:-translate-y-0.5'
+                  ? 'border-primary bg-gradient-to-br from-primary/10 to-primary/5 shadow-mj-md hover:shadow-mj-lg hover:-translate-y-1'
+                  : 'border-border hover:border-primary/50 hover:shadow-mj-sm hover:-translate-y-0.5'
               }`}
             >
               <div className="text-3xl mb-2"><DynamicIcon name={interest.icon} size={28} className="text-primary" /></div>

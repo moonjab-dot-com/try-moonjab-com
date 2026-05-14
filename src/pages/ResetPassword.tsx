@@ -1,4 +1,4 @@
-import { SEOHead } from '@/components/SEOHead';
+﻿import { SEOHead } from '@/components/SEOHead';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -72,10 +72,10 @@ const ResetPassword = () => {
           <DecoratedLogo className="mx-auto" />
         </div>
 
-        <Card className="p-8 rounded-2xl shadow-clovely-lg border-2">
+        <Card className="p-8 rounded-2xl shadow-mj-lg border-2">
           <div className="space-y-6">
             <div className="space-y-2 text-center">
-              <div className="mx-auto w-16 h-16 bg-gradient-to-br from-primary/10 to-primary-warm/20 rounded-2xl flex items-center justify-center mb-4 shadow-clovely-sm">
+              <div className="mx-auto w-16 h-16 bg-gradient-to-br from-primary/10 to-primary-warm/20 rounded-2xl flex items-center justify-center mb-4 shadow-mj-sm">
                 <Lock className="h-8 w-8 text-primary" />
               </div>
               <h2 className="text-2xl font-heading font-bold bg-gradient-to-r from-primary to-primary-warm bg-clip-text text-transparent">Nueva Contraseña</h2>
@@ -95,7 +95,7 @@ const ResetPassword = () => {
                     value={formData.password}
                     onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                     required
-                    className="shadow-clovely-sm focus-visible:shadow-clovely-md transition-all duration-300"
+                    className="shadow-mj-sm focus-visible:shadow-mj-md transition-all duration-300"
                   />
                   <button
                     type="button"
@@ -120,7 +120,7 @@ const ResetPassword = () => {
                     value={formData.confirmPassword}
                     onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
                     required
-                    className="shadow-clovely-sm focus-visible:shadow-clovely-md transition-all duration-300"
+                    className="shadow-mj-sm focus-visible:shadow-mj-md transition-all duration-300"
                   />
                   <button
                     type="button"
@@ -135,7 +135,7 @@ const ResetPassword = () => {
               <Button
                 type="submit"
                 variant="premium"
-                className="w-full shadow-clovely-glow"
+                className="w-full shadow-mj-glow"
                 disabled={loading}
               >
                 {loading ? 'Actualizando...' : 'Actualizar Contraseña'}

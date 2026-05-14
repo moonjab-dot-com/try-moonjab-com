@@ -1,4 +1,4 @@
-import { SEOHead } from '@/components/SEOHead';
+﻿import { SEOHead } from '@/components/SEOHead';
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Mic, TrendingUp, Target, Clock, Bot, Sparkles, Lock } from "lucide-react";
@@ -122,7 +122,7 @@ export default function InterviewLanding() {
           <h2 className="text-xs font-medium text-muted-foreground uppercase tracking-wider">{t('interviews.landing.recentSessions')}</h2>
           <div className="space-y-2">
             {recentSessions.map((session) => (
-              <Card key={session.id} className="p-4 border-border/40 hover:border-primary/20 hover:shadow-clovely-sm transition-all duration-200">
+              <Card key={session.id} className="p-4 border-border/40 hover:border-primary/20 hover:shadow-mj-sm transition-all duration-200">
                 <div className="flex items-center justify-between">
                   <div className="space-y-0.5">
                     <h3 className="font-medium text-sm">{session.role}</h3>
@@ -151,7 +151,7 @@ export default function InterviewLanding() {
         className="grid md:grid-cols-3 gap-4"
       >
         {benefits.map((benefit, i) => (
-          <Card key={i} className="p-6 border-border/40 hover:border-primary/20 hover:shadow-clovely-md transition-all duration-300 group">
+          <Card key={i} className="p-6 border-border/40 hover:border-primary/20 hover:shadow-mj-md transition-all duration-300 group">
             <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/15 transition-colors">
               <benefit.icon className="w-5 h-5 text-primary" />
             </div>

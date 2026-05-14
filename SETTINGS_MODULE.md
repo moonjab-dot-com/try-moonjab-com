@@ -1,4 +1,4 @@
-# Módulo de Configuración (Settings) - MoonJab
+﻿# Módulo de Configuración (Settings) - MoonJab
 
 ## Descripción General
 

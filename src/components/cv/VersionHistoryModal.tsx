@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { CVData, CVVersion } from '@/types';
 import {
   Dialog,
@@ -84,7 +84,7 @@ export default function VersionHistoryModal({
                 {sortedVersions.map((version, index) => (
                   <div
                     key={version.versionId}
-                    className="border-2 rounded-xl p-4 hover:bg-accent/50 hover:shadow-clovely-md hover:-translate-y-0.5 transition-all duration-300"
+                    className="border-2 rounded-xl p-4 hover:bg-accent/50 hover:shadow-mj-md hover:-translate-y-0.5 transition-all duration-300"
                   >
                     <div className="flex items-start justify-between gap-4">
                       <div className="flex-1">
@@ -125,7 +125,7 @@ export default function VersionHistoryModal({
                           variant="outline"
                           size="sm"
                           onClick={() => setRestoreConfirm(version.versionId)}
-                          className="shadow-clovely-sm hover:shadow-clovely-md min-h-[44px] w-full sm:w-auto"
+                          className="shadow-mj-sm hover:shadow-mj-md min-h-[44px] w-full sm:w-auto"
                         >
                           <RotateCcw className="h-4 w-4 mr-1" />
                           Restaurar
@@ -163,7 +163,7 @@ export default function VersionHistoryModal({
           </AlertDialogHeader>
           <AlertDialogFooter className="flex-col sm:flex-row gap-2">
             <AlertDialogCancel className="rounded-xl min-h-[44px] w-full sm:w-auto">Cancelar</AlertDialogCancel>
-            <AlertDialogAction onClick={() => restoreConfirm && handleRestore(restoreConfirm)} className="rounded-xl shadow-clovely-sm min-h-[44px] w-full sm:w-auto">
+            <AlertDialogAction onClick={() => restoreConfirm && handleRestore(restoreConfirm)} className="rounded-xl shadow-mj-sm min-h-[44px] w-full sm:w-auto">
               Restaurar versión
             </AlertDialogAction>
           </AlertDialogFooter>
@@ -183,7 +183,7 @@ export default function VersionHistoryModal({
             <AlertDialogCancel className="rounded-xl min-h-[44px] w-full sm:w-auto">Cancelar</AlertDialogCancel>
             <AlertDialogAction
               onClick={() => deleteConfirm && handleDelete(deleteConfirm)}
-              className="bg-destructive text-destructive-foreground hover:bg-destructive/90 rounded-xl shadow-clovely-sm min-h-[44px] w-full sm:w-auto"
+              className="bg-destructive text-destructive-foreground hover:bg-destructive/90 rounded-xl shadow-mj-sm min-h-[44px] w-full sm:w-auto"
             >
               Eliminar
             </AlertDialogAction>

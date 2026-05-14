@@ -1,4 +1,4 @@
-# MoonJab - Production Testing Checklist
+﻿# MoonJab - Production Testing Checklist
 
 ## 📱 Cross-Browser Testing
 

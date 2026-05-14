@@ -1,4 +1,4 @@
-# MoonJab - Performance Optimization Guide
+﻿# MoonJab - Performance Optimization Guide
 
 ## ✅ Implemented Optimizations
 

@@ -1,4 +1,4 @@
-import { SEOHead } from '@/components/SEOHead';
+﻿import { SEOHead } from '@/components/SEOHead';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { User, Lock, Bell, Palette, CreditCard, Briefcase, Globe, Download } from 'lucide-react';
@@ -99,7 +99,7 @@ export default function Settings() {
                     className={cn(
                       'w-full flex items-center gap-2.5 px-3 py-2.5 rounded-lg text-sm text-left transition-all duration-200',
                       isActive
-                        ? 'bg-primary text-primary-foreground font-medium shadow-clovely-sm'
+                        ? 'bg-primary text-primary-foreground font-medium shadow-mj-sm'
                         : 'text-muted-foreground hover:text-foreground hover:bg-muted/60'
                     )}
                   >

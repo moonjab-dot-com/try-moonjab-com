@@ -1,4 +1,4 @@
-# Módulo de Acceso sin Registro (Modo Invitado) - MoonJab
+﻿# Módulo de Acceso sin Registro (Modo Invitado) - MoonJab
 
 ## Descripción General
 
