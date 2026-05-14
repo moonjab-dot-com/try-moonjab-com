@@ -242,6 +242,8 @@ export function useAuthSync() {
 
     setUser(user);
 
+    const prefs = (profile.preferencias_laborales as any) || {};
+
     setProfile({
       userId: profile.id,
       interests: [],
@@ -256,6 +258,8 @@ export function useAuthSync() {
       rolesSugeridos: [],
       preferencias: { intereses: [], objetivos: [], herramientas: [], nivelExperiencia: 'junior' },
       historialRol: [],
+      riasecCode: prefs.hollandCode || undefined,
+      riasecScores: prefs.riasecScores || undefined,
     });
   }
 }
