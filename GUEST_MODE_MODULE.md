@@ -1,8 +1,8 @@
-# Módulo de Acceso sin Registro (Modo Invitado) - Clovely
+# Módulo de Acceso sin Registro (Modo Invitado) - MoonJab
 
 ## Descripción General
 
-El módulo de Modo Invitado permite a los usuarios explorar Clovely sin necesidad de crear una cuenta, reduciendo la fricción de entrada y aumentando la retención temprana. Los usuarios pueden probar funcionalidades clave antes de decidir registrarse, con la opción de convertir su sesión de prueba en una cuenta permanente que conserva todo su progreso.
+El módulo de Modo Invitado permite a los usuarios explorar MoonJab sin necesidad de crear una cuenta, reduciendo la fricción de entrada y aumentando la retención temprana. Los usuarios pueden probar funcionalidades clave antes de decidir registrarse, con la opción de convertir su sesión de prueba en una cuenta permanente que conserva todo su progreso.
 
 ## Objetivo
 
@@ -66,7 +66,7 @@ src/
 ```
 
 **Persistencia:**
-- Todo guardado en `localStorage` bajo clave `clovely-auth`
+- Todo guardado en `localStorage` bajo clave `MoonJab-auth`
 - Sobrevive recargas de página
 - Se limpia al hacer logout
 
@@ -445,7 +445,7 @@ const registerSchema = z.object({
 **Inspeccionar localStorage:**
 ```javascript
 // En console del navegador
-JSON.parse(localStorage.getItem('clovely-auth'))
+JSON.parse(localStorage.getItem('MoonJab-auth'))
 ```
 
 **Verificar estado:**
@@ -482,4 +482,4 @@ window.location.reload()
 
 **Última actualización**: 2025-11-08  
 **Versión**: 1.0.0  
-**Mantenedor**: Equipo Clovely
+**Mantenedor**: Equipo MoonJab
