@@ -75,6 +75,7 @@ serve(async (req) => {
         },
       ],
       mode: "subscription",
+      allow_promotion_codes: true,
       success_url: `${origin}/payment?status=success`,
       cancel_url: `${origin}/payment?status=cancelled`,
     });
