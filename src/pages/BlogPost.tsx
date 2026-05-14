@@ -5,7 +5,7 @@ import { ThemeToggle } from '@/components/ThemeToggle';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Link, useParams, useNavigate } from 'react-router-dom';
-import { Calendar, Clock, ArrowLeft, ArrowRight, Share2, Twitter, Linkedin, User } from 'lucide-react';
+import { Calendar, Clock, ArrowLeft, ArrowRight, Share2, Twitter, Linkedin, Facebook, User } from 'lucide-react';
 import { blogPosts } from './Blog';
 
 const BlogPost = () => {
@@ -174,7 +174,7 @@ const BlogPost = () => {
               >
                 <Twitter className="h-4 w-4" />
               </a>
-              <a 
+              <a
                 href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -182,7 +182,16 @@ const BlogPost = () => {
               >
                 <Linkedin className="h-4 w-4" />
               </a>
-              <button 
+              <a
+                href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
+                aria-label="Compartir en Facebook"
+              >
+                <Facebook className="h-4 w-4" />
+              </a>
+              <button
                 onClick={() => navigator.clipboard.writeText(shareUrl)}
                 className="w-10 h-10 rounded-full bg-muted flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors"
               >

@@ -8,7 +8,8 @@ import {
   FileText, MessageSquare, Target, TrendingUp, Shield,
   Users, ChevronRight, Zap, ArrowUpRight, Layers, Award,
   GraduationCap, Sparkles, LineChart, Rocket,
-  Eye, BookOpen, Check, Mic, Menu, X } from
+  Eye, BookOpen, Check, Mic, Menu, X,
+  Youtube, Linkedin, Twitter, MapPin, Phone } from
 'lucide-react';
 import { OfficialLogo } from '@/components/OfficialLogo';
 import { useRef, useState, useEffect } from 'react';
@@ -537,25 +538,78 @@ const LandingContent = () => {
       {/* ── Footer ── */}
       <footer className="py-12 border-t border-border/30">
         <div className="mx-auto max-w-6xl px-6">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
-            <div className="space-y-2">
+          <div className="flex flex-col sm:flex-row items-start justify-between gap-8">
+            <div className="space-y-3 max-w-xs">
               <OfficialLogo size="md" animated={false} />
               <p className="text-xs text-muted-foreground">{t('landing.footer.tagline')}</p>
+              <div className="space-y-1">
+                <p className="flex items-start gap-1.5 text-[11px] text-muted-foreground">
+                  <MapPin className="h-3 w-3 mt-0.5 flex-shrink-0" />
+                  Av. José Larco 1301, Miraflores, Lima 15074, Perú
+                </p>
+                <a href="tel:+5116420000" className="flex items-center gap-1.5 text-[11px] text-muted-foreground hover:text-foreground transition-colors">
+                  <Phone className="h-3 w-3 flex-shrink-0" />
+                  +51 1 642-0000
+                </a>
+              </div>
+              <div className="flex items-center gap-3 pt-1">
+                <a href="https://www.instagram.com/trymoonjab" target="_blank" rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-foreground transition-colors" aria-label="Instagram">
+                  <Instagram className="h-4 w-4" />
+                </a>
+                <a href="https://www.youtube.com/@TryMoonJab" target="_blank" rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-primary transition-colors" aria-label="YouTube — Suscríbete a MoonJab">
+                  <Youtube className="h-4 w-4" />
+                </a>
+                <a href="https://www.linkedin.com/company/moonjab" target="_blank" rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-foreground transition-colors" aria-label="LinkedIn">
+                  <Linkedin className="h-4 w-4" />
+                </a>
+                <a href="https://x.com/MoonJabdotcom" target="_blank" rel="noopener noreferrer"
+                  className="text-muted-foreground hover:text-foreground transition-colors" aria-label="X (Twitter)">
+                  <Twitter className="h-4 w-4" />
+                </a>
+              </div>
+              <a
+                href="https://www.youtube.com/@TryMoonJab?sub_confirmation=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-[11px] font-medium text-red-600 hover:text-red-700 transition-colors"
+              >
+                <Youtube className="h-3.5 w-3.5" />
+                Suscríbete en YouTube
+              </a>
             </div>
-            <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs text-muted-foreground">
-              <Link to="/pricing" className="hover:text-foreground transition-colors">{t('landing.footer.pricing')}</Link>
-              <Link to="/about" className="hover:text-foreground transition-colors">{t('landing.footer.about')}</Link>
-              <Link to="/blog" className="hover:text-foreground transition-colors">{t('landing.footer.blog')}</Link>
-              <Link to="/help" className="hover:text-foreground transition-colors">{t('landing.footer.help')}</Link>
-              <Link to="/privacy" className="hover:text-foreground transition-colors">{t('landing.footer.privacy')}</Link>
-              <Link to="/terms" className="hover:text-foreground transition-colors">{t('landing.footer.terms')}</Link>
+            <div className="flex flex-wrap gap-x-10 gap-y-6">
+              <div className="space-y-2.5">
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-foreground">Producto</p>
+                <ul className="space-y-2 text-xs text-muted-foreground">
+                  <li><Link to="/pricing" className="hover:text-foreground transition-colors">{t('landing.footer.pricing')}</Link></li>
+                  <li><Link to="/cv-builder" className="hover:text-foreground transition-colors">CV Builder IA</Link></li>
+                  <li><Link to="/interview-prep" className="hover:text-foreground transition-colors">Simulador Entrevistas</Link></li>
+                  <li><Link to="/guest-start" className="hover:text-foreground transition-colors">Probar gratis</Link></li>
+                </ul>
+              </div>
+              <div className="space-y-2.5">
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-foreground">Compañía</p>
+                <ul className="space-y-2 text-xs text-muted-foreground">
+                  <li><Link to="/about" className="hover:text-foreground transition-colors">{t('landing.footer.about')}</Link></li>
+                  <li><Link to="/blog" className="hover:text-foreground transition-colors">{t('landing.footer.blog')}</Link></li>
+                  <li><Link to="/prensa" className="hover:text-foreground transition-colors">Prensa</Link></li>
+                  <li><Link to="/help" className="hover:text-foreground transition-colors">{t('landing.footer.help')}</Link></li>
+                </ul>
+              </div>
+              <div className="space-y-2.5">
+                <p className="text-[10px] font-semibold uppercase tracking-wider text-foreground">Legal</p>
+                <ul className="space-y-2 text-xs text-muted-foreground">
+                  <li><Link to="/privacy" className="hover:text-foreground transition-colors">{t('landing.footer.privacy')}</Link></li>
+                  <li><Link to="/terms" className="hover:text-foreground transition-colors">{t('landing.footer.terms')}</Link></li>
+                </ul>
+              </div>
             </div>
           </div>
-          <div className="flex items-center justify-between mt-8 pt-6 border-t border-border/20">
+          <div className="mt-8 pt-6 border-t border-border/20">
             <p className="text-[11px] text-muted-foreground">{t('landing.footer.rights')}</p>
-            <a href="https://www.instagram.com/trymoonjab" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground transition-colors" aria-label="Instagram">
-              <Instagram className="h-4 w-4" />
-            </a>
           </div>
         </div>
       </footer>
