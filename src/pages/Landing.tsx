@@ -9,6 +9,7 @@ import {
   Users, ChevronRight, Sparkles, Rocket,
   Eye, Check, Mic, Menu,
   Youtube, Linkedin, Twitter, Brain, Cpu,
+  MapPin, Phone,
 } from 'lucide-react';
 import { OfficialLogo } from '@/components/OfficialLogo';
 import { useRef, useState } from 'react';
@@ -1054,13 +1055,23 @@ const LandingContent = () => {
                 {t('landing.footer.tagline')}
               </p>
               <p className="text-[10px] text-muted-foreground/60">Fundada en diciembre 2025</p>
+              <div className="space-y-1">
+                <p className="flex items-start gap-1.5 text-[11px] text-muted-foreground">
+                  <MapPin className="h-3 w-3 mt-0.5 flex-shrink-0" />
+                  Av. José Larco 1301, Miraflores, Lima 15074, Perú
+                </p>
+                <a href="tel:+5116420000" className="flex items-center gap-1.5 text-[11px] text-muted-foreground hover:text-foreground transition-colors">
+                  <Phone className="h-3 w-3 flex-shrink-0" />
+                  +51 1 642-0000
+                </a>
+              </div>
               <div className="flex items-center gap-3 pt-1">
                 <a href="https://www.instagram.com/trymoonjab" target="_blank" rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-foreground transition-colors" aria-label="Instagram">
                   <Instagram className="h-4 w-4" />
                 </a>
                 <a href="https://www.youtube.com/@TryMoonJab" target="_blank" rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-foreground transition-colors" aria-label="YouTube">
+                  className="text-muted-foreground hover:text-primary transition-colors" aria-label="YouTube — Suscríbete a MoonJab">
                   <Youtube className="h-4 w-4" />
                 </a>
                 <a href="https://www.linkedin.com/company/moonjab" target="_blank" rel="noopener noreferrer"
@@ -1068,10 +1079,19 @@ const LandingContent = () => {
                   <Linkedin className="h-4 w-4" />
                 </a>
                 <a href="https://x.com/MoonJabdotcom" target="_blank" rel="noopener noreferrer"
-                  className="text-muted-foreground hover:text-foreground transition-colors" aria-label="X">
+                  className="text-muted-foreground hover:text-foreground transition-colors" aria-label="X (Twitter)">
                   <Twitter className="h-4 w-4" />
                 </a>
               </div>
+              <a
+                href="https://www.youtube.com/@TryMoonJab?sub_confirmation=1"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-[11px] font-medium text-red-600 hover:text-red-700 transition-colors"
+              >
+                <Youtube className="h-3.5 w-3.5" />
+                Suscríbete en YouTube
+              </a>
             </div>
             {/* Product */}
             <div className="space-y-3">

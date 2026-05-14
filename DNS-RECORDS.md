@@ -1,6 +1,7 @@
 # DNS Records for moonjab.com
 
 Add these records in your DNS provider (Namecheap, Cloudflare, GoDaddy, etc.).
+Last reviewed: 2026-05-14
 
 ---
 

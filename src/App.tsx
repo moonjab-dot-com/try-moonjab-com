@@ -35,11 +35,11 @@ import CVTemplatesHub from "./pages/CVTemplatesHub";
 import CVTemplatesByProfession from "./pages/CVTemplatesByProfession";
 import ATSCheckerLanding from "./pages/ATSCheckerLanding";
 import Prensa from "./pages/Prensa";
+import Testimonios from "./pages/Testimonios";
+import DiagnosticoVocacionalLanding from "./pages/DiagnosticoVocacionalLanding";
 import Help from "./pages/Help";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
-import Testimonios from "./pages/Testimonios";
-import DiagnosticoVocacionalLanding from "./pages/DiagnosticoVocacionalLanding";
 const Install = lazy(() => import("./pages/Install"));
 import DashboardLayout from "./layouts/DashboardLayout";
 import { ProtectedRoute } from "./components/ProtectedRoute";
@@ -118,11 +118,11 @@ const App = () => (
                 <Route path="/plantillas-cv/:profesion" element={<CVTemplatesByProfession />} />
                 <Route path="/verificador-ats" element={<ATSCheckerLanding />} />
                 <Route path="/prensa" element={<Prensa />} />
+                <Route path="/testimonios" element={<Testimonios />} />
+                <Route path="/diagnostico-vocacional" element={<DiagnosticoVocacionalLanding />} />
                 <Route path="/help" element={<Help />} />
                 <Route path="/privacy" element={<Privacy />} />
                 <Route path="/terms" element={<Terms />} />
-                <Route path="/testimonios" element={<Testimonios />} />
-                <Route path="/diagnostico-vocacional" element={<DiagnosticoVocacionalLanding />} />
                 <Route path="/onboarding" element={<ProtectedRoute><Onboarding /></ProtectedRoute>} />
 
                 <Route path="/dashboard" element={<ProtectedRoute><DashboardLayout /></ProtectedRoute>}>

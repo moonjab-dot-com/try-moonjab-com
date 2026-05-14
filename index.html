@@ -81,6 +81,8 @@
     <link rel="preconnect" href="https://storage.googleapis.com" />
     <link rel="dns-prefetch" href="https://vajjrwoiufqdbziwluih.supabase.co" />
     <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+    <link rel="preconnect" href="https://connect.facebook.net" />
+    <link rel="dns-prefetch" href="https://www.facebook.com" />
 
     <!-- ── FONTS (single combined request for performance) ─────────── -->
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=EB+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -97,6 +99,22 @@
         send_page_view: true
       });
     </script>
+
+    <!-- ── FACEBOOK PIXEL ───────────────────────── -->
+    <!-- Replace YOUR_FB_PIXEL_ID with the actual Pixel ID from Meta Business Suite -->
+    <script>
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+      n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+      document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init','YOUR_FB_PIXEL_ID');
+      fbq('track','PageView');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none" alt=""
+        src="https://www.facebook.com/tr?id=YOUR_FB_PIXEL_ID&ev=PageView&noscript=1" />
+    </noscript>
 
     <!-- ═══════════════════════════════════════════════
          STRUCTURED DATA — JSON-LD
@@ -656,6 +674,7 @@
 
         <footer class="ns-ftr">
           <p>© 2024–2026 MoonJab. Todos los derechos reservados.</p>
+          <p>Av. José Larco 1301, Miraflores, Lima 15074, Perú · Tel: +51 1 642-0000 · hey@moonjab.com</p>
           <p>
             <a href="/privacy">Privacidad</a> |
             <a href="/terms">Términos de uso</a> |
@@ -688,10 +707,11 @@
           var s = document.createElement('script');
           s.src = 'https://unpkg.com/@elevenlabs/convai-widget-embed';
           s.async = true;
-          document.body.appendChild(s);
+          s.type = 'text/javascript';
+          document.head.appendChild(s);
         }
-        ['mouseover', 'touchstart', 'scroll', 'keydown'].forEach(function(evt) {
-          document.addEventListener(evt, loadWidget, { once: true, passive: true });
+        ['mousemove','touchstart','scroll','keypress'].forEach(function(e) {
+          document.addEventListener(e, loadWidget, { once: true, passive: true });
         });
         setTimeout(loadWidget, 5000);
       })();
