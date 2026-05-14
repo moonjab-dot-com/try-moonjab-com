@@ -1,4 +1,4 @@
-# Clovely - Accessibility Audit (A11y)
+# MoonJab - Accessibility Audit (A11y)
 
 ## 🎯 Accessibility Standards
 
@@ -89,7 +89,7 @@ Proper HTML structure:
 ```tsx
 <img 
   src={logo} 
-  alt="Clovely – cargando" 
+  alt="MoonJab – cargando" 
   loading="eager" 
   decoding="async" 
 />
@@ -216,10 +216,10 @@ All forms follow best practices:
 **Example:**
 ```tsx
 // Good
-<img alt="Clovely logo" />
+<img alt="MoonJab logo" />
 
 // Better
-<img alt="Clovely - Tu aliado en el crecimiento profesional" />
+<img alt="MoonJab - Tu aliado en el crecimiento profesional" />
 ```
 
 ---
