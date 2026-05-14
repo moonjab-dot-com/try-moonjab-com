@@ -31,7 +31,6 @@ const About = () => {
         title="Sobre MoonJab — Nuestra Misión y Equipo"
         description="Conoce la misión y equipo de MoonJab. Democratizamos la empleabilidad en LATAM con IA: CV builder ATS y simulador de entrevistas para estudiantes universitarios en LATAM."
         path="/about"
-        keywords="sobre moonjab, equipo moonjab, misión moonjab, startup empleabilidad LATAM, plataforma empleo estudiantes"
         breadcrumbs={[{ name: 'Nosotros', url: 'https://moonjab.com/about' }]}
         schema={[
           {

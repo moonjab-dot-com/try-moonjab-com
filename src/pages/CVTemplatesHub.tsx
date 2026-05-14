@@ -9,37 +9,27 @@ import { CV_TEMPLATES, CV_CATEGORIES } from '@/data/cvTemplates';
 
 const fade = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } };
 
-const schema = [
-  {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: '¿Qué debe incluir un currículum vitae en LATAM?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Un CV en LATAM debe incluir: encabezado con datos de contacto y LinkedIn, resumen o perfil profesional de 3-4 líneas, experiencia laboral cronológica inversa con logros medibles, educación, habilidades técnicas y herramientas, idiomas y certificaciones relevantes. Para primer empleo, agrega proyectos académicos y actividades extracurriculares.' },
-      },
-      {
-        '@type': 'Question',
-        name: '¿Cuántas páginas debe tener un CV en LATAM?',
-        acceptedAnswer: { '@type': 'Answer', text: '1 página para menos de 5 años de experiencia, máximo 2 páginas para más. Los reclutadores de empresas top en LATAM prefieren CVs concisos que vayan directo al punto. La excepción son los CVs académicos o científicos (curriculum vitae académico) que pueden ser más extensos.' },
-      },
-      {
-        '@type': 'Question',
-        name: '¿Debo incluir foto en el CV en Perú, México o Colombia?',
-        acceptedAnswer: { '@type': 'Answer', text: 'En Perú y Colombia es práctica común incluir foto profesional. En México y Argentina, las empresas modernas prefieren CVs sin foto. En Chile, no es obligatorio. Si incluyes foto, usa fondo neutro, vestimenta formal y buena iluminación. Nunca uses selfies o fotos informales.' },
-      },
-    ],
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    name: 'Plantillas de CV por Profesión — Formato ATS LATAM 2025',
-    url: 'https://moonjab.com/plantillas-cv',
-    description: 'Plantillas de currículum vitae optimizadas para ATS por profesión para el mercado laboral en Perú, México, Colombia y Chile.',
-    publisher: { '@id': 'https://moonjab.com/#organization' },
-  },
-];
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: '¿Qué debe incluir un currículum vitae en LATAM?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Un CV en LATAM debe incluir: encabezado con datos de contacto y LinkedIn, resumen o perfil profesional de 3-4 líneas, experiencia laboral cronológica inversa con logros medibles, educación, habilidades técnicas y herramientas, idiomas y certificaciones relevantes. Para primer empleo, agrega proyectos académicos y actividades extracurriculares.' },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Cuántas páginas debe tener un CV en LATAM?',
+      acceptedAnswer: { '@type': 'Answer', text: '1 página para menos de 5 años de experiencia, máximo 2 páginas para más. Los reclutadores de empresas top en LATAM prefieren CVs concisos que vayan directo al punto. La excepción son los CVs académicos o científicos (curriculum vitae académico) que pueden ser más extensos.' },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Debo incluir foto en el CV en Perú, México o Colombia?',
+      acceptedAnswer: { '@type': 'Answer', text: 'En Perú y Colombia es práctica común incluir foto profesional. En México y Argentina, las empresas modernas prefieren CVs sin foto. En Chile, no es obligatorio. Si incluyes foto, usa fondo neutro, vestimenta formal y buena iluminación. Nunca uses selfies o fotos informales.' },
+    },
+  ],
+};
 
 const CVTemplatesHub = () => {
   const templates = Object.values(CV_TEMPLATES);

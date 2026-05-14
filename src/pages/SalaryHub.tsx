@@ -9,32 +9,22 @@ import { SALARY_ROLES, SALARY_COUNTRIES, SALARY_CATEGORIES } from '@/data/salari
 
 const fade = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } };
 
-const schema = [
-  {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: '¿Cuánto gana un profesional en LATAM?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Los salarios varían significativamente por país, profesión y nivel de experiencia. Un desarrollador web junior en Perú puede ganar S/ 1,800–2,800 mensuales, mientras que un senior puede alcanzar S/ 6,000–10,000. En México, los rangos son $12,000–70,000 MXN. Consulta nuestras guías por rol y país para datos específicos.' },
-      },
-      {
-        '@type': 'Question',
-        name: '¿Cómo puedo negociar mejor mi salario en LATAM?',
-        acceptedAnswer: { '@type': 'Answer', text: 'La clave es conocer el rango de mercado para tu rol, nivel y país antes de negociar. Investiga en portales de empleo, habla con colegas del sector y usa herramientas como MoonJab para prepararte. Presenta logros cuantificables y sé específico sobre el valor que aportas.' },
-      },
-    ],
-  },
-  {
-    '@context': 'https://schema.org',
-    '@type': 'WebPage',
-    name: 'Guía de Salarios en LATAM 2025',
-    url: 'https://moonjab.com/salario',
-    description: 'Rangos salariales actualizados 2025 para las profesiones más demandadas en Perú, México, Colombia, Argentina y Chile.',
-    publisher: { '@id': 'https://moonjab.com/#organization' },
-  },
-];
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: '¿Cuánto gana un profesional en LATAM?',
+      acceptedAnswer: { '@type': 'Answer', text: 'Los salarios varían significativamente por país, profesión y nivel de experiencia. Un desarrollador web junior en Perú puede ganar S/ 1,800–2,800 mensuales, mientras que un senior puede alcanzar S/ 6,000–10,000. En México, los rangos son $12,000–70,000 MXN. Consulta nuestras guías por rol y país para datos específicos.' },
+    },
+    {
+      '@type': 'Question',
+      name: '¿Cómo puedo negociar mejor mi salario en LATAM?',
+      acceptedAnswer: { '@type': 'Answer', text: 'La clave es conocer el rango de mercado para tu rol, nivel y país antes de negociar. Investiga en portales de empleo, habla con colegas del sector y usa herramientas como MoonJab para prepararte. Presenta logros cuantificables y sé específico sobre el valor que aportas.' },
+    },
+  ],
+};
 
 const SalaryHub = () => {
   const roles = Object.values(SALARY_ROLES);
