@@ -57,18 +57,12 @@ const InterviewPrepLanding = () => {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <SEOHead
-        title="Practica Entrevistas Laborales con IA — Prepárate para el Trabajo"
+        title="Simulador de Entrevistas con IA — LATAM"
         description="Practica entrevistas de trabajo con IA y recibe feedback instantáneo. Preguntas personalizadas por industria y método STAR. Gratis para estudiantes en LATAM."
         path="/interview-prep"
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        keywords="simulador entrevistas trabajo, practicar entrevista con IA, preparar entrevista laboral LATAM, feedback entrevista, método STAR entrevista"
+        breadcrumbs={[{ name: 'Simulador de Entrevistas', url: 'https://moonjab.com/interview-prep' }]}
+        schema={[jsonLd, faqSchema]}
       />
 
       {/* Nav */}
