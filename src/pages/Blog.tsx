@@ -2121,6 +2121,38 @@ const Blog = () => {
         </div>
       </section>
 
+      {/* Tools Hub */}
+      <section className="py-16 border-t border-border/30">
+        <div className="container mx-auto px-6 max-w-6xl">
+          <div className="text-center mb-10">
+            <h2 className="text-2xl font-bold mb-2">Herramientas gratuitas de MoonJab</h2>
+            <p className="text-muted-foreground">Usa estas herramientas mientras aplicas lo que aprendes en el blog</p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {[
+              { title: 'CV Builder con IA', desc: 'Crea tu currículum optimizado para ATS en minutos', to: '/cv-builder', label: 'Crear CV gratis' },
+              { title: 'Simulador de Entrevistas', desc: 'Practica con preguntas reales y feedback inmediato de IA', to: '/interview-prep', label: 'Practicar ahora' },
+              { title: 'Verificador ATS', desc: 'Descubre si tu CV pasa los filtros automáticos de las empresas', to: '/verificador-ats', label: 'Verificar mi CV' },
+              { title: 'Guía de Salarios', desc: 'Consulta rangos salariales por rol y país en LATAM', to: '/salario', label: 'Ver salarios' },
+              { title: 'Plantillas de CV', desc: 'Plantillas profesionales por profesión, listas para usar', to: '/plantillas-cv', label: 'Ver plantillas' },
+              { title: 'Preguntas de Entrevista', desc: 'Banco de preguntas reales por rol e industria', to: '/preguntas-de-entrevista', label: 'Ver preguntas' },
+            ].map((tool) => (
+              <Link
+                key={tool.to}
+                to={tool.to}
+                className="group flex flex-col p-5 rounded-xl border border-border/50 bg-card hover:border-primary/40 hover:shadow-md transition-all"
+              >
+                <p className="font-semibold mb-1 group-hover:text-primary transition-colors">{tool.title}</p>
+                <p className="text-sm text-muted-foreground flex-1 mb-3">{tool.desc}</p>
+                <span className="text-xs font-medium text-primary flex items-center gap-1">
+                  {tool.label} <ArrowRight className="h-3 w-3" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Newsletter CTA */}
       <section className="py-24 bg-muted/30">
         <div className="container mx-auto px-6 max-w-2xl text-center">
@@ -2131,8 +2163,8 @@ const Blog = () => {
             Únete a 10,000+ profesionales que reciben tips semanales para impulsar su carrera.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <input 
-              type="email" 
+            <input
+              type="email"
               placeholder="tu@email.com"
               className="px-4 py-3 rounded-lg border bg-background flex-1 max-w-sm"
             />
@@ -2146,10 +2178,18 @@ const Blog = () => {
 
       {/* Footer */}
       <footer className="py-8 border-t">
-        <div className="container mx-auto px-6 text-center">
-          <Link to="/" className="text-muted-foreground hover:text-foreground transition-colors">
-            ← Volver al inicio
-          </Link>
+        <div className="container mx-auto px-6 max-w-6xl flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
+          <Link to="/" className="hover:text-foreground transition-colors">← Inicio</Link>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link to="/cv-builder" className="hover:text-foreground transition-colors">CV Builder</Link>
+            <Link to="/interview-prep" className="hover:text-foreground transition-colors">Simulador Entrevistas</Link>
+            <Link to="/verificador-ats" className="hover:text-foreground transition-colors">Verificador ATS</Link>
+            <Link to="/salario" className="hover:text-foreground transition-colors">Guía Salarios</Link>
+            <Link to="/plantillas-cv" className="hover:text-foreground transition-colors">Plantillas CV</Link>
+            <Link to="/preguntas-de-entrevista" className="hover:text-foreground transition-colors">Preguntas Entrevista</Link>
+            <Link to="/pricing" className="hover:text-foreground transition-colors">Precios</Link>
+            <Link to="/about" className="hover:text-foreground transition-colors">Nosotros</Link>
+          </div>
         </div>
       </footer>
     </div>

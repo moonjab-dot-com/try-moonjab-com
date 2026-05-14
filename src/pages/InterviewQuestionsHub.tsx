@@ -222,9 +222,12 @@ const InterviewQuestionsHub = () => {
         <div className="mx-auto max-w-6xl px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
           <p>© 2024–2026 MoonJab. Todos los derechos reservados.</p>
           <div className="flex gap-4">
+            <Link to="/interview-prep" className="hover:text-foreground">Simulador de Entrevistas</Link>
             <Link to="/cv-builder" className="hover:text-foreground">CV Builder</Link>
+            <Link to="/verificador-ats" className="hover:text-foreground">Verificador ATS</Link>
             <Link to="/plantillas-cv" className="hover:text-foreground">Plantillas CV</Link>
             <Link to="/salario" className="hover:text-foreground">Guía de salarios</Link>
+            <Link to="/blog" className="hover:text-foreground">Blog</Link>
             <Link to="/privacy" className="hover:text-foreground">Privacidad</Link>
           </div>
         </div>

@@ -313,6 +313,9 @@ const InterviewPrepLanding = () => {
           <nav className="flex gap-5 text-xs text-muted-foreground flex-wrap justify-center">
             <Link to="/" className="hover:text-foreground transition-colors">Inicio</Link>
             <Link to="/cv-builder" className="hover:text-foreground transition-colors">CV Builder con IA</Link>
+            <Link to="/preguntas-de-entrevista" className="hover:text-foreground transition-colors">Banco de Preguntas</Link>
+            <Link to="/verificador-ats" className="hover:text-foreground transition-colors">Verificador ATS</Link>
+            <Link to="/salario" className="hover:text-foreground transition-colors">Guía Salarios</Link>
             <Link to="/pricing" className="hover:text-foreground transition-colors">Precios</Link>
             <Link to="/blog" className="hover:text-foreground transition-colors">Blog</Link>
             <Link to="/privacy" className="hover:text-foreground transition-colors">Privacidad</Link>

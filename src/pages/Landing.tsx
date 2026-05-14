@@ -1081,8 +1081,11 @@ const LandingContent = () => {
                   { label: t('landing.footer.pricing'), to: '/pricing' },
                   { label: 'CV Builder IA', to: '/cv-builder' },
                   { label: 'Simulador de Entrevistas', to: '/interview-prep' },
+                  { label: 'Verificador ATS', to: '/verificador-ats' },
+                  { label: 'Guía de Salarios', to: '/salario' },
                   { label: 'Plantillas CV', to: '/plantillas-cv' },
-                  { label: 'Diagnóstico Vocacional', to: '/#features' },
+                  { label: 'Preguntas de Entrevista', to: '/preguntas-de-entrevista' },
+                  { label: 'Diagnóstico Vocacional', to: '/diagnostico-vocacional' },
                 ].map(({ label, to }) => (
                   <li key={to}>
                     <Link to={to} className="text-xs text-muted-foreground hover:text-foreground transition-colors">
