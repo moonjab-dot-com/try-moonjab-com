@@ -4,9 +4,38 @@ import { OfficialLogo } from '@/components/OfficialLogo';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { Card } from '@/components/ui/card';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { Calendar, Clock, ArrowLeft, ArrowRight, Share2, Twitter, Linkedin, Facebook, User } from 'lucide-react';
 import { blogPosts } from './Blog';
+
+const CATEGORY_TOOLS: Record<string, { title: string; desc: string; to: string }[]> = {
+  'CV': [
+    { title: 'CV Builder con IA', desc: 'Crea tu CV optimizado para ATS en minutos', to: '/cv-builder' },
+    { title: 'Verificador ATS', desc: 'Comprueba si tu CV pasa los filtros automáticos', to: '/verificador-ats' },
+    { title: 'Plantillas de CV', desc: 'Plantillas profesionales por profesión', to: '/plantillas-cv' },
+  ],
+  'Entrevistas': [
+    { title: 'Simulador de Entrevistas', desc: 'Practica con feedback de IA en tiempo real', to: '/interview-prep' },
+    { title: 'Preguntas de Entrevista', desc: 'Banco de preguntas reales por rol e industria', to: '/preguntas-de-entrevista' },
+    { title: 'CV Builder con IA', desc: 'Un buen CV es el primer paso a la entrevista', to: '/cv-builder' },
+  ],
+  'Salarios': [
+    { title: 'Guía de Salarios', desc: 'Rangos salariales por rol y país en LATAM', to: '/salario' },
+    { title: 'Simulador de Entrevistas', desc: 'Prepárate para negociar en la entrevista', to: '/interview-prep' },
+    { title: 'Preguntas de Entrevista', desc: 'Preguntas frecuentes sobre expectativas salariales', to: '/preguntas-de-entrevista' },
+  ],
+  'Carrera': [
+    { title: 'Diagnóstico Vocacional', desc: 'Descubre tu perfil RIASEC y carreras compatibles', to: '/diagnostico-vocacional' },
+    { title: 'Guía de Salarios', desc: 'Consulta el potencial económico de tu carrera', to: '/salario' },
+    { title: 'CV Builder con IA', desc: 'Construye el CV que tu carrera necesita', to: '/cv-builder' },
+  ],
+  'Networking': [
+    { title: 'CV Builder con IA', desc: 'Un CV sólido respalda tu red de contactos', to: '/cv-builder' },
+    { title: 'Simulador de Entrevistas', desc: 'Practica antes de reunirte con contactos clave', to: '/interview-prep' },
+    { title: 'Diagnóstico Vocacional', desc: 'Conoce tu perfil para comunicarlo con claridad', to: '/diagnostico-vocacional' },
+  ],
+};
 
 const BlogPost = () => {
   const { id } = useParams();
@@ -249,6 +278,52 @@ const BlogPost = () => {
               return <p key={i} className="my-4 leading-relaxed">{paragraph}</p>;
             })}
           </div>
+
+          {/* Related Tools */}
+          {(CATEGORY_TOOLS[post.category] ?? CATEGORY_TOOLS['CV']).length > 0 && (
+            <div className="mb-12">
+              <h3 className="text-lg font-bold mb-4">Herramientas relacionadas</h3>
+              <div className="grid sm:grid-cols-3 gap-4">
+                {(CATEGORY_TOOLS[post.category] ?? CATEGORY_TOOLS['CV']).map((tool) => (
+                  <Link key={tool.to} to={tool.to}
+                    className="group flex flex-col p-4 rounded-xl border border-border/50 bg-muted/30 hover:border-primary/40 hover:bg-muted/60 transition-all">
+                    <p className="font-semibold text-sm mb-1 group-hover:text-primary transition-colors">{tool.title}</p>
+                    <p className="text-xs text-muted-foreground flex-1 mb-2">{tool.desc}</p>
+                    <span className="text-xs text-primary flex items-center gap-1">
+                      Ir ahora <ArrowRight className="h-3 w-3" />
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Related Posts */}
+          {(() => {
+            const related = blogPosts.filter(p => p.id !== post.id && p.category === post.category).slice(0, 3);
+            if (!related.length) return null;
+            return (
+              <div className="mb-12">
+                <h3 className="text-lg font-bold mb-4">Artículos relacionados</h3>
+                <div className="grid sm:grid-cols-3 gap-4">
+                  {related.map((rp) => (
+                    <Card key={rp.id}
+                      className="overflow-hidden cursor-pointer group hover:shadow-md transition-all"
+                      onClick={() => navigate(`/blog/${rp.id}`)}>
+                      <img src={rp.image} alt={rp.title} className="w-full h-28 object-cover group-hover:scale-105 transition-transform duration-300" />
+                      <div className="p-4">
+                        <Badge variant="secondary" className="text-[10px] mb-2">{rp.category}</Badge>
+                        <p className="font-semibold text-sm line-clamp-2 group-hover:text-primary transition-colors">{rp.title}</p>
+                        <p className="text-xs text-muted-foreground mt-1 flex items-center gap-1">
+                          <Clock className="h-3 w-3" />{rp.readTime}
+                        </p>
+                      </div>
+                    </Card>
+                  ))}
+                </div>
+              </div>
+            );
+          })()}
 
           {/* CTA */}
           <div className="bg-primary text-primary-foreground rounded-2xl p-8 md:p-12 text-center mb-16">
