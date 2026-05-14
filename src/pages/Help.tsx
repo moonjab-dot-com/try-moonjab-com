@@ -88,9 +88,11 @@ const Help = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEOHead
-        title="Centro de Ayuda"
-        description="¿Necesitas ayuda con MoonJab? Encuentra respuestas a preguntas frecuentes y contacta a nuestro equipo de soporte."
+        title="Centro de Ayuda — Soporte MoonJab"
+        description="Centro de ayuda MoonJab: preguntas frecuentes sobre CV builder, simulador de entrevistas, planes y pagos. Soporte en español para estudiantes en LATAM."
         path="/help"
+        keywords="ayuda moonjab, soporte moonjab, preguntas frecuentes moonjab, como usar moonjab, cancelar moonjab, exportar cv moonjab"
+        breadcrumbs={[{ name: 'Centro de Ayuda', url: 'https://moonjab.com/help' }]}
         schema={faqSchema}
       />
       <nav className="sticky top-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border/50">

@@ -96,10 +96,10 @@ const Register = () => {
   return (
     <div className="min-h-screen flex bg-background">
       <SEOHead
-        title="Crear Cuenta"
-        description="Regístrate gratis en MoonJab. Crea tu CV y practica entrevistas con IA en LATAM."
+        title="Registro Gratis — Crea tu Cuenta MoonJab"
+        description="Regístrate gratis en MoonJab. Crea tu CV profesional con IA, practica entrevistas laborales y descubre tu perfil vocacional RIASEC. Sin tarjeta de crédito."
         path="/registro"
-        noindex
+        keywords="registro moonjab, crear cuenta moonjab, registrarse moonjab gratis, moonjab estudiantes"
       />
 
       {/* ── Brand panel ── */}

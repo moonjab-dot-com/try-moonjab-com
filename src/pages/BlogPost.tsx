@@ -82,6 +82,7 @@ const BlogPost = () => {
         publishedTime={`${post.isoDate}T00:00:00-05:00`}
         modifiedTime={`${post.isoDate}T00:00:00-05:00`}
         author={post.author}
+        articleSection={post.category}
         keywords={`${post.category.toLowerCase()}, ${post.title.toLowerCase()}, MoonJab blog, empleabilidad LATAM`}
         breadcrumbs={[
           { name: 'Blog', url: 'https://moonjab.com/blog' },

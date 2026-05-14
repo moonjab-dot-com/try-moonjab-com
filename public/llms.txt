@@ -155,7 +155,7 @@ MoonJab publica las preguntas más frecuentes en entrevistas de trabajo en LATAM
 - [Preguntas entrevista Desarrollador Web](https://moonjab.com/preguntas-de-entrevista/desarrollador-web) - JavaScript, React, CSS, algoritmos, conductuales
 - [Preguntas entrevista Analista de Datos](https://moonjab.com/preguntas-de-entrevista/analista-de-datos) - SQL, Python, estadística, visualización
 - [Preguntas entrevista Marketing Digital](https://moonjab.com/preguntas-de-entrevista/marketing-digital) - Google Ads, Meta Ads, SEO, analytics
-- [Preguntas entrevista Diseñador UX/UI](https://moonjab.com/preguntas-de-entrevista/diseñador-ux-ui) - Proceso de diseño, Figma, portfolio review
+- [Preguntas entrevista Diseñador UX/UI](https://moonjab.com/preguntas-de-entrevista/disenador-ux-ui) - Proceso de diseño, Figma, portfolio review
 - [Preguntas entrevista Recursos Humanos](https://moonjab.com/preguntas-de-entrevista/recursos-humanos) - Reclutamiento, ATS, legislación laboral
 - [Preguntas entrevista Contador](https://moonjab.com/preguntas-de-entrevista/contador) - NIIF, estados financieros, tributación
 
@@ -172,7 +172,7 @@ MoonJab publica plantillas de CV optimizadas para ATS por profesión. Cada guía
 
 - [Plantillas CV por profesión](https://moonjab.com/plantillas-cv) - Hub con todas las profesiones
 - [Plantilla CV Ingeniero de Software](https://moonjab.com/plantillas-cv/ingeniero-de-software) - Stack técnico, proyectos, GitHub
-- [Plantilla CV Diseñador Gráfico / UX-UI](https://moonjab.com/plantillas-cv/diseñador-grafico) - Portfolio, Figma, métricas de diseño
+- [Plantilla CV Diseñador Gráfico / UX-UI](https://moonjab.com/plantillas-cv/disenador-grafico) - Portfolio, Figma, métricas de diseño
 - [Plantilla CV Administrador de Empresas](https://moonjab.com/plantillas-cv/administrador-empresas) - Logros medibles, ERP, MBA
 - [Plantilla CV Contador / Auditor](https://moonjab.com/plantillas-cv/contador-auditor) - NIIF, SAP, colegiatura
 - [Plantilla CV Marketing Digital](https://moonjab.com/plantillas-cv/marketing-digital) - Métricas de campañas, certificaciones
@@ -187,39 +187,39 @@ MoonJab publica plantillas de CV optimizadas para ATS por profesión. Cada guía
 ## Artículos del blog
 
 **CV y candidatura:**
-- [Cómo hacer un CV sin experiencia laboral](https://moonjab.com/blog/como-hacer-un-cv-sin-experiencia): Guía paso a paso para estudiantes. Proyectos académicos, voluntariado y habilidades como experiencia real.
-- [¿Qué es ATS y cómo optimizar tu CV?](https://moonjab.com/blog/que-es-ats-y-como-optimizar-tu-cv): Por qué el 75% de CVs son rechazados por software antes de llegar a un humano, y cómo superarlo.
-- [10 errores en tu CV que cuestan entrevistas](https://moonjab.com/blog/errores-cv-evitar): Los errores más comunes y cómo evitarlos para aumentar callbacks en un 300%.
-- [Las palabras clave que debes incluir en tu CV para LATAM](https://moonjab.com/blog/palabras-clave-cv-ats-latam): Keywords por industria para sistemas ATS en Perú, México, Colombia, Argentina y Chile.
-- [Cómo escribir una carta de presentación en 2025](https://moonjab.com/blog/carta-presentacion-2025): Estructura, plantilla y errores a evitar para el mercado LATAM actual.
+- [Cómo hacer un CV sin experiencia laboral](https://moonjab.com/blog/como-hacer-un-cv-sin-experiencia): Guía completa para universitarios sin experiencia laboral previa. Enseña cómo destacar proyectos académicos, voluntariados y habilidades técnicas como evidencia real de competencia. Incluye estructura, ejemplos por industria y errores frecuentes a evitar.
+- [¿Qué es ATS y cómo optimizar tu CV?](https://moonjab.com/blog/que-es-ats-y-como-optimizar-tu-cv): Explica por qué el 75% de CVs son rechazados automáticamente por sistemas ATS antes de llegar a un reclutador humano. Incluye lista de palabras clave por industria, formato correcto y errores de formato que invalidan un currículum.
+- [10 errores en tu CV que cuestan entrevistas](https://moonjab.com/blog/errores-cv-evitar): Los 10 errores más comunes en currículums de estudiantes en LATAM y cómo corregirlos. Candidatos que aplican estas correcciones reportan hasta 300% más respuestas de reclutadores.
+- [Las palabras clave que debes incluir en tu CV para LATAM](https://moonjab.com/blog/palabras-clave-cv-ats-latam): Lista de keywords por industria (tecnología, finanzas, marketing, RR.HH.) optimizadas para los sistemas ATS que usan BCP, Falabella, BBVA, Bancolombia y Femsa en sus procesos de selección masiva.
+- [Cómo escribir una carta de presentación en 2025](https://moonjab.com/blog/carta-presentacion-2025): Estructura de 3 párrafos para carta de presentación efectiva en el mercado LATAM 2025. Incluye plantilla descargable, ejemplos reales y errores que hacen que tu solicitud sea descartada.
 
 **Entrevistas:**
-- [Cómo preparar una entrevista técnica](https://moonjab.com/blog/preparar-entrevista-tecnica-2025): Estrategias probadas para destacar en entrevistas técnicas en 2025.
-- [Las 15 preguntas conductuales más frecuentes](https://moonjab.com/blog/preguntas-conductuales-entrevista): Cómo responder con el método STAR y ejemplos reales para LATAM.
-- [Método STAR para entrevistas](https://moonjab.com/blog/metodo-star-respuestas-entrevista): La técnica definitiva para respuestas claras, convincentes y memorables.
-- [Tu primera entrevista de trabajo: guía completa](https://moonjab.com/blog/primera-entrevista-trabajo-guia): Qué hacer antes, durante y después para no cometer errores.
-- [8 errores que arruinan una entrevista](https://moonjab.com/blog/errores-fatales-entrevista): Descuidos que eliminan a buenos candidatos todos los días.
+- [Cómo preparar una entrevista técnica](https://moonjab.com/blog/preparar-entrevista-tecnica-2025): Las entrevistas técnicas en 2025 evalúan razonamiento más que memorización. Estrategias probadas para pair programming, system design y preguntas conductuales. Incluye plan de estudio de 30 días y recursos recomendados.
+- [Las 15 preguntas conductuales más frecuentes](https://moonjab.com/blog/preguntas-conductuales-entrevista): Las 15 preguntas de comportamiento más usadas en entrevistas en empresas como Google, Rappi, MercadoLibre y bancos LATAM. Incluye respuestas modelo con el método STAR y errores que eliminan candidatos.
+- [Método STAR para entrevistas](https://moonjab.com/blog/metodo-star-respuestas-entrevista): Guía paso a paso del método STAR (Situación, Tarea, Acción, Resultado) para responder preguntas de comportamiento en entrevistas laborales. Con ejemplos reales para cada tipo de pregunta y errores comunes.
+- [Tu primera entrevista de trabajo: guía completa](https://moonjab.com/blog/primera-entrevista-trabajo-guia): Todo lo que necesitas saber antes, durante y después de tu primera entrevista laboral. Desde qué vestir hasta qué preguntar al final, con lista de verificación descargable para no olvidar nada.
+- [8 errores que arruinan una entrevista](https://moonjab.com/blog/errores-fatales-entrevista): Ocho descuidos específicos que eliminan a candidatos calificados: llegar tarde, no investigar la empresa, respuestas vagas, no hacer preguntas. Con versión corregida de cada error.
 
 **Networking:**
-- [Networking para conseguir empleo](https://moonjab.com/blog/networking-busqueda-empleo): El 70% de empleos se consiguen por contactos. Cómo construir una red profesional.
-- [LinkedIn para estudiantes universitarios](https://moonjab.com/blog/linkedin-estudiantes-universitarios): Cómo crear un perfil que consiga entrevistas sin años de experiencia.
-- [Entrevistas informativas: la estrategia secreta](https://moonjab.com/blog/entrevistas-informativas-como-conseguirlas): Cómo entrar a empresas sin postular formalmente.
-- [Networking para introvertidos](https://moonjab.com/blog/networking-introvertidos): Conectar auténticamente sin fingir ser extrovertido.
-- [Cómo construir tu marca personal digital](https://moonjab.com/blog/presencia-digital-profesional): Gestiona tu huella digital para atraer oportunidades laborales.
+- [Networking para conseguir empleo](https://moonjab.com/blog/networking-busqueda-empleo): El 70% de empleos en LATAM se consiguen por contactos y referencias directas, no por postulaciones online. Estrategia paso a paso para construir red profesional desde cero siendo estudiante universitario.
+- [LinkedIn para estudiantes universitarios](https://moonjab.com/blog/linkedin-estudiantes-universitarios): Guía práctica para optimizar el perfil de LinkedIn como estudiante sin experiencia y conseguir que reclutadores te contacten. Incluye keywords, foto, resumen y cómo solicitar conexiones estratégicas.
+- [Entrevistas informativas: la estrategia secreta](https://moonjab.com/blog/entrevistas-informativas-como-conseguirlas): Cómo conseguir 20–30 minutos con profesionales de empresas de tu interés sin postular formalmente. El 40% de quienes hacen entrevistas informativas reciben una oferta o referencia directa.
+- [Networking para introvertidos](https://moonjab.com/blog/networking-introvertidos): Estrategias de conexión auténtica para personas introvertidas que no quieren fingir ser extrovertidas. Enfocado en conversaciones profundas, networking 1:1 y comunidades online relevantes.
+- [Cómo construir tu marca personal digital](https://moonjab.com/blog/presencia-digital-profesional): Cómo gestionar tu huella digital en LinkedIn, GitHub, portafolio y redes para atraer oportunidades laborales en lugar de buscarlas activamente.
 
 **Carrera:**
-- [Cómo conseguir tu primer trabajo siendo universitario](https://moonjab.com/blog/primer-trabajo-estudiante-universitario): Estrategia completa para estudiantes LATAM.
-- [Prácticas profesionales en LATAM](https://moonjab.com/blog/practicas-profesionales-latam): Guía completa de programas de prácticas en 5 países.
-- [Cómo cambiar de carrera a los 30](https://moonjab.com/blog/cambio-carrera-guia): Guía paso a paso basada en casos reales de transición exitosa.
-- [Los primeros 90 días en tu primer trabajo](https://moonjab.com/blog/primer-empleo-90-dias): Cómo causar una excelente primera impresión y construir reputación.
-- [Las 10 habilidades digitales más demandadas en LATAM 2025](https://moonjab.com/blog/habilidades-digitales-2025-latam): Qué habilidades técnicas priorizan las empresas al contratar.
+- [Cómo conseguir tu primer trabajo siendo universitario](https://moonjab.com/blog/primer-trabajo-estudiante-universitario): Estrategia completa de 90 días para conseguir primer empleo o prácticas siendo estudiante universitario en Perú, México, Colombia, Argentina o Chile. Incluye timeline, recursos y casos reales.
+- [Prácticas profesionales en LATAM](https://moonjab.com/blog/practicas-profesionales-latam): Guía completa de programas de prácticas preprofesionales en los 5 principales mercados de LATAM: empresas que ofrecen pasantías, requisitos, proceso de postulación y cómo destacar.
+- [Cómo cambiar de carrera a los 30](https://moonjab.com/blog/cambio-carrera-guia): Marco de decisión para cambiar de industria o rol profesional basado en casos reales de transición exitosa. Incluye cómo reencuadrar la experiencia previa y construir el perfil para la nueva industria.
+- [Los primeros 90 días en tu primer trabajo](https://moonjab.com/blog/primer-empleo-90-dias): Plan semana a semana para causar excelente primera impresión, construir reputación y posicionarse para crecimiento desde el primer empleo.
+- [Las 10 habilidades digitales más demandadas en LATAM 2025](https://moonjab.com/blog/habilidades-digitales-2025-latam): Ranking de las habilidades técnicas más solicitadas en ofertas laborales LATAM 2025: análisis de datos, IA, automatización, cloud, ciberseguridad. Con recursos gratuitos para aprenderlas.
 
 **Salario:**
-- [Cómo negociar tu salario](https://moonjab.com/blog/negociar-salario): Técnicas y scripts para negociar con confianza.
-- [Sueldos en tecnología en LATAM 2025](https://moonjab.com/blog/sueldos-tecnologia-latam-2025): Rangos reales por rol y país para desarrolladores, diseñadores y más.
-- [Cómo pedir un aumento de sueldo](https://moonjab.com/blog/pedir-aumento-sueldo-estrategia): Scripts reales y el timing correcto para conseguirlo.
-- [Beneficios laborales que negociar en LATAM](https://moonjab.com/blog/beneficios-laborales-negociar-latam): Más allá del salario base: salud, tiempo, desarrollo y más.
-- [Freelance vs. empleo formal en LATAM](https://moonjab.com/blog/freelance-vs-empleo-economia-latam): Comparativa real con números para tomar la mejor decisión en 2025.
+- [Cómo negociar tu salario](https://moonjab.com/blog/negociar-salario): Técnicas y scripts exactos para negociar sueldo con confianza en primer empleo y cambios de trabajo. Incluye cuándo y cómo pedir, cómo responder contraofertas y errores que cuestan dinero.
+- [Sueldos en tecnología en LATAM 2025](https://moonjab.com/blog/sueldos-tecnologia-latam-2025): Rangos salariales reales por rol (desarrollador web, analista de datos, UX designer, marketing digital) y país (Perú, México, Colombia, Argentina, Chile) con datos de mercado 2025.
+- [Cómo pedir un aumento de sueldo](https://moonjab.com/blog/pedir-aumento-sueldo-estrategia): Scripts probados y el timing correcto para pedir aumento de sueldo. Incluye cómo construir el caso con evidencia, qué decir exactamente y cómo manejar la negativa.
+- [Beneficios laborales que negociar en LATAM](https://moonjab.com/blog/beneficios-laborales-negociar-latam): Más allá del salario base: seguro médico, días de vacaciones adicionales, trabajo remoto, bonos, capacitación y otros beneficios negociables en el mercado laboral de LATAM.
+- [Freelance vs. empleo formal en LATAM](https://moonjab.com/blog/freelance-vs-empleo-economia-latam): Comparativa real con números: ingresos, estabilidad, beneficios, impuestos y perspectivas de crecimiento entre freelance y empleo formal en los principales mercados de LATAM en 2025.
 
 ## Sala de Prensa
 

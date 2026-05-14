@@ -108,6 +108,8 @@ const Pricing = () => {
         title="Precios — Plan Gratuito y Pro desde $5 USD/mes"
         description="MoonJab gratis para empezar. Plan Pro $5 USD/mes: CV builder ilimitado, plantillas ATS, entrevistas ilimitadas y coach IA para estudiantes en LATAM."
         path="/pricing"
+        keywords="precios moonjab, plan pro moonjab, cv builder precio, simulador entrevistas precio, moonjab gratis"
+        breadcrumbs={[{ name: 'Precios', url: 'https://moonjab.com/pricing' }]}
         schema={pricingFaqSchema}
       />
       <nav className="sticky top-0 z-50 backdrop-blur-xl bg-background/80 border-b border-border/40">
