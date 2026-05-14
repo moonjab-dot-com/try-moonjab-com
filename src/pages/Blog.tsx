@@ -1937,7 +1937,44 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEOHead title="Blog de Empleabilidad — CV ATS, Entrevistas y Primer Empleo" description="Guías prácticas sobre cómo crear un CV optimizado para ATS, preparar entrevistas laborales y conseguir tu primer trabajo o prácticas profesionales en LATAM." path="/blog" />
+      <SEOHead
+        title="Blog de Empleabilidad — CV ATS, Entrevistas y Primer Empleo"
+        description="Guías prácticas sobre cómo crear un CV optimizado para ATS, preparar entrevistas laborales y conseguir tu primer trabajo o prácticas profesionales en LATAM."
+        path="/blog"
+        keywords="blog empleabilidad latam, cv ats, entrevistas de trabajo, primer empleo estudiante, prácticas profesionales, carrera universitaria"
+        breadcrumbs={[{ name: 'Blog', url: 'https://moonjab.com/blog' }]}
+        schema={[
+          {
+            '@context': 'https://schema.org',
+            '@type': 'CollectionPage',
+            '@id': 'https://moonjab.com/blog#collection',
+            name: 'Blog MoonJab — Empleabilidad para Estudiantes LATAM',
+            description: 'Guías prácticas sobre CV, entrevistas, networking, salarios y carrera profesional para estudiantes universitarios en Latinoamérica.',
+            url: 'https://moonjab.com/blog',
+            publisher: { '@id': 'https://moonjab.com/#organization' },
+            inLanguage: 'es',
+            about: [
+              { '@type': 'Thing', name: 'Curriculum Vitae' },
+              { '@type': 'Thing', name: 'Entrevistas de trabajo' },
+              { '@type': 'Thing', name: 'Primer empleo' },
+              { '@type': 'Thing', name: 'Empleabilidad en LATAM' },
+            ],
+          },
+          {
+            '@context': 'https://schema.org',
+            '@type': 'ItemList',
+            '@id': 'https://moonjab.com/blog#posts',
+            name: 'Artículos del blog MoonJab',
+            itemListElement: blogPosts.slice(0, 10).map((post, idx) => ({
+              '@type': 'ListItem',
+              position: idx + 1,
+              name: post.title,
+              url: `https://moonjab.com/blog/${post.id}`,
+              description: post.excerpt,
+            })),
+          },
+        ]}
+      />
       {/* Navbar */}
       <nav className="sticky top-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border/50">
         <div className="container mx-auto px-6 h-20 flex items-center justify-between max-w-7xl">

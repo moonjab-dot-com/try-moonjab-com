@@ -27,7 +27,61 @@ const About = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      <SEOHead title="Sobre MoonJab — Nuestra Misión y Equipo" description="Conoce la misión y equipo de MoonJab. Democratizamos la empleabilidad en LATAM con IA: CV builder ATS y simulador de entrevistas para estudiantes universitarios en LATAM." path="/about" />
+      <SEOHead
+        title="Sobre MoonJab — Nuestra Misión y Equipo"
+        description="Conoce la misión y equipo de MoonJab. Democratizamos la empleabilidad en LATAM con IA: CV builder ATS y simulador de entrevistas para estudiantes universitarios en LATAM."
+        path="/about"
+        breadcrumbs={[{ name: 'Nosotros', url: 'https://moonjab.com/about' }]}
+        schema={[
+          {
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            '@id': 'https://moonjab.com/#organization',
+            name: 'MoonJab',
+            url: 'https://moonjab.com',
+            logo: 'https://moonjab.com/moonjab-logo.png',
+            description: 'Plataforma de empleabilidad con IA para estudiantes universitarios y jóvenes profesionales en Latinoamérica.',
+            foundingDate: '2025',
+            founder: {
+              '@type': 'Person',
+              '@id': 'https://moonjab.com/#founder',
+              name: 'Salvador',
+              jobTitle: 'CEO & Co-Founder',
+            },
+            address: {
+              '@type': 'PostalAddress',
+              streetAddress: 'Av. José Larco 1301',
+              addressLocality: 'Miraflores',
+              addressRegion: 'Lima',
+              addressCountry: 'PE',
+            },
+            contactPoint: {
+              '@type': 'ContactPoint',
+              email: 'hey@moonjab.com',
+              contactType: 'customer support',
+              availableLanguage: ['Spanish', 'English'],
+            },
+            areaServed: ['PE', 'MX', 'CO', 'AR', 'CL', 'EC', 'BO', 'PY', 'UY', 'VE'],
+            sameAs: [
+              'https://x.com/MoonJabdotcom',
+              'https://www.instagram.com/trymoonjab',
+              'https://www.linkedin.com/company/moonjab',
+              'https://www.youtube.com/@TryMoonJab',
+            ],
+          },
+          {
+            '@context': 'https://schema.org',
+            '@type': 'AboutPage',
+            '@id': 'https://moonjab.com/about#webpage',
+            name: 'Sobre MoonJab — Nuestra Misión y Equipo',
+            url: 'https://moonjab.com/about',
+            description: 'Conoce la misión, valores y equipo de MoonJab, la plataforma de empleabilidad con IA para estudiantes en LATAM.',
+            isPartOf: { '@id': 'https://moonjab.com/#website' },
+            about: { '@id': 'https://moonjab.com/#organization' },
+            publisher: { '@id': 'https://moonjab.com/#organization' },
+          },
+        ]}
+      />
       <nav className="sticky top-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border/50">
         <div className="container mx-auto px-6 h-20 flex items-center justify-between max-w-7xl">
           <OfficialLogo size="lg" to="/" />

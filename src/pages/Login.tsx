@@ -54,10 +54,10 @@ const Login = () => {
   return (
     <div className="min-h-screen flex bg-background">
       <SEOHead
-        title="Iniciar Sesión"
-        description="Accede a tu cuenta MoonJab para gestionar tu CV y practicar entrevistas con IA."
+        title="Iniciar Sesión en MoonJab"
+        description="Accede a tu cuenta MoonJab. Gestiona tu CV builder con IA, practica entrevistas laborales y consulta tu diagnóstico vocacional RIASEC."
         path="/login"
-        noindex
+        keywords="iniciar sesión moonjab, login moonjab, entrar moonjab"
       />
 
       {/* ── Brand panel ── */}

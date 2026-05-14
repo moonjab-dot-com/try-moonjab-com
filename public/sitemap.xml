@@ -178,6 +178,25 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/help"/>
   </url>
 
+  <!-- AUTH PAGES — critical for sitelinks -->
+  <url>
+    <loc>https://moonjab.com/login</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/login"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/login"/>
+  </url>
+
+  <url>
+    <loc>https://moonjab.com/registro</loc>
+    <lastmod>2026-05-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.70</priority>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/registro"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/registro"/>
+  </url>
+
   <!-- BLOG HUB -->
   <url>
     <loc>https://moonjab.com/blog</loc>

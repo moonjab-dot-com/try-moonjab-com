@@ -88,7 +88,31 @@ const DiagnosticoVocacionalLanding = () => {
         description="Test vocacional RIASEC gratis en español. Responde 40 preguntas y descubre qué carrera es ideal para ti según tu personalidad e intereses. +10,000 estudiantes LATAM."
         path="/diagnostico-vocacional"
         keywords="test vocacional gratis, diagnóstico vocacional, RIASEC, test de personalidad carrera, qué carrera estudiar, orientación vocacional LATAM, Holland Code"
-        breadcrumbs={[{ name: 'Diagnóstico Vocacional', url: '/diagnostico-vocacional' }]}
+        breadcrumbs={[{ name: 'Diagnóstico Vocacional RIASEC', url: 'https://moonjab.com/diagnostico-vocacional' }]}
+        schema={{
+          '@context': 'https://schema.org',
+          '@type': 'SoftwareApplication',
+          '@id': 'https://moonjab.com/diagnostico-vocacional#app',
+          name: 'Diagnóstico Vocacional RIASEC — MoonJab',
+          url: 'https://moonjab.com/diagnostico-vocacional',
+          description: 'Test vocacional basado en el modelo RIASEC (Holland Codes). Descubre tu perfil profesional y las carreras más alineadas a tus intereses y personalidad.',
+          applicationCategory: 'EducationApplication',
+          operatingSystem: 'Web',
+          inLanguage: 'es',
+          isAccessibleForFree: true,
+          offers: {
+            '@type': 'Offer',
+            price: '0',
+            priceCurrency: 'USD',
+            availability: 'https://schema.org/InStock',
+          },
+          publisher: { '@id': 'https://moonjab.com/#organization' },
+          about: [
+            { '@type': 'Thing', name: 'Orientación vocacional' },
+            { '@type': 'Thing', name: 'RIASEC Holland Code' },
+            { '@type': 'Thing', name: 'Test de personalidad profesional' },
+          ],
+        }}
       />
 
       {/* Navbar */}

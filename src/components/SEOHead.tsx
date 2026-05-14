@@ -18,6 +18,7 @@ interface SEOHeadProps {
   publishedTime?: string;
   modifiedTime?: string;
   author?: string;
+  articleSection?: string;
   schema?: object | object[];
 }
 
@@ -39,6 +40,7 @@ export const SEOHead = ({
   publishedTime,
   modifiedTime,
   author,
+  articleSection,
   schema,
 }: SEOHeadProps) => {
   const url = `${BASE_URL}${path}`;
@@ -81,9 +83,14 @@ export const SEOHead = ({
       <meta property="og:image" content={ogImage} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
-      {ogImageAlt && <meta property="og:image:alt" content={ogImageAlt} />}
+      <meta property="og:image:alt" content={ogImageAlt ?? fullTitle} />
       <meta property="og:site_name" content="MoonJab" />
       <meta property="og:locale" content="es_LA" />
+      <meta property="og:locale:alternate" content="es_PE" />
+      <meta property="og:locale:alternate" content="es_MX" />
+      <meta property="og:locale:alternate" content="es_CO" />
+      <meta property="og:locale:alternate" content="es_AR" />
+      <meta property="og:locale:alternate" content="es_CL" />
 
       {/* Article meta (og:type="article" pages) */}
       {type === 'article' && publishedTime && (
@@ -95,14 +102,18 @@ export const SEOHead = ({
       {type === 'article' && author && (
         <meta property="article:author" content={author} />
       )}
+      {type === 'article' && articleSection && (
+        <meta property="article:section" content={articleSection} />
+      )}
 
       {/* Twitter / X */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
-      {ogImageAlt && <meta name="twitter:image:alt" content={ogImageAlt} />}
+      <meta name="twitter:image:alt" content={ogImageAlt ?? fullTitle} />
       <meta name="twitter:site" content="@MoonJabdotcom" />
+      <meta name="twitter:creator" content="@MoonJabdotcom" />
 
       {/* Breadcrumb JSON-LD */}
       {breadcrumbSchema && (
