@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next';
+﻿import { useTranslation } from 'react-i18next';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
@@ -38,7 +38,7 @@ export function LanguageSection() {
 
   return (
     <div className="space-y-6">
-      <Card className="rounded-2xl shadow-clovely-md border-2">
+      <Card className="rounded-2xl shadow-mj-md border-2">
         <CardHeader>
           <div className="flex items-center gap-3">
             <div className="p-2 bg-primary/10 rounded-xl">
@@ -82,7 +82,7 @@ export function LanguageSection() {
         </CardContent>
       </Card>
 
-      <Card className="rounded-2xl shadow-clovely-md border-2">
+      <Card className="rounded-2xl shadow-mj-md border-2">
         <CardHeader>
           <CardTitle className="text-base">{t('settings.language.availableLanguages')}</CardTitle>
           <CardDescription>

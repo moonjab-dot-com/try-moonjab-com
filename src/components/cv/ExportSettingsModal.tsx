@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import {
   Dialog,
   DialogContent,
@@ -219,10 +219,10 @@ export default function ExportSettingsModal({
               Vista previa
             </Button>
           )}
-          <Button variant="outline" onClick={onClose} className="w-full sm:w-auto shadow-clovely-sm min-h-[44px]">
+          <Button variant="outline" onClick={onClose} className="w-full sm:w-auto shadow-mj-sm min-h-[44px]">
             Cancelar
           </Button>
-          <Button onClick={handleExport} variant="premium" className="w-full sm:w-auto shadow-clovely-glow min-h-[44px]">
+          <Button onClick={handleExport} variant="premium" className="w-full sm:w-auto shadow-mj-glow min-h-[44px]">
             <FileDown className="mr-2 h-4 w-4" />
             Exportar PDF
           </Button>

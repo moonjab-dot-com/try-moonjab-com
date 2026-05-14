@@ -1,4 +1,4 @@
-import { SEOHead } from '@/components/SEOHead';
+﻿import { SEOHead } from '@/components/SEOHead';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCVStore } from '@/store/useCVStore';
@@ -93,7 +93,7 @@ export default function CVList() {
               transition={{ delay: i * 0.05 }}
             >
               <Card
-                className="p-5 border-border/40 hover:border-primary/20 hover:shadow-clovely-md transition-all duration-300 cursor-pointer group"
+                className="p-5 border-border/40 hover:border-primary/20 hover:shadow-mj-md transition-all duration-300 cursor-pointer group"
                 onClick={() => navigate(`/dashboard/cvs/${cv.id}`)}
               >
                 <div className="flex items-start justify-between mb-4">

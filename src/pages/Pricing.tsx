@@ -1,4 +1,4 @@
-import { SEOHead } from '@/components/SEOHead';
+﻿import { SEOHead } from '@/components/SEOHead';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
@@ -145,7 +145,7 @@ const Pricing = () => {
               <motion.div key={i} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: i * 0.06 }}
                 className={plan.popular ? 'lg:-mt-3' : ''}>
                 <div className={`p-6 h-full rounded-xl border transition-all duration-200 flex flex-col ${
-                  plan.popular ? 'border-primary/30 bg-primary/[0.02] shadow-clovely-md' : 'border-border/50 hover:border-primary/15'
+                  plan.popular ? 'border-primary/30 bg-primary/[0.02] shadow-mj-md' : 'border-border/50 hover:border-primary/15'
                 }`}>
                   {plan.popular && (
                     <div className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary/10 text-primary text-[10px] font-medium mb-4 w-fit">

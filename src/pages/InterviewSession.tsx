@@ -1,4 +1,4 @@
-import { SEOHead } from '@/components/SEOHead';
+﻿import { SEOHead } from '@/components/SEOHead';
 import { useState, useEffect, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -120,7 +120,7 @@ export default function InterviewSession() {
     <div className="container max-w-4xl py-6 sm:py-8 space-y-4 sm:space-y-6">
       <SEOHead title="Sesión de Entrevista" description="Practica tu entrevista en tiempo real con feedback de IA." path="/interview-session" noindex />
       {/* Progress */}
-      <Card className="p-4 sm:p-6 space-y-3 rounded-2xl shadow-clovely-lg border-2 border-primary/10">
+      <Card className="p-4 sm:p-6 space-y-3 rounded-2xl shadow-mj-lg border-2 border-primary/10">
         <div className="flex items-center justify-between text-sm">
           <span className="text-muted-foreground">{t('interviews.session.progress')}</span>
           <span className="font-medium">{answeredCount} / {totalQuestions} {t('interviews.session.questions')}</span>
@@ -129,7 +129,7 @@ export default function InterviewSession() {
       </Card>
 
       {/* Question */}
-      <Card className="p-5 sm:p-8 space-y-5 sm:space-y-6 rounded-xl bg-gradient-to-br from-card to-primary/[0.02] shadow-clovely-md border-2">
+      <Card className="p-5 sm:p-8 space-y-5 sm:space-y-6 rounded-xl bg-gradient-to-br from-card to-primary/[0.02] shadow-mj-md border-2">
         <div className="space-y-3">
           <div className="inline-block px-4 py-2 rounded-full bg-gradient-to-r from-primary/10 to-primary-warm/10 border-2 border-primary/20 text-primary text-sm font-medium">
             {t('interviews.session.question')} {answeredCount + 1}
@@ -167,7 +167,7 @@ export default function InterviewSession() {
                   onChange={(e) => setAnswer(e.target.value)}
                   rows={6}
                   disabled={isLoading}
-                  className="resize-none rounded-xl shadow-clovely-sm"
+                  className="resize-none rounded-xl shadow-mj-sm"
                   placeholder={t('interviews.session.writeOrRecord')}
                 />
                 <p className="text-xs text-muted-foreground">
@@ -190,7 +190,7 @@ export default function InterviewSession() {
                 onChange={(e) => setAnswer(e.target.value)}
                 rows={10}
                 disabled={isLoading}
-                className="resize-none min-h-[200px] sm:min-h-[240px] rounded-xl shadow-clovely-sm focus-visible:shadow-clovely-md focus-visible:ring-primary/20 transition-all duration-300"
+                className="resize-none min-h-[200px] sm:min-h-[240px] rounded-xl shadow-mj-sm focus-visible:shadow-mj-md focus-visible:ring-primary/20 transition-all duration-300"
               />
               <p className="text-sm text-muted-foreground bg-blue-50/50 dark:bg-blue-950/20 p-3 rounded-lg border border-blue-200/50 dark:border-blue-800/50">
                 {t('interviews.session.starTip')}
@@ -208,7 +208,7 @@ export default function InterviewSession() {
               }
             }}
             disabled={isLoading}
-            className="min-h-[44px] w-full sm:w-auto shadow-clovely-sm"
+            className="min-h-[44px] w-full sm:w-auto shadow-mj-sm"
           >
             {t('interviews.session.exit')}
           </Button>
@@ -216,7 +216,7 @@ export default function InterviewSession() {
             onClick={handleSubmit} 
             disabled={isLoading || !answer.trim()} 
             variant="premium" 
-            className="min-h-[44px] flex-1 shadow-clovely-glow"
+            className="min-h-[44px] flex-1 shadow-mj-glow"
           >
             {isLoading ? (
               <>
@@ -238,7 +238,7 @@ export default function InterviewSession() {
 
       {/* Recent feedback */}
       {currentSession.responses.length > 0 && (
-        <Card className="p-4 sm:p-6 space-y-4 rounded-xl border-2 shadow-clovely-md">
+        <Card className="p-4 sm:p-6 space-y-4 rounded-xl border-2 shadow-mj-md">
           <h3 className="font-semibold flex items-center gap-2">
             <div className="p-2 rounded-lg bg-gradient-to-br from-green-500/10 to-emerald-500/10">
               <CheckCircle2 className="h-4 w-4 text-green-600" />

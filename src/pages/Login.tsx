@@ -57,6 +57,7 @@ const Login = () => {
         title="Iniciar Sesión"
         description="Accede a tu cuenta MoonJab para gestionar tu CV y practicar entrevistas con IA."
         path="/login"
+        noindex
       />
 
       {/* ── Brand panel ── */}

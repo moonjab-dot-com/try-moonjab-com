@@ -8,8 +8,8 @@ Disallow: /settings/
 Disallow: /api/
 Disallow: /admin/
 Disallow: /profile/edit/
-Disallow: /_next/
-Disallow: /src/
+Disallow: /test/
+Disallow: /usuariostest/
 Allow: /moonjab-logo.png
 Allow: /og-image.png
 Allow: /sitemap.xml
@@ -65,4 +65,6 @@ User-agent: Omgilibot
 Allow: /
 
 # Sitemaps
+Sitemap: https://moonjab.com/sitemap-index.xml
 Sitemap: https://moonjab.com/sitemap.xml
+Sitemap: https://moonjab.com/sitemap-blog.xml

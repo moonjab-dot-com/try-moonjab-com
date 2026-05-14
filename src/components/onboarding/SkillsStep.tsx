@@ -1,4 +1,4 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Input } from '@/components/ui/input';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -227,8 +227,8 @@ export const SkillsStep = ({ skills, onChange }: SkillsStepProps) => {
                 onClick={() => toggleSoftSkill(skill)}
                 className={`p-3 rounded-xl border-2 transition-all duration-300 text-left text-sm ${
                   skills.soft.includes(skill)
-                    ? 'border-primary bg-gradient-to-br from-primary/10 to-primary/5 shadow-clovely-sm hover:shadow-clovely-md'
-                    : 'border-border hover:border-primary/50 hover:shadow-clovely-sm'
+                    ? 'border-primary bg-gradient-to-br from-primary/10 to-primary/5 shadow-mj-sm hover:shadow-mj-md'
+                    : 'border-border hover:border-primary/50 hover:shadow-mj-sm'
                 }`}
               >
                 {skill}

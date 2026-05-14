@@ -1,4 +1,4 @@
-import {
+﻿import {
   Dialog,
   DialogContent,
   DialogDescription,
@@ -94,7 +94,7 @@ export default function AIAnalysisModal({
         <ScrollArea className="h-[calc(90vh-140px)] sm:h-[calc(85vh-180px)] pr-2 sm:pr-4">
           <div className="space-y-6">
             {/* Score Overview */}
-            <Card className="p-4 sm:p-6 rounded-2xl shadow-clovely-lg border-2 border-primary/10 bg-primary/10">
+            <Card className="p-4 sm:p-6 rounded-2xl shadow-mj-lg border-2 border-primary/10 bg-primary/10">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-4">
                 <h3 className="font-semibold text-base sm:text-lg text-primary">Score General</h3>
                 <div className="text-3xl sm:text-4xl font-bold text-primary">{analysisData.overallScore}/100</div>
@@ -113,7 +113,7 @@ export default function AIAnalysisModal({
                 </h3>
                 <div className="space-y-2">
                   {analysisData.strengths.map((strength, idx) => (
-                    <Card key={idx} className="p-3 sm:p-4 rounded-xl border-2 border-green-300 bg-green-50 dark:border-green-700 dark:bg-green-950/30 shadow-clovely-sm">
+                    <Card key={idx} className="p-3 sm:p-4 rounded-xl border-2 border-green-300 bg-green-50 dark:border-green-700 dark:bg-green-950/30 shadow-mj-sm">
                       <p className="text-xs sm:text-sm">{strength}</p>
                     </Card>
                   ))}
@@ -132,7 +132,7 @@ export default function AIAnalysisModal({
                 </h3>
                 <div className="space-y-2">
                   {analysisData.improvements.map((improvement, idx) => (
-                    <Card key={idx} className="p-3 sm:p-4 rounded-xl border-2 border-amber-300 bg-amber-50 dark:border-amber-700 dark:bg-amber-950/30 shadow-clovely-sm">
+                    <Card key={idx} className="p-3 sm:p-4 rounded-xl border-2 border-amber-300 bg-amber-50 dark:border-amber-700 dark:bg-amber-950/30 shadow-mj-sm">
                       <p className="text-xs sm:text-sm">{improvement}</p>
                     </Card>
                   ))}
@@ -150,7 +150,7 @@ export default function AIAnalysisModal({
               </h3>
               <div className="space-y-3">
                 {analysisData.suggestions.map((suggestion, idx) => (
-                  <Card key={idx} className="p-3 sm:p-4 rounded-xl shadow-clovely-sm border-2">
+                  <Card key={idx} className="p-3 sm:p-4 rounded-xl shadow-mj-sm border-2">
                     <div className="flex flex-col gap-3">
                       <div className="flex-1">
                         <div className="flex items-center gap-2 mb-2">
@@ -181,7 +181,7 @@ export default function AIAnalysisModal({
 
         {/* Actions */}
         <div className="flex justify-end gap-2 pt-4 border-t">
-          <Button variant="outline" onClick={onClose} className="shadow-clovely-sm min-h-[44px] w-full sm:w-auto">
+          <Button variant="outline" onClick={onClose} className="shadow-mj-sm min-h-[44px] w-full sm:w-auto">
             Cerrar
           </Button>
         </div>

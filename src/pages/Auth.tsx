@@ -1,4 +1,4 @@
-import { SEOHead } from '@/components/SEOHead';
+﻿import { SEOHead } from '@/components/SEOHead';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -116,7 +116,7 @@ export default function Auth() {
           <p className="text-muted-foreground text-sm">Descubre tu camino profesional ideal</p>
         </div>
 
-        <Card className="p-6 border-border/50 shadow-clovely-md">
+        <Card className="p-6 border-border/50 shadow-mj-md">
           <Tabs defaultValue="login" className="w-full">
             <TabsList className="grid w-full grid-cols-2 mb-6">
               <TabsTrigger value="login">Iniciar Sesión</TabsTrigger>
