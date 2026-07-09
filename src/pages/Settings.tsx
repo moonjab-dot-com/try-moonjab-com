@@ -1,7 +1,7 @@
 ﻿import { SEOHead } from '@/components/SEOHead';
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { User, Lock, Bell, Palette, CreditCard, Briefcase, Globe, Download } from 'lucide-react';
+import { User, Lock, Bell, Palette, CreditCard, Briefcase, Globe, Download, Gift } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -14,10 +14,11 @@ import { SubscriptionSection } from '@/components/settings/SubscriptionSection';
 import { LanguageSection } from '@/components/settings/LanguageSection';
 import { AccountSection } from '@/components/settings/AccountSection';
 import { RoleSection } from '@/components/settings/RoleSection';
+import { ReferralSection } from '@/components/settings/ReferralSection';
 import { cn } from '@/lib/utils';
 
 type SettingSection =
-  | 'profile' | 'role' | 'security' | 'notifications'
+  | 'profile' | 'role' | 'referral' | 'security' | 'notifications'
   | 'appearance' | 'language' | 'subscription' | 'account';
 
 export default function Settings() {
@@ -28,6 +29,7 @@ export default function Settings() {
   const navigation = [
     { id: 'profile', label: t('settings.profile.title'), icon: User },
     { id: 'role', label: t('settings.role.title'), icon: Briefcase },
+    { id: 'referral', label: 'Invitar y ganar', icon: Gift },
     { id: 'security', label: t('settings.security.title'), icon: Lock },
     { id: 'notifications', label: t('settings.notifications.title'), icon: Bell },
     { id: 'appearance', label: t('settings.appearance.title'), icon: Palette },
@@ -39,6 +41,7 @@ export default function Settings() {
     switch (activeSection) {
       case 'profile': return <ProfileSection />;
       case 'role': return <RoleSection />;
+      case 'referral': return <ReferralSection />;
       case 'security': return <SecuritySection />;
       case 'notifications': return <NotificationsSection />;
       case 'appearance': return <AppearanceSection />;

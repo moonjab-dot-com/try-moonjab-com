@@ -7,6 +7,7 @@ import { RIASEC_QUESTIONS, getShuffledQuestions, RIASECQuestion } from '@/lib/ri
 import { AnswerValue } from '@/lib/riasecScoring';
 import { cn } from '@/lib/utils';
 import { toast } from 'sonner';
+import { track } from '@/lib/analytics';
 
 interface RIASECQuizStepProps {
   onComplete: (answers: Record<string, AnswerValue>) => void;
@@ -35,6 +36,10 @@ export function RIASECQuizStep({ onComplete, initialAnswers = {} }: RIASECQuizSt
   const [shownMilestones, setShownMilestones] = useState<Set<number>>(new Set());
   const [milestoneVisible, setMilestoneVisible] = useState(false);
   const [milestoneText, setMilestoneText] = useState('');
+
+  useEffect(() => {
+    track('diagnostic_started');
+  }, []);
 
   const currentQuestion = questions[currentIndex] ?? questions[0];
   const answeredCount = Object.keys(answers).length;
@@ -79,6 +84,7 @@ export function RIASECQuizStep({ onComplete, initialAnswers = {} }: RIASECQuizSt
 
   const handleTryComplete = useCallback(() => {
     if (isComplete) {
+      track('diagnostic_completed');
       onComplete(answers);
     } else {
       const missing = questions.length - answeredCount;

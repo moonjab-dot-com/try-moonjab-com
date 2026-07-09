@@ -56,6 +56,7 @@ export const useAuthStore = create<AuthState>()(
       },
       
       register: async (name: string, email: string, password: string) => {
+        const refCode = localStorage.getItem('moonjab_ref_code');
         const { data, error } = await supabase.auth.signUp({
           email,
           password,
@@ -64,6 +65,7 @@ export const useAuthStore = create<AuthState>()(
             data: {
               nombre: name,
               name: name,
+              ...(refCode ? { ref_code: refCode } : {}),
             }
           }
         });

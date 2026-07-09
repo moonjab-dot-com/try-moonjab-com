@@ -11,6 +11,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { useSubscription, MOONJAB_PRO } from '@/hooks/useSubscription';
 import { Badge } from '@/components/ui/badge';
+import { track } from '@/lib/analytics';
 
 const Payment = () => {
   const { t } = useTranslation();
@@ -27,6 +28,8 @@ const Payment = () => {
   useEffect(() => {
     if (status === 'success') {
       void checkSubscription();
+      track('checkout_completed');
+      void supabase.functions.invoke('complete-referral').catch(() => {});
       toast.success(t('payment.successToast'));
       const timer = setTimeout(() => navigate('/dashboard?subscription=success'), 2000);
       return () => clearTimeout(timer);
@@ -52,6 +55,7 @@ const Payment = () => {
     }
 
     setLoading(true);
+    track('upgrade_clicked');
     try {
       await openCheckout();
     } catch (err: any) {

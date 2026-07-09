@@ -9,6 +9,8 @@ import { ThemeProvider } from "next-themes";
 import { Suspense, lazy } from "react";
 import { useAuthSync } from "@/hooks/useAuthSync";
 import { useAuthRedirect } from "@/hooks/useAuthRedirect";
+import { useEffect } from "react";
+import { captureReferralCode } from "@/lib/referral";
 import { SkeletonDashboard } from "@/components/ui/skeleton-loader";
 import Landing from "./pages/Landing";
 import Auth from "./pages/Auth";
@@ -62,6 +64,9 @@ const queryClient = new QueryClient();
 function AuthSyncWrapper({ children }: { children: React.ReactNode }) {
   useAuthSync();
   useAuthRedirect();
+  useEffect(() => {
+    captureReferralCode();
+  }, []);
   return <>{children}</>;
 }
 
@@ -126,14 +131,6 @@ const App = () => (
                 <Route path="/onboarding" element={<ProtectedRoute><Onboarding /></ProtectedRoute>} />
 
                 <Route path="/dashboard" element={<ProtectedRoute><DashboardLayout /></ProtectedRoute>}>
-                  {dashboardChildren}
-                </Route>
-
-                <Route path="/test/dashboard" element={<ProtectedRoute><DashboardLayout /></ProtectedRoute>}>
-                  {dashboardChildren}
-                </Route>
-
-                <Route path="/usuariostest/dashboard" element={<ProtectedRoute><DashboardLayout /></ProtectedRoute>}>
                   {dashboardChildren}
                 </Route>
 

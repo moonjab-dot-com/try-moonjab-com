@@ -6,6 +6,7 @@ import { ThemeToggle } from '@/components/ThemeToggle';
 import { motion } from 'framer-motion';
 import { ArrowRight, TrendingUp, Search } from 'lucide-react';
 import { SALARY_ROLES, SALARY_COUNTRIES, SALARY_CATEGORIES } from '@/data/salaries';
+import { EmailCaptureCard } from '@/components/EmailCaptureCard';
 
 const fade = { hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5 } } };
 
@@ -168,6 +169,13 @@ const SalaryHub = () => {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Email capture */}
+      <section className="py-4">
+        <div className="mx-auto max-w-2xl px-6">
+          <EmailCaptureCard sourcePage="/salario" />
         </div>
       </section>
 

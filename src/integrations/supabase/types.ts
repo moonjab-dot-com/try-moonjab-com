@@ -185,6 +185,8 @@ export type Database = {
           pais: string | null
           preferencias_laborales: Json | null
           progreso: Json | null
+          referral_code: string | null
+          referred_by: string | null
           rol_profesional: string | null
           updated_at: string
           user_role: string | null
@@ -200,6 +202,8 @@ export type Database = {
           pais?: string | null
           preferencias_laborales?: Json | null
           progreso?: Json | null
+          referral_code?: string | null
+          referred_by?: string | null
           rol_profesional?: string | null
           updated_at?: string
           user_role?: string | null
@@ -215,11 +219,84 @@ export type Database = {
           pais?: string | null
           preferencias_laborales?: Json | null
           progreso?: Json | null
+          referral_code?: string | null
+          referred_by?: string | null
           rol_profesional?: string | null
           updated_at?: string
           user_role?: string | null
         }
+        Relationships: [
+          {
+            foreignKeyName: "profiles_referred_by_fkey"
+            columns: ["referred_by"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      leads: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          source_page: string | null
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          source_page?: string | null
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          source_page?: string | null
+        }
         Relationships: []
+      }
+      referrals: {
+        Row: {
+          created_at: string
+          id: string
+          referred_id: string
+          referrer_id: string
+          reward_granted_at: string | null
+          status: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          referred_id: string
+          referrer_id: string
+          reward_granted_at?: string | null
+          status?: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          referred_id?: string
+          referrer_id?: string
+          reward_granted_at?: string | null
+          status?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "referrals_referred_id_fkey"
+            columns: ["referred_id"]
+            isOneToOne: true
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "referrals_referrer_id_fkey"
+            columns: ["referrer_id"]
+            isOneToOne: false
+            referencedRelation: "profiles"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       student_profiles: {
         Row: {

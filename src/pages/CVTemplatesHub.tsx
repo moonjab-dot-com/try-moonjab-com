@@ -1,6 +1,7 @@
 import { SEOHead } from '@/components/SEOHead';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
+import { EmailCaptureCard } from '@/components/EmailCaptureCard';
 import { OfficialLogo } from '@/components/OfficialLogo';
 import { ThemeToggle } from '@/components/ThemeToggle';
 import { motion } from 'framer-motion';
@@ -168,6 +169,13 @@ const CVTemplatesHub = () => {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Email capture */}
+      <section className="py-4">
+        <div className="mx-auto max-w-2xl px-6">
+          <EmailCaptureCard sourcePage="/plantillas-cv" />
         </div>
       </section>
 
