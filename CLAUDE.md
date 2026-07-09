@@ -5,10 +5,8 @@ MoonJab is an AI-powered career platform for students in LATAM.
 Stack: Vite + React + TypeScript + Tailwind + Supabase
 
 ## Git workflow (MANDATORY)
-- NEVER commit directly to main
-- Always create a new branch: seo/fix-name, feat/feature-name, fix/bug-name
-- Always create a Pull Request for review
-- Branch naming: seo/*, feat/*, fix/*, chore/*
+- Commit directly to main — no PR required
+- Push straight to main; the deploy workflow (.github/workflows/deploy.yml) will build and deploy automatically
 
 ## SEO priorities
 - All pages must use SEOHead component from src/components/SEOHead.tsx
