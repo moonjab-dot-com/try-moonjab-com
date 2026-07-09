@@ -35,6 +35,22 @@ jobs:
           SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
           SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
 
+      # One-time fix: this project's schema was originally created outside of
+      # Supabase's migration tracking, so its migration history is empty and
+      # `db push` tries to replay every migration from scratch (failing on
+      # tables that already exist). Mark the pre-existing migrations as
+      # already applied so only genuinely new ones get pushed going forward.
+      - name: Repair migration history for pre-existing schema
+        run: |
+          supabase migration repair --status applied \
+            20251112230849 20251114152927 20251114153022 20251114173346 \
+            20251114174551 20251206013625 20251213160435 20260314222203 \
+            20260315014833 20260316004741 20260316005007 20260503004735 \
+            20260512000000 || true
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
+
       - name: Push database migrations
         run: supabase db push --yes
         env:
