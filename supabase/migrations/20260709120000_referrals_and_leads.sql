@@ -28,9 +28,17 @@ BEGIN
   END IF;
 END $$;
 
+-- Guarded: has_role() is defined in an earlier migration, but this
+-- project's schema history predates migration tracking, so its actual
+-- presence in production isn't guaranteed. Skip gracefully rather than
+-- fail the whole migration if it's missing.
 DO $$
 BEGIN
-  IF NOT EXISTS (
+  IF EXISTS (
+    SELECT 1 FROM pg_proc p
+    JOIN pg_namespace n ON n.oid = p.pronamespace
+    WHERE n.nspname = 'public' AND p.proname = 'has_role'
+  ) AND NOT EXISTS (
     SELECT 1 FROM pg_policies
     WHERE schemaname = 'public' AND tablename = 'leads' AND policyname = 'Admins can view leads'
   ) THEN
