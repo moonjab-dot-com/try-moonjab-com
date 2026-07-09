@@ -34,6 +34,9 @@ export function EmailCaptureCard({
       if (error) throw error;
       track('lead_captured', { source_page: sourcePage });
       setDone(true);
+      supabase.functions.invoke('send-lead-magnet', { body: { email, source_page: sourcePage } }).catch((err) => {
+        console.error('Failed to send lead magnet email:', err);
+      });
     } catch {
       toast.error('No pudimos guardar tu email, intenta de nuevo');
     } finally {
