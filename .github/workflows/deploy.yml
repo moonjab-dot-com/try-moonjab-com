@@ -16,8 +16,11 @@ concurrency:
 
 jobs:
   # ─── Deploy Supabase Edge Functions ───────────────────────────────────────
+  # Runs independently of the frontend build so a broken/expired
+  # SUPABASE_ACCESS_TOKEN can never block the website from deploying.
   deploy-functions:
     runs-on: ubuntu-latest
+    continue-on-error: true
     steps:
       - uses: actions/checkout@v4
 
@@ -31,13 +34,13 @@ jobs:
           supabase functions deploy create-checkout --project-ref vajjrwoiufqdbziwluih
           supabase functions deploy check-subscription --project-ref vajjrwoiufqdbziwluih
           supabase functions deploy customer-portal --project-ref vajjrwoiufqdbziwluih
+          supabase functions deploy complete-referral --project-ref vajjrwoiufqdbziwluih
         env:
           SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
 
   # ─── Build & Deploy Frontend ───────────────────────────────────────────────
   build:
     runs-on: ubuntu-latest
-    needs: deploy-functions
     steps:
       - uses: actions/checkout@v4
 
