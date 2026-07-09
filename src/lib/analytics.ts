@@ -11,7 +11,9 @@ export type FunnelEvent =
   | 'referral_link_copied'
   | 'signup_completed'
   | 'upgrade_clicked'
-  | 'checkout_completed';
+  | 'checkout_completed'
+  | 'calculator_result_viewed'
+  | 'calculator_shared';
 
 export function track(event: FunnelEvent, params?: Record<string, string | number | boolean>) {
   if (typeof window === 'undefined' || !window.gtag) return;

@@ -215,6 +215,7 @@ MoonJab publica plantillas de CV optimizadas para ATS por profesión. Cada guía
 - [Las 10 habilidades digitales más demandadas en LATAM 2025](https://moonjab.com/blog/habilidades-digitales-2025-latam): Ranking de las habilidades técnicas más solicitadas en ofertas laborales LATAM 2025: análisis de datos, IA, automatización, cloud, ciberseguridad. Con recursos gratuitos para aprenderlas.
 
 **Salario:**
+- [Calculadora de Salario LATAM](https://moonjab.com/calculadora-de-salario): Herramienta interactiva para calcular el rango salarial esperado según profesión, país (Perú, México, Colombia, Argentina, Chile) y nivel de experiencia, con opción de compartir el resultado.
 - [Cómo negociar tu salario](https://moonjab.com/blog/negociar-salario): Técnicas y scripts exactos para negociar sueldo con confianza en primer empleo y cambios de trabajo. Incluye cuándo y cómo pedir, cómo responder contraofertas y errores que cuestan dinero.
 - [Sueldos en tecnología en LATAM 2025](https://moonjab.com/blog/sueldos-tecnologia-latam-2025): Rangos salariales reales por rol (desarrollador web, analista de datos, UX designer, marketing digital) y país (Perú, México, Colombia, Argentina, Chile) con datos de mercado 2025.
 - [Cómo pedir un aumento de sueldo](https://moonjab.com/blog/pedir-aumento-sueldo-estrategia): Scripts probados y el timing correcto para pedir aumento de sueldo. Incluye cómo construir el caso con evidencia, qué decir exactamente y cómo manejar la negativa.

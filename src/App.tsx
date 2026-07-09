@@ -31,6 +31,7 @@ import CVBuilderCountry from "./pages/CVBuilderCountry";
 import InterviewPrepLanding from "./pages/InterviewPrepLanding";
 import SalaryHub from "./pages/SalaryHub";
 import SalaryPage from "./pages/SalaryPage";
+import SalaryCalculator from "./pages/SalaryCalculator";
 import InterviewQuestionsHub from "./pages/InterviewQuestionsHub";
 import InterviewQuestionsByRole from "./pages/InterviewQuestionsByRole";
 import CVTemplatesHub from "./pages/CVTemplatesHub";
@@ -117,6 +118,7 @@ const App = () => (
                 <Route path="/salario" element={<SalaryHub />} />
                 <Route path="/salario/:rol" element={<SalaryPage />} />
                 <Route path="/salario/:rol/:pais" element={<SalaryPage />} />
+                <Route path="/calculadora-de-salario" element={<SalaryCalculator />} />
                 <Route path="/preguntas-de-entrevista" element={<InterviewQuestionsHub />} />
                 <Route path="/preguntas-de-entrevista/:rol" element={<InterviewQuestionsByRole />} />
                 <Route path="/plantillas-cv" element={<CVTemplatesHub />} />

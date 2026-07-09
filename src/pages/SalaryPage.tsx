@@ -269,6 +269,15 @@ const SalaryPage = () => {
         </div>
       </section>
 
+      {/* Calculator cross-link */}
+      <section className="py-8">
+        <div className="mx-auto max-w-2xl px-6 text-center">
+          <Link to={`/calculadora-de-salario?rol=${rol}`} className="inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline">
+            Calcula tu salario exacto según tu nivel y país <ArrowRight className="h-3.5 w-3.5" />
+          </Link>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-16 bg-muted/30 border-y border-border/30">
         <div className="mx-auto max-w-2xl px-6 text-center">

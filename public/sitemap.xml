@@ -252,6 +252,16 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/salario"/>
   </url>
 
+  <!-- Salary calculator -->
+  <url>
+    <loc>https://moonjab.com/calculadora-de-salario</loc>
+    <lastmod>2026-07-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="es"        href="https://moonjab.com/calculadora-de-salario"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://moonjab.com/calculadora-de-salario"/>
+  </url>
+
   <!-- Salary by role -->
   <url><loc>https://moonjab.com/salario/desarrollador-web</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/salario/desarrollador-web"/></url>
   <url><loc>https://moonjab.com/salario/desarrollador-software</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.88</priority><xhtml:link rel="alternate" hreflang="es" href="https://moonjab.com/salario/desarrollador-software"/></url>
