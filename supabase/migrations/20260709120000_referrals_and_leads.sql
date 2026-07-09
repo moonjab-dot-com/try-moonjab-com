@@ -52,9 +52,19 @@ END $$;
 
 -- ─── Referral program ────────────────────────────────────────────────────────
 
-ALTER TABLE public.profiles
-  ADD COLUMN IF NOT EXISTS referral_code TEXT UNIQUE,
-  ADD COLUMN IF NOT EXISTS referred_by UUID REFERENCES public.profiles(id);
+ALTER TABLE public.profiles ADD COLUMN IF NOT EXISTS referral_code TEXT UNIQUE;
+
+ALTER TABLE public.profiles ADD COLUMN IF NOT EXISTS referred_by UUID;
+
+DO $$
+BEGIN
+  IF NOT EXISTS (
+    SELECT 1 FROM pg_constraint WHERE conname = 'profiles_referred_by_fkey'
+  ) THEN
+    ALTER TABLE public.profiles
+      ADD CONSTRAINT profiles_referred_by_fkey FOREIGN KEY (referred_by) REFERENCES public.profiles(id);
+  END IF;
+END $$;
 
 CREATE TABLE IF NOT EXISTS public.referrals (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
