@@ -57,15 +57,6 @@ jobs:
           SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
           SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
 
-      - name: DEBUG - verify profiles schema post-migration
-        run: |
-          supabase db dump --linked --schema public -f /tmp/verify.sql
-          echo "===PROFILES SECTION==="
-          sed -n '/CREATE TABLE IF NOT EXISTS "public"."profiles"/,/^);/p' /tmp/verify.sql
-        env:
-          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
-          SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
-
       - name: Deploy Edge Functions
         run: |
           supabase functions deploy create-checkout --project-ref vajjrwoiufqdbziwluih
