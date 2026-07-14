@@ -51,6 +51,16 @@ jobs:
           SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
           SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
 
+      - name: DEBUG - dump full live schema
+        run: |
+          supabase db dump --linked --schema public -f /tmp/full_schema.sql
+          echo "===FULL SCHEMA DUMP START==="
+          cat /tmp/full_schema.sql
+          echo "===FULL SCHEMA DUMP END==="
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
+
       # db push is intentionally disabled: this repo's migration files
       # (profiles.id, cvs, interview_sessions, analytics_events, etc.)
       # do not match the live database's actual schema (confirmed via
