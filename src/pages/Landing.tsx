@@ -144,88 +144,6 @@ const ChatMockup = () => (
   </div>
 );
 
-/* ─── Hero signature: CV under ATS scan ─── */
-const SCAN_CHECKS = [
-  'Formato ATS',
-  'Palabras clave',
-  'Sin errores de formato',
-];
-
-const CVScanMockup = () => {
-  const checkVariants = {
-    hidden: { opacity: 0, x: -8 },
-    visible: (i: number) => ({
-      opacity: 1,
-      x: 0,
-      transition: { delay: 0.6 + i * 0.35, duration: 0.4, ease },
-    }),
-  };
-
-  return (
-    <div className="relative w-full max-w-[280px] mx-auto">
-      <div className="relative rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm p-5 overflow-hidden">
-        {/* scan sweep */}
-        <div
-          aria-hidden="true"
-          className="scan-line absolute left-0 right-0 h-px pointer-events-none"
-          style={{
-            background: 'linear-gradient(90deg, transparent, hsl(var(--primary-light)) 20%, hsl(var(--primary-light)) 80%, transparent)',
-            boxShadow: '0 0 12px 2px hsl(var(--primary-light) / 0.55)',
-          }}
-        />
-
-        {/* document silhouette */}
-        <div className="space-y-2.5 mb-5">
-          <div className="flex items-center gap-2.5 pb-2.5 border-b border-white/10">
-            <div className="w-8 h-8 rounded-full bg-white/10" />
-            <div className="space-y-1.5 flex-1">
-              <div className="h-2 w-24 rounded-full bg-white/20" />
-              <div className="h-1.5 w-16 rounded-full bg-white/10" />
-            </div>
-          </div>
-          <div className="h-1.5 w-full rounded-full bg-white/10" />
-          <div className="h-1.5 w-5/6 rounded-full bg-white/10" />
-          <div className="h-1.5 w-3/4 rounded-full bg-white/[0.07]" />
-          <div className="h-1.5 w-full rounded-full bg-white/10" />
-          <div className="h-1.5 w-2/3 rounded-full bg-white/[0.07]" />
-        </div>
-
-        {/* checklist reveal */}
-        <div className="space-y-2 mb-4">
-          {SCAN_CHECKS.map((label, i) => (
-            <motion.div
-              key={label}
-              custom={i}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={checkVariants}
-              className="flex items-center gap-2 text-[11px] text-white/70"
-            >
-              <div className="w-3.5 h-3.5 rounded-full bg-primary/25 flex items-center justify-center flex-shrink-0">
-                <Check className="h-2 w-2 text-primary-light" strokeWidth={3} />
-              </div>
-              {label}
-            </motion.div>
-          ))}
-        </div>
-
-        {/* score reveal */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 1.7, duration: 0.4, ease }}
-          className="flex items-center justify-between pt-3 border-t border-white/10"
-        >
-          <span className="text-[10px] text-white/50 uppercase tracking-wider">Compatibilidad ATS</span>
-          <span className="text-lg font-bold text-primary-light">94%</span>
-        </motion.div>
-      </div>
-    </div>
-  );
-};
-
 /* ─── RIASEC bars for Diagnostic card ─── */
 const DiagnosticMockup = () => {
   const bars = [
@@ -309,20 +227,20 @@ const LandingContent = () => {
         breadcrumbs={[]}
       />
 
-      {/* ── Navbar (dark, sits on the hero panel) ── */}
-      <nav className="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-[#0b0f0d]/75 border-b border-white/[0.08] transition-all duration-300">
+      {/* ── Navbar ── */}
+      <nav className="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-background/80 border-b border-border/30 transition-all duration-300">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 h-14 flex items-center justify-between">
-          <OfficialLogo size="md" to="/" className="brightness-0 invert" />
+          <OfficialLogo size="md" to="/" />
           <div className="hidden md:flex items-center gap-8">
-            <a href="#features" className="text-[13px] text-white/55 hover:text-white transition-colors">{t('nav.features')}</a>
-            <a href="#how" className="text-[13px] text-white/55 hover:text-white transition-colors">{t('nav.howItWorks')}</a>
-            <a href="#pricing" className="text-[13px] text-white/55 hover:text-white transition-colors">{t('nav.pricing')}</a>
+            <a href="#features" className="text-[13px] text-muted-foreground hover:text-foreground transition-colors">{t('nav.features')}</a>
+            <a href="#how" className="text-[13px] text-muted-foreground hover:text-foreground transition-colors">{t('nav.howItWorks')}</a>
+            <a href="#pricing" className="text-[13px] text-muted-foreground hover:text-foreground transition-colors">{t('nav.pricing')}</a>
           </div>
           <div className="flex items-center gap-2">
             <LanguageToggle />
             <ThemeToggle />
             <Link to="/login" className="hidden sm:inline-flex">
-              <Button variant="ghost" size="sm" className="text-[13px] h-8 text-white/70 hover:text-white hover:bg-white/10">{t('nav.login')}</Button>
+              <Button variant="ghost" size="sm" className="text-[13px] h-8">{t('nav.login')}</Button>
             </Link>
             <Link to="/registro" className="hidden sm:inline-flex">
               <Button size="sm" className="text-[13px] h-8 px-4 shadow-sm">{t('nav.start')}</Button>
@@ -332,114 +250,116 @@ const LandingContent = () => {
         </div>
       </nav>
 
-      {/* ── Hero: near-black panel, serif headline, ATS-scan signature ── */}
+      {/* ── Hero ── */}
       <motion.section
         ref={heroRef}
         style={{ opacity: heroOpacity, scale: heroScale }}
-        className="hero-dark-panel relative pt-28 pb-20 sm:pt-36 sm:pb-24 overflow-hidden"
+        className="relative pt-28 pb-20 sm:pt-36 sm:pb-28 overflow-hidden"
       >
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute inset-0 bg-dots opacity-[0.12]" />
+          <div className="absolute inset-0 bg-dots opacity-[0.35]" />
+          <div className="absolute -top-48 -right-48 w-[650px] h-[650px] rounded-full bg-primary/[0.07] blur-3xl" />
+          <div className="absolute -bottom-48 -left-48 w-[550px] h-[550px] rounded-full bg-primary/[0.04] blur-3xl" />
+          <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[900px] h-[200px] rounded-full bg-secondary/60 blur-3xl" />
         </div>
 
-        <div className="relative mx-auto max-w-6xl px-6 grid lg:grid-cols-[1.15fr_0.85fr] gap-14 lg:gap-10 items-center">
-          <div className="text-center lg:text-left">
-            {/* Eyebrow */}
-            <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0}>
-              <div className="hero-eyebrow inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.14em] mb-7">
-                <Sparkles className="h-3 w-3" />
-                {t('landing.badge')}
-              </div>
-            </motion.div>
+        <div className="relative mx-auto max-w-3xl px-6 text-center">
+          {/* Badge */}
+          <motion.div initial="hidden" animate="visible" variants={fadeUp} custom={0}>
+            <div className="badge-pill mb-8 shadow-sm">
+              <Sparkles className="h-3 w-3" />
+              {t('landing.badge')}
+            </div>
+          </motion.div>
 
-            {/* Headline — serif display */}
-            <motion.h1
-              initial="hidden"
-              animate="visible"
-              variants={fadeUp}
-              custom={1}
-              className="font-display text-balance text-[clamp(2.6rem,6vw,4.25rem)] font-medium leading-[1.05] tracking-[-0.01em] mb-6"
-            >
-              {t('landing.heroTitle1')}
-              <br />
-              <span className="relative inline-block italic text-primary-light">
-                {t('landing.heroHighlight')}
-              </span>
-            </motion.h1>
+          {/* Headline */}
+          <motion.h1
+            initial="hidden"
+            animate="visible"
+            variants={fadeUp}
+            custom={1}
+            className="text-balance text-[clamp(2.4rem,5.5vw,3.75rem)] font-bold leading-[1.06] tracking-[-0.03em] mb-6"
+          >
+            {t('landing.heroTitle1')}
+            <br />
+            <span className="relative inline-block">
+              <span className="gradient-text">{t('landing.heroHighlight')}</span>
+              <svg
+                className="absolute -bottom-1 left-0 w-full"
+                viewBox="0 0 240 8"
+                fill="none"
+                aria-hidden="true"
+              >
+                <path
+                  d="M2 6C60 2 180 2 238 6"
+                  stroke="hsl(var(--primary))"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  opacity="0.45"
+                />
+              </svg>
+            </span>
+          </motion.h1>
 
-            <motion.p
-              initial="hidden"
-              animate="visible"
-              variants={fadeUp}
-              custom={2}
-              className="hero-subtitle text-pretty text-base sm:text-lg max-w-xl mx-auto lg:mx-0 leading-relaxed mb-8"
-            >
-              {t('landing.heroSubtitle')}
-            </motion.p>
+          <motion.p
+            initial="hidden"
+            animate="visible"
+            variants={fadeUp}
+            custom={2}
+            className="text-pretty text-base sm:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed mb-8"
+          >
+            {t('landing.heroSubtitle')}
+          </motion.p>
 
-            {/* CTAs */}
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={fadeUp}
-              custom={3}
-              className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-8"
-            >
-              <Link to="/registro">
-                <Button size="lg" className="h-12 px-7 text-sm font-semibold gap-2 shadow-mj-md">
-                  {t('landing.ctaStart')}
-                  <ArrowRight className="h-4 w-4" />
-                </Button>
-              </Link>
-              <Link to="/guest-start">
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="h-12 px-7 text-sm font-medium gap-2 border-white/20 text-white hover:bg-white/10 hover:border-white/30 bg-transparent"
+          {/* CTAs */}
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={fadeUp}
+            custom={3}
+            className="flex flex-col sm:flex-row gap-3 justify-center mb-8"
+          >
+            <Link to="/registro">
+              <Button size="lg" className="h-12 px-7 text-sm font-semibold gap-2 shadow-mj-md">
+                {t('landing.ctaStart')}
+                <ArrowRight className="h-4 w-4" />
+              </Button>
+            </Link>
+            <Link to="/guest-start">
+              <Button variant="outline" size="lg" className="h-12 px-7 text-sm font-medium gap-2">
+                <Eye className="h-4 w-4" />
+                {t('landing.ctaTry')}
+              </Button>
+            </Link>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={fadeUp}
+            custom={4}
+            className="flex items-center justify-center gap-4"
+          >
+            <div className="flex items-center -space-x-2">
+              {avatarInitials.map((initial, i) => (
+                <div
+                  key={i}
+                  className={`w-7 h-7 rounded-full ${avatarColors[i]} border-2 border-background flex items-center justify-center text-[10px] font-bold text-white ring-0`}
                 >
-                  <Eye className="h-4 w-4" />
-                  {t('landing.ctaTry')}
-                </Button>
-              </Link>
-            </motion.div>
-
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              variants={fadeUp}
-              custom={4}
-              className="flex items-center justify-center lg:justify-start gap-4"
-            >
-              <div className="flex items-center -space-x-2">
-                {avatarInitials.map((initial, i) => (
-                  <div
-                    key={i}
-                    className={`w-7 h-7 rounded-full ${avatarColors[i]} border-2 border-[#0b0f0d] flex items-center justify-center text-[10px] font-bold text-white ring-0`}
-                  >
-                    {initial}
-                  </div>
+                  {initial}
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-col items-start gap-0.5">
+              <div className="flex gap-0.5">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} className="h-3 w-3 fill-amber-400 text-amber-400" />
                 ))}
               </div>
-              <div className="flex flex-col items-start gap-0.5">
-                <div className="flex gap-0.5">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star key={i} className="h-3 w-3 fill-amber-400 text-amber-400" />
-                  ))}
-                </div>
-                <p className="text-[11px] text-white/55">
-                  <span className="font-semibold text-white/90">+10,000 estudiantes</span> mejoraron su carrera
-                </p>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Signature: CV under ATS scan */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.7, ease }}
-          >
-            <CVScanMockup />
+              <p className="text-[11px] text-muted-foreground">
+                <span className="font-semibold text-foreground">+10,000 estudiantes</span> mejoraron su carrera
+              </p>
+            </div>
           </motion.div>
         </div>
       </motion.section>

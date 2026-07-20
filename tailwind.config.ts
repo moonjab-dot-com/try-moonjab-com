@@ -42,7 +42,6 @@ export default {
         mono: ["ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
         heading: ["'Plus Jakarta Sans'", "'DM Sans'", "system-ui", "sans-serif"],
         body: ["'DM Sans'", "'Plus Jakarta Sans'", "system-ui", "sans-serif"],
-        display: ["'EB Garamond'", "'Plus Jakarta Sans'", "serif"],
       },
       colors: {
         border: "hsl(var(--border))",
