@@ -186,10 +186,9 @@ const LandingContent = () => {
   const heroScale = useTransform(scrollYProgress, [0, 1], [1, 0.97]);
 
   const stats = [
-    { value: '10K+', label: t('landing.stats.professionals'), icon: Users },
     { value: '87%', label: t('landing.stats.getJobs'), icon: TrendingUp },
     { value: '4.9', label: t('landing.stats.satisfaction'), icon: Star },
-    { value: '15+', label: t('landing.stats.countries'), icon: Compass },
+    { value: '21+', label: t('landing.stats.countries'), icon: Compass },
   ];
 
   const steps = [
@@ -401,7 +400,7 @@ const LandingContent = () => {
       {/* ── Social Proof Stats ── */}
       <section className="py-14 border-y border-border/30 bg-muted/20">
         <div className="mx-auto max-w-4xl px-6">
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 text-center">
+          <div className="grid grid-cols-3 gap-6 sm:gap-8 text-center">
             {stats.map((stat, i) => (
               <motion.div
                 key={i}
